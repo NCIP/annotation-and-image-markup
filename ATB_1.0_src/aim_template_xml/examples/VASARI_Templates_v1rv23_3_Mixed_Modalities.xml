@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TemplateContainer creationDate="2011-07-10" authors="The AIM team" name="VK Template" version="1" uid="12.37.398.3675.74.35436346" description="This template is used by an application program to present readers and adjudicators with available option for evaluating brain tumor studies. TWO" xsi:schemaLocation="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate AIMTemplate_v1rv23.xsd" xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Template name="LIDC CT" version="1.1" authors="AIM Team" creationDate="2011-07-10" description="This is a LIDC template version 2 revision 23." uid="12.345437.36.78744.87.782.678357" codeValue="LIDC-1" codeMeaning="LungMeasurement" codingSchemeDesignator="LIDC" modality="CT" precedingAnnotation="RequireToSelect" >
+		<Component itemNumber="1" label="Tumor Location" explanatoryText="Location of lesion geographic center (not all areas of involvement)." maxCardinality="2" minCardinality="0" shouldDisplay="true">
+			<QuestionType codeMeaning="Where is the tumor location?" codingSchemeDesignator="Private" codeValue="WTL-100"></QuestionType>			
+			<AnatomicEntity annotatorConfidence="true">
+			<AnatomicEntityCharacteristic itemNumber="1" annotatorConfidence="false" minCardinality="1" label="Side of Tumor Center" shouldDisplay="true" maxCardinality="1" explanatoryText="Side of lesion center">
+				<AllowedTerm codeMeaning="Right" codeValue="G-A100" codingSchemeDesignator="SRT"/>
+				<AllowedTerm codeMeaning="Left" codeValue="G-A101" codingSchemeDesignator="SRT"/>
+			</AnatomicEntityCharacteristic>
+			</AnatomicEntity>
+			<AllowedTerm codeMeaning="Upper lobe of left lung" codeValue="RID1327" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Upper lobe of right lung" codeValue="RID1303" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Lower lobe of left lung" codingSchemeDesignator="RID1338" codeValue="RadLex"/>
+		</Component>
+		<Component shouldDisplay="true" label="Arrow" maxCardinality="1" minCardinality="0" itemNumber="2" authors="The AIM Team" explanatoryText="Please put an arrow to identify the tumor location." groupLabel="Creating an arrow ">
+		<QuestionType codeMeaning="Place an arrow an a tumor" codingSchemeDesignator="Private" codeValue="PA1"></QuestionType>
+			<GeometricShape>Point</GeometricShape>
+		</Component>
+		<Component shouldDisplay="true" label="RECIST Calculation" maxCardinality="1" minCardinality="0" itemNumber="7">
+		  <QuestionType codeMeaning="Perform RECIST calculation " codingSchemeDesignator="Private" codeValue="PRCAL1"></QuestionType>	
+			<Calculation>
+				<CalculationType codeMeaning="RECIST Calculation" codingSchemeDesignator="Private-RECIST" codeValue="REC-C">
+					<ValidTerm codeMeaning="RECIST 1.0" codingSchemeDesignator="Private-RECIST" codeValue="REC-C-1.0"></ValidTerm>
+					<ValidTerm codeMeaning="RECIST 1.1" codingSchemeDesignator="Private-RECIST" codeValue="REC-C-1.1"></ValidTerm>
+					<AlgorithmType codeMeaning="Longest Diameter" codingSchemeDesignator="Private-RECIST" codeValue="REC-LD-0264" description="Calculation the logest diameter of a lesion." algorithmName="Longest Diameter for Recist" algorithmVersion="1.0" uniqueIdentifier="7880.3455756.67856.343412.13567" ></AlgorithmType>
+				</CalculationType>
+			</Calculation>
+		</Component>
+		<Tags>
+			<Tag>
+				<TagName codeMeaning="Disease" codingSchemeDesignator="SRT" codeValue="64572001"></TagName>
+				<TagValue>
+					<CodedValue codeMeaning="Lung Carcinoma" codingSchemeDesignator="NCIt" codeValue="C4878"></CodedValue>
+				</TagValue>
+			</Tag>
+			<Tag>
+				<TagName codeMeaning="Body Part" codingSchemeDesignator="NCI" codeValue="C32221"></TagName>
+				<TagValue>
+					<CodedValue codeMeaning="Lung" codingSchemeDesignator="NCI" codeValue="C12468"></CodedValue>
+				</TagValue>
+			</Tag>
+		</Tags>
+		</Template>
+	<Template name="LIDC_CR_DR" version="1.1" authors="AIM Team" creationDate="2011-07-10" description="This is a LIDC template version 2 revision 23." uid="123.9234527.3216541657.44324.3124152" codeValue="LIDC-2" codeMeaning="Lung Tumor Measurement 2" codingSchemeDesignator="Private_LIDC" modality="CR" precedingAnnotation="DoNotOffer">
+		<Component itemNumber="1" label="Tumor Location" explanatoryText="Location of lesion geographic center." maxCardinality="2" minCardinality="0" shouldDisplay="true">
+		   <QuestionType codeMeaning="Where is the tumor location?" codingSchemeDesignator="Private" codeValue="WTL-100"></QuestionType>	
+			<AnatomicEntity annotatorConfidence="true">
+								
+				<AnatomicEntityCharacteristic itemNumber="1" annotatorConfidence="false" minCardinality="1" label="Side of Tumor Center" shouldDisplay="true" maxCardinality="1" explanatoryText="Side of lesion center only">
+					<AllowedTerm codeMeaning="Right" codeValue="G-A100" codingSchemeDesignator="SRT"/>
+					<AllowedTerm codeMeaning="Left" codeValue="G-A101" codingSchemeDesignator="SRT"/>
+					<QuestionType codeMeaning="Where is the side of tumor center?" codingSchemeDesignator="Private" codeValue="PRTC1"></QuestionType>
+				</AnatomicEntityCharacteristic>
+			</AnatomicEntity>
+			<AllowedTerm codeMeaning="Upper lobe of right lung" codeValue="RID1303" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Lower lobe of left lung" codingSchemeDesignator="RID1338" codeValue="RadLex"/>
+		</Component>
+
+		<Tags>
+			<Tag>
+				<TagName codeMeaning="Disease" codingSchemeDesignator="SRT" codeValue="64572001"></TagName>
+				<TagValue>
+					<CodedValue codeMeaning="Lung Carcinoma" codingSchemeDesignator="NCIt" codeValue="C4878"></CodedValue>
+				</TagValue>
+			</Tag>
+			<Tag>
+				<TagName codeMeaning="Disease" codingSchemeDesignator="SRT" codeValue="64572001"></TagName>
+				<TagValue>
+					<CodedValue codeMeaning="Suspected lung cancer" codingSchemeDesignator="SRT" codeValue="R-F344B"></CodedValue>
+				</TagValue>
+			</Tag>
+		</Tags>
+		</Template>
+	<Tags>
+		<Tag>
+			<TagName codeMeaning="Disease" codingSchemeDesignator="SRT" codeValue="64572001"></TagName>
+			<TagValue>
+				<CodedValue codeMeaning="Malignant Neoplasm" codingSchemeDesignator="NCIt" codeValue="C9305"></CodedValue>
+			</TagValue>
+		</Tag>
+		<Tag>
+			<TagName codeMeaning="Body Part" codingSchemeDesignator="NCI" codeValue="C32221"></TagName>
+			<TagValue>
+				<CodedValue codeMeaning="Thorax" codingSchemeDesignator="NCI" codeValue="C12799"></CodedValue>
+			</TagValue>
+		</Tag>
+	</Tags>
+</TemplateContainer>

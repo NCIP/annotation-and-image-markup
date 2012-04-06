@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<TemplateContainer authors="tuser" name="Mammo Template" version="1" uid="12.6776678.78973.12435.65476.474312.78" description="This template is used by an application program to present readers and adjudicators with available option for evaluating brain tumor studies" creationDate="2011-06-17" xsi:schemaLocation="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate AIMTemplate_v1rv23.xsd" xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Template name="MarkupOnly" version="1.0" authors="tuser" description="TCGA-GBM markup only template" uid="1.2.45678.57894.235.465353.2432.8686.342222568" codeValue="na" codeMeaning="na" codingSchemeDesignator="na" creationDate="2011-06-17">
+    <Component label="Lesion Size" minCardinality="0" maxCardinality="1" itemNumber="0" shouldDisplay="true" explanatoryText="LS" authors="tuser">
+      <ImagingObservation annotatorConfidence="false">
+        <ImagingObservationCharacteristic label="25 - Please mark up the tumor using the ruler tool" minCardinality="1" maxCardinality="1" itemNumber="0" shouldDisplay="true" explanatoryText="Lesion size is defined as the largest perpendicular (x-y) cross- sectional diameter of entire T2 signal abnormality (longest dimension x perpendicular dimension) measured the single axial image that reveals the largest cross-sectional area of the lesion. " authors="tuser" annotatorConfidence="false">
+          <AllowedTerm codeMeaning="Not Applicable" codeValue="R-400F9" codingSchemeDesignator="SRT">
+          </AllowedTerm>
+          <AllowedTerm codeMeaning="Marked" codeValue="A10767872" codingSchemeDesignator="NCI">
+          </AllowedTerm>
+        </ImagingObservationCharacteristic>
+      </ImagingObservation>
+      <AllowedTerm codeMeaning="Not Applicable" codeValue="R-400F9" codingSchemeDesignator="SRT">
+      </AllowedTerm>
+      <AllowedTerm codeMeaning="Present" codeValue="G-A203" codingSchemeDesignator="SRT">
+      </AllowedTerm>
+    </Component>
+    <Component label="L2" minCardinality="0" maxCardinality="0" itemNumber="1" shouldDisplay="false" explanatoryText="L2" authors="tuser">
+      <AnatomicEntity annotatorConfidence="false">
+      </AnatomicEntity>
+      <AllowedTerm codeMeaning="None" codeValue="R-40775" codingSchemeDesignator="SRT">
+      </AllowedTerm>
+    </Component>
+  </Template>
+</TemplateContainer>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TemplateContainer creationDate="2011-07-03" authors="The AIM team"
+	name="VASARI Template Group" version="1"
+	uid="2.25.594855684734358879644913128696602393814"
+	description="This template is used by an application program to present readers and adjudicators with available option for evaluating brain tumor studies."
+	xsi:schemaLocation="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate AIMTemplate_v1rv23.xsd"
+	xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Template name="VASARI_THREE_5" version="1.1" authors="AIM Team" creationDate="2011-07-10" description="This is a VASARI template version 2." uid="2.25.123423212534358879644913128698495049586" codeValue="VASARI-1" codeMeaning="Brain Tumor Measurement" codingSchemeDesignator="VASARI"/>
+	<Tags>
+		<Tag>
+			<TagName codeMeaning="Disease" codingSchemeDesignator="SRT"
+				codeValue="64572001"></TagName>
+			<TagValue>
+				<CodedValue codeMeaning="Lung Carcinoma"
+					codingSchemeDesignator="NCIt" codeValue="C4878"></CodedValue>
+			</TagValue>
+		</Tag>
+		<Tag>
+			<TagName codeMeaning="Body Part" codingSchemeDesignator="NCI"
+				codeValue="C32221"></TagName>
+			<TagValue>
+				<CodedValue codeMeaning="Lung" codingSchemeDesignator="NCI"
+					codeValue="C12468"></CodedValue>
+			</TagValue>
+		</Tag>
+	</Tags>
+</TemplateContainer>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TemplateContainer authors="tuser" name="Mammo Template" version="1" uid="2.34.65675768.8908123.3234543.6786" description="This template is used by an application program to present readers and adjudicators with available option for evaluating brain tumor studies" creationDate="2011-06-17" xsi:schemaLocation="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate AIMTemplate_v1rv23.xsd" xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Template name="MarkupOnly" version="1.0" authors="tuser" description="TCGA-GBM markup only template" uid="1.2.45678.545634.23257" codeValue="na" codeMeaning="na" codingSchemeDesignator="na" creationDate="2011-06-17">
+    <Component label="Lesion Size" minCardinality="0" maxCardinality="1" itemNumber="0" shouldDisplay="false" explanatoryText="LS" authors="tuser">
+      <ImagingObservation annotatorConfidence="false">
+        <ImagingObservationCharacteristic label="25 - Please mark up the tumor using the ruler tool" minCardinality="0" maxCardinality="1" itemNumber="0" shouldDisplay="false" explanatoryText="Lesion size is defined as the largest perpendicular (x-y) cross- sectional diameter of entire T2 signal abnormality (longest dimension x perpendicular dimension) measured the single axial image that reveals the largest cross-sectional area of the lesion. " authors="tuser" annotatorConfidence="false">
+          <AllowedTerm codeMeaning="Not Applicable" codeValue="R-400F9" codingSchemeDesignator="SRT">
+          </AllowedTerm>
+        </ImagingObservationCharacteristic>
+      </ImagingObservation>
+      <AllowedTerm codeMeaning="Not Applicable" codeValue="R-400F9" codingSchemeDesignator="SRT">
+      </AllowedTerm>
+    </Component>
+  </Template>
+</TemplateContainer>

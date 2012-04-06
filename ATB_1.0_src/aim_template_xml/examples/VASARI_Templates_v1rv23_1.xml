@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TemplateContainer creationDate="2011-07-10" authors="The AIM team" name="VK Template" version="1" uid="123.93234.3888767786.78667856.56734.2685785" description="This template is used by an application program to present readers and adjudicators with available option for evaluating brain tumor studies. ONE" xsi:schemaLocation="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate AIMTemplate_v1rv23.xsd" xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Template name="VASARI_ONE" version="1.0" authors="AIM Team" creationDate="2011-07-10" description="This is a VASARI template version 2 revision 23." uid="123.94677.32156.8.121864.894423.565" codeValue="VASARI-1" codeMeaning="VK1: Brain Tumor Measurement" codingSchemeDesignator="VASARI" modality="MR" precedingAnnotation="RequireToSelect" >
+		<Component itemNumber="1" label="Tumor Location" explanatoryText="Location of lesion geographic center (not all areas of involvement)." maxCardinality="2" minCardinality="0" shouldDisplay="true">
+			<QuestionType codeMeaning="Where is the tumor location?" codingSchemeDesignator="Private" codeValue="WTL-100"></QuestionType>			
+			<AnatomicEntity annotatorConfidence="true">
+			<AnatomicEntityCharacteristic itemNumber="1" annotatorConfidence="false" minCardinality="1" label="Side of Tumor Center" shouldDisplay="true" maxCardinality="1" explanatoryText="Side of lesion center">
+				<AllowedTerm codeMeaning="Right" codeValue="G-A100" codingSchemeDesignator="SRT"/>
+				<AllowedTerm codeMeaning="Center/Bilateral" codeValue="G-A102" codingSchemeDesignator="SRT"/>
+				<AllowedTerm codeMeaning="Left" codeValue="G-A101" codingSchemeDesignator="SRT"/>
+			</AnatomicEntityCharacteristic>
+			</AnatomicEntity>
+			<AllowedTerm codeMeaning="Frontal lobe" codeValue="RID6440" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Temporal lobe" codeValue="RID6476" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Insula" codeValue="RID6472" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Parietal lobe" codeValue="RID6493" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Occipital lobe" codeValue="RID6502" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Brainstem" codeValue="RID6677" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Cerebellum" codeValue="RID6815" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Basal Ganglia" codeValue="RID6537" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Thalamus" codeValue="RID6578" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Corpus Callosum" codeValue="RID6915" codingSchemeDesignator="RadLex"/>
+		</Component>
+		<Component shouldDisplay="true" label="Arrow" maxCardinality="1" minCardinality="0" itemNumber="2" authors="The AIM Team" explanatoryText="Please put an arrow to identify the tumor location." groupLabel="Creating an arrow ">
+			<GeometricShape>Point</GeometricShape>
+		</Component>
+		<Component itemNumber="2" label="Lesion" explanatoryText="Select the type of lesion" maxCardinality="3" minCardinality="1" shouldDisplay="true" groupLabel="Component Label 1">
+			<ImagingObservation annotatorConfidence="true">
+				<ImagingObservationCharacteristic label="Enhancement Quality" itemNumber="1" explanatoryText="Qualitative degree of contrast enhancement is defined as having all or portions of the tumor that demonstrate significantly higher signal on the postcontrast T1W images compared to precontrast T1W images. Mild/Minimal = when barely discernable degree of enhancement is present relative to pre-contrast images. Marked/avid = obvious tissue enhancement" maxCardinality="1" minCardinality="1" annotatorConfidence="false" shouldDisplay="true">
+					<AllowedTerm codeMeaning="Enhancement Quality" codeValue="67-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Enhancement Quality Characteristic Quantification" annotatorConfidence="false">
+							<NonQuantifiable codeMeaning="None" codeValue="R-40775" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Mild" codeValue="R-404FA" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Marked" codeValue="A10767872" codingSchemeDesignator="NCI"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+							<!-- A prominent or noticeable characteristic. -->
+						</CharacteristicQuantification>
+					</AllowedTerm>
+						<AllowedTerm codeMeaning="Enhancement Quality 2" codeValue="67-111" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Enhancement Quality Characteristic Quantification" annotatorConfidence="false">
+							<NonQuantifiable codeMeaning="None" codeValue="R-40775" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Mild" codeValue="R-404FA" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Marked" codeValue="A10767872" codingSchemeDesignator="NCI"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+							<!-- A prominent or noticeable characteristic. -->
+						</CharacteristicQuantification>
+					</AllowedTerm>
+				
+				</ImagingObservationCharacteristic>
+				<ImagingObservationCharacteristic label="Proportion Enhancing" itemNumber="2" explanatoryText="Visually, when scanning through the entire tumor volume, what proportion of the entire tumor would you estimate is enhancing. (Assuming that the the entire abnormality may be comprised of: (1) an enhancing component, (2) a non-enhancing component, (3) a necrotic component and (4) a edema component.)" annotatorConfidence="false" maxCardinality="4" minCardinality="0" shouldDisplay="true" groupLabel="Group 1">
+					<AllowedTerm codeMeaning="Proportion Enhancing" codeValue="59-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Percent Proportion Enhancing Characteristic Quantification" annotatorConfidence="false">
+							<Interval minValue="0" ucumString="%" maxValue="0" maxOperator="Equal" minOperator="Equal"/>
+							<Interval minValue="5" ucumString="%" maxValue="5" maxOperator="LessThan" minOperator="LessThan"/>
+							<Interval minValue="6" ucumString="%" maxValue="33" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="34" ucumString="%" maxValue="67" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="68" ucumString="%" maxValue="95" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="95" ucumString="%" maxValue="95" maxOperator="GreaterThan" minOperator="GreaterThan"/>
+							<Interval minValue="100" ucumString="%" maxValue="100" maxOperator="Equal" minOperator="Equal"/>
+							<NonQuantifiable codeMeaning="Not Applicable" codeValue="R-400F9" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+						</CharacteristicQuantification>
+					</AllowedTerm>
+					<AllowedTerm codeMeaning="Proportion Enhancing 2" codeValue="59-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Percent Proportion Enhancing Characteristic Quantification 2" annotatorConfidence="false">
+							<Interval minValue="0" ucumString="%" maxValue="0" maxOperator="Equal" minOperator="Equal"/>
+							<Interval minValue="5" ucumString="%" maxValue="5" maxOperator="LessThan" minOperator="LessThan"/>
+							<Interval minValue="6" ucumString="%" maxValue="33" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="34" ucumString="%" maxValue="67" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="68" ucumString="%" maxValue="95" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="95" ucumString="%" maxValue="95" maxOperator="GreaterThan" minOperator="GreaterThan"/>
+							<Interval minValue="100" ucumString="%" maxValue="100" maxOperator="Equal" minOperator="Equal"/>
+							<NonQuantifiable codeMeaning="Not Applicable" codeValue="R-400F9" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+						</CharacteristicQuantification>
+					</AllowedTerm>
+				</ImagingObservationCharacteristic>
+				<ImagingObservationCharacteristic label="Proportion nCET" itemNumber="3" explanatoryText="Visually, when scanning through the entire tumor, what proportion of the entire tumor is estimated to represent non-enhancing tumor (not edema)? Nonenhancing tumor is defined as regions of T2W hyperintensity (less than the intensity of cerebrospinal fluid, with corresponding T1W hypointensity) that are associated with mass effect and architectural distortion, including blurring of the gray-white interface.(Assuming that the the entire abnormality may be comprised of: (1) an enhancing component, (2) a non-enhancing component, (3) a necrotic component and (4) a edema component.)" annotatorConfidence="false" maxCardinality="1" minCardinality="1" shouldDisplay="false" groupLabel="Group 1">
+					<AllowedTerm codeMeaning="Proportion nCET" codeValue="19-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Percent Proportion nCET Characteristic Quantification" annotatorConfidence="false">
+							<Interval minValue="0" ucumString="%" maxValue="0" maxOperator="Equal" minOperator="Equal"/>
+							<Interval minValue="5" ucumString="%" maxValue="5" maxOperator="LessThan" minOperator="LessThan"/>
+							<Interval minValue="6" ucumString="%" maxValue="33" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="34" ucumString="%" maxValue="67" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="68" ucumString="%" maxValue="95" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="95" ucumString="%" maxValue="95" maxOperator="GreaterThan" minOperator="GreaterThan"/>
+							<Interval minValue="100" ucumString="%" maxValue="100" maxOperator="Equal" minOperator="Equal"/>
+							<NonQuantifiable codeMeaning="Not Applicable" codeValue="R-400F9" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+						</CharacteristicQuantification>
+					</AllowedTerm>
+				</ImagingObservationCharacteristic>
+				<ImagingObservationCharacteristic label="Proportion nCET 2" itemNumber="4" explanatoryText="Visually, when scanning through the entire tumor, what proportion of the entire tumor is estimated to represent non-enhancing tumor (not edema)? Nonenhancing tumor is defined as regions of T2W hyperintensity (less than the intensity of cerebrospinal fluid, with corresponding T1W hypointensity) that are associated with mass effect and architectural distortion, including blurring of the gray-white interface.(Assuming that the the entire abnormality may be comprised of: (1) an enhancing component, (2) a non-enhancing component, (3) a necrotic component and (4) a edema component.)" annotatorConfidence="false" maxCardinality="1" minCardinality="1" shouldDisplay="false">
+					<AllowedTerm codeMeaning="Proportion nCET" codeValue="19-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Percent Proportion nCET Characteristic Quantification 2" annotatorConfidence="false">
+							<Interval minValue="0" ucumString="%" maxValue="0" maxOperator="Equal" minOperator="Equal"/>
+							<Interval minValue="5" ucumString="%" maxValue="5" maxOperator="LessThan" minOperator="LessThan"/>
+							<Interval minValue="6" ucumString="%" maxValue="33" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="34" ucumString="%" maxValue="67" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="68" ucumString="%" maxValue="95" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="95" ucumString="%" maxValue="95" maxOperator="GreaterThan" minOperator="GreaterThan"/>
+							<Interval minValue="100" ucumString="%" maxValue="100" maxOperator="Equal" minOperator="Equal"/>
+							<NonQuantifiable codeMeaning="Not Applicable" codeValue="R-400F9" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+						</CharacteristicQuantification>
+					</AllowedTerm>
+				</ImagingObservationCharacteristic>
+				<ImagingObservationCharacteristic label="Proportion Necrosis" itemNumber="5" explanatoryText="Visually, when scanning through the entire tumor volume, what proportion of the tumor is estimated to represent necrosis. Necrosis is defined as a region within the tumor that does not enhance or shows markedly diminished enhancement, is high on T2W and proton density images, is low on T1W images, and has an irregular border). (Assuming that the the entire abnormality may be comprised of: (1) an enhancing component, (2) a non-enhancing component, (3) a necrotic component and (4) a edema component.)" annotatorConfidence="false" maxCardinality="1" minCardinality="1" shouldDisplay="false" groupLabel="Group 2">
+					<AllowedTerm codeMeaning="Proportion Necrosis" codeValue="49-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Percent Necrosis Characteristic Quantification" annotatorConfidence="false">
+							<Interval minValue="0" ucumString="%" maxValue="0" maxOperator="Equal" minOperator="Equal"/>
+							<Interval minValue="5" ucumString="%" maxValue="5" maxOperator="LessThan" minOperator="LessThan"/>
+							<Interval minValue="6" ucumString="%" maxValue="33" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="34" ucumString="%" maxValue="67" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="68" ucumString="%" maxValue="95" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="95" ucumString="%" maxValue="95" maxOperator="GreaterThan" minOperator="GreaterThan"/>
+							<Interval minValue="100" ucumString="%" maxValue="100" maxOperator="Equal" minOperator="Equal"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+						</CharacteristicQuantification>
+					</AllowedTerm>
+				</ImagingObservationCharacteristic>
+			</ImagingObservation>
+			<AllowedTerm codeMeaning="mass" codeValue="RID3874" codingSchemeDesignator="RadLex"/>
+		</Component>
+		<Component itemNumber="4" label="Eloquent Brain" explanatoryText="Select Eloquent Brain Involvement feature" maxCardinality="1" minCardinality="1" shouldDisplay="true" groupLabel="Component Label 5">
+			<Inference annotatorConfidence="false"/>
+			<AllowedTerm codeMeaning="Eloquent Brain : None" codeValue="85" codingSchemeDesignator="VASARI"/>
+			<AllowedTerm codeMeaning="Eloquent Brain : Speech Motor" codeValue="86" codingSchemeDesignator="VASARI"/>
+			<AllowedTerm codeMeaning="Eloquent Brain : Speech Receptive" codeValue="87" codingSchemeDesignator="VASARI"/>
+			<AllowedTerm codeMeaning="Eloquent Brain : Motor" codeValue="88" codingSchemeDesignator="VASARI"/>
+			<AllowedTerm codeMeaning="Eloquent Brain : Vision" codeValue="89" codingSchemeDesignator="VASARI"/>
+		</Component>		
+		<Component itemNumber="5" label="Lesion" explanatoryText="Select the type of lesion" maxCardinality="3" minCardinality="1" shouldDisplay="true" groupLabel="Component Label 1">
+			<ImagingObservation annotatorConfidence="true">
+				<ImagingObservationCharacteristic label="Enhancement Quality" itemNumber="1" explanatoryText="Qualitative degree of contrast enhancement is defined as having all or portions of the tumor that demonstrate significantly higher signal on the postcontrast T1W images compared to precontrast T1W images. Mild/Minimal = when barely discernable degree of enhancement is present relative to pre-contrast images. Marked/avid = obvious tissue enhancement" maxCardinality="1" minCardinality="1" annotatorConfidence="false" shouldDisplay="true">
+					<AllowedTerm codeMeaning="Enhancement Quality" codeValue="67-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Enhancement Quality Characteristic Quantification" annotatorConfidence="false">
+							<NonQuantifiable codeMeaning="None" codeValue="R-40775" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Mild" codeValue="R-404FA" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Marked" codeValue="A10767872" codingSchemeDesignator="NCI"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+							<!-- A prominent or noticeable characteristic. -->
+						</CharacteristicQuantification>
+					</AllowedTerm>
+						<AllowedTerm codeMeaning="Enhancement Quality 2" codeValue="67-111" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Enhancement Quality Characteristic Quantification" annotatorConfidence="false">
+							<NonQuantifiable codeMeaning="None" codeValue="R-40775" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Mild" codeValue="R-404FA" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Marked" codeValue="A10767872" codingSchemeDesignator="NCI"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+							<!-- A prominent or noticeable characteristic. -->
+						</CharacteristicQuantification>
+					</AllowedTerm>
+				
+				</ImagingObservationCharacteristic>
+				<ImagingObservationCharacteristic label="Proportion Enhancing" itemNumber="2" explanatoryText="Visually, when scanning through the entire tumor volume, what proportion of the entire tumor would you estimate is enhancing. (Assuming that the the entire abnormality may be comprised of: (1) an enhancing component, (2) a non-enhancing component, (3) a necrotic component and (4) a edema component.)" annotatorConfidence="false" maxCardinality="4" minCardinality="0" shouldDisplay="true" groupLabel="Group 1">
+					<AllowedTerm codeMeaning="Proportion Enhancing" codeValue="59-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Percent Proportion Enhancing Characteristic Quantification" annotatorConfidence="false">
+							<Interval minValue="0" ucumString="%" maxValue="0" maxOperator="Equal" minOperator="Equal"/>
+							<Interval minValue="5" ucumString="%" maxValue="5" maxOperator="LessThan" minOperator="LessThan"/>
+							<Interval minValue="6" ucumString="%" maxValue="33" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="34" ucumString="%" maxValue="67" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="68" ucumString="%" maxValue="95" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="95" ucumString="%" maxValue="95" maxOperator="GreaterThan" minOperator="GreaterThan"/>
+							<Interval minValue="100" ucumString="%" maxValue="100" maxOperator="Equal" minOperator="Equal"/>
+							<NonQuantifiable codeMeaning="Not Applicable" codeValue="R-400F9" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+						</CharacteristicQuantification>
+					</AllowedTerm>
+					<AllowedTerm codeMeaning="Proportion Enhancing 2" codeValue="59-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Percent Proportion Enhancing Characteristic Quantification 2" annotatorConfidence="false">
+							<Interval minValue="0" ucumString="%" maxValue="0" maxOperator="Equal" minOperator="Equal"/>
+							<Interval minValue="5" ucumString="%" maxValue="5" maxOperator="LessThan" minOperator="LessThan"/>
+							<Interval minValue="6" ucumString="%" maxValue="33" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="34" ucumString="%" maxValue="67" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="68" ucumString="%" maxValue="95" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="95" ucumString="%" maxValue="95" maxOperator="GreaterThan" minOperator="GreaterThan"/>
+							<Interval minValue="100" ucumString="%" maxValue="100" maxOperator="Equal" minOperator="Equal"/>
+							<NonQuantifiable codeMeaning="Not Applicable" codeValue="R-400F9" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+						</CharacteristicQuantification>
+					</AllowedTerm>
+				</ImagingObservationCharacteristic>
+				<ImagingObservationCharacteristic label="Proportion nCET" itemNumber="3" explanatoryText="Visually, when scanning through the entire tumor, what proportion of the entire tumor is estimated to represent non-enhancing tumor (not edema)? Nonenhancing tumor is defined as regions of T2W hyperintensity (less than the intensity of cerebrospinal fluid, with corresponding T1W hypointensity) that are associated with mass effect and architectural distortion, including blurring of the gray-white interface.(Assuming that the the entire abnormality may be comprised of: (1) an enhancing component, (2) a non-enhancing component, (3) a necrotic component and (4) a edema component.)" annotatorConfidence="false" maxCardinality="1" minCardinality="1" shouldDisplay="false" groupLabel="Group 1">
+					<AllowedTerm codeMeaning="Proportion nCET" codeValue="19-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Percent Proportion nCET Characteristic Quantification" annotatorConfidence="false">
+							<Interval minValue="0" ucumString="%" maxValue="0" maxOperator="Equal" minOperator="Equal"/>
+							<Interval minValue="5" ucumString="%" maxValue="5" maxOperator="LessThan" minOperator="LessThan"/>
+							<Interval minValue="6" ucumString="%" maxValue="33" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="34" ucumString="%" maxValue="67" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="68" ucumString="%" maxValue="95" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="95" ucumString="%" maxValue="95" maxOperator="GreaterThan" minOperator="GreaterThan"/>
+							<Interval minValue="100" ucumString="%" maxValue="100" maxOperator="Equal" minOperator="Equal"/>
+							<NonQuantifiable codeMeaning="Not Applicable" codeValue="R-400F9" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+						</CharacteristicQuantification>
+					</AllowedTerm>
+				</ImagingObservationCharacteristic>
+				<ImagingObservationCharacteristic label="Proportion nCET 2" itemNumber="4" explanatoryText="Visually, when scanning through the entire tumor, what proportion of the entire tumor is estimated to represent non-enhancing tumor (not edema)? Nonenhancing tumor is defined as regions of T2W hyperintensity (less than the intensity of cerebrospinal fluid, with corresponding T1W hypointensity) that are associated with mass effect and architectural distortion, including blurring of the gray-white interface.(Assuming that the the entire abnormality may be comprised of: (1) an enhancing component, (2) a non-enhancing component, (3) a necrotic component and (4) a edema component.)" annotatorConfidence="false" maxCardinality="1" minCardinality="1" shouldDisplay="false">
+					<AllowedTerm codeMeaning="Proportion nCET" codeValue="19-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Percent Proportion nCET Characteristic Quantification 2" annotatorConfidence="false">
+							<Interval minValue="0" ucumString="%" maxValue="0" maxOperator="Equal" minOperator="Equal"/>
+							<Interval minValue="5" ucumString="%" maxValue="5" maxOperator="LessThan" minOperator="LessThan"/>
+							<Interval minValue="6" ucumString="%" maxValue="33" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="34" ucumString="%" maxValue="67" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="68" ucumString="%" maxValue="95" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="95" ucumString="%" maxValue="95" maxOperator="GreaterThan" minOperator="GreaterThan"/>
+							<Interval minValue="100" ucumString="%" maxValue="100" maxOperator="Equal" minOperator="Equal"/>
+							<NonQuantifiable codeMeaning="Not Applicable" codeValue="R-400F9" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+						</CharacteristicQuantification>
+					</AllowedTerm>
+				</ImagingObservationCharacteristic>
+				<ImagingObservationCharacteristic label="Proportion Necrosis" itemNumber="5" explanatoryText="Visually, when scanning through the entire tumor volume, what proportion of the tumor is estimated to represent necrosis. Necrosis is defined as a region within the tumor that does not enhance or shows markedly diminished enhancement, is high on T2W and proton density images, is low on T1W images, and has an irregular border). (Assuming that the the entire abnormality may be comprised of: (1) an enhancing component, (2) a non-enhancing component, (3) a necrotic component and (4) a edema component.)" annotatorConfidence="false" maxCardinality="1" minCardinality="1" shouldDisplay="false" groupLabel="Group 2">
+					<AllowedTerm codeMeaning="Proportion Necrosis" codeValue="49-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Percent Necrosis Characteristic Quantification" annotatorConfidence="false">
+							<Interval minValue="0" ucumString="%" maxValue="0" maxOperator="Equal" minOperator="Equal"/>
+							<Interval minValue="5" ucumString="%" maxValue="5" maxOperator="LessThan" minOperator="LessThan"/>
+							<Interval minValue="6" ucumString="%" maxValue="33" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="34" ucumString="%" maxValue="67" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="68" ucumString="%" maxValue="95" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="95" ucumString="%" maxValue="95" maxOperator="GreaterThan" minOperator="GreaterThan"/>
+							<Interval minValue="100" ucumString="%" maxValue="100" maxOperator="Equal" minOperator="Equal"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+						</CharacteristicQuantification>
+					</AllowedTerm>
+				</ImagingObservationCharacteristic>
+			</ImagingObservation>
+			<AllowedTerm codeMeaning="mass" codeValue="RID3874" codingSchemeDesignator="RadLex"/>
+		</Component>	
+		<Component shouldDisplay="true" label="RECIST Calculation" maxCardinality="1" minCardinality="0" itemNumber="7">
+			<Calculation>
+				<CalculationType codeMeaning="RECIST Calculation" codingSchemeDesignator="Private-RECIST" codeValue="REC-C">
+					<ValidTerm codeMeaning="RECIST 1.0" codingSchemeDesignator="Private-RECIST" codeValue="REC-C-1.0"></ValidTerm>
+					<ValidTerm codeMeaning="RECIST 1.1" codingSchemeDesignator="Private-RECIST" codeValue="REC-C-1.1"></ValidTerm>
+					<AlgorithmType codeMeaning="Longest Diameter" codingSchemeDesignator="Private-RECIST" codeValue="REC-LD-0264" description="Calculation the logest diameter of a lesion." algorithmName="Longest Diameter for Recist" algorithmVersion="1.0" uniqueIdentifier="7880.3455756.67856.343412.13567" ></AlgorithmType>
+				</CalculationType>
+			</Calculation>
+		</Component>
+		<Tags>
+			<Tag>
+				<TagName codeMeaning="Disease" codingSchemeDesignator="SRT" codeValue="64572001"></TagName>
+				<TagValue>
+					<CodedValue codeMeaning="Glioblastoma multiforme of brain (disorder)" codingSchemeDesignator="SRT" codeValue="276828006"></CodedValue>
+				</TagValue>
+			</Tag>
+			<Tag>
+				<TagName codeMeaning="Body Part" codingSchemeDesignator="NCIt" codeValue="C32221"></TagName>
+				<TagValue>
+					<CodedValue codeMeaning="Brain" codingSchemeDesignator="RadLex" codeValue="RID6434"></CodedValue>
+				</TagValue>
+			</Tag>
+		</Tags>
+		</Template>
+	<Template name="VASARI_TWO" version="1.0" authors="AIM Team" creationDate="2010-02-15" description="This is a VASARI template version 2 revision 23." uid="123.925687454.12152557.45674354" codeValue="VASARI-2" codeMeaning="VASARI2: Brain Tumor Measurement 2" codingSchemeDesignator="VASARI" modality="MR" precedingAnnotation="DoNotOffer">
+		<Component itemNumber="1" label="Tumor Location" explanatoryText="Location of lesion geographic center." maxCardinality="2" minCardinality="0" shouldDisplay="true">
+			<AnatomicEntity annotatorConfidence="true">
+			<AnatomicEntityCharacteristic itemNumber="1" annotatorConfidence="false" minCardinality="1" label="Side of Tumor Center" shouldDisplay="true" maxCardinality="1" explanatoryText="Side of lesion center only">
+				<AllowedTerm codeMeaning="Right" codeValue="G-A100" codingSchemeDesignator="SRT"/>
+				<AllowedTerm codeMeaning="Center/Bilateral" codeValue="G-A102" codingSchemeDesignator="SRT"/>
+				<AllowedTerm codeMeaning="Left" codeValue="G-A101" codingSchemeDesignator="SRT"/>
+			</AnatomicEntityCharacteristic>
+			</AnatomicEntity>
+			<AllowedTerm codeMeaning="Frontal lobe" codeValue="RID6440" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Temporal lobe" codeValue="RID6476" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Occipital lobe" codeValue="RID6502" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Brainstem" codeValue="RID6677" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Cerebellum" codeValue="RID6815" codingSchemeDesignator="RadLex"/>
+		</Component>
+		<Component itemNumber="2" label="Lesion" explanatoryText="Select the type of lesion" maxCardinality="3" minCardinality="1" shouldDisplay="true" groupLabel="Component Label 1">
+			<ImagingObservation annotatorConfidence="true">
+				<ImagingObservationCharacteristic label="Enhancement Quality" itemNumber="1" explanatoryText="Qualitative degree of contrast enhancement is defined as having all or portions of the tumor that demonstrate significantly higher signal on the postcontrast T1W images compared to precontrast T1W images. Mild/Minimal = when barely discernable degree of enhancement is present relative to pre-contrast images. Marked/avid = obvious tissue enhancement" maxCardinality="1" minCardinality="1" annotatorConfidence="false" shouldDisplay="true">
+					<AllowedTerm codeMeaning="Enhancement Quality" codeValue="67-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Enhancement Quality Characteristic Quantification" annotatorConfidence="false">
+							<NonQuantifiable codeMeaning="None" codeValue="R-40775" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+							<!-- A prominent or noticeable characteristic. -->
+						</CharacteristicQuantification>
+					</AllowedTerm>
+						<AllowedTerm codeMeaning="Enhancement Quality 2" codeValue="67-111" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Enhancement Quality Characteristic Quantification" annotatorConfidence="false">
+							<NonQuantifiable codeMeaning="None" codeValue="R-40775" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Mild" codeValue="R-404FA" codingSchemeDesignator="SRT"/>
+							<!-- A prominent or noticeable characteristic. -->
+						</CharacteristicQuantification>
+					</AllowedTerm>
+				
+				</ImagingObservationCharacteristic>
+				<ImagingObservationCharacteristic label="Proportion Enhancing" itemNumber="2" explanatoryText="Visually, when scanning through the entire tumor volume, what proportion of the entire tumor would you estimate is enhancing. (Assuming that the the entire abnormality may be comprised of: (1) an enhancing component, (2) a non-enhancing component, (3) a necrotic component and (4) a edema component.)" annotatorConfidence="false" maxCardinality="4" minCardinality="0" shouldDisplay="true" groupLabel="Group 1">
+					<AllowedTerm codeMeaning="Proportion Enhancing" codeValue="59-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Percent Proportion Enhancing Characteristic Quantification" annotatorConfidence="false">
+							<Interval minValue="0" ucumString="%" maxValue="0" maxOperator="Equal" minOperator="Equal"/>
+							<Interval minValue="5" ucumString="%" maxValue="5" maxOperator="LessThan" minOperator="LessThan"/>
+							<Interval minValue="6" ucumString="%" maxValue="33" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="34" ucumString="%" maxValue="67" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="68" ucumString="%" maxValue="95" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="95" ucumString="%" maxValue="95" maxOperator="GreaterThan" minOperator="GreaterThan"/>
+							<Interval minValue="100" ucumString="%" maxValue="100" maxOperator="Equal" minOperator="Equal"/>
+							<NonQuantifiable codeMeaning="Not Applicable" codeValue="R-400F9" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+						</CharacteristicQuantification>
+					</AllowedTerm>
+					<AllowedTerm codeMeaning="Proportion Enhancing 2" codeValue="59-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Percent Proportion Enhancing Characteristic Quantification 2" annotatorConfidence="false">
+							<Interval minValue="0" ucumString="%" maxValue="0" maxOperator="Equal" minOperator="Equal"/>
+							<Interval minValue="5" ucumString="%" maxValue="5" maxOperator="LessThan" minOperator="LessThan"/>
+							<Interval minValue="6" ucumString="%" maxValue="33" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="34" ucumString="%" maxValue="67" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="68" ucumString="%" maxValue="95" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="95" ucumString="%" maxValue="95" maxOperator="GreaterThan" minOperator="GreaterThan"/>
+							<Interval minValue="100" ucumString="%" maxValue="100" maxOperator="Equal" minOperator="Equal"/>
+							<NonQuantifiable codeMeaning="Not Applicable" codeValue="R-400F9" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+						</CharacteristicQuantification>
+					</AllowedTerm>
+				</ImagingObservationCharacteristic>
+				<ImagingObservationCharacteristic label="Proportion nCET" itemNumber="3" explanatoryText="Visually, when scanning through the entire tumor, what proportion of the entire tumor is estimated to represent non-enhancing tumor (not edema)? Nonenhancing tumor is defined as regions of T2W hyperintensity (less than the intensity of cerebrospinal fluid, with corresponding T1W hypointensity) that are associated with mass effect and architectural distortion, including blurring of the gray-white interface.(Assuming that the the entire abnormality may be comprised of: (1) an enhancing component, (2) a non-enhancing component, (3) a necrotic component and (4) a edema component.)" annotatorConfidence="false" maxCardinality="1" minCardinality="1" shouldDisplay="false" groupLabel="Group 1">
+					<AllowedTerm codeMeaning="Proportion nCET" codeValue="19-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Percent Proportion nCET Characteristic Quantification" annotatorConfidence="false">
+							<Interval minValue="0" ucumString="%" maxValue="0" maxOperator="Equal" minOperator="Equal"/>
+							<Interval minValue="5" ucumString="%" maxValue="5" maxOperator="LessThan" minOperator="LessThan"/>
+							<Interval minValue="6" ucumString="%" maxValue="33" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="34" ucumString="%" maxValue="67" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="68" ucumString="%" maxValue="95" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="95" ucumString="%" maxValue="95" maxOperator="GreaterThan" minOperator="GreaterThan"/>
+							<Interval minValue="100" ucumString="%" maxValue="100" maxOperator="Equal" minOperator="Equal"/>
+							<NonQuantifiable codeMeaning="Not Applicable" codeValue="R-400F9" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+						</CharacteristicQuantification>
+					</AllowedTerm>
+				</ImagingObservationCharacteristic>
+				<ImagingObservationCharacteristic label="Proportion nCET 2" itemNumber="4" explanatoryText="Visually, when scanning through the entire tumor, what proportion of the entire tumor is estimated to represent non-enhancing tumor (not edema)? Nonenhancing tumor is defined as regions of T2W hyperintensity (less than the intensity of cerebrospinal fluid, with corresponding T1W hypointensity) that are associated with mass effect and architectural distortion, including blurring of the gray-white interface.(Assuming that the the entire abnormality may be comprised of: (1) an enhancing component, (2) a non-enhancing component, (3) a necrotic component and (4) a edema component.)" annotatorConfidence="false" maxCardinality="1" minCardinality="1" shouldDisplay="false">
+					<AllowedTerm codeMeaning="Proportion nCET" codeValue="19-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Percent Proportion nCET Characteristic Quantification 2" annotatorConfidence="false">
+							<Interval minValue="0" ucumString="%" maxValue="0" maxOperator="Equal" minOperator="Equal"/>
+							<Interval minValue="5" ucumString="%" maxValue="5" maxOperator="LessThan" minOperator="LessThan"/>
+							<Interval minValue="6" ucumString="%" maxValue="33" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="34" ucumString="%" maxValue="67" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="68" ucumString="%" maxValue="95" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="95" ucumString="%" maxValue="95" maxOperator="GreaterThan" minOperator="GreaterThan"/>
+							<Interval minValue="100" ucumString="%" maxValue="100" maxOperator="Equal" minOperator="Equal"/>
+							<NonQuantifiable codeMeaning="Not Applicable" codeValue="R-400F9" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+						</CharacteristicQuantification>
+					</AllowedTerm>
+				</ImagingObservationCharacteristic>
+				<ImagingObservationCharacteristic label="Proportion Necrosis" itemNumber="5" explanatoryText="Visually, when scanning through the entire tumor volume, what proportion of the tumor is estimated to represent necrosis. Necrosis is defined as a region within the tumor that does not enhance or shows markedly diminished enhancement, is high on T2W and proton density images, is low on T1W images, and has an irregular border). (Assuming that the the entire abnormality may be comprised of: (1) an enhancing component, (2) a non-enhancing component, (3) a necrotic component and (4) a edema component.)" annotatorConfidence="false" maxCardinality="1" minCardinality="1" shouldDisplay="false" groupLabel="Group 2">
+					<AllowedTerm codeMeaning="Proportion Necrosis" codeValue="49-1" codingSchemeDesignator="VASARI">
+						<CharacteristicQuantification name="Percent Necrosis Characteristic Quantification" annotatorConfidence="false">
+							<Interval minValue="0" ucumString="%" maxValue="0" maxOperator="Equal" minOperator="Equal"/>
+							<Interval minValue="5" ucumString="%" maxValue="5" maxOperator="LessThan" minOperator="LessThan"/>
+							<Interval minValue="6" ucumString="%" maxValue="33" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="34" ucumString="%" maxValue="67" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="68" ucumString="%" maxValue="95" maxOperator="LessThanEqual" minOperator="GreaterThanEqual"/>
+							<Interval minValue="95" ucumString="%" maxValue="95" maxOperator="GreaterThan" minOperator="GreaterThan"/>
+							<Interval minValue="100" ucumString="%" maxValue="100" maxOperator="Equal" minOperator="Equal"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+						</CharacteristicQuantification>
+					</AllowedTerm>
+				</ImagingObservationCharacteristic>
+			</ImagingObservation>
+			<AllowedTerm codeMeaning="mass" codeValue="RID3874" codingSchemeDesignator="RadLex"/>
+		</Component>
+		<Tags>
+		<Tag>
+			<TagName codeMeaning="Disease" codingSchemeDesignator="SRT" codeValue="64572001"></TagName>
+			<TagValue>
+				<CodedValue codeMeaning="Glioblastoma multiforme" codingSchemeDesignator="SRT" codeValue="393563007"></CodedValue>
+			</TagValue>
+		</Tag>
+		<Tag>
+			<TagName codeMeaning="Disease" codingSchemeDesignator="SRT" codeValue="64572001"></TagName>
+			<TagValue>
+				<CodedValue codeMeaning="Glioblastoma multiforme of brain (disorder)" codingSchemeDesignator="SRT" codeValue="276828006"></CodedValue>
+			</TagValue>
+		</Tag>
+		<Tag>
+			<TagName codeMeaning="Body Part" codingSchemeDesignator="NCIt" codeValue="C32221"></TagName>
+			<TagValue>
+				<CodedValue codeMeaning="Brain" codingSchemeDesignator="NCIt" codeValue="C12439"></CodedValue>
+			</TagValue>
+		</Tag>	
+		</Tags>
+		</Template>
+	<Tags>
+	<Tag>
+		<TagName codeMeaning="Disease" codingSchemeDesignator="SRT" codeValue="64572001"></TagName>
+		<TagValue>
+			<CodedValue codeMeaning="Malignant Brain Neoplasm" codingSchemeDesignator="NCIt" codeValue="C3568"></CodedValue>
+		</TagValue>
+	</Tag>
+	<Tag>
+		<TagName codeMeaning="Body Part" codingSchemeDesignator="NCIt" codeValue="C32221"></TagName>
+		<TagValue>
+			<CodedValue codeMeaning="Head" codingSchemeDesignator="NCIt" codeValue="C12419"></CodedValue>
+		</TagValue>
+	</Tag>
+
+		</Tags>
+</TemplateContainer>
