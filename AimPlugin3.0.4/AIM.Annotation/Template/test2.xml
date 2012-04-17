@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TemplateContainer creationDate="1967-08-13" authors="The AIM team" name="VASARI Template" version="1" description="This template is used by an application program to present readers and adjudicators with available option for evaluating brain tumor studies." xsi:schemaLocation="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate AIMTemplate_v1rv18.xsd" xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Template name="VASARI_TWO" version="1.0" authors="AIM Team" creationDate="2010-02-15" description="This is a VASARI template version 2." uid="123.987.32156.8454.1213156464.87987" codeValue="VASARI-1" codeMeaning="Brain Tumor Measurement" codingSchemeDesignator="VASARI">
+		<Component itemNumber="1" label="Tumor Location" explanatoryText="Location of lesion geographic center (not all areas of involvement)." maxCardinality="1" minCardinality="1" shouldDisplay="true">
+			<AnatomicEntity annotatorConfidence="true">
+			<AnatomicEntityCharacteristic itemNumber="1" annotatorConfidence="false" minCardinality="1" label="Side of Tumor Center" shouldDisplay="true" maxCardinality="1" explanatoryText="Side of lesion center">
+				<AllowedTerm codeMeaning="Right" codeValue="G-A100" codingSchemeDesignator="SRT"/>
+				<AllowedTerm codeMeaning="Center/Bilateral" codeValue="G-A102" codingSchemeDesignator="SRT"/>
+				<AllowedTerm codeMeaning="Left" codeValue="G-A101" codingSchemeDesignator="SRT"/>
+			</AnatomicEntityCharacteristic>
+			</AnatomicEntity>
+			<AllowedTerm codeMeaning="Frontal lobe" codeValue="RID6440" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Temporal lobe" codeValue="RID6476" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Insula" codeValue="RID6472" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Parietal lobe" codeValue="RID6493" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Occipital lobe" codeValue="RID6502" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Brainstem" codeValue="RID6677" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Cerebellum" codeValue="RID6815" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Basal Ganglia" codeValue="RID6537" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Thalamus" codeValue="RID6578" codingSchemeDesignator="RadLex"/>
+			<AllowedTerm codeMeaning="Corpus Callosum" codeValue="RID6915" codingSchemeDesignator="RadLex"/>
+		</Component>
+		<Component itemNumber="2" label="Lesion" explanatoryText="Select the type of lesion" maxCardinality="1" minCardinality="1" shouldDisplay="true">
+			<ImagingObservation annotatorConfidence="true">
+				<ImagingObservationCharacteristic label="Enhancement Quality" itemNumber="1" explanatoryText="Qualitative degree of contrast enhancement is defined as having all or portions of the tumor that demonstrate significantly higher signal on the postcontrast T1W images compared to precontrast T1W images. Mild/Minimal = when barely discernable degree of enhancement is present relative to pre-contrast images. Marked/avid = obvious tissue enhancement" maxCardinality="1" minCardinality="1" annotatorConfidence="false" shouldDisplay="false">
+					<AllowedTerm codeMeaning="Enhancement Quality" codeValue="2891769" codingSchemeDesignator="caBIG" codingSchemeVersion="1">
+						<CharacteristicQuantification name="Enhancement Quality Characteristic Quantification" annotatorConfidence="false">
+							<NonQuantifiable codeMeaning="None" codeValue="R-40775" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Mild" codeValue="R-404FA" codingSchemeDesignator="SRT"/>
+							<NonQuantifiable codeMeaning="Marked" codeValue="A10767872" codingSchemeDesignator="NCI"/>
+							<NonQuantifiable codeMeaning="Indeterminate" codeValue="C48658" codingSchemeDesignator="NCI"/>
+							<!-- A prominent or noticeable characteristic. -->
+						</CharacteristicQuantification>
+					</AllowedTerm>
+				</ImagingObservationCharacteristic>
+			</ImagingObservation>
+			<AllowedTerm codeMeaning="mass" codeValue="RID3874" codingSchemeDesignator="RadLex"/>
+		</Component>
+		<Component itemNumber="3" label="Eloquent Brain" explanatoryText="Select Eloquent Brain Involvement feature" maxCardinality="1" minCardinality="1" shouldDisplay="true">
+			<Inference annotatorConfidence="false"/>
+			<AllowedTerm codeMeaning="Eloquent Brain" codeValue="85" codingSchemeDesignator="VASARI">
+				<NonQuantifiable codeMeaning="None" codeValue="R-40775" codingSchemeDesignator="SRT"/>
+				<NonQuantifiable codeMeaning="Speech Motor" codeValue="86" codingSchemeDesignator="VASARI"/>
+				<NonQuantifiable codeMeaning="Speech Receptive" codeValue="87" codingSchemeDesignator="VASARI"/>
+				<NonQuantifiable codeMeaning="Motor" codeValue="C28367" codingSchemeDesignator="NCI"/>
+				<NonQuantifiable codeMeaning="Vision" codeValue="F-F0000" codingSchemeDesignator="SRT"/>
+			</AllowedTerm>
+		</Component>		
+	</Template>
+</TemplateContainer>

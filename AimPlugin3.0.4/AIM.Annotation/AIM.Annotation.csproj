@@ -1,0 +1,285 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7BBA1CE8-86AD-4CA3-ACEE-0BF84F7CE48D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIM.Annotation</RootNamespace>
+    <AssemblyName>AIM.Annotation</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AIMLib.NET, Version=1.0.3117.21980, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(SolutionDir)\AIMReferences\$(ConfigurationName)\AIMLib.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="AIMLibModel.NET, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(SolutionDir)\AIMReferences\$(ConfigurationName)\AIMLibModel.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="AimTmplUtil1923, Version=1.0.4428.2587, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(SolutionDir)\AIMReferences\$(ConfigurationName)\AimTmplUtil1923.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.Common, Version=2.0.12729.37986, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SDK\2.0SP1\bin\redistributable\common\ClearCanvas.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.Desktop, Version=2.0.12729.37986, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SDK\2.0SP1\bin\redistributable\plugins\ClearCanvas.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.Desktop.Configuration, Version=2.0.12729.37986, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SDK\2.0SP1\bin\redistributable\plugins\ClearCanvas.Desktop.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.Dicom, Version=2.0.12729.37986, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SDK\2.0SP1\bin\redistributable\common\ClearCanvas.Dicom.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.Dicom.DataStore, Version=2.0.12729.37986, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SDK\2.0SP1\bin\redistributable\common\ClearCanvas.Dicom.DataStore.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.ImageViewer, Version=2.0.12729.37986, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SDK\2.0SP1\bin\redistributable\plugins\ClearCanvas.ImageViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.ImageViewer.Explorer.Dicom, Version=2.0.12729.37986, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SDK\2.0SP1\bin\redistributable\plugins\ClearCanvas.ImageViewer.Explorer.Dicom.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.ImageViewer.Services, Version=2.0.12729.37986, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SDK\2.0SP1\bin\redistributable\plugins\ClearCanvas.ImageViewer.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.ImageViewer.Tools.Measurement, Version=2.0.12729.37986, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SDK\2.0SP1\bin\redistributable\plugins\ClearCanvas.ImageViewer.Tools.Measurement.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AimAnnotationComponent.cs" />
+    <Compile Include="AimAnnotationCreationContext.cs" />
+    <Compile Include="AimAnnotationDetailsComponent.cs" />
+    <Compile Include="AimAnnotationsListComponent.cs" />
+    <Compile Include="AimAnnotationTool.cs" />
+    <Compile Include="AimDataServiceSendQueue.cs" />
+    <Compile Include="Configuration\AimMarkupColorComponent.cs" />
+    <Compile Include="Graphics\AimRoiGraphic.cs" />
+    <Compile Include="IAimAnnotationExtension.cs" />
+    <Compile Include="Template\Algorithm.cs" />
+    <Compile Include="Template\AlgorithmType.cs" />
+    <Compile Include="Template\CalculationType.cs" />
+    <Compile Include="Template\CodedTerm.cs" />
+    <Compile Include="Template\GeometricShape.cs" />
+    <Compile Include="Template\ModalityType.cs" />
+    <Compile Include="Template\PrecedingAnnotationRequest.cs" />
+    <Compile Include="Template\Tag.cs" />
+    <Compile Include="Template\TagValue.cs" />
+    <Compile Include="Tools\AimUserGuideTool.cs" />
+    <Compile Include="Tools\AimHtmlFormatter.cs" />
+    <Compile Include="AimLoadHelper.cs" />
+    <Compile Include="CodeUtils.cs" />
+    <Compile Include="Graphics\AimGraphic.cs" />
+    <Compile Include="AimHelpers.cs" />
+    <Compile Include="AimInstanceDictionary.cs" />
+    <Compile Include="CodeList.cs" />
+    <Compile Include="Configuration\AimConfigurationComponent.cs" />
+    <Compile Include="Configuration\AimConfigurationPageProvider.cs" />
+    <Compile Include="Configuration\AimSettings.cs" />
+    <Compile Include="Configuration\AimSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>AimSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SR.Designer.cs">
+      <DependentUpon>SR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Template\AllowedTerm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\AllowedTerm1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\AnatomicEntity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\AnatomicEntityCharacteristic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\Calculation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\CharacteristicQuantification.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\ChildComponents.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\ComparisonOperator.cs" />
+    <Compile Include="Template\Component.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\ComponentCharacteristic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\ComponentCharacteristicCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\ComponentCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\ImagingObservation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\ImagingObservationCharacteristic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\Inference.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\Interval.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\NonQuantifiable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\Numerical.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\OrdinalLevel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\Quantile.cs" />
+    <Compile Include="Template\Scale.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\Template.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\TemplateContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\TemplateContainerSerializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Template\ValidTerm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\AnnotationQueueSendTool.cs" />
+    <Compile Include="Tools\AnnotationVisibilityTool.cs" />
+    <Compile Include="Tools\ShowAnnotationDetailsTool.cs" />
+    <Compile Include="Tools\ShowAnnotationListTool.cs" />
+    <Compile Include="Utilities\ExtendedOpenFilesDialog.cs" />
+    <Compile Include="Utilities\ValidateXML.cs" />
+    <Compile Include="Utilities\ValidationResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AIMTCGAService\AIMTCGAService.csproj">
+      <Project>{A8BF5416-5E3C-4717-8550-493F25932A50}</Project>
+      <Name>AIMTCGAService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeneralUtilities\GeneralUtilities.csproj">
+      <Project>{96EF8A73-2CAF-4625-BA5F-9FDC685219E5}</Project>
+      <Name>GeneralUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\AIMAnnotationToolLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\AIMAnnotationToolMedium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\AIMAnnotationToolSmall.png" />
+    <EmbeddedResource Include="SR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\ShowAnnotationDetailsToolLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\ShowAnnotationDetailsToolMedium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\ShowAnnotationDetailsToolSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\ShowAnnotationListToolLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\ShowAnnotationListToolMedium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\ShowAnnotationListToolSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Configuration\AimSettings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>AimSettings.Designer.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="Template\AIMTemplate_v1rv23.xsd" />
+    <EmbeddedResource Include="Template\AIMTemplate_v1rv19.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tools\AimHtmlDoc.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tools\minus_13x13.gif" />
+    <EmbeddedResource Include="Tools\plus_13x13.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Template\AIM_Template_v1rv18_TCGA_v5.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

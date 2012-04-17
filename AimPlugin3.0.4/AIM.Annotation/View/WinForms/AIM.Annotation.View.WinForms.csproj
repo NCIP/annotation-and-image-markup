@@ -1,0 +1,281 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1C04E54-8F41-4DE9-901E-5988DD95476A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIM.Annotation.View.WinForms</RootNamespace>
+    <AssemblyName>AIM.Annotation.View.WinForms</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AIMLibModel.NET, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(SolutionDir)\AIMReferences\$(ConfigurationName)\AIMLibModel.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.Common, Version=2.0.12729.37986, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\SDK\2.0SP1\bin\redistributable\common\ClearCanvas.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.Desktop, Version=2.0.12729.37986, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\SDK\2.0SP1\bin\redistributable\plugins\ClearCanvas.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.Desktop.Configuration, Version=2.0.12729.37986, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\SDK\2.0SP1\bin\redistributable\plugins\ClearCanvas.Desktop.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.Desktop.View.WinForms, Version=2.0.12729.37986, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\SDK\2.0SP1\bin\redistributable\plugins\ClearCanvas.Desktop.View.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.Dicom, Version=2.0.12729.37986, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\SDK\2.0SP1\bin\redistributable\common\ClearCanvas.Dicom.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.ImageViewer, Version=2.0.12729.37986, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\SDK\2.0SP1\bin\redistributable\plugins\ClearCanvas.ImageViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft.NET\Primary Interop Assemblies\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AimAnnotationComponentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AimAnnotationComponentControl.Designer.cs">
+      <DependentUpon>AimAnnotationComponentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AimAnnotationComponentView.cs" />
+    <Compile Include="AimAnnotationDetailsComponentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AimAnnotationDetailsComponentControl.Designer.cs">
+      <DependentUpon>AimAnnotationDetailsComponentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AimAnnotationDetailsComponentView.cs" />
+    <Compile Include="AimAnnotationsListComponentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AimAnnotationsListComponentControl.Designer.cs">
+      <DependentUpon>AimAnnotationsListComponentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AimAnnotationsListComponentView.cs" />
+    <Compile Include="AimCodeSequenceDetailsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AimCodeSequenceDetailsControl.Designer.cs">
+      <DependentUpon>AimCodeSequenceDetailsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AimDetailsListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AimDetailsListControl.Designer.cs">
+      <DependentUpon>AimDetailsListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AimDetailsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AimDetailsControl.Designer.cs">
+      <DependentUpon>AimDetailsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AimWinFormsUtil.cs" />
+    <Compile Include="CodeSequenceListItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\AimConfigurationComponentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configuration\AimConfigurationComponentControl.Designer.cs">
+      <DependentUpon>AimConfigurationComponentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\AimConfigurationComponentView.cs" />
+    <Compile Include="Configuration\AimMarkupColorComponentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configuration\AimMarkupColorComponentControl.Designer.cs">
+      <DependentUpon>AimMarkupColorComponentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\AimMarkupColorComponentView.cs" />
+    <Compile Include="ExtendedOpenFilesDialogProvider.cs" />
+    <Compile Include="Template\CharacteristicQuantificationNumericalControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Template\CharacteristicQuantificationNumericalControl.Designer.cs">
+      <DependentUpon>CharacteristicQuantificationNumericalControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\CharacteristicQuantificationDetailsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Template\CharacteristicQuantificationDetailsControl.Designer.cs">
+      <DependentUpon>CharacteristicQuantificationDetailsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\ComponentContainerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Template\ComponentContainerControl.Designer.cs">
+      <DependentUpon>ComponentContainerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\ComponentQuestionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Template\ComponentQuestionControl.Designer.cs">
+      <DependentUpon>ComponentQuestionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\ConfidenceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Template\ConfidenceControl.Designer.cs">
+      <DependentUpon>ConfidenceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\ImagingObservationCharacteristicCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Template\ImagingObservationCharacteristicCtrl.Designer.cs">
+      <DependentUpon>ImagingObservationCharacteristicCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\IComponentQuestionDetails.cs" />
+    <Compile Include="Template\AnatomicEntityCharacteristicCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Template\AnatomicEntityCharacteristicCtrl.Designer.cs">
+      <DependentUpon>AnatomicEntityCharacteristicCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\SimpleQuestionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Template\SimpleQuestionControl.Designer.cs">
+      <DependentUpon>SimpleQuestionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\TemplateControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Template\TemplateControl.Designer.cs">
+      <DependentUpon>TemplateControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValidTermListItem.cs" />
+    <Compile Include="ToolTipLinkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInfoForm.Designer.cs">
+      <DependentUpon>UserInfoForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\GeneralUtilities\GeneralUtilities.csproj">
+      <Project>{96EF8A73-2CAF-4625-BA5F-9FDC685219E5}</Project>
+      <Name>GeneralUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AIM.Annotation.csproj">
+      <Project>{7BBA1CE8-86AD-4CA3-ACEE-0BF84F7CE48D}</Project>
+      <Name>AIM.Annotation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AimAnnotationComponentControl.resx">
+      <DependentUpon>AimAnnotationComponentControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AimAnnotationDetailsComponentControl.resx">
+      <DependentUpon>AimAnnotationDetailsComponentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AimAnnotationsListComponentControl.resx">
+      <DependentUpon>AimAnnotationsListComponentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AimCodeSequenceDetailsControl.resx">
+      <DependentUpon>AimCodeSequenceDetailsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AimDetailsListControl.resx">
+      <DependentUpon>AimDetailsListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AimDetailsControl.resx">
+      <DependentUpon>AimDetailsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuration\AimConfigurationComponentControl.resx">
+      <DependentUpon>AimConfigurationComponentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuration\AimMarkupColorComponentControl.resx">
+      <DependentUpon>AimMarkupColorComponentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\CharacteristicQuantificationNumericalControl.resx">
+      <DependentUpon>CharacteristicQuantificationNumericalControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\CharacteristicQuantificationDetailsControl.resx">
+      <DependentUpon>CharacteristicQuantificationDetailsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\ComponentContainerControl.resx">
+      <DependentUpon>ComponentContainerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\ComponentQuestionControl.resx">
+      <DependentUpon>ComponentQuestionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\ConfidenceControl.resx">
+      <DependentUpon>ConfidenceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\ImagingObservationCharacteristicCtrl.resx">
+      <DependentUpon>ImagingObservationCharacteristicCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\AnatomicEntityCharacteristicCtrl.resx">
+      <DependentUpon>AnatomicEntityCharacteristicCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\SimpleQuestionControl.resx">
+      <DependentUpon>SimpleQuestionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\TemplateControl.resx">
+      <DependentUpon>TemplateControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInfoForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
