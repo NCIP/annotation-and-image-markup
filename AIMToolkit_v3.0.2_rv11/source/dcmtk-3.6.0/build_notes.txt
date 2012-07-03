@@ -1,0 +1,52 @@
+CMakeList.txt changes (project root):
+- Windows only. Change compiler options (CMAKE_C_FLAGS_*) to /MD[d] for VS targets (CMake UI values are overwritten by that file)
+- Windows only. Add options to IF(WIN32) to enable STL and std:string:
+  ADD_DEFINITIONS("-DHAVE_STD_STRING")
+  ADD_DEFINITIONS("-DHAVE_STL")
+
+
+Platform choices should be:
+- win32
+- amd64
+- linux32 - ? (may need to add compiler/system version id)
+- linux64 - ? (may need to add compiler/system version id)
+
+
+CMakeUI settings (done for platfrom):
+- check use relative paths checkbox (advanced options)
+- specify CMAKE_INSTALL_PREFIX to be ./../bin/<platform>/${BUILD_TYPE}
+- specify EXECUTABLE_OUTPUT_PATH to point to ../../../output/<platform>
+- specify LIBRARY_OUTPUT_PATH to point to ../../../libs/<platform>
+
+Example (Win64):
+CMAKE_USE_RELATIVE_PATHS - checked
+CMAKE_INSTALL_PREFIX = ./../bin/amd64/${BUILD_TYPE}
+EXECUTABLE_OUTPUT_PATH = ../../../output/amd64
+LIBRARY_OUTPUT_PATH = ../../../libs/amd64
+
+Example (Ubuntu 32-bit):
+Where is the source code: /<path>/dcmtk-3.6.0
+Where to build the bineries: /<path>/dcmtk-3.6.0/build_ubuntu_32
+CMAKE_USE_RELATIVE_PATHS - checked
+CMAKE_INSTALL_PREFIX = ./../bin/ubuntu_32/${BUILD_TYPE}
+EXECUTABLE_OUTPUT_PATH = ../../../output/ubuntu_32
+LIBRARY_OUTPUT_PATH = ../../../libs/ubuntu_32
+
+NOTE: On a new machine, re-open CMake UI to update & generate project files. This is especcially necessary if CMake's path is different.
+Alternative to re-running CMake: change path to CMake in ZERO_CHECK.vcproj and build the project from the solution. This will force CMake to run. Then close and re-open solution.
+
+Build Projects (Windows):
+- Open build_<build_type>/DCMTK.sln
+- Compile ALL_BUILD for each build type (e.g. Debug & Release)
+   - will populate ./libs/<platform>/<build type> folders
+   - will populate ./output/<platform>/<build type> folders
+- Compile INSTALL for each build type (e.g. Debug & Release)
+   - will populate ./bin/<platform>/<build type> folders with compiled binaries, libs & includes. AIMLib will look for libs and includes there.
+
+Build Projects (Ubuntu):
+- cd to build_ubuntu_<build_type>
+- run: make all
+   - will populate ./libs/ubuntu_<build type> folders
+   - will populate ./output/ubuntu_<build type> folders
+- run: make install
+   - will populate ./bin/ubuntu_<build type> folders with compiled binaries, libs & includes. AIMLib will look for libs and includes there.

@@ -1,0 +1,17 @@
+# Operation includes
+
+OPERATIONS_HDRS = BaseModel.h
+OPERATIONS_HDRS += DcmModel.h
+OPERATIONS_HDRS += DcmModelInternal.h
+OPERATIONS_HDRS += ModelValidator.h
+OPERATIONS_HDRS += XmlModel.h
+OPERATIONS_HDRS += XmlModelInternal.h
+
+OPERATIONS_SRCS = BaseModel.cpp
+OPERATIONS_SRCS += DcmModel.cpp
+OPERATIONS_SRCS += DcmModelInternalRead.cpp
+OPERATIONS_SRCS += DcmModelInternalWrite.cpp
+OPERATIONS_SRCS += ModelValidator.cpp
+OPERATIONS_SRCS += XmlModel.cpp
+OPERATIONS_SRCS += XmlModelInternalRead.cpp
+OPERATIONS_SRCS += XmlModelInternalWrite.cpp

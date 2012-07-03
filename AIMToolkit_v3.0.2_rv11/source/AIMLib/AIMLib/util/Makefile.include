@@ -1,0 +1,5 @@
+# util files
+
+UTIL_HDRS =  AimUidGenerator.h
+
+UTIL_SRCS =  AimUidGenerator.cpp

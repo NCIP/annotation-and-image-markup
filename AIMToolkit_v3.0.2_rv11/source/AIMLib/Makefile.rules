@@ -1,0 +1,58 @@
+# *********************************************************************************
+# Rules for AIMLib. Currentrly set to build for Ubuntu 32bit
+#
+# Options to change for other platforms:
+# 1. DCMTK_ROOT
+# 2. INC_XERCESC_FOLDER
+# 3. LIB_XERCESC_FOLDER
+# 4. CXXFLAGS - Remove -fPIC flag if not building a shared 64bit library
+#
+# NOTES:
+# - For 64bit shared AIMLib, EVERY library may need -fPIC compiler flag (TBD)
+# *********************************************************************************
+
+# library version
+VERSION = 3.1
+
+# release
+#CXXFLAGS += -O3 -fPIC
+CXXFLAGS += -O3
+BUILD_FOLDER := release
+
+# debug
+#CXXFLAGS += -g
+#BUILD_FOLDER := debug
+
+# This hardcodes location of the project. Change to suit your environment.
+AIM_TOOLKIT := $(HOME)/Projects/AIMToolkit
+PROJ_ROOT := $(AIM_TOOLKIT)/AIMLib
+DCMTK_ROOT := $(PROJ_ROOT)/../dcmtk-3.6.0/bin/ubuntu_32
+
+# DCMTK folders
+# This assumes that DCMTK build is configured with according to the build notes file.
+INC_DCMTK_FOLDER := $(DCMTK_ROOT)/include
+LIB_DCMTK_FOLDER := $(DCMTK_ROOT)/lib
+
+# Xerces-C folders (optional)
+# NOTE: xerces-c 3.1.x can be installed globally insted of using this settings.
+#INC_XERCESC_FOLDER := $(AIM_TOOLKIT)/xercesc_local/x86_64/include
+#LIB_XERCESC_FOLDER := $(AIM_TOOLKIT)/xercesc_local/x86_64/lib
+
+# Platform-dependent output folder, e.g. release/Linux
+OUT_FOLDER := $(strip $(BUILD_FOLDER))/$(shell uname -s)/$(shell uname -i)
+
+# Additional preprocessor definitions
+DEF1 := -DUSE_NULL_SAFE_OFSTRING
+DEF2 := # -DHAVE_STD_STRING
+DEF3 := -DHAVE_STL
+DEF4 := -DUSE_STD_CXX_INCLUDES # not needed - defined in DCMTK by CMake in osconfig.h
+DEF5 := -DHAVE_CONFIG_H # Pat
+
+DEFS := $(DEF1) $(DEF2) $(DEF3) # $(DEF4)
+
+CXXFLAGS += -I$(INC_DCMTK_FOLDER) $(DEFS)
+
+ifneq ($(strip $(INC_XERCESC_FOLDER)),)
+CXXFLAGS += -I$(strip $(INC_XERCESC_FOLDER))
+endif
+

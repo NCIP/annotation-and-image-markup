@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- edited with XMLSpy v2008 sp1 (http://www.altova.com) by Pattanasak Mongkolwat (Northwestern University) -->
+<ImageAnnotation xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" aimVersion="AIM.1.0" comment="" dateTime="2008-04-11T16:10:04" cagridId="0"  codeMeaning="Target Lesion Complete Response" codeValue="112041" codingSchemeDesignator="DCM" codingSchemeVersion="" name="0025" uniqueIdentifier="1.2.288.3.2205383238.1072.1207948204.85" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM AIM_v3_rv11_Model.xsd">
+	<calculationCollection>
+		<Calculation description="Linear Measurement" cagridId="0"  mathML="" codeMeaning="Length" codeValue="G-A22A" codingSchemeDesignator="SRT" codingSchemeVersion="" uid="4.879987.26465465.979.879798" >
+			<referencedCalculationCollection/>
+			<calculationResultCollection>
+				<CalculationResult cagridId="0"  numberOfDimensions="1" type="Scalar" unitOfMeasure="mm">
+					<calculationDataCollection>
+						<CalculationData cagridId="0"  value="71.4840698242188">
+							<coordinateCollection>
+								<Coordinate dimensionIndex="0" cagridId="0"  position="0"/>
+							</coordinateCollection>
+						</CalculationData>
+					</calculationDataCollection>
+					<dimensionCollection>
+						<Dimension cagridId="0"  index="0" label="Length" size="1"/>
+					</dimensionCollection>
+				</CalculationResult>
+			</calculationResultCollection>
+		</Calculation>
+	</calculationCollection>
+	<user>
+		<User name="B" cagridId="0"  loginName="NWU" numberWithinRoleOfClinicalTrial="3" roleInTrial="Recording"/>
+	</user>
+	<equipment>
+		<Equipment cagridId="0"  manufacturerName="GE MEDICAL SYSTEMS" manufacturerModelName="" softwareVersion=""/>
+	</equipment>	
+	<anatomicEntityCollection>
+		<AnatomicEntity codeMeaning="LUNG" codeValue="REX0001" codingSchemeDesignator="RADLEX" cagridId="0" label="" >
+		</AnatomicEntity>
+	</anatomicEntityCollection>	
+	<imagingObservationCollection>
+		<ImagingObservation codeMeaning="Conspicuity" codeValue="REX4001" codingSchemeDesignator="RADREX" comment="" cagridId="0" label="" >
+			<imagingObservationCharacteristicCollection>
+				<ImagingObservationCharacteristic codeMeaning="Extremely Obvious" codeValue="REX4007" codingSchemeDesignator="RADLEX" comment="" cagridId="0" label="" />
+			</imagingObservationCharacteristicCollection>
+		</ImagingObservation>
+		<ImagingObservation codeMeaning="Internal Structure" codeValue="REX4002" codingSchemeDesignator="RADREX" comment="" cagridId="0" label="" >
+			<imagingObservationCharacteristicCollection>
+				<ImagingObservationCharacteristic codeMeaning="LIDC Soft Tissue" codeValue="REX4010" codingSchemeDesignator="RADREX" comment="" cagridId="0" label="" />
+			</imagingObservationCharacteristicCollection>
+		</ImagingObservation>
+		<ImagingObservation codeMeaning="Calcification" codeValue="REX4010" codingSchemeDesignator="RADREX" comment="" cagridId="0" label="" >
+			<imagingObservationCharacteristicCollection>
+				<ImagingObservationCharacteristic codeMeaning="LIDC Calcification 1" codeValue="REX4020" codingSchemeDesignator="RADREX" comment="" cagridId="0" label="" />
+			</imagingObservationCharacteristicCollection>
+		</ImagingObservation>
+		<ImagingObservation codeMeaning="Sphericity " codeValue="REX4015" codingSchemeDesignator="RADREX" comment="" cagridId="0" label="" >
+			<imagingObservationCharacteristicCollection>
+				<ImagingObservationCharacteristic codeMeaning="LIDC Sphericity 2" codeValue="REX4032" codingSchemeDesignator="RADREX" comment="" cagridId="0" label="" />
+			</imagingObservationCharacteristicCollection>
+		</ImagingObservation>
+		<ImagingObservation codeMeaning="Margin" codeValue="REX4019" codingSchemeDesignator="RADREX" comment="" cagridId="0" label="" >
+			<imagingObservationCharacteristicCollection>
+				<ImagingObservationCharacteristic codeMeaning="LIDC Margin 4" codeValue="REX4043" codingSchemeDesignator="RADREX" comment="" cagridId="0" label="" />
+			</imagingObservationCharacteristicCollection>
+		</ImagingObservation>
+		<ImagingObservation codeMeaning="Texture" codeValue="REX4025" codingSchemeDesignator="RADREX" comment="" cagridId="0" label="" >
+			<imagingObservationCharacteristicCollection>
+				<ImagingObservationCharacteristic codeMeaning="LI|DC Texture 3" codeValue="REX4062" codingSchemeDesignator="RADREX" comment="" cagridId="0" label="" />
+			</imagingObservationCharacteristicCollection>
+		</ImagingObservation>
+		<ImagingObservation codeMeaning="Malignancy" codeValue="REX4027" codingSchemeDesignator="RADREX" comment="" cagridId="0" label="" >
+			<imagingObservationCharacteristicCollection>
+				<ImagingObservationCharacteristic codeMeaning="Malignant" codeValue="REX4074" codingSchemeDesignator="RADREX" comment="" cagridId="0" label="" />
+			</imagingObservationCharacteristicCollection>
+		</ImagingObservation>
+	</imagingObservationCollection>
+	<imageReferenceCollection>
+		<ImageReference cagridId="0"  xsi:type="DICOMImageReference">
+			<imageStudy>
+				<ImageStudy cagridId="0"  instanceUID="1.3.6.1.4.1.9328.50.1.12637" startDate="2000-08-23T00:00:00"  startTime="+00:00:00.000000">
+					<imageSeries>
+						<ImageSeries cagridId="0"  instanceUID="1.3.6.1.4.1.9328.50.1.12713">
+							<imageCollection>
+								<Image cagridId="0"  sopClassUID="1.2.840.10008.5.1.4.1.1.2" sopInstanceUID="1.3.6.1.4.1.9328.50.1.12733" />
+							</imageCollection>
+						</ImageSeries>
+					</imageSeries>
+				</ImageStudy>
+			</imageStudy>
+		</ImageReference>
+	</imageReferenceCollection>
+
+	<geometricShapeCollection>
+		<GeometricShape cagridId="0"  includeFlag="false" lineColor="" lineOpacity="" lineStyle="" lineThickness="" shapeIdentifier="-1" xsi:type="Polyline">
+			<spatialCoordinateCollection>
+				<SpatialCoordinate coordinateIndex="0" cagridId="0"  imageReferenceUID="1.3.6.1.4.1.9328.50.1.12733" referencedFrameNumber="0" x="265" xsi:type="TwoDimensionSpatialCoordinate" y="192"/>
+				<SpatialCoordinate coordinateIndex="1" cagridId="0"  imageReferenceUID="1.3.6.1.4.1.9328.50.1.12733" referencedFrameNumber="0" x="304" xsi:type="TwoDimensionSpatialCoordinate" y="290"/>
+			</spatialCoordinateCollection>
+		</GeometricShape>
+	</geometricShapeCollection>
+		<person>
+		<Person birthDate="2000-07-01T00:00:00" cagridId="0"  name="1.3.6.1.4.1.9328.50.1.0025"  id="34567" sex="M"/>
+	</person>	
+	<textAnnotationCollection/>
+</ImageAnnotation>
