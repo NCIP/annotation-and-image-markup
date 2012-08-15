@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Template uid="1.3.6.1.4.1.14519.5.2.1.2" name="TCGA-BRCA CRF" authors="kirbyju" version="1.1" creationDate="2012-03-19" description="TCGA Breast Research Team" modality="MG" codeMeaning="TCGA-BRCA CRF" codeValue="99NCI_TCGA_BRCA" codingSchemeDesignator="99NCI_CIP">
+   <Component label="Breast Observations" itemNumber="0" authors="kirbyju" minCardinality="1" maxCardinality="1" shouldDisplay="false">
+      <AnatomicEntity annotatorConfidence="false">
+         <AnatomicEntityCharacteristic label="Fibro-glandular Tissue (FGT)" itemNumber="0" authors="kirbyju" minCardinality="1" maxCardinality="1" shouldDisplay="true" annotatorConfidence="false">
+            <AllowedTerm codeValue="BRCA-12" codeMeaning="Almost entirely fat" codingSchemeDesignator="BRCA"/>
+            <AllowedTerm codeValue="RID34274" codeMeaning="Scattered FGT" codingSchemeDesignator="RADLEX"/>
+            <AllowedTerm codeValue="BRCA-13" codeMeaning="Heterogeneous FGT" codingSchemeDesignator="BRCA"/>
+            <AllowedTerm codeValue="BRCA-14" codeMeaning="Extreme FGT" codingSchemeDesignator="BRCA"/>
+         </AnatomicEntityCharacteristic>
+         <AnatomicEntityCharacteristic label="Background Enhancement" itemNumber="1" authors="kirbyju" minCardinality="1" maxCardinality="1" shouldDisplay="true" annotatorConfidence="false">
+            <AllowedTerm codeValue="C25570" codeMeaning="Minimal" codingSchemeDesignator="NCIT"/>
+            <AllowedTerm codeValue="C70666" codeMeaning="Mild" codingSchemeDesignator="NCIT"/>
+            <AllowedTerm codeValue="C61376" codeMeaning="Moderate" codingSchemeDesignator="NCIT"/>
+            <AllowedTerm codeValue="C48662" codeMeaning="Marked" codingSchemeDesignator="NCIT"/>
+         </AnatomicEntityCharacteristic>
+         <AnatomicEntityCharacteristic label="Distance between lesions" itemNumber="2" authors="kirbyju" explanatoryText="Multifocal is defined as &lt;= 4cm and multicentric &gt;4cm." minCardinality="1" maxCardinality="1" shouldDisplay="true" annotatorConfidence="false">
+            <AllowedTerm codeValue="C25253" codeMeaning="Multifocal" codingSchemeDesignator="NCIT"/>
+            <AllowedTerm codeValue="C25303" codeMeaning="Multicentric" codingSchemeDesignator="NCIT"/>
+            <AllowedTerm codeValue="BRCA-20" codeMeaning="Unicentric" codingSchemeDesignator="BRCA"/>
+         </AnatomicEntityCharacteristic>
+         <AnatomicEntityCharacteristic label="Dominant Finding" itemNumber="3" authors="kirbyju" minCardinality="1" maxCardinality="1" shouldDisplay="true" annotatorConfidence="false">
+            <AllowedTerm codeValue="C34808" codeMeaning="Mass" codingSchemeDesignator="NCIT"/>
+            <AllowedTerm codeValue="BRCA-22" codeMeaning="Nonmass" codingSchemeDesignator="BRCA"/>
+         </AnatomicEntityCharacteristic>
+         <AnatomicEntityCharacteristic label="Associated Features" itemNumber="4" authors="kirbyju" minCardinality="1" maxCardinality="9" shouldDisplay="true" annotatorConfidence="false">
+            <AllowedTerm codeValue="RID34269" codeMeaning="Nipple retraction" codingSchemeDesignator="RADLEX"/>
+            <AllowedTerm codeValue="BRCA-15" codeMeaning="Nipple invasion" codingSchemeDesignator="BRCA"/>
+            <AllowedTerm codeValue="RID34383" codeMeaning="Skin retraction" codingSchemeDesignator="RADLEX"/>
+            <AllowedTerm codeValue="RID34270" codeMeaning="Skin thickening" codingSchemeDesignator="RADLEX"/>
+            <AllowedTerm codeValue="RID34318" codeMeaning="Skin invasion" codingSchemeDesignator="RADLEX"/>
+            <AllowedTerm codeValue="C3002" codeMeaning="Edema" codingSchemeDesignator="NCIT"/>
+            <AllowedTerm codeValue="C35493" codeMeaning="Axillary lymphadenopathy" codingSchemeDesignator="NCIT"/>
+            <AllowedTerm codeValue="BRCA-16" codeMeaning="Pectoralis invasion" codingSchemeDesignator="BRCA"/>
+            <AllowedTerm codeValue="BRCA-17" codeMeaning="Chest wall invasion" codingSchemeDesignator="BRCA"/>
+            <AllowedTerm codeValue="C18902" codeMeaning="None apply" codingSchemeDesignator="NCIT"/>
+         </AnatomicEntityCharacteristic>
+      </AnatomicEntity>
+      <AllowedTerm codeValue="C12971" codeMeaning="Breast" codingSchemeDesignator="NCIT"/>
+   </Component>
+</Template>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TemplateContainer uid="1.3.6.1.4.1.14519.5.34.7435.2378" name="BRCA 04-18-12" authors="kirbyju" version="1.2" creationDate="2012-04-18" description="TCGA Breast Research Group templates." xsi:schemaLocation="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate AIMTemplate_v1rv23.xsd" xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Tags>
+      <Tag>
+         <TagName codeValue="C0229962" codeMeaning="Body Part" codingSchemeDesignator="NCIm" codingSchemeVersion="1.0"/>
+         <TagValue>
+            <CodedValue codeValue="C0006141" codeMeaning="Breast" codingSchemeDesignator="NCIm" codingSchemeVersion="1.0"/>
+         </TagValue>
+      </Tag>
+   </Tags>
+   <Template uid="1.3.6.1.4.1.14519.5.2.1.1" name="TCGA-BRCA Mass" authors="kirbyju" version="1.2" creationDate="2012-04-18" description="TCGA Breast Research Team" codeMeaning="TCGA-BRCA Mass" codeValue="99NCI_TCGA_BRCA" codingSchemeDesignator="99NCI_CIP"/>
+   <Template uid="1.3.6.1.4.1.14519.5.2.1.2" name="TCGA-BRCA CRF" authors="kirbyju" version="1.1" creationDate="2012-03-19" description="TCGA Breast Research Team" codeMeaning="TCGA-BRCA CRF" codeValue="99NCI_TCGA_BRCA" codingSchemeDesignator="99NCI_CIP"/>
+   <Template uid="1.3.6.1.4.1.14519.5.2.1.3" name="TCGA-BRCA Nonmass" authors="kirbyju" version="1.2" creationDate="2012-04-18" description="TCGA Breast Research Team" codeMeaning="TCGA-BRCA Nonmass" codeValue="99NCI_TCGA_BRCA" codingSchemeDesignator="99NCI_CIP"/>
+</TemplateContainer>

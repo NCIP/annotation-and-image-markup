@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TemplateContainer uid="2.25.234308535339829963002466314639387168766" name="ATB-VASARI-Example" authors="AIM Team" version="1.4" creationDate="2012-07-31" description="This template is used by an application program to present imaging interpreters with available questions and answer choices for evaluating brain tumor studies." xsi:schemaLocation="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate AIMTemplate_v1rv23.xsd" xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Tags>
+      <Tag>
+         <TagName codeValue="C0229962" codeMeaning="Body Part" codingSchemeDesignator="NCIm" codingSchemeVersion="1.0"/>
+         <TagValue>
+            <StringValue>Brain</StringValue>
+         </TagValue>
+      </Tag>
+      <Tag>
+         <TagName codeValue="C0012634" codeMeaning="Disease" codingSchemeDesignator="NCIm" codingSchemeVersion="1.0"/>
+         <TagValue>
+            <CodedValue codeValue="C0017636" codeMeaning="Glioblastoma" codingSchemeDesignator="NCIm" codingSchemeVersion="1.0"/>
+         </TagValue>
+      </Tag>
+   </Tags>
+   <Template uid="2.25.248576217325677268603117050771746797241" name="VASARI_caDSR" authors="AIM Team" version="1.0" creationDate="2011-07-11" description="This is an AIM template example using VASARI information from caDSR." codeMeaning="Brain Tumor Measurement" codeValue="PRI-VASARI-1" codingSchemeDesignator="VASARI" codingSchemeVersion="1.0"/>
+</TemplateContainer>

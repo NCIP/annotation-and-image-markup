@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Template uid="1.3.6.1.4.1.14519.5.2.1.1" name="TCGA-BRCA Mass" authors="kirbyju" version="1.2" creationDate="2012-04-18" description="TCGA Breast Research Team" modality="MG" codeMeaning="TCGA-BRCA Mass" codeValue="99NCI_TCGA_BRCA" codingSchemeDesignator="99NCI_CIP">
+   <Component label="Measure the mass" itemNumber="0" authors="kirbyju" explanatoryText="Use the ruler tool to measure the longest diameter of the mass." minCardinality="1" maxCardinality="1" shouldDisplay="false">
+      <ImagingObservation annotatorConfidence="false"/>
+      <AllowedTerm codeValue="C34808" codeMeaning="Mass" codingSchemeDesignator="NCIT"/>
+   </Component>
+   <Component label="Mass Observations" itemNumber="1" authors="kirbyju" minCardinality="1" maxCardinality="1" shouldDisplay="false">
+      <ImagingObservation annotatorConfidence="false">
+         <ImagingObservationCharacteristic label="Breast Side" itemNumber="0" authors="kirbyju" minCardinality="1" maxCardinality="1" shouldDisplay="true" annotatorConfidence="false">
+            <AllowedTerm codeValue="C25229" codeMeaning="Left" codingSchemeDesignator="NCIT"/>
+            <AllowedTerm codeValue="C25228" codeMeaning="Right" codingSchemeDesignator="NCIT"/>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Shape" itemNumber="1" authors="kirbyju" minCardinality="1" maxCardinality="1" shouldDisplay="true" annotatorConfidence="false">
+            <AllowedTerm codeValue="C48348" codeMeaning="Round" codingSchemeDesignator="NCIT"/>
+            <AllowedTerm codeValue="C48345" codeMeaning="Oval" codingSchemeDesignator="NCIT"/>
+            <AllowedTerm codeValue="C63815" codeMeaning="Irregular" codingSchemeDesignator="NCIT"/>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Internal Enhancement" itemNumber="2" authors="kirbyju" minCardinality="1" maxCardinality="1" shouldDisplay="true" annotatorConfidence="false">
+            <AllowedTerm codeValue="RID34304" codeMeaning="Homogeneous" codingSchemeDesignator="RADLEX"/>
+            <AllowedTerm codeValue="RID34305" codeMeaning="Heterogeneous" codingSchemeDesignator="RADLEX"/>
+            <AllowedTerm codeValue="BRCA-1" codeMeaning="Dark Internal Septa" codingSchemeDesignator="BRCA"/>
+            <AllowedTerm codeValue="RID5980" codeMeaning="Rim" codingSchemeDesignator="RADLEX"/>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Margin" itemNumber="3" authors="kirbyju" minCardinality="1" maxCardinality="1" shouldDisplay="true" annotatorConfidence="false">
+            <AllowedTerm codeValue="RID34279" codeMeaning="Circumscribed" codingSchemeDesignator="RADLEX"/>
+            <AllowedTerm codeValue="C94538" codeMeaning="Spiculated" codingSchemeDesignator="NCIT"/>
+            <AllowedTerm codeValue="RID34283" codeMeaning="Indistinct" codingSchemeDesignator="RADLEX"/>
+            <AllowedTerm codeValue="BRCA-21" codeMeaning="Uneven" codingSchemeDesignator="BRCA"/>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="T2 Characteristics" itemNumber="4" authors="kirbyju" minCardinality="1" maxCardinality="1" shouldDisplay="true" annotatorConfidence="false">
+            <AllowedTerm codeValue="BRCA-2" codeMeaning="Iso" codingSchemeDesignator="BRCA"/>
+            <AllowedTerm codeValue="BRCA-3" codeMeaning="Bright" codingSchemeDesignator="BRCA"/>
+            <AllowedTerm codeValue="BRCA-4" codeMeaning="Dark" codingSchemeDesignator="BRCA"/>
+            <AllowedTerm codeValue="RID6060" codeMeaning="Heterogeneous" codingSchemeDesignator="RADLEX"/>
+         </ImagingObservationCharacteristic>
+      </ImagingObservation>
+      <AllowedTerm codeValue="C34808" codeMeaning="Mass" codingSchemeDesignator="NCIT"/>
+   </Component>
+</Template>

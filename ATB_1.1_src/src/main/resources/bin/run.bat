@@ -1,0 +1,1 @@
+start javaw -cp ..;../lib/* -splash:../etc/images/misc/splash.png ${application.mainClass}

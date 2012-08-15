@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TemplateContainer uid="12.354456647.76656.73414.5671" name="VASARI Template" authors="AIM Team" version="1" creationDate="1967-08-13" description="This template is used by an application program to present readers and adjudicators with available option for evaluating brain tumor studies." xsi:schemaLocation="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate AIMTemplate_v1rv23.xsd" xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Template uid="123.987.32156.8454.1213156464.87987" name="VASARI_TWO" authors="AIM Team" version="1.0" creationDate="2010-02-15" description="This is a VASARI template version 2." codeMeaning="Brain Tumor Measurement" codeValue="VASARI-1" codingSchemeDesignator="VASARI"/>
+</TemplateContainer>

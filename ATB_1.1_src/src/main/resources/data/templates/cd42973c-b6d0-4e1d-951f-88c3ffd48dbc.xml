@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Template uid="123.987.32156.8454.1213156464.87987" name="VASARI_TWO" authors="AIM Team" version="1.0" creationDate="2010-02-15" description="This is a VASARI template version 2." modality="MR" codeMeaning="Brain Tumor Measurement" codeValue="VASARI-1" codingSchemeDesignator="VASARI" codingSchemeVersion="1.0">
+   <Component label="Tumor Location" itemNumber="1" explanatoryText="Location of lesion geographic center (not all areas of involvement)." minCardinality="1" maxCardinality="1" shouldDisplay="true">
+      <AnatomicEntity annotatorConfidence="true">
+         <AnatomicEntityCharacteristic label="Side of Tumor Center" itemNumber="1" explanatoryText="Side of lesion center" minCardinality="1" maxCardinality="1" shouldDisplay="true" annotatorConfidence="false">
+            <AllowedTerm codeValue="G-A100" codeMeaning="Right" codingSchemeDesignator="SRT"/>
+            <AllowedTerm codeValue="G-A102" codeMeaning="Center/Bilateral" codingSchemeDesignator="SRT"/>
+            <AllowedTerm codeValue="G-A101" codeMeaning="Left" codingSchemeDesignator="SRT"/>
+         </AnatomicEntityCharacteristic>
+      </AnatomicEntity>
+      <AllowedTerm codeValue="RID6440" codeMeaning="Frontal lobe" codingSchemeDesignator="RadLex"/>
+      <AllowedTerm codeValue="RID6476" codeMeaning="Temporal lobe" codingSchemeDesignator="RadLex"/>
+      <AllowedTerm codeValue="RID6472" codeMeaning="Insula" codingSchemeDesignator="RadLex"/>
+      <AllowedTerm codeValue="RID6493" codeMeaning="Parietal lobe" codingSchemeDesignator="RadLex"/>
+      <AllowedTerm codeValue="RID6502" codeMeaning="Occipital lobe" codingSchemeDesignator="RadLex"/>
+      <AllowedTerm codeValue="RID6677" codeMeaning="Brainstem" codingSchemeDesignator="RadLex"/>
+      <AllowedTerm codeValue="RID6815" codeMeaning="Cerebellum" codingSchemeDesignator="RadLex"/>
+      <AllowedTerm codeValue="RID6537" codeMeaning="Basal Ganglia" codingSchemeDesignator="RadLex"/>
+      <AllowedTerm codeValue="RID6578" codeMeaning="Thalamus" codingSchemeDesignator="RadLex"/>
+      <AllowedTerm codeValue="RID6915" codeMeaning="Corpus Callosum" codingSchemeDesignator="RadLex"/>
+   </Component>
+   <Component label="Lesion" itemNumber="2" explanatoryText="Select the type of lesion" minCardinality="1" maxCardinality="1" shouldDisplay="false">
+      <ImagingObservation annotatorConfidence="true">
+         <ImagingObservationCharacteristic label="Enhancement Quality" itemNumber="1" explanatoryText="Qualitative degree of contrast enhancement is defined as having all or portions of the tumor that demonstrate significantly higher signal on the postcontrast T1W images compared to precontrast T1W images. Mild/Minimal = when barely discernable degree of enhancement is present relative to pre-contrast images. Marked/avid = obvious tissue enhancement" minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="67-1" codeMeaning="Enhancement Quality" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Enhancement Quality Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="R-40775" codeMeaning="None" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="R-404FA" codeMeaning="Mild" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C1706089" codeMeaning="Marked" codingSchemeDesignator="NCIt"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Proportion Enhancing" itemNumber="2" explanatoryText="Visually, when scanning through the entire tumor volume, what proportion of the entire tumor would you estimate is enhancing. (Assuming that the the entire abnormality may be comprised of: (1) an enhancing component, (2) a non-enhancing component, (3) a necrotic component and (4) a edema component.)" minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="59-1" codeMeaning="Proportion Enhancing" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Percent Proportion Enhancing Characteristic Quantification" annotatorConfidence="false">
+                  <Interval minValue="0.0" maxValue="0.0" minOperator="Equal" maxOperator="Equal" ucumString="%"/>
+                  <Interval minValue="5.0" maxValue="5.0" minOperator="LessThan" maxOperator="LessThan" ucumString="%"/>
+                  <Interval minValue="6.0" maxValue="33.0" minOperator="GreaterThanEqual" maxOperator="LessThanEqual" ucumString="%"/>
+                  <Interval minValue="34.0" maxValue="67.0" minOperator="GreaterThanEqual" maxOperator="LessThanEqual" ucumString="%"/>
+                  <Interval minValue="68.0" maxValue="95.0" minOperator="GreaterThanEqual" maxOperator="LessThanEqual" ucumString="%"/>
+                  <Interval minValue="95.0" maxValue="95.0" minOperator="GreaterThan" maxOperator="GreaterThan" ucumString="%"/>
+                  <Interval minValue="100.0" maxValue="100.0" minOperator="Equal" maxOperator="Equal" ucumString="%"/>
+                  <NonQuantifiable codeValue="R-400F9" codeMeaning="Not Applicable" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Proportion nCET" itemNumber="3" explanatoryText="Visually, when scanning through the entire tumor, what proportion of the entire tumor is estimated to represent non-enhancing tumor (not edema)? Nonenhancing tumor is defined as regions of T2W hyperintensity (less than the intensity of cerebrospinal fluid, with corresponding T1W hypointensity) that are associated with mass effect and architectural distortion, including blurring of the gray-white interface.(Assuming that the the entire abnormality may be comprised of: (1) an enhancing component, (2) a non-enhancing component, (3) a necrotic component and (4) a edema component.)" minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="19-1" codeMeaning="Proportion nCET" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Percent Proportion nCET Characteristic Quantification" annotatorConfidence="false">
+                  <Interval minValue="0.0" maxValue="0.0" minOperator="Equal" maxOperator="Equal" ucumString="%"/>
+                  <Interval minValue="5.0" maxValue="5.0" minOperator="LessThan" maxOperator="LessThan" ucumString="%"/>
+                  <Interval minValue="6.0" maxValue="33.0" minOperator="GreaterThanEqual" maxOperator="LessThanEqual" ucumString="%"/>
+                  <Interval minValue="34.0" maxValue="67.0" minOperator="GreaterThanEqual" maxOperator="LessThanEqual" ucumString="%"/>
+                  <Interval minValue="68.0" maxValue="95.0" minOperator="GreaterThanEqual" maxOperator="LessThanEqual" ucumString="%"/>
+                  <Interval minValue="95.0" maxValue="95.0" minOperator="GreaterThan" maxOperator="GreaterThan" ucumString="%"/>
+                  <Interval minValue="100.0" maxValue="100.0" minOperator="Equal" maxOperator="Equal" ucumString="%"/>
+                  <NonQuantifiable codeValue="R-400F9" codeMeaning="Not Applicable" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Proportion Necrosis" itemNumber="4" explanatoryText="Visually, when scanning through the entire tumor volume, what proportion of the tumor is estimated to represent necrosis. Necrosis is defined as a region within the tumor that does not enhance or shows markedly diminished enhancement, is high on T2W and proton density images, is low on T1W images, and has an irregular border). (Assuming that the the entire abnormality may be comprised of: (1) an enhancing component, (2) a non-enhancing component, (3) a necrotic component and (4) a edema component.)" minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="49-1" codeMeaning="Proportion Necrosis" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Percent Necrosis Characteristic Quantification" annotatorConfidence="false">
+                  <Interval minValue="0.0" maxValue="0.0" minOperator="Equal" maxOperator="Equal" ucumString="%"/>
+                  <Interval minValue="5.0" maxValue="5.0" minOperator="LessThan" maxOperator="LessThan" ucumString="%"/>
+                  <Interval minValue="6.0" maxValue="33.0" minOperator="GreaterThanEqual" maxOperator="LessThanEqual" ucumString="%"/>
+                  <Interval minValue="34.0" maxValue="67.0" minOperator="GreaterThanEqual" maxOperator="LessThanEqual" ucumString="%"/>
+                  <Interval minValue="68.0" maxValue="95.0" minOperator="GreaterThanEqual" maxOperator="LessThanEqual" ucumString="%"/>
+                  <Interval minValue="95.0" maxValue="95.0" minOperator="GreaterThan" maxOperator="GreaterThan" ucumString="%"/>
+                  <Interval minValue="100.0" maxValue="100.0" minOperator="Equal" maxOperator="Equal" ucumString="%"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Proportion of Edema" itemNumber="5" explanatoryText="What proportion of the entire abnormality is vasogenic edema? (Edema should be greater in signal than than nCET and somewhat lower in signal than CSF. Pseudopods are characteristic of edema). (Assuming that the the entire abnormality may be comprised of: (1) an enhancing component, (2) a non-enhancing component, (3) a necrotic component and (4) a edema component.)" minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="34-1" codeMeaning="Proportion of Edema" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Percent Proportion of Edema Characteristic Quantification" annotatorConfidence="false">
+                  <Interval minValue="0.0" maxValue="0.0" minOperator="Equal" maxOperator="Equal" ucumString="%"/>
+                  <Interval minValue="5.0" maxValue="5.0" minOperator="LessThan" maxOperator="LessThan" ucumString="%"/>
+                  <Interval minValue="6.0" maxValue="33.0" minOperator="GreaterThanEqual" maxOperator="LessThanEqual" ucumString="%"/>
+                  <Interval minValue="34.0" maxValue="67.0" minOperator="GreaterThanEqual" maxOperator="LessThanEqual" ucumString="%"/>
+                  <Interval minValue="68.0" maxValue="95.0" minOperator="GreaterThanEqual" maxOperator="LessThanEqual" ucumString="%"/>
+                  <Interval minValue="95.0" maxValue="95.0" minOperator="GreaterThan" maxOperator="GreaterThan" ucumString="%"/>
+                  <Interval minValue="100.0" maxValue="100.0" minOperator="Equal" maxOperator="Equal" ucumString="%"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Cysts" itemNumber="6" explanatoryText="Cysts are well defined, rounded, often eccentric regions of very bright T2W signal and low T1W signal essentially matching CSF signal intensity, with very thin, regular, smooth, nonenhancing or regularly enhancing walls, possibly with thin, regular, internal septations." minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="80-1" codeMeaning="Cyst" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Cyst Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="R-4089B" codeMeaning="Absent" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="G-A203" codeMeaning="Present" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Multifocal or Multicentric" itemNumber="7" explanatoryText="Multifocal is defined as having at least one region of tumor, either enhancing or nonenhancing, which is not contiguous with the dominant lesion and is outside the region of signal abnormality (edema) surrounding the dominant mass. This can be defined as those resulting from dissemination or growth by an established route, spread via commissural or other pathways, or via CSF channels or local metastases, whereas Multicentric are widely separated lesions in different lobes or different hemispheres that cannot be attributed to one of the previously mentioned pathways. Gliomatosis refers to generalized neoplastic transformation of the white matter of most of a hemisphere. " minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="13" codeMeaning="Multifocal or Multicentric" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Multifocal or Multicentric Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="RID5702" codeMeaning="Focal" codingSchemeDesignator="RadLex"/>
+                  <NonQuantifiable codeValue="RID5703" codeMeaning="Multifocal" codingSchemeDesignator="RadLex"/>
+                  <NonQuantifiable codeValue="R-40353" codeMeaning="Multicentric" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="RID4427" codeMeaning="Gliomatosis" codingSchemeDesignator="RadLex"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="T1/FLAIR Ratio" itemNumber="8" explanatoryText="Tumor feature summary. [Mixed, expansive or infiltrative]. Expansive = size of pre-contrast T1 abnormality (exclusive of signal intensity) approximates size of FLAIR abnormality. Mixed = Size of T1 abnormality moderately less than FLAIR envelope; Infiltrative = Size of pre-contrast T1 abnormality much smaller than size of FLAIR abnormality. (Use T2 if FLAIR is not provided)" minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="90-1" codeMeaning="T1/FLAIR ratio" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="T1/FLAIR Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="R-400F9" codeMeaning="Not Applicable" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="90" codeMeaning="Expansive " codingSchemeDesignator="VASARI"/>
+                  <NonQuantifiable codeValue="RID5890" codeMeaning="Mixed" codingSchemeDesignator="RadLex"/>
+                  <NonQuantifiable codeValue="92" codeMeaning="Infiltrative" codingSchemeDesignator="VASARI"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Thickness of Enhancing Margin" itemNumber="9" explanatoryText="The scoring is not applicable if there is no contrast enhancement. If most of the enhancing rim is thin, regular, and measures &lt; 3mm in thickness and has homogenous enhancement the grade is thin. If most of the rim demonstrates nodular and/or thick enhancement, the grade is thick. If there is only solid enhancement and no rim, the grade is solid." minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="01-1" codeMeaning="Thickness of Enhancing Margin" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Thickness of Enhancing Margin Characteristic Quantification" annotatorConfidence="false">
+                  <Numerical value="3.0" ucumString="mm" operator="LessThan"/>
+                  <Numerical value="3.0" ucumString="mm" operator="GreaterThan"/>
+                  <NonQuantifiable codeValue="R-40775" codeMeaning="None" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="G-A301" codeMeaning="Solid" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Definition of the Enhancing Margin" itemNumber="10" explanatoryText="The scoring is not applicable (n/a) if there is no contrast enhancement. Assess if most of the outside margin of the enhancement is well defined or poorly defined." minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="12" codeMeaning="Enhancing Margin Definition" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Enhancing Margin Definition Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="R-400F9" codeMeaning="Not Applicable" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C81187" codeMeaning="Well-defined" codingSchemeDesignator="NCI"/>
+                  <NonQuantifiable codeValue="R-428E7" codeMeaning="Poorly defined" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Definition of the Non-Enhancing Margin" itemNumber="11" explanatoryText="If most of the outside nonenhancing margin of the tumor is well defined and smooth (geographic), versus if the margin is ill-defined and irregular." minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="true">
+            <AllowedTerm codeValue="70" codeMeaning="Definition of the Non-Enhancing Margin" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Definition of the Non-Enhancing Margin Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="71" codeMeaning="Well-defined" codingSchemeDesignator="VASARI"/>
+                  <NonQuantifiable codeValue="72" codeMeaning="Poorly-defined" codingSchemeDesignator="VASARI"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Hemorrhage" itemNumber="12" explanatoryText="Intrinsic hemorrhage in the tumor matrix. Any intrinsic foci of low signal on T2WI or high signal on T1WI. (Use Bo image if necessary for confirmation.)" minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="81-1" codeMeaning="Hemorrhage" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Hemorrhage Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="G-A203" codeMeaning="Present" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="R-4089B" codeMeaning="Absent" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Diffusion" itemNumber="13" explanatoryText="Predominantly facilitated or restricted diffusion in the enhancing or nCET portion of the tumor. (Based on ADC map). Equivocal is neither. No ADC, use no-images. Proportion of tissue not relevant." minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="033-1" codeMeaning="Diffusion" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Diffusion Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="03-1" codeMeaning="No Image" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C82345" codeMeaning="Facilitated" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C82346" codeMeaning="Restricted" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="RID5890" codeMeaning="Mixed" codingSchemeDesignator="RadLex"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Pial invasion" itemNumber="14" explanatoryText="Enhancement of the overlying pia in continuity with enhancing or non-enhancing tumor" minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="04-1" codeMeaning="Pial invasion" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Pial invasion Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="G-A203" codeMeaning="Present" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="R-4089B" codeMeaning="Absent" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Ependymal Extension" itemNumber="15" explanatoryText="Extension of any adjacent ependymal surface in continuity with enhancing or non-enhancing tumor matrix" minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="05-1" codeMeaning="Ependymal Extension" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Ependymal Extension Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="G-A203" codeMeaning="Present" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="R-4089B" codeMeaning="Absent" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Cortical Involvement" itemNumber="16" explanatoryText="Non-enhancing or enhancing tumor extending to the cortical mantle, or cortex is no longer distinguishable relative to subjacent tumor." minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="06-1" codeMeaning="Cortical Involvement" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Cortical Involvement Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="G-A203" codeMeaning="Present" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="R-4089B" codeMeaning="Absent" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Deep WM Invasion" itemNumber="17" explanatoryText="Enhancing or nCET tumor extending into the internal capsule or brainstem." minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="6" codeMeaning="Deep WM Invasion" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Deep WM Invasion Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="R-40775" codeMeaning="None" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="RID6941" codeMeaning="Internal Capsule" codingSchemeDesignator="RadLex"/>
+                  <NonQuantifiable codeValue="RID6915" codeMeaning="Corpus Callosum" codingSchemeDesignator="RadLex"/>
+                  <NonQuantifiable codeValue="RID6677" codeMeaning="Brainstem" codingSchemeDesignator="RadLex"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="nCET Tumor Crosses Midline" itemNumber="18" explanatoryText="nCET crosses into contralateral hemisphere through white matter commissures (exclusive of herniated ipsilateral tissue)." minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="63" codeMeaning="nCET Tumor Crosses Midline" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="nCET Tumor Crosses Midline Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="R-400F9" codeMeaning="Not Applicable" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="G-A203" codeMeaning="Present" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="R-4089B" codeMeaning="Absent" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Enhancing Tumor Crosses Midline" itemNumber="19" explanatoryText="Enhancing tissue crosses into contralateral hemisphere through white matter commisures (exclusive of herniated ipsilateral tissue)." minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="true">
+            <AllowedTerm codeValue="3" codeMeaning="Enhancing Tumor Crosses Midline" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Enhancing Tumor Crosses Midline Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="R-400F9" codeMeaning="Not Applicable" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="G-A203" codeMeaning="Present" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="R-4089B" codeMeaning="Absent" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Satellites" itemNumber="20" explanatoryText="A satellite lesion is an area of enhancement within the region of signal abnormality surrounding the dominant lesion but not contiguous in any part with the major tumor mass." minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="09-1" codeMeaning="Satellites" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Satellites Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="G-A203" codeMeaning="Present" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="R-4089B" codeMeaning="Absent" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="Calvarial Remodeling" itemNumber="21" explanatoryText="Erosion of inner table of skull (possibly a secondary sign of slow growth)" minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="10-1" codeMeaning="Calvarial Remodeling" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="Calvarial Remodeling Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="G-A203" codeMeaning="Present" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="R-4089B" codeMeaning="Absent" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="C0205258" codeMeaning="Indeterminate" codingSchemeDesignator="NCIt"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+         <ImagingObservationCharacteristic label="FLAIR Signal Cross Midline" itemNumber="22" explanatoryText="FLAIR signal spans white matter commissures extending into contralateral hemisphere. (exclusive of herniated ipsilateral tissue)." minCardinality="1" maxCardinality="1" shouldDisplay="false" annotatorConfidence="false">
+            <AllowedTerm codeValue="02-1" codeMeaning="FLAIR Signal Cross Midline" codingSchemeDesignator="VASARI">
+               <CharacteristicQuantification name="FLAIR Signal Cross Midline Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="R-400F9" codeMeaning="Not Applicable" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="G-A203" codeMeaning="Present" codingSchemeDesignator="SRT"/>
+                  <NonQuantifiable codeValue="R-4089B" codeMeaning="Absent" codingSchemeDesignator="SRT"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+         </ImagingObservationCharacteristic>
+      </ImagingObservation>
+      <AllowedTerm codeValue="RID3874" codeMeaning="mass" codingSchemeDesignator="RadLex"/>
+   </Component>
+   <Component label="Eloquent Brain" itemNumber="3" explanatoryText="Select Eloquent Brain Involvement feature" minCardinality="1" maxCardinality="1" shouldDisplay="true">
+      <Inference annotatorConfidence="false"/>
+      <AllowedTerm codeValue="85" codeMeaning="Eloquent Brain : None" codingSchemeDesignator="VASARI"/>
+      <AllowedTerm codeValue="86" codeMeaning="Eloquent Brain : Speech Motor" codingSchemeDesignator="VASARI"/>
+      <AllowedTerm codeValue="87" codeMeaning="Eloquent Brain : Speech Receptive" codingSchemeDesignator="VASARI"/>
+      <AllowedTerm codeValue="88" codeMeaning="Eloquent Brain : Motor" codingSchemeDesignator="VASARI"/>
+      <AllowedTerm codeValue="89" codeMeaning="Eloquent Brain : Vision" codingSchemeDesignator="VASARI"/>
+   </Component>
+</Template>

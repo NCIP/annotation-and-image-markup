@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Template uid="2.25.248576217325677268603117050771746797241" name="VASARI_caDSR" authors="AIM Team" version="1.0" creationDate="2011-07-11" description="This is an AIM template example using VASARI information from caDSR." modality="MR" codeMeaning="Brain Tumor Measurement" codeValue="PRI-VASARI-1" codingSchemeDesignator="VASARI" codingSchemeVersion="1.0">
+   <Component label="Tumor Location" itemNumber="1" authors="AIM Team" explanatoryText="Location of lesion geographic center (not all areas of involvement)." minCardinality="1" maxCardinality="1" shouldDisplay="true">
+      <QuestionType codeValue="QT-09827" codeMeaning="Where is the location of the tumor?" codingSchemeDesignator="99PRIVATEQA" codingSchemeVersion="1.0"/>
+      <AnatomicEntity annotatorConfidence="true">
+         <AnatomicEntityCharacteristic label="Side of Tumor Center" itemNumber="1" explanatoryText="Side of lesion center" minCardinality="1" maxCardinality="1" shouldDisplay="true" annotatorConfidence="false">
+            <AllowedTerm codeValue="3262715" codeMeaning="Center/Bilateral" codingSchemeDesignator="caDSR" codingSchemeVersion="1.0"/>
+            <AllowedTerm codeValue="2574089" codeMeaning="Left" codingSchemeDesignator="caDSR" codingSchemeVersion="1.0"/>
+            <AllowedTerm codeValue="2574088" codeMeaning="Right" codingSchemeDesignator="caDSR" codingSchemeVersion="1.0"/>
+            <QuestionType codeValue="2890972" codeMeaning="Lesion Brain Foci Side Type" codingSchemeDesignator="caDSR" codingSchemeVersion="1.0"/>
+         </AnatomicEntityCharacteristic>
+      </AnatomicEntity>
+      <AllowedTerm codeValue="RID6440" codeMeaning="frontal lobe" codingSchemeDesignator="RadLex" codingSchemeVersion="1.0"/>
+      <AllowedTerm codeValue="RID6493" codeMeaning="parietal lobe" codingSchemeDesignator="RadLex" codingSchemeVersion="1.0"/>
+      <AllowedTerm codeValue="RID6502" codeMeaning="occipital lobe" codingSchemeDesignator="RadLex" codingSchemeVersion="1.0"/>
+      <AllowedTerm codeValue="RID6472" codeMeaning="insula" codingSchemeDesignator="RadLex" codingSchemeVersion="1.0"/>
+      <AllowedTerm codeValue="RID6677" codeMeaning="brainstem" codingSchemeDesignator="RadLex" codingSchemeVersion="1.0"/>
+      <AllowedTerm codeValue="RID6815" codeMeaning="cerebellum" codingSchemeDesignator="RadLex" codingSchemeVersion="1.0"/>
+      <AllowedTerm codeValue="RID6537" codeMeaning="basal ganglia" codingSchemeDesignator="RadLex" codingSchemeVersion="1.0"/>
+      <AllowedTerm codeValue="RID6578" codeMeaning="thalamus" codingSchemeDesignator="RadLex" codingSchemeVersion="1.0"/>
+      <AllowedTerm codeValue="RID6915" codeMeaning="corpus callosum" codingSchemeDesignator="RadLex" codingSchemeVersion="1.0"/>
+   </Component>
+   <Component label="Lesion" itemNumber="2" authors="AIM Team" explanatoryText="Imaging observation provided by imaging interpreter." minCardinality="1" maxCardinality="1" shouldDisplay="false">
+      <QuestionType codeValue="QT-839565" codeMeaning="What have you seen on the image?" codingSchemeDesignator="99PRIVATEQA" codingSchemeVersion="1.0"/>
+      <ImagingObservation annotatorConfidence="false">
+         <ImagingObservationCharacteristic label="Proportion of Edema" itemNumber="1" authors="AIM Team" explanatoryText="Lesion alteration vascular edema proportion" minCardinality="1" maxCardinality="1" shouldDisplay="false" groupLabel="" annotatorConfidence="false">
+            <AllowedTerm codeValue="2904274" codeMeaning="Lesion Alteration Vascular Edema Proportion Category" codingSchemeDesignator="caDSR" codingSchemeVersion="1.0">
+               <CharacteristicQuantification name="Percent Proportion of Edema Characteristic Quantification" annotatorConfidence="false">
+                  <NonQuantifiable codeValue="3262723" codeMeaning="Greater than two thirds" codingSchemeDesignator="caDSR" codingSchemeVersion="1.0"/>
+                  <NonQuantifiable codeValue="3262722" codeMeaning="Between Two Thirds and One Third " codingSchemeDesignator="caDSR" codingSchemeVersion="1.0"/>
+                  <NonQuantifiable codeValue="3262721" codeMeaning="Less than One Third " codingSchemeDesignator="caDSR" codingSchemeVersion="1.0"/>
+                  <NonQuantifiable codeValue="3227238" codeMeaning="Minimal " codingSchemeDesignator="caDSR" codingSchemeVersion="1.0"/>
+                  <NonQuantifiable codeValue="3262719" codeMeaning="No Contrast Enhancement" codingSchemeDesignator="caDSR" codingSchemeVersion="1.0"/>
+                  <NonQuantifiable codeValue="3262720" codeMeaning="No Contrast Injected" codingSchemeDesignator="caDSR" codingSchemeVersion="1.0"/>
+               </CharacteristicQuantification>
+            </AllowedTerm>
+            <QuestionType codeValue="2904274" codeMeaning="Lesion Alteration Vascular Edema Proportion Category" codingSchemeDesignator="caBIG" codingSchemeVersion="1.0"/>
+         </ImagingObservationCharacteristic>
+      </ImagingObservation>
+      <AllowedTerm codeValue="C0577559" codeMeaning="Mass" codingSchemeDesignator="caDSR" codingSchemeVersion="1.0"/>
+   </Component>
+   <Component label="Eloquent Brain" itemNumber="3" authors="AIM Team" explanatoryText="Select Eloquent Brain Involvement feature" minCardinality="1" maxCardinality="1" shouldDisplay="true">
+      <QuestionType codeValue="PRI-VASARI-7343" codeMeaning="Eloquent Brain" codingSchemeDesignator="VASARI" codingSchemeVersion="1.0"/>
+      <Inference annotatorConfidence="false"/>
+      <AllowedTerm codeValue="C1513492 " codeMeaning="Motor" codingSchemeDesignator="caDSR" codingSchemeVersion="1.0"/>
+      <AllowedTerm codeValue="C0549184" codeMeaning="None" codingSchemeDesignator="caDSR" codingSchemeVersion="1.0"/>
+      <AllowedTerm codeValue="C0042789" codeMeaning="Vision" codingSchemeDesignator="caDSR" codingSchemeVersion="1.0"/>
+      <AllowedTerm codeValue="86" codeMeaning="Speech Motor" codingSchemeDesignator="99VASARI" codingSchemeVersion="1.0"/>
+      <AllowedTerm codeValue="87" codeMeaning="Speech Receptive" codingSchemeDesignator="99VASARI" codingSchemeVersion="1.0"/>
+   </Component>
+   <Component label="Draw a line to measure the longest diameter" itemNumber="4" authors="AIM Team" explanatoryText="Find an image with the largest lesion size and draw a line to measure the longest dimension of the lesion." minCardinality="2" maxCardinality="2" shouldDisplay="true" groupLabel="">
+      <QuestionType codeValue="QT-02730" codeMeaning="Draw a line to measure longest diameter." codingSchemeDesignator="99PRIVATEQA" codingSchemeVersion="1.0"/>
+      <GeometricShape>Point</GeometricShape>
+   </Component>
+   <Component label="Calculate the longest diameter" itemNumber="5" authors="AIM Team" explanatoryText="Calculate the longest diameter" minCardinality="1" maxCardinality="1" shouldDisplay="false">
+      <QuestionType codeValue="QT-4027234" codeMeaning="What is the length of the longest diameter?" codingSchemeDesignator="99PRIVATEQA" codingSchemeVersion="1.0"/>
+      <Calculation>
+         <CalculationType codeValue="112074" codeMeaning="Target Lesion at Baseline" codingSchemeDesignator="DCM" codingSchemeVersion="1.0">
+            <AlgorithmType codeValue="ALG-1" codeMeaning="A length in millimeters between two points" codingSchemeDesignator="99PRIVATEALGO" codingSchemeVersion="1.0" description="Compute a length in millimeters between two points." uniqueIdentifier="1.23.45644755675.34534.234234" algorithmName="Line measurement (mm)" algorithmVersion="1.0" mathML="None"/>
+         </CalculationType>
+      </Calculation>
+   </Component>
+   <Component label="Draw a line to measure a longest perpendicular diameter" itemNumber="6" authors="AIM Team" explanatoryText="Draw a line to measure the longest perpendicular diameter to the first line." minCardinality="2" maxCardinality="2" shouldDisplay="true">
+      <QuestionType codeValue="QT-0A23891" codeMeaning="Draw a line along the longest perpendicular diameter" codingSchemeDesignator="99PRIVATEQA" codingSchemeVersion="1.0"/>
+      <GeometricShape>MultiPoint</GeometricShape>
+   </Component>
+   <Component label="Calculate the longest perpendicular diameter" itemNumber="7" authors="AIM Team" explanatoryText="Calculate the longest perpendicular diameter" minCardinality="1" maxCardinality="1" shouldDisplay="false">
+      <QuestionType codeValue="QT-779023" codeMeaning="What is the length of the longest perpendicular diameter?" codingSchemeDesignator="99PRIVATEQA" codingSchemeVersion="1.0"/>
+      <Calculation>
+         <CalculationType codeValue="112074" codeMeaning="Target Lesion at Baseline" codingSchemeDesignator="DCM" codingSchemeVersion="1.0">
+            <AlgorithmType codeValue="ALG-1" codeMeaning="A length in millimeters between two points" codingSchemeDesignator="99PRIVATEALGO" codingSchemeVersion="1.0" description="Compute a length in millimeters between two points." uniqueIdentifier="1.23.45644755675.34534.234234" algorithmName="Line measurement (mm)" algorithmVersion="1.0" mathML="None"/>
+         </CalculationType>
+      </Calculation>
+   </Component>
+   <Tags>
+      <Tag>
+         <TagName codeValue="C0229962" codeMeaning="Body Part" codingSchemeDesignator="NCIm" codingSchemeVersion="1.0"/>
+         <TagValue>
+            <StringValue>Brain</StringValue>
+         </TagValue>
+      </Tag>
+      <Tag>
+         <TagName codeValue="C0012634" codeMeaning="Disease" codingSchemeDesignator="NCIm" codingSchemeVersion="1.0"/>
+         <TagValue>
+            <CodedValue codeValue="C0017636" codeMeaning="Glioblastoma" codingSchemeDesignator="NCIm" codingSchemeVersion="1.0"/>
+         </TagValue>
+      </Tag>
+   </Tags>
+</Template>
