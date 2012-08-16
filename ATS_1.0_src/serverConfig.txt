@@ -1,0 +1,5 @@
+port = 8080
+dbpath = /xmldatabase
+CaGridSecurityUrl=https://secure01.cci.emory.edu:8443/SecurityTokenServiceNCIProd/rest/STS
+//keystorepath = /keystore
+//keystorename = serverKeystore
