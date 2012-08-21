@@ -166,7 +166,7 @@ permission of its copyright owner.
 #include "../model/AimHeaders.h"
 
 #include "BaseModel.h"
-#include "DcmModelinternal.h"
+#include "DcmModelInternal.h"
 #include "DcmModel.h"
 
 #include "../AIMUtil.h"
