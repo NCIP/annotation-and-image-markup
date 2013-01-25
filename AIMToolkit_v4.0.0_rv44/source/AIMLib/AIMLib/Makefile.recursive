@@ -1,0 +1,94 @@
+include ../Makefile.rules
+
+NAME = AIMLib
+LIBDIR = ../$(OBJDIR)
+LIB = $(LIBDIR)/lib$(NAME).a
+SHAREDLIB = $(LIBDIR)/lib$(NAME).so
+
+HDRS =  AIMCodes.h
+HDRS += AIMCommon.h
+HDRS += AimEnum.h
+HDRS += AIMLib.h
+HDRS += AimResultValidator.h
+HDRS += AIMUtil.h
+
+SRCS =  AIMCodes.cpp
+SRCS += AimEnum.cpp
+SRCS += AIMLib.cpp
+SRCS += AimResultValidator.cpp
+SRCS += AIMUtil.cpp
+
+SUBDIR = util
+SUBDIR += model
+SUBDIR += operations
+
+SUBDIR_LIBS = $(addprefix $(OBJDIR)/lib,$(addsuffix .a,$(SUBDIR)))
+
+ALTOVA_PROJ = Altova
+ALTOVA_PROJ += AltovaXML
+ALTOVA_PROJ += AIMXML
+
+# Ex: ../Altova/libAltova.a
+DEPLIBS = $(addprefix ../,$(join $(ALTOVA_PROJ),$(addprefix /lib,$(addsuffix .a,$(ALTOVA_PROJ)))))
+# Ex: ../Altova/libAltova.so
+SHAREDDEPLIBS = $(addprefix ../,$(join $(ALTOVA_PROJ),$(addprefix /lib,$(addsuffix .so,$(ALTOVA_PROJ)))))
+# All libraries that we are linking against
+LINKLIBS = $(addprefix -l,$(ALTOVA_PROJ)) -lxerces-c -loflog -lofstd -ldcmdata -ldcmsr 
+# All libraries search directories
+LINKDIRS = $(addprefix -L../,$(ALTOVA_PROJ)) -L$(LIB_DCMTK_FOLDER)
+
+OBJDIR = $(OUT_FOLDER)
+OBJS = $(addprefix $(OBJDIR)/,$(filter %.o, $(SRCS:.cpp=.o)))
+#Q ?= @
+
+.PHONY: all clean $(OBJDIR) $(SUBDIR)
+
+
+#all: $(LIB)
+all: $(SHAREDLIB)
+
+
+$(SHAREDLIB): $(ALTOVA_PROJ) $(SUBDIR) $(OBJS)
+	@echo '===> Linking shared $(SHAREDLIB)'
+	$(Q)$(CXX) -shared -Wl,-soname,$(SHAREDLIB),-Bstatic,-whole-archive $(LINKDIRS) $(LINKLIBS) $(OBJS) $(SUBDIR_LIBS) -o $(SHAREDLIB).$(VERSION) -Wl,-Bdynamic,-no-whole-archive
+	$(Q)cp -f $(SHAREDLIB).$(VERSION) $(SHAREDLIB)
+
+# DOES NOT WORK ON MOUNTED SHARED FOLDERS:
+#	$(Q)ln -s $(SHAREDLIB).$(VERSION) $(SHAREDLIB)
+
+$(LIB): $(ALTOVA_PROJ) $(OBJS)
+	@echo '===> Linking $(LIB)'
+	$(Q)ar cr $(LIB) $(OBJS) $(SUBDIR_LIBS)
+	$(Q)ranlib $(LIB)
+
+#$(OBJDIR)/%.o: $(HDRS) $(SRCS)
+$(OBJDIR)/%.o: $(SRCS)
+	$(CXX) -static -c -fPIC -c $(CFLAGS) $(CXXFLAGS) $< -o $@
+
+$(OBJS): | $(OBJDIR)
+
+# NOTE: both clean and compilation can depend on this!!!
+# Call make <goal> on our subdirectories
+$(SUBDIR):
+	$(MAKE) $(MAKECMDGOALS) -C $@
+
+# NOTE: This is used during both clean and compilation!!!
+# Run Altova makefiles
+$(ALTOVA_PROJ):
+	$(MAKE) $(MAKECMDGOALS) -C ../$@
+
+# Create Output dirs, if missing
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
+
+clean: $(SUBDIR) $(ALTOVA_PROJ)
+	rm -Rf $(OBJS) $(LIB) $(SHAREDLIB) $(SHAREDLIB).$(VERSION)
+
+#	@for dir in $(SUBDIR); do \
+#		$(MAKE) clean -C $$dir; \
+#	done
+#		cd $$dir && $(MAKE) clean && cd ..; \
+#cd $(SUBDIR) && $(MAKE) clean
+
+#	cd operations && $(MAKE) clean
+#	cd util && $(MAKE) clean

@@ -1,0 +1,7 @@
+# util files
+
+UTIL_HDRS =  AimUidGenerator.h
+UTIL_HDRS += DateTime.h
+
+UTIL_SRCS =  AimUidGenerator.cpp
+UTIL_SRCS += DateTime.cpp

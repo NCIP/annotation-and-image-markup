@@ -1,0 +1,63 @@
+Build notes for dcmtk_3.6.1_20121102 using CMake 2.8.9
+
+Each platform was configured with its native default compiler, e.g. amd64 uses VS2008 Win64, etc.
+Windows - VS2008 SP1, HotFix: VS90SP1-KB976656-x86.exe
+
+Platform name choices:
+- win32
+- amd64
+- ubuntu_32
+- ubuntu_64
+- etc.
+
+CMakeUI settings (done for each platfrom). Use defaults except for:
+- uncheck BUIL_APPS checkbox
+- uncheck BUILD_SHARED_LIBS checkbox
+- check CMAKE_USER_RELATIVE_PATHS checkbox (advanced options)
+- uncheck DCMTK_OVERWRITE_WIN32_COMPILER_FLAGS
+- specify CMAKE_INSTALL_PREFIX to be ./../bin/<platform>/${BUILD_TYPE}
+
+CMake/dcmtkPrepare.cmake changes (Windows only):
+- [NOT NEEDED if BUILD_SHARED_LIBS is checked] Change compiler options (CMAKE_C_FLAGS_*) to /MD[d] for VS targets (CMake UI values are overwritten by that file)
+- Add the following preprocessor definitions to the WIN32/VS section under ADD_DEFINITIONS(..):
+     -DHAVE_STD_STRING
+     -DHAVE_STL
+
+CMakeUI (Ubuntu):
+- Add the following preprocessor definitions to CMAKE_CXX_FLAGS and CMAKE_C_FLAGS:
+     -DHAVE_STD_STRING
+     -DHAVE_STL
+- check DCMTK_FORCE_FPIC_ON_UNIX checkbox
+
+Example (Win64):
+Where is the source code: <path>/dcmtk-3.6.1_20121102
+Where to build the binaries: <path>/dcmtk-3.6.1_20121102/build_amd64
+BUIL_APPS - unchecked
+BUILD_SHARED_LIBS - unchecked
+CMAKE_USE_RELATIVE_PATHS - checked
+DCMTK_OVERWRITE_WIN32_COMPILER_FLAGS - unchecked
+CMAKE_INSTALL_PREFIX = ./../bin/amd64/${BUILD_TYPE}
+
+Example (Ubuntu 32-bit):
+Where is the source code: /<path>/dcmtk-3.6.1_20121102
+Where to build the binaries: /<path>/dcmtk-3.6.1_20121102/build_ubuntu_32
+BUIL_APPS - unchecked
+BUILD_SHARED_LIBS - unchecked
+CMAKE_USE_RELATIVE_PATHS - checked
+CMAKE_INSTALL_PREFIX = ./../bin/ubuntu_32/${BUILD_TYPE}
+DCMTK_WITH_SNDFILE - unchecked
+
+NOTE: On a new machine, re-open CMake UI to update & generate project files. This is especially necessary if CMake's path is different.
+Alternative to re-running CMake: change path to CMake in ZERO_CHECK.vcproj and build the project from the solution. This will force CMake to run. Then close and re-open solution.
+
+Build Projects (Windows):
+- Open build_<build_type>/DCMTK.sln
+- Compile ALL_BUILD for each build type (e.g. Debug & Release)
+- Compile INSTALL for each build type (e.g. Debug & Release)
+   - will populate ./bin/<platform>/<build type> folders with compiled binaries, libs & includes. AIMLib looks for libs and includes in this location.
+
+Build Projects (Ubuntu):
+- cd to build_ubuntu_<build_type>
+- run: make all
+- run: make install
+   - will populate ./bin/ubuntu_<build type> folders with compiled binaries, libs & includes. AIMLib will look for libs and includes there.

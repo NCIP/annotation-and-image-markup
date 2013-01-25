@@ -1,0 +1,7 @@
+# External includes
+
+EXTERNAL_HDRS =  CD.h
+EXTERNAL_HDRS += II.h
+
+EXTERNAL_SRCS =  CD.cpp
+EXTERNAL_SRCS += II.cpp

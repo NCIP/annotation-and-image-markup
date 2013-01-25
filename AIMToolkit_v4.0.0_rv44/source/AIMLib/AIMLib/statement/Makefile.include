@@ -1,0 +1,10 @@
+# Statement includes
+
+STATEMENT_HDRS =  AbstractAnnotationStatement.h
+STATEMENT_HDRS += AnnotationOfAnnotationStatement.h
+STATEMENT_HDRS += AnnotationStatement.h
+STATEMENT_HDRS += AnnotationStatementRelationship.h
+STATEMENT_HDRS += ImageAnnotationStatement.h
+STATEMENT_HDRS += StatementFactory.h
+
+STATEMENT_SRCS = StatementFactory.cpp
