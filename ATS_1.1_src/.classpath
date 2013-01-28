@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="bin" path="src"/>
+	<classpathentry kind="lib" path="lib/bdbxml/jar/db.jar"/>
+	<classpathentry kind="lib" path="lib/bdbxml/jar/dbxml.jar"/>
+	<classpathentry kind="lib" path="lib/cagrid/lib/EmorySTSClient.jar"/>
+	<classpathentry kind="lib" path="lib/cagrid/lib/cog-jglobus.jar"/>
+	<classpathentry kind="lib" path="lib/cagrid/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/cagrid/lib/jce-jdk13-125.jar"/>
+	<classpathentry kind="lib" path="lib/cagrid/lib/log4j.jar"/>
+	<classpathentry kind="lib" path="lib/cagrid/lib/picketlink-fed-1.0.4.final.jar"/>
+	<classpathentry kind="lib" path="lib/freemarker/freemarker-gae-2.3.18.jar"/>
+	<classpathentry kind="lib" path="lib/freemarker/freemarker.jar"/>
+	<classpathentry kind="lib" path="lib/restlet/lib/javax.servlet_2.5/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="lib/restlet/lib/org.apache.commons.fileupload_1.2/org.apache.commons.fileupload.jar"/>
+	<classpathentry kind="lib" path="lib/restlet/lib/org.apache.commons.io_1.4/org.apache.commons.io.jar"/>
+	<classpathentry kind="lib" path="lib/restlet/lib/org.eclipse.jetty_7.1/org.eclipse.jetty.ajp.jar"/>
+	<classpathentry kind="lib" path="lib/restlet/lib/org.eclipse.jetty_7.1/org.eclipse.jetty.continuations.jar"/>
+	<classpathentry kind="lib" path="lib/restlet/lib/org.eclipse.jetty_7.1/org.eclipse.jetty.http.jar"/>
+	<classpathentry kind="lib" path="lib/restlet/lib/org.eclipse.jetty_7.1/org.eclipse.jetty.io.jar"/>
+	<classpathentry kind="lib" path="lib/restlet/lib/org.eclipse.jetty_7.1/org.eclipse.jetty.server.jar"/>
+	<classpathentry kind="lib" path="lib/restlet/lib/org.eclipse.jetty_7.1/org.eclipse.jetty.util.jar"/>
+	<classpathentry kind="lib" path="lib/restlet/lib/org.jsslutils_1.0/org.jsslutils.jar"/>
+	<classpathentry kind="lib" path="lib/restlet/lib/org.restlet.ext.fileupload.jar"/>
+	<classpathentry kind="lib" path="lib/restlet/lib/org.restlet.ext.freemarker.jar"/>
+	<classpathentry kind="lib" path="lib/restlet/lib/org.restlet.ext.jetty.jar"/>
+	<classpathentry kind="lib" path="lib/restlet/lib/org.restlet.ext.ssl.jar"/>
+	<classpathentry kind="lib" path="lib/restlet/lib/org.restlet.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

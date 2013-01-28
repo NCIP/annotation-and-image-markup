@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="AimTemplateService">
+    <!-- requires ANT 1.7 or later -->
+    <property name="destdir" location="dist" />
+    <property name="lib" location="lib" />
+    <property name="bin" location="bin" />
+
+    <!-- define classpath -->
+    <path id="project.class.path">
+        <fileset dir="${lib}" includes="**/*.jar"/>
+        <fileset dir="${lib}/bdbxml/jar" includes="**/*.jar"/>
+        <fileset dir="${lib}/restlet/lib" includes="**/*.jar"/>
+        <fileset dir="${lib}/restlet/lib/org.jsslutils_1.0" includes="**/*.jar"/>
+        <fileset dir="${lib}/restlet/lib/org.eclipse.jetty_7.1" includes="**/*.jar"/>
+        <fileset dir="${lib}/restlet/lib/javax.servlet_2.5" includes="**/*.jar"/>
+        <fileset dir="${lib}/restlet/lib/org.apache.commons.fileupload_1.2" includes="**/*.jar"/>
+        <fileset dir="${lib}/restlet/lib/org.apache.commons.io_1.4" includes="**/*.jar"/>
+        <fileset dir="${lib}/cagrid/lib" includes="**/*.jar"/>
+        <fileset dir="${lib}/freemarker" includes="freemarker.jar"/>
+    </path>
+
+    <!-- Create the jar-on-jar file. -->
+    <target name="create_run_jar" depends="javac">
+    	<mkdir dir="${destdir}"/>
+
+    	<!-- Copy all non-java resource files: FreeMarker templates, AIMTemplate xsds, etc. -->
+        <copy todir="${bin}">
+            <fileset dir="src" excludes="**/*.java" />
+        </copy>
+
+    	<copy file="readme.txt" tofile="${destdir}/readme.txt"/>
+    	<copy file="serverConfig.txt" tofile="${destdir}/serverConfig.txt"/>
+        <jar destfile="${destdir}/AimTemplateService.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="edu.stanford.isis.ats.AimTemplateService"/>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Rsrc-Class-Path" value="./ dbxml.jar db.jar org.restlet.jar org.restlet.ext.ssl.jar org.jsslutils.jar org.restlet.ext.jetty.jar org.eclipse.jetty.util.jar org.eclipse.jetty.ajp.jar org.eclipse.jetty.continuations.jar org.eclipse.jetty.http.jar org.eclipse.jetty.io.jar org.eclipse.jetty.server.jar javax.servlet.jar org.restlet.ext.fileupload.jar org.apache.commons.fileupload.jar org.apache.commons.io.jar EmorySTSClient.jar cog-jglobus.jar commons-logging.jar jce-jdk13-125.jar log4j.jar picketlink-fed-1.0.4.final.jar freemarker.jar org.restlet.ext.freemarker.jar"/>
+            </manifest>
+            <zipfileset src="jar-in-jar-loader.zip"/>
+            <fileset dir="${bin}"/>
+            <zipfileset dir="${lib}/bdbxml/jar" includes="dbxml.jar"/>
+            <zipfileset dir="${lib}/bdbxml/jar" includes="db.jar"/>
+            <zipfileset dir="${lib}/restlet/lib" includes="org.restlet.jar"/>
+            <zipfileset dir="${lib}/restlet/lib" includes="org.restlet.ext.ssl.jar"/>
+            <zipfileset dir="${lib}/restlet/lib" includes="org.restlet.ext.jetty.jar"/>
+            <zipfileset dir="${lib}/restlet/lib" includes="org.restlet.ext.freemarker.jar"/>
+            <zipfileset dir="${lib}/restlet/lib/org.jsslutils_1.0" includes="org.jsslutils.jar"/>
+            <zipfileset dir="${lib}/restlet/lib/org.eclipse.jetty_7.1" includes="org.eclipse.jetty.util.jar"/>
+            <zipfileset dir="${lib}/restlet/lib/org.eclipse.jetty_7.1" includes="org.eclipse.jetty.ajp.jar"/>
+            <zipfileset dir="${lib}/restlet/lib/org.eclipse.jetty_7.1" includes="org.eclipse.jetty.continuations.jar"/>
+            <zipfileset dir="${lib}/restlet/lib/org.eclipse.jetty_7.1" includes="org.eclipse.jetty.http.jar"/>
+            <zipfileset dir="${lib}/restlet/lib/org.eclipse.jetty_7.1" includes="org.eclipse.jetty.io.jar"/>
+            <zipfileset dir="${lib}/restlet/lib/org.eclipse.jetty_7.1" includes="org.eclipse.jetty.server.jar"/>
+            <zipfileset dir="${lib}/restlet/lib/javax.servlet_2.5" includes="javax.servlet.jar"/>
+            <zipfileset dir="${lib}/restlet/lib" includes="org.restlet.ext.fileupload.jar"/>
+            <zipfileset dir="${lib}/restlet/lib/org.apache.commons.fileupload_1.2" includes="org.apache.commons.fileupload.jar"/>
+            <zipfileset dir="${lib}/restlet/lib/org.apache.commons.io_1.4" includes="org.apache.commons.io.jar"/>
+            <zipfileset dir="${lib}/cagrid/lib" includes="cog-jglobus.jar"/>
+            <zipfileset dir="${lib}/cagrid/lib" includes="commons-logging.jar"/>
+            <zipfileset dir="${lib}/cagrid/lib" includes="EmorySTSClient.jar"/>
+            <zipfileset dir="${lib}/cagrid/lib" includes="jce-jdk13-125.jar"/>
+            <zipfileset dir="${lib}/cagrid/lib" includes="picketlink-fed-1.0.4.final.jar"/>
+            <zipfileset dir="${lib}/cagrid/lib" includes="log4j.jar"/>
+            <zipfileset dir="${lib}/freemarker" includes="freemarker.jar"/>
+        </jar>
+
+        <!-- Create location for static files. -->
+        <mkdir dir="${destdir}/static"/>
+        <copy todir="${destdir}/static">
+            <fileset dir="etc/static"/>
+        </copy>
+
+        <!-- Add certificate to talk with caGrid -->
+        <mkdir dir="${destdir}/certificate"/>
+        <copy file="${lib}/cagrid/stsClient.jks" todir="${destdir}/certificate"/>
+        <copy file="${lib}/cagrid/README.txt" todir="${destdir}/certificate"/>
+
+    </target>
+
+    <!-- compile the source code. -->
+    <target name="javac" description="Compile the source code" depends="clean">
+        <mkdir dir="${bin}" />
+        <javac srcdir="src" destdir="bin" includeantruntime="false">
+            <classpath refid="project.class.path"/>
+        </javac>
+    </target>
+
+    <!-- clean the project directories -->
+    <target name="clean">
+        <delete dir="${bin}" />
+        <delete dir="${destdir}" />
+    </target>
+</project>
