@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 sp1 (x64) (http://www.altova.com) by Pat Mongkolwat (Northwestern University) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate" targetNamespace="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate" elementFormDefault="qualified" version="AIMTemplate_v2_rv13">
+	<xs:simpleType name="modalityType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AU"/>
+			<xs:enumeration value="BDUS"/>
+			<xs:enumeration value="BI"/>
+			<xs:enumeration value="BMD"/>
+			<xs:enumeration value="CD"/>
+			<xs:enumeration value="CR"/>
+			<xs:enumeration value="CT"/>
+			<xs:enumeration value="DD"/>
+			<xs:enumeration value="DOC"/>
+			<xs:enumeration value="DG"/>
+			<xs:enumeration value="DX"/>
+			<xs:enumeration value="ECG"/>
+			<xs:enumeration value="EPS"/>
+			<xs:enumeration value="ES"/>
+			<xs:enumeration value="GM"/>
+			<xs:enumeration value="HC"/>
+			<xs:enumeration value="HD"/>
+			<xs:enumeration value="IO"/>
+			<xs:enumeration value="IVUS"/>
+			<xs:enumeration value="KO"/>
+			<xs:enumeration value="LS"/>
+			<xs:enumeration value="MG"/>
+			<xs:enumeration value="MR"/>
+			<xs:enumeration value="NM"/>
+			<xs:enumeration value="OCT"/>
+			<xs:enumeration value="OT"/>
+			<xs:enumeration value="OP"/>
+			<xs:enumeration value="OPM"/>
+			<xs:enumeration value="OPT"/>
+			<xs:enumeration value="OPR"/>
+			<xs:enumeration value="OPV"/>
+			<xs:enumeration value="PR"/>
+			<xs:enumeration value="PT"/>
+			<xs:enumeration value="PX"/>
+			<xs:enumeration value="REG"/>
+			<xs:enumeration value="RG"/>
+			<xs:enumeration value="RTDOSE"/>
+			<xs:enumeration value="RTIMAGE"/>
+			<xs:enumeration value="RTPLAN"/>
+			<xs:enumeration value="RTSTRUCT"/>
+			<xs:enumeration value="RTRECORD"/>
+			<xs:enumeration value="SEG"/>
+			<xs:enumeration value="SM"/>
+			<xs:enumeration value="SMR"/>
+			<xs:enumeration value="SR"/>
+			<xs:enumeration value="ST"/>
+			<xs:enumeration value="US"/>
+			<xs:enumeration value="XA"/>
+			<xs:enumeration value="XC"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="operator">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Equal"/>
+			<xs:enumeration value="NotEqual"/>
+			<xs:enumeration value="LessThan"/>
+			<xs:enumeration value="GreaterThan"/>
+			<xs:enumeration value="LessThanEqual"/>
+			<xs:enumeration value="GreaterThanEqual"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PrecedingAnnotationRequest">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OfferToSelect"/>
+			<xs:enumeration value="RequireToSelect"/>
+			<xs:enumeration value="DoNotOffer"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ScaleType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nominal"/>
+			<xs:enumeration value="Ordinal"/>
+			<xs:enumeration value="Ratio"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GeometricShape">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Point"/>
+			<xs:enumeration value="Circle"/>
+			<xs:enumeration value="Polyline"/>
+			<xs:enumeration value="Ellipse"/>
+			<xs:enumeration value="MultiPoint"/>
+			<xs:enumeration value="3DPolygon"/>
+			<xs:enumeration value="3DPolyline"/>
+			<xs:enumeration value="3DMultiPoint"/>
+			<xs:enumeration value="3DPoint"/>
+			<xs:enumeration value="3DEllipse"/>
+			<xs:enumeration value="3DEllipsoid"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UID">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="64"/>
+			<xs:pattern value="[0-2]((\.0)|(\.[1-9][0-9]*))*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="Tag">
+		<xs:sequence>
+			<xs:element name="TagName" type="CodedTerm"/>
+			<xs:element name="TagValue" type="TagValue"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Algorithm">
+		<xs:complexContent>
+			<xs:extension base="CodedTerm"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CodedTerm">
+		<xs:attribute name="codeValue" type="xs:string" use="required"/>
+		<xs:attribute name="codeMeaning" type="xs:string" use="required"/>
+		<xs:attribute name="codingSchemeDesignator" type="xs:string" use="required"/>
+		<xs:attribute name="codingSchemeVersion" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="TagValue">
+		<xs:choice>
+			<xs:element name="CodedValue" type="CodedTerm"/>
+			<xs:element name="StringValue" type="xs:string"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="ValidTerm">
+		<xs:complexContent>
+			<xs:extension base="CodedTerm">
+				<xs:sequence minOccurs="0">
+					<xs:element name="ValidTerm" type="ValidTerm" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Numerical">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="value" type="xs:double" use="required"/>
+				<xs:attribute name="ucumString" type="xs:string" use="required"/>
+				<xs:attribute name="operator" type="operator"/>
+				<xs:attribute name="valueLabel" type="xs:string"/>
+				<xs:attribute name="valueDescription" type="xs:string"/>
+				<xs:attribute name="askForInput" type="xs:boolean" use="optional" default="false"/>
+				<xs:attribute name="defaultAnswer" type="xs:boolean" use="optional" default="false"/>
+				<xs:attribute name="nextId" type="UID" use="optional"/>
+				<xs:attribute name="noMoreQuestions" type="xs:boolean" use="optional" default="false"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Interval">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="minValue" type="xs:double" use="required"/>
+				<xs:attribute name="maxValue" type="xs:double" use="required"/>
+				<xs:attribute name="minOperator" type="operator" use="required"/>
+				<xs:attribute name="maxOperator" type="operator" use="required"/>
+				<xs:attribute name="ucumString" type="xs:string" use="required"/>
+				<xs:attribute name="valueLabel" type="xs:string"/>
+				<xs:attribute name="valueDescription" type="xs:string"/>
+				<xs:attribute name="askForInput" type="xs:boolean" use="optional" default="false"/>
+				<xs:attribute name="defaultAnswer" type="xs:boolean" use="optional" default="false"/>
+				<xs:attribute name="nextId" type="UID" use="optional"/>
+				<xs:attribute name="noMoreQuestions" type="xs:boolean" use="optional" default="false"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="CharacteristicQuantification">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="annotatorConfidence" type="xs:boolean" use="required"/>
+		<xs:attribute name="characteristicQuantificationIndex" type="xs:nonNegativeInteger" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Scale">
+		<xs:sequence minOccurs="2" maxOccurs="unbounded">
+			<xs:element name="ScaleLevel">
+				<xs:complexType>
+					<xs:attribute name="value" type="xs:string" use="required"/>
+					<xs:attribute name="valueLabel" type="xs:string"/>
+					<xs:attribute name="valueDescription" type="xs:string"/>
+					<xs:attribute name="defaultAnswer" type="xs:boolean" use="optional" default="false"/>
+					<xs:attribute name="nextId" type="UID" use="optional"/>
+					<xs:attribute name="noMoreQuestions" type="xs:boolean" use="optional" default="false"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="scaleType" type="ScaleType" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Quantile">
+		<xs:attribute name="bins" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="maxValue" type="xs:double" use="required"/>
+		<xs:attribute name="minValue" type="xs:double" use="required"/>
+		<xs:attribute name="valueLabel" type="xs:string"/>
+		<xs:attribute name="valueDescription" type="xs:string"/>
+		<xs:attribute name="defaultBin" type="xs:nonNegativeInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>Bin number starts at one, "1".</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="nextId" type="UID" use="optional"/>
+		<xs:attribute name="noMoreQuestions" type="xs:boolean" use="optional" default="false"/>
+	</xs:complexType>
+	<xs:element name="TemplateContainer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Template" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="Template"/>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Tags" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Tag" type="Tag" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="version" type="xs:string" use="required"/>
+			<xs:attribute name="description" type="xs:string" use="required"/>
+			<xs:attribute name="uid" type="UID" use="required"/>
+			<xs:attribute name="authors" type="xs:string"/>
+			<xs:attribute name="creationDate" type="xs:date"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Template">
+		<xs:sequence>
+			<xs:element name="Component" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="Component">
+							<xs:sequence>
+								<xs:element name="QuestionType" type="ValidTerm" minOccurs="0"/>
+								<xs:choice>
+									<xs:sequence>
+										<xs:choice>
+											<xs:element name="AnatomicEntity">
+												<xs:complexType>
+													<xs:sequence minOccurs="0">
+														<xs:element name="AnatomicEntityCharacteristic" minOccurs="0" maxOccurs="unbounded">
+															<xs:complexType>
+																<xs:complexContent>
+																	<xs:extension base="AnatomicEntityCharacteristic">
+																		<xs:sequence>
+																			<xs:element name="QuestionType" type="ValidTerm" minOccurs="0"/>
+																		</xs:sequence>
+																	</xs:extension>
+																</xs:complexContent>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="ImagingObservationCharacteristic" minOccurs="0" maxOccurs="unbounded">
+															<xs:complexType>
+																<xs:complexContent>
+																	<xs:extension base="ImagingObservationCharacteristic">
+																		<xs:sequence>
+																			<xs:element name="QuestionType" type="ValidTerm" minOccurs="0"/>
+																		</xs:sequence>
+																	</xs:extension>
+																</xs:complexContent>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+													<xs:attribute name="annotatorConfidence" type="xs:boolean" use="required"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="ImagingObservation">
+												<xs:complexType>
+													<xs:sequence minOccurs="0">
+														<xs:element name="ImagingObservationCharacteristic" maxOccurs="unbounded">
+															<xs:complexType>
+																<xs:complexContent>
+																	<xs:extension base="ImagingObservationCharacteristic">
+																		<xs:sequence>
+																			<xs:element name="QuestionType" type="ValidTerm" minOccurs="0"/>
+																		</xs:sequence>
+																	</xs:extension>
+																</xs:complexContent>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+													<xs:attribute name="annotatorConfidence" type="xs:boolean" use="required"/>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="Inference">
+												<xs:complexType>
+													<xs:attribute name="annotatorConfidence" type="xs:boolean" use="required"/>
+												</xs:complexType>
+											</xs:element>
+										</xs:choice>
+										<xs:element name="AllowedTerm" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:complexContent>
+													<xs:extension base="ValidTerm">
+														<xs:attribute name="defaultAnswer" type="xs:boolean" use="optional" default="false"/>
+														<xs:attribute name="nextId" type="UID" use="optional"/>
+														<xs:attribute name="noMoreQuestions" type="xs:boolean" use="optional" default="false"/>
+													</xs:extension>
+												</xs:complexContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:element name="Calculation">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="CalculationType" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:complexContent>
+															<xs:extension base="ValidTerm">
+																<xs:sequence>
+																	<xs:element name="AlgorithmType" minOccurs="0" maxOccurs="unbounded">
+																		<xs:complexType>
+																			<xs:complexContent>
+																				<xs:extension base="CodedTerm">
+																					<xs:attribute name="description" type="xs:string" use="required"/>
+																					<xs:attribute name="uniqueIdentifier" type="xs:string"/>
+																					<xs:attribute name="algorithmName" type="xs:string"/>
+																					<xs:attribute name="algorithmVersion" type="xs:string"/>
+																					<xs:attribute name="mathML" type="xs:string"/>
+																				</xs:extension>
+																			</xs:complexContent>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:extension>
+														</xs:complexContent>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+											<xs:attribute name="noMoreQuestions" type="xs:boolean" use="optional" default="false"/>
+											<xs:attribute name="nextId" type="UID" use="optional"/>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="GeometricShape">
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="GeometricShape">
+													<xs:attribute name="noMoreQuestions" type="xs:boolean" use="optional" default="false"/>
+													<xs:attribute name="nextId" type="UID" use="optional"/>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+								</xs:choice>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Tags" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Tag" type="Tag" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="version" type="xs:string" use="required"/>
+		<xs:attribute name="description" type="xs:string" use="required"/>
+		<xs:attribute name="uid" type="UID" use="required"/>
+		<xs:attribute name="codeValue" type="xs:string" use="required"/>
+		<xs:attribute name="codeMeaning" type="xs:string" use="required"/>
+		<xs:attribute name="codingSchemeDesignator" type="xs:string" use="required"/>
+		<xs:attribute name="codingSchemeVersion" type="xs:string"/>
+		<xs:attribute name="modality" type="modalityType"/>
+		<xs:attribute name="authors" type="xs:string"/>
+		<xs:attribute name="creationDate" type="xs:date"/>
+		<xs:attribute name="precedingAnnotation" type="PrecedingAnnotationRequest"/>
+	</xs:complexType>
+	<xs:complexType name="AnatomicEntityCharacteristic">
+		<xs:complexContent>
+			<xs:extension base="ComponentCharacteristic">
+				<xs:attribute name="annotatorConfidence" type="xs:boolean" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ImagingObservationCharacteristic">
+		<xs:complexContent>
+			<xs:extension base="ComponentCharacteristic">
+				<xs:attribute name="annotatorConfidence" type="xs:boolean" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Component" abstract="true">
+		<xs:attribute name="label" type="xs:string" use="required"/>
+		<xs:attribute name="minCardinality" type="xs:nonNegativeInteger" use="required"/>
+		<xs:attribute name="maxCardinality" type="xs:nonNegativeInteger" use="required"/>
+		<xs:attribute name="itemNumber" type="xs:integer" use="required"/>
+		<xs:attribute name="shouldDisplay" type="xs:boolean" use="required"/>
+		<xs:attribute name="explanatoryText" type="xs:string"/>
+		<xs:attribute name="authors" type="xs:string"/>
+		<xs:attribute name="groupLabel" type="xs:string" default=""/>
+		<xs:attribute name="id" type="UID" use="required"/>
+		<xs:attribute name="requireComment" type="xs:boolean"/>
+	</xs:complexType>
+	<xs:complexType name="ComponentCharacteristic" abstract="true">
+		<xs:sequence>
+			<xs:element name="AllowedTerm" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="ValidTerm">
+							<xs:sequence minOccurs="0">
+								<xs:element name="CharacteristicQuantification" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:complexContent>
+											<xs:extension base="CharacteristicQuantification">
+												<xs:sequence>
+													<xs:choice minOccurs="0">
+														<xs:element name="Scale" type="Scale"/>
+														<xs:element name="Numerical" type="Numerical" maxOccurs="unbounded"/>
+														<xs:element name="Interval" type="Interval" maxOccurs="unbounded"/>
+														<xs:element name="Quantile" type="Quantile"/>
+													</xs:choice>
+													<xs:element name="NonQuantifiable" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:attribute name="codeValue" type="xs:string" use="required"/>
+															<xs:attribute name="codeMeaning" type="xs:string" use="required"/>
+															<xs:attribute name="codingSchemeDesignator" type="xs:string" use="required"/>
+															<xs:attribute name="codingSchemeVersion" type="xs:string"/>
+															<xs:attribute name="valueDescription" type="xs:string"/>
+															<xs:attribute name="defaultAnswer" type="xs:boolean" use="optional" default="false"/>
+															<xs:attribute name="nextId" type="UID" use="optional"/>
+															<xs:attribute name="noMoreQuestions" type="xs:boolean" use="optional" default="false"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:extension>
+										</xs:complexContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+							<xs:attribute name="defaultAnswer" type="xs:boolean" use="optional" default="false"/>
+							<xs:attribute name="nextId" type="UID" use="optional"/>
+							<xs:attribute name="noMoreQuestions" type="xs:boolean" use="optional" default="false"/>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="label" type="xs:string" use="required"/>
+		<xs:attribute name="minCardinality" type="xs:nonNegativeInteger" use="required"/>
+		<xs:attribute name="maxCardinality" type="xs:nonNegativeInteger" use="required"/>
+		<xs:attribute name="itemNumber" type="xs:integer" use="required"/>
+		<xs:attribute name="shouldDisplay" type="xs:boolean" use="required"/>
+		<xs:attribute name="explanatoryText" type="xs:string"/>
+		<xs:attribute name="authors" type="xs:string"/>
+		<xs:attribute name="groupLabel" type="xs:string" default=""/>
+		<xs:attribute name="id" type="UID" use="required"/>
+		<xs:attribute name="requireComment" type="xs:boolean"/>
+	</xs:complexType>
+</xs:schema>
