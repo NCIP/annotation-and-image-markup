@@ -1,7 +1,7 @@
 port = 8080
 dbpath = /xmldatabase
 //CaGridSecurityUrl=https://secure01.cci.emory.edu:8443/EmorySTS/PicketLinkSTS
-CaGridSecurityUrl=https://secure01.cci.emory.edu:8443/SecurityTokenServicePF/rest/STS
-//CaGridSecurityUrl=https://secure01.cci.emory.edu:8443/SecurityTokenServiceNCIProd/rest/STS
+//CaGridSecurityUrl=https://secure01.cci.emory.edu:8443/SecurityTokenServicePF/rest/STS
+CaGridSecurityUrl=https://secure01.cci.emory.edu:8443/SecurityTokenServiceNCIProd/rest/STS
 //keystorepath = /keystore
 //keystorename = serverKeystore
