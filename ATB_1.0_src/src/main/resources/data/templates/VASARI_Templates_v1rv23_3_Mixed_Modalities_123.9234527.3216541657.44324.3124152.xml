@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright Northwestern University
+Copyright Stanford University (ATB 1.0 and ATS 1.0)
+
+Distributed under the OSI-approved BSD 3-Clause License.
+See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+-->
+
 	<Template name="LIDC_CR_DR" version="1.1" authors="AIM Team" creationDate="2011-07-10" description="This is a LIDC template version 2 revision 23." uid="2.25.223957448572358879644913128696602393814" codeValue="LIDC-2" codeMeaning="Lung Tumor Measurement 2" codingSchemeDesignator="Private_LIDC" modality="CR" precedingAnnotation="DoNotOffer">
 		<Component itemNumber="1" label="Tumor Location" explanatoryText="Location of lesion geographic center." maxCardinality="2" minCardinality="0" shouldDisplay="false">
 		   <QuestionType codeMeaning="Where is the tumor location?" codingSchemeDesignator="Private" codeValue="WTL-100"></QuestionType>	

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE personnel SYSTEM "personal.dtd">
+<!--
+Copyright Northwestern University
+Copyright Stanford University (ATB 1.0 and ATS 1.0)
 
-<!-- @version: -->
+Distributed under the OSI-approved BSD 3-Clause License.
+See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+-->
+
+<!DOCTYPE personnel SYSTEM "personal.dtd">
 
 <personnel>
 

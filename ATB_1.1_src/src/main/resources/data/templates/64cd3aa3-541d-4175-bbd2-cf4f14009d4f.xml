@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright Northwestern University
+Copyright Stanford University (ATB 1.0 and ATS 1.0)
+
+Distributed under the OSI-approved BSD 3-Clause License.
+See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+-->
+
 <Template uid="2.25.248576217325677268603117050771746797241" name="VASARI_caDSR" authors="AIM Team" version="1.0" creationDate="2011-07-11" description="This is an AIM template example using VASARI information from caDSR." modality="MR" codeMeaning="Brain Tumor Measurement" codeValue="PRI-VASARI-1" codingSchemeDesignator="VASARI" codingSchemeVersion="1.0">
    <Component label="Tumor Location" itemNumber="1" authors="AIM Team" explanatoryText="Location of lesion geographic center (not all areas of involvement)." minCardinality="1" maxCardinality="1" shouldDisplay="true">
       <QuestionType codeValue="QT-09827" codeMeaning="Where is the location of the tumor?" codingSchemeDesignator="99PRIVATEQA" codingSchemeVersion="1.0"/>

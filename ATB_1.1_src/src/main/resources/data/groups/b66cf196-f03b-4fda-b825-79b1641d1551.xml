@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright Northwestern University
+Copyright Stanford University (ATB 1.0 and ATS 1.0)
+
+Distributed under the OSI-approved BSD 3-Clause License.
+See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+-->
+
 <TemplateContainer uid="2.25.234308535339829963002466314639387168766" name="ATB-VASARI-Example" authors="AIM Team" version="1.4" creationDate="2012-07-31" description="This template is used by an application program to present imaging interpreters with available questions and answer choices for evaluating brain tumor studies." xsi:schemaLocation="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate AIMTemplate_v1rv23.xsd" xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
    <Tags>
       <Tag>

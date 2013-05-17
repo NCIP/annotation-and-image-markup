@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright Northwestern University
+Copyright Stanford University (ATB 1.0 and ATS 1.0)
+
+Distributed under the OSI-approved BSD 3-Clause License.
+See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+-->
+
 <?proc-inst-1 'foo' ?>
 <personnel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xsi:noNamespaceSchemaLocation='personal.xsd'>

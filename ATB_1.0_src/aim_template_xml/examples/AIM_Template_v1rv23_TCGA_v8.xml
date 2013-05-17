@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright Northwestern University
+Copyright Stanford University (ATB 1.0 and ATS 1.0)
+
+Distributed under the OSI-approved BSD 3-Clause License.
+See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+-->
+
 <TemplateContainer creationDate="2011-07-10" authors="The AIM team" name="VASARI Template" version="1" uid="1.23.568293.576897.13235.2345" description="This template is used by an application program to present readers and adjudicators with available option for evaluating brain tumor studies." xsi:schemaLocation="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate AIMTemplate_v1rv23.xsd" xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<Template name="VASARI_8" version="1.0" authors="AIM Team" creationDate="2011-07-11" description="This is a VASARI template version 2." uid="1.98877.357664.87986658.645.9807.45646" codeValue="VASARI-1" codeMeaning="Brain Tumor Measurement" codingSchemeDesignator="VASARI">
 		<Component itemNumber="1" label="Tumor Location" explanatoryText="Location of lesion geographic center (not all areas of involvement)." maxCardinality="1" minCardinality="1" shouldDisplay="true">

@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright Northwestern University
+Copyright Stanford University (ATB 1.0 and ATS 1.0)
+
+Distributed under the OSI-approved BSD 3-Clause License.
+See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+-->
+
 <TemplateContainer creationDate="2010-11-12" authors="The AIM team" name="VK Template" version="1" uid="1.45623.987.32345.3434.23.4.324523" description="This template is used by an application program to present readers and adjudicators with available option for evaluating brain tumor studies." xsi:schemaLocation="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate AIMTemplate_v1rv23.xsd" xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<Template name="LIDC_CT" version="1.0" authors="AIM Team" creationDate="2011-06-10" description="This is a LIDC template version 2 revision 22." uid="123.987.37894.879879.12487" codeValue="LIDC-1" codeMeaning="LungMeasurement" codingSchemeDesignator="LIDC" modality="CT" precedingAnnotation="RequireToSelect" >
 		<Component itemNumber="1" label="Tumor Location" explanatoryText="Location of lesion geographic center (not all areas of involvement)." maxCardinality="2" minCardinality="0" shouldDisplay="true">

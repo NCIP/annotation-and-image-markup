@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- edited with XMLSpy v2008 sp1 (http://www.altova.com) by Pattanasak Mongkolwat (Northwestern University) -->
+<!--
+Copyright Northwestern University
+Copyright Stanford University (ATB 1.0 and ATS 1.0)
+
+Distributed under the OSI-approved BSD 3-Clause License.
+See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+-->
+
 <ImageAnnotation xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM" aimVersion="AIM.1.0" comment="" dateTime="2008-04-11T16:04:05" cagridId="0"  codeMeaning="Target Lesion Complete Response" codeValue="112041" codingSchemeDesignator="DCM" codingSchemeVersion="" name="0024" uniqueIdentifier="1.2.288.3.2205383238.1072.1207947845.64" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIM AIM_v3_rv11_Model.xsd">
 	<calculationCollection>
 		<Calculation description="Linear Measurement" cagridId="0"  mathML="" codeMeaning="Length" codeValue="G-A22A" codingSchemeDesignator="SRT" codingSchemeVersion=""  uid="1.2489.768465.464313.4697498" >

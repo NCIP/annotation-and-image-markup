@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright Northwestern University
+Copyright Stanford University (ATB 1.0 and ATS 1.0)
+
+Distributed under the OSI-approved BSD 3-Clause License.
+See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+-->
+
 <Template uid="1.3.6.1.4.1.14519.5.2.1.1" name="TCGA-BRCA Mass" authors="kirbyju" version="1.2" creationDate="2012-04-18" description="TCGA Breast Research Team" modality="MG" codeMeaning="TCGA-BRCA Mass" codeValue="99NCI_TCGA_BRCA" codingSchemeDesignator="99NCI_CIP">
    <Component label="Measure the mass" itemNumber="0" authors="kirbyju" explanatoryText="Use the ruler tool to measure the longest diameter of the mass." minCardinality="1" maxCardinality="1" shouldDisplay="false">
       <ImagingObservation annotatorConfidence="false"/>

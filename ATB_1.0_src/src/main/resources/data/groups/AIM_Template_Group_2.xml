@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright Northwestern University
+Copyright Stanford University (ATB 1.0 and ATS 1.0)
+
+Distributed under the OSI-approved BSD 3-Clause License.
+See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+-->
+
 <TemplateContainer creationDate="2011-07-03" authors="The AIM team"
 	name="VASARI Template Group" version="1"
 	uid="2.25.594855684734358879644913128696602393814"

@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright Northwestern University
+Copyright Stanford University (ATB 1.0 and ATS 1.0)
+
+Distributed under the OSI-approved BSD 3-Clause License.
+See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+-->
+
 <TemplateContainer authors="tuser" name="Mammo Template" version="1" uid="2.34.65675768.8908123.3234543.6786" description="This template is used by an application program to present readers and adjudicators with available option for evaluating brain tumor studies" creationDate="2011-06-17" xsi:schemaLocation="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate AIMTemplate_v1rv23.xsd" xmlns="gme://caCORE.caCORE/3.2/edu.northwestern.radiology.AIMTemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Template name="MarkupOnly" version="1.0" authors="tuser" description="TCGA-GBM markup only template" uid="1.2.45678.545634.23257" codeValue="na" codeMeaning="na" codingSchemeDesignator="na" creationDate="2011-06-17">
     <Component label="Lesion Size" minCardinality="0" maxCardinality="1" itemNumber="0" shouldDisplay="false" explanatoryText="LS" authors="tuser">

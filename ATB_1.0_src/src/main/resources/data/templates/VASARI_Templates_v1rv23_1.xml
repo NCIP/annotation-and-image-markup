@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright Northwestern University
+Copyright Stanford University (ATB 1.0 and ATS 1.0)
+
+Distributed under the OSI-approved BSD 3-Clause License.
+See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+-->
+
 	<Template name="VASARI_ONE" version="1.0" authors="AIM Team" creationDate="2011-07-10" description="This is a VASARI template version 2 revision 23." uid="2.25.223215684734358879644913128696602393814" codeValue="VASARI-1" codeMeaning="VK1: Brain Tumor Measurement" codingSchemeDesignator="VASARI" modality="MR" precedingAnnotation="RequireToSelect" >
 		<Component itemNumber="1" label="Tumor Location" explanatoryText="Location of lesion geographic center (not all areas of involvement)." maxCardinality="2" minCardinality="0" shouldDisplay="true">
 			<QuestionType codeMeaning="Where is the tumor location?" codingSchemeDesignator="Private" codeValue="WTL-100"></QuestionType>			
