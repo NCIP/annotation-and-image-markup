@@ -1,17 +1,25 @@
+/*
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
+
 package edu.stanford.isis.ats.utils;
 
 import java.util.Collection;
 import java.util.Iterator;
 
 /**
- * 
+ *
  * @author Vladimir Kleper
  *
  */
 public class ATSStringUtils {
 
     private static final String UID_REGEX = "[0-2]((\\.0)|(\\.[1-9][0-9]*))*";
-    
+
     public static int tryParseInt(String in, int defaultValue) {
         try {
             return Integer.parseInt(in);
@@ -25,7 +33,7 @@ public class ATSStringUtils {
      *  NOTE: Characters that are already upper case are ignored. To get proper Title Case, call String.toLower() first.
      *  Example: toTitleCase("stRIng onE") results in "StRIng OnE" output
      * @param input
-     * @return given string 
+     * @return given string
      */
     public static String toTitleCase(String input) {
         final StringBuilder titleCase = new StringBuilder();
@@ -52,16 +60,16 @@ public class ATSStringUtils {
     public static boolean isValidUid(String uidToValidate) {
         return uidToValidate != null && uidToValidate.length() <= 64 && uidToValidate.matches(UID_REGEX);
     }
-    
+
     /**
      * Get file name out of the full path name
      * @param filePathName
-     * @return file name of the file's path & name if found, or the original file path name 
+     * @return file name of the file's path & name if found, or the original file path name
      */
     public static String fileNameFromPathName (String filePathName) {
         if (filePathName == null)
             return filePathName;
-        
+
         final String[] separators = {"\\", "/"};
         for (String sep : separators) {
             int idx = filePathName.lastIndexOf(sep);

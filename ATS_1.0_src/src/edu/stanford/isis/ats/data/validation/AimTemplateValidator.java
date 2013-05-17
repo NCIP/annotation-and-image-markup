@@ -1,3 +1,11 @@
+/*
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
+
 package edu.stanford.isis.ats.data.validation;
 
 import java.io.File;
@@ -31,15 +39,15 @@ import edu.stanford.isis.ats.utils.ATSStringUtils;
 
 /**
  * AIM Template Validation class
- * 
+ *
  * @author Vladimir Kleper
  */
 public class AimTemplateValidator {
     private static ATSLogger log = ATSLogger.getLogger();
-    
+
     /**
      * Validates given template against its XSD and returns the template's UID
-     * 
+     *
      * @param filePathName - template to validate
      * @return template UID
      * @throws TemplateValidationException if the given AIM template file does not pass validation
@@ -54,7 +62,7 @@ public class AimTemplateValidator {
             final String expression = "/aim:TemplateContainer/@*";
             fileInputStream = new FileInputStream(file);
             final InputSource inputSource = new InputSource(fileInputStream);
-            
+
             xpath.setNamespaceContext(new NamespaceContext() {
                 @SuppressWarnings("rawtypes")
                 @Override
@@ -72,7 +80,7 @@ public class AimTemplateValidator {
                     return XMLConstants.NULL_NS_URI;
                 }
             });
-            
+
             NodeList attributes = (NodeList)xpath.evaluate(expression, inputSource, XPathConstants.NODESET);
             for (int i=0; i < attributes.getLength() && (uid == null || xsdName == null); i++) {
                 Attr attr = (Attr)attributes.item(i);
@@ -101,14 +109,14 @@ public class AimTemplateValidator {
                 } catch (IOException e) {
                     log.error("(ATV-106): Failed to close file", e);
                 } finally {
-                    fileInputStream = null;                  
+                    fileInputStream = null;
                 }
             }
         }
-        
+
         if (xsdName == null)
             throw new TemplateValidationException("Failed to validate the template", "Could not get schema file name from the document: " + file.getName());
-        
+
         // Load one of the known XSDs
         final InputStream schemaFile = ResourceManager.getInstance().getResourceAsStream(xsdName);
         if (schemaFile == null)
@@ -123,7 +131,7 @@ public class AimTemplateValidator {
             Schema schema = schemaFactory.newSchema(xsdFile);
             Validator validator = schema.newValidator();
             validator.validate(xmlFile);
-            
+
             // Validate UID
             if (!ATSStringUtils.isValidUid(uid)) {
                 log.error("Template has an invalid UID {" + uid + "}: " + file.getName(), null);
@@ -145,11 +153,11 @@ public class AimTemplateValidator {
                 } catch (IOException e) {
                     log.error("(ATV-150): Failed to close file", e);
                 } finally {
-                    fileInputStream = null;                  
+                    fileInputStream = null;
                 }
             }
         }
-        
+
         return uid;
     }
 }

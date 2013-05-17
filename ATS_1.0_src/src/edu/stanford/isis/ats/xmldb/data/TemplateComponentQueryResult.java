@@ -1,3 +1,12 @@
+/*
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
+
+
 package edu.stanford.isis.ats.xmldb.data;
 
 import java.util.Arrays;
@@ -23,19 +32,19 @@ public class TemplateComponentQueryResult {
     private TemplatePermissionType permissionType;
     private Date publishDate;
     private String templateComponent; // String representation of a template document
-    
+
     public String getFileName() {
         return fileName;
     }
-    
+
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
-    
+
     public String getTemplateOwner() {
         return templateOwner;
     }
-    
+
     public void setTemplateOwner(String templateOwner) {
         this.templateOwner = templateOwner;
     }
@@ -71,13 +80,13 @@ public class TemplateComponentQueryResult {
     public void setTemplateComponent(String templateComponent) {
         this.templateComponent = templateComponent;
     }
-    
+
     /**
      * Parses result of a query into the data object
      */
     public static QueryResultAdapter<TemplateComponentQueryResult> templateComponentQueryResultAdapter = new QueryResultAdapter<TemplateComponentQueryResult>() {
         protected final ATSLogger log = ATSLogger.getLogger();
-        
+
         @Override
         public TemplateComponentQueryResult adaptResult(XmlValue value) {
             try {
@@ -107,7 +116,7 @@ public class TemplateComponentQueryResult {
                 queryResult.setAllowedUsers(allowedUsers);
                 // 2. Get the document
                 queryResult.setTemplateComponent(xmlDocument.getContentAsString());
-                
+
                 return queryResult;
             } catch(XmlException ex) {
                 log.error("(TQQR-120: Failed to parse query result into a Template Container", ex);
