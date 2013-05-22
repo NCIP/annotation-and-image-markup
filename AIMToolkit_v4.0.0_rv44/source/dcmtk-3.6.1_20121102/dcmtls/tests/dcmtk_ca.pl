@@ -1,25 +1,9 @@
-#!/usr/local/bin/perl
+#L
+#  Copyright Northwestern University
+#  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 #
-#  Copyright (C) 1998-2010, OFFIS e.V.
-#  All rights reserved.  See COPYRIGHT file for details.
-#
-#  This software and supporting documentation were developed by
-#
-#   OFFIS e.V.
-#   R&D Division Health
-#   Escherweg 2
-#   D-26121 Oldenburg, Germany
-#
-#
-#  Module: dcmpstat
-#
-#  Author: Marco Eichelberg
-#
-#  Purpose:
-#    This script simplifies the set-up and operation of a Certification
-#    Authority by means of OpenSSL, for use with the TLS-enhanced
-#    DCMTK DICOM Tools.
-#
+#  Distributed under the OSI-approved BSD 3-Clause License.
+#  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 
 $const_openssl="openssl";
 $const_ca_key="cakey.pem";

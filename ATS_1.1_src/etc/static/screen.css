@@ -1,15 +1,10 @@
-/* -----------------------------------------------------------------------
-
-
- Blueprint CSS Framework 1.0.1
- http://blueprintcss.org
-
-   * Copyright (c) 2007-Present. See LICENSE for more info.
-   * See README for instructions on how to use Blueprint.
-   * For credits and origins, see AUTHORS.
-   * This is a compressed file. See the sources in the 'src' directory.
-
------------------------------------------------------------------------ */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 /* reset.css */
 html {margin:0;padding:0;border:0;}

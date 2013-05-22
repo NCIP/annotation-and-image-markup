@@ -1,46 +1,9 @@
-#!/usr/local/bin/perl
+#L
+#  Copyright Northwestern University
+#  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 #
-# Copyright & Disclaimer.
-#	This set of routines may be freely distributed, modified and
-#	used, provided this copyright & disclaimer remains intact.
-#	This package is used at your own risk, if it does what you
-#	want, good; if it doesn't, modify it or use something else--but
-#	don't blame me. Support level = negligable (i.e. mail bugs but
-#	not requests for extensions)
-#
-# Module: dcmwlm (WWW Component)
-#
-# Author:
-# 	James Tappin: sjt@xun8.sr.bham.ac.uk
-#	School of Physics & Space Research University of Birmingham
-#	Feb 1993.
-#
-# Purpose:
-#   The CGI_HANDLERS deal with basic CGI POST or GET method request
-#   elements such as those delivered by an HTTPD form, i.e. a url
-#   encoded line of "=" separated key=value pairs separated by &'s
-#
-# Renamed from "cgi_handlers.pl" to "urldecod.ph" to conform to
-# ISO High Sierra file naming conventions.
-#
-# Last Update:      $Author: joergr $
-# Update Date:      $Date: 2010-10-14 13:02:02 $
-# CVS/RCS Revision: $Revision: 1.2 $
-# Status:           $State: Exp $
-#
-# CVS/RCS Log
-#   $Log: urldecod.ph,v $
-#   Revision 1.2  2010-10-14 13:02:02  joergr
-#   Updated copyright header. Added reference to COPYRIGHT file.
-#
-#   Revision 1.1  2002/12/03 12:16:18  wilkens
-#   Added files und functionality from the dcmtk/wlisctn folder to dcmtk/dcmwlm
-#   so that dcmwlm can now completely replace wlistctn in the public domain part
-#   of dcmtk. Pertaining to this replacement requirement, another optional return
-#   key attribute was integrated into the wlm utilities.
-#
-#
-#
+#  Distributed under the OSI-approved BSD 3-Clause License.
+#  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 
 
 # Routines:

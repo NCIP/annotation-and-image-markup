@@ -1,31 +1,9 @@
-#!/usr/local/bin/perl
+#L
+#  Copyright Northwestern University
+#  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 #
-#  Copyright (C) 1996-2010, OFFIS e.V.
-#  All rights reserved.  See COPYRIGHT file for details.
-#
-#  This software and supporting documentation were developed by
-#
-#    OFFIS e.V.
-#    R&D Division Health
-#    Escherweg 2
-#    D-26121 Oldenburg, Germany
-#
-#  for CEN/TC251/WG4 as a contribution to the Computer Assisted Radiology
-#  (CAR) 1996 DICOM Demonstration.
-#
-#
-# Module: dcmwlm (WWW Component)
-#
-# Author: Marco Eichelberg
-#
-# Purpose:
-#   This module contains perl procedures which allow to convert between
-#   HTML encoded strings containing key words like "&uuml;" for ISO Latin 1
-#   characters and 8-Bit ISO 8859-1 (ISO Latin 1) encoded string.
-#   The HTML strings must obey Unix line end conventions, the ISO strings
-#   usw DICOM/DOS conventions (CR/LF).
-#
-
+#  Distributed under the OSI-approved BSD 3-Clause License.
+#  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 
 # Parameter: Binary coded ISO 8859-1 string
 # Result: HTML coded string
