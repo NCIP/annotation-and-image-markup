@@ -6,6 +6,7 @@
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
 
+
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/dcmnet/dccfenmp.h" /* for class DcmExtendedNegotiationMap */
 #include "dcmtk/dcmnet/dccfpcmp.h" /* for class DcmPresentationContextMap */
