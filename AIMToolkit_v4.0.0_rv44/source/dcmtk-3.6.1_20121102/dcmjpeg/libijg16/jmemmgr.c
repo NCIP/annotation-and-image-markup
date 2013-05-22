@@ -1,28 +1,10 @@
-/*
- * jmemmgr.c
- *
- * Copyright (C) 1991-1998, Thomas G. Lane.
- * This file is part of the Independent JPEG Group's software.
- * For conditions of distribution and use, see the accompanying README file.
- *
- * This file contains the JPEG system-independent memory management
- * routines.  This code is usable across a wide variety of machines; most
- * of the system dependencies have been isolated in a separate file.
- * The major functions provided here are:
- *   * pool-based allocation and freeing of memory;
- *   * policy decisions about how to divide available memory among the
- *     virtual arrays;
- *   * control logic for swapping virtual arrays between main memory and
- *     backing storage.
- * The separate system-dependent file provides the actual backing-storage
- * access code, and it contains the policy decision about how much total
- * main memory to use.
- * This file is system-dependent in the sense that some of its functions
- * are unnecessary in some systems.  For example, if there is enough virtual
- * memory so that backing storage will never be used, much of the virtual
- * array control logic could be removed.  (Of course, if you have that much
- * memory then you shouldn't care about a little bit of unused code...)
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 #define JPEG_INTERNALS
 #define AM_MEMORY_MANAGER	/* we define jvirt_Xarray_control structs */

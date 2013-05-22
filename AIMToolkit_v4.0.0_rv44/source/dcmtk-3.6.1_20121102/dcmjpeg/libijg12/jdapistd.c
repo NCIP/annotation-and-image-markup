@@ -1,18 +1,10 @@
-/*
- * jdapistd.c
- *
- * Copyright (C) 1994-1998, Thomas G. Lane.
- * This file is part of the Independent JPEG Group's software.
- * For conditions of distribution and use, see the accompanying README file.
- *
- * This file contains application interface code for the decompression half
- * of the JPEG library.  These are the "standard" API routines that are
- * used in the normal full-decompression case.  They are not used by a
- * transcoding-only application.  Note that if an application links in
- * jpeg_start_decompress, it will end up linking in the entire decompressor.
- * We thus must separate this file from jdapimin.c to avoid linking the
- * whole decompression library into a transcoder.
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 #define JPEG_INTERNALS
 #include "jinclude12.h"

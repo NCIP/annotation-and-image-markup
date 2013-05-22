@@ -1,55 +1,10 @@
-/*
- *
- *  Copyright (C) 1994-2012, OFFIS e.V.
- *  All rights reserved.  See COPYRIGHT file for details.
- *
- *  This software and supporting documentation were developed by
- *
- *    OFFIS e.V.
- *    R&D Division Health
- *    Escherweg 2
- *    D-26121 Oldenburg, Germany
- *
- *
- *  Module:  dcmdata
- *
- *  Author:  Andrew Hewett, Joerg Riesmeier
- *
- *  Purpose:
- *  Make a DICOMDIR according to the DICOM Part 11 Media Storage Application
- *  Profiles. Supports the following profiles:
- *  - General Purpose CD-R Interchange (STD-GEN-CD)
- *  - General Purpose Interchange on DVD-RAM Media (STD-GEN-DVD-RAM)
- *  If build with 'BUILD_DCMGPDIR_AS_DCMMKDIR' it also supports:
- *  - General Purpose DVD Interchange with JPEG (STD-GEN-DVD-JPEG)
- *  - General Purpose DVD Interchange with JPEG 2000 (STD-GEN-DVD-J2K)
- *  - General Purpose BD Interchange with JPEG (STD-GEN-BD-JPEG)
- *  - General Purpose BD Interchange with JPEG 2000 (STD-GEN-BD-J2K)
- *  - General Purpose BD Interchange with MPEG2 MP@ML (STD-GEN-BD-MPEG2-MPML)
- *  - General Purpose BD Interchange with MPEG2 MP@HL (STD-GEN-BD-MPEG2-MPHL)
- *  - General Purpose BD Interchange with MPEG-4 AVC/H.264 HiP@Level4.1 (STD-GEN-BD-MPEG4-HPLV41)
- *  - General Purpose BD Interchange with MPEG-4 AVC/H.264 BD-Compatible HiP@Level4.1 (STD-GEN-BD-MPEG4-HPLV41BD)
- *  - General Purpose USB and Flash Memory Interchange with JPEG (STD-GEN-USB/MMC/CF/SD-JPEG)
- *  - General Purpose USB and Flash Memory Interchange with JPEG 2000 (STD-GEN-USB/MMC/CF/SD-J2K)
- *  - General Purpose MIME Interchange (STD-GEN-MIME)
- *  - DVD Interchange with MPEG2 MP@ML (STD-DVD-MPEG2-MPML)
- *  - Basic Cardiac X-Ray Angiographic Studies on CD-R Media (STD-XABC-CD)
- *  - 1024 X-Ray Angiographic Studies on CD-R Media (STD-XA1K-CD)
- *  - 1024 X-Ray Angiographic Studies on DVD Media (STD-XA1K-DVD)
- *  - Dental Radiograph Interchange (STD-DEN-CD)
- *  - CT/MR Studies on various Media (STD-CTMR-xxxx)
- *  - Ultrasound Single Frame for Image Display (STD-US-ID-SF-xxxx)
- *  - Ultrasound Single Frame with Spatial Calibration (STD-US-SC-SF-xxxx)
- *  - Ultrasound Single Frame with Combined Calibration (STD-US-CC-SF-xxxx)
- *  - Ultrasound Single & Multi-Frame for Image Display (STD-US-ID-MF-xxxx)
- *  - Ultrasound Single & Multi-Frame with Spatial Calibration (STD-US-SC-MF-xxxx)
- *  - Ultrasound Single & Multi-Frame with Combined Calibration (STD-US-CC-MF-xxxx)
- *  - 12-lead ECG Interchange on Diskette (STD-WVFM-ECG-FD)
- *  - Hemodynamic Waveform Interchange on Diskette (STD-WVFM-HD-FD)
- *  There should be no need to set this compiler flag manually, just compile
- *  dcmjpeg/apps/dcmmkdir.cc.
- *
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 
 #include "dcmtk/config/osconfig.h"     /* make sure OS specific configuration is included first */

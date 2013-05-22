@@ -1,19 +1,9 @@
-/*
-**
-** Author: Andrew Hewett, medigration GmbH
-**
-** Module: extneg.h
-**
-** Purpose:
-**   Extended Negotiation for A-ASSOCIATE
-**
-** Last Update:         $Author: joergr $
-** Update Date:         $Date: 2010-10-14 13:17:22 $
-** CVS/RCS Revision:    $Revision: 1.4 $
-** Status:              $State: Exp $
-**
-** CVS/RCS Log at end of file
-**
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
 
 #ifndef EXTNEG_H

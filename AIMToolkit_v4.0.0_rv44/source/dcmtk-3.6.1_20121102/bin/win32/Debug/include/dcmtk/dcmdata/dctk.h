@@ -1,23 +1,10 @@
-/*
- *
- *  Copyright (C) 1994-2011, OFFIS e.V.
- *  All rights reserved.  See COPYRIGHT file for details.
- *
- *  This software and supporting documentation were developed by
- *
- *    OFFIS e.V.
- *    R&D Division Health
- *    Escherweg 2
- *    D-26121 Oldenburg, Germany
- *
- *
- *  Module:  dcmdata
- *
- *  Author:  Gerd Ehlers
- *
- *  Purpose: include most dcmdata files that are usually required
- *
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 #ifndef DCTK_H
 #define DCTK_H

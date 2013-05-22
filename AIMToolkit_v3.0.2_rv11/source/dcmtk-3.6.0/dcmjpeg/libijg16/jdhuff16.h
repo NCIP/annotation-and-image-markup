@@ -1,15 +1,10 @@
-/*
- * jdhuff.h
- *
- * Copyright (C) 1991-1998, Thomas G. Lane.
- * This file is part of the Independent JPEG Group's software.
- * For conditions of distribution and use, see the accompanying README file.
- *
- * This file contains declarations for Huffman entropy decoding routines
- * that are shared between the sequential decoder (jdhuff.c), the
- * progressive decoder (jdphuff.c) and the lossless decoder (jdlhuff.c).
- * No other modules need to see these.
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 /* Short forms of external names for systems with brain-damaged linkers. */
 

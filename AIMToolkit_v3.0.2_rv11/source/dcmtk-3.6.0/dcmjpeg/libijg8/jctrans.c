@@ -1,14 +1,10 @@
-/*
- * jctrans.c
- *
- * Copyright (C) 1995-1998, Thomas G. Lane.
- * This file is part of the Independent JPEG Group's software.
- * For conditions of distribution and use, see the accompanying README file.
- *
- * This file contains library routines for transcoding compression,
- * that is, writing raw DCT coefficient arrays to an output JPEG file.
- * The routines in jcapimin.c will also be needed by a transcoder.
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 #define JPEG_INTERNALS
 #include "jinclude8.h"

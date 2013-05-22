@@ -1,18 +1,10 @@
-/*
- * jdcoefct.c
- *
- * Copyright (C) 1994-1998, Thomas G. Lane.
- * This file is part of the Independent JPEG Group's software.
- * For conditions of distribution and use, see the accompanying README file.
- *
- * This file contains the coefficient buffer controller for decompression.
- * This controller is the top level of the lossy JPEG decompressor proper.
- * The coefficient buffer lies between entropy decoding and inverse-DCT steps.
- *
- * In buffered-image mode, this controller is the interface between
- * input-oriented processing and output-oriented processing.
- * Also, the input side (only) is used when reading a file for transcoding.
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 #define JPEG_INTERNALS
 #include "jinclude8.h"

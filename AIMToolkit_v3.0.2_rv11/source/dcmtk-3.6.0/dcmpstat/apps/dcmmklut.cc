@@ -1,33 +1,10 @@
-/*
- *
- *  Copyright (C) 1998-2010, OFFIS e.V.
- *  All rights reserved.  See COPYRIGHT file for details.
- *
- *  This software and supporting documentation were developed by
- *
- *    OFFIS e.V.
- *    R&D Division Health
- *    Escherweg 2
- *    D-26121 Oldenburg, Germany
- *
- *
- *  Module:  dcmpstat
- *
- *  Authors: Marco Eichelberg, Joerg Riesmeier
- *
- *  Purpose: This application reads a DICOM image, adds a Modality LUT,
- *    a VOI LUT or a Presentation LUT to the image and writes it back.
- *    The LUT has a gamma curve shape or can be imported from an external
- *    file.
- *
- *  Last Update:      $Author: joergr $
- *  Update Date:      $Date: 2010-12-15 17:03:38 $
- *  CVS/RCS Revision: $Revision: 1.47 $
- *  Status:           $State: Exp $
- *
- *  CVS/RCS Log at end of file
- *
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 
 #include "dcmtk/config/osconfig.h"    /* make sure OS specific configuration is included first */

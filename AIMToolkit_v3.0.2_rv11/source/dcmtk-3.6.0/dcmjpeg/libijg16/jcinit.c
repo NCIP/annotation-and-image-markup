@@ -1,19 +1,10 @@
-/*
- * jcinit.c
- *
- * Copyright (C) 1991-1997, Thomas G. Lane.
- * This file is part of the Independent JPEG Group's software.
- * For conditions of distribution and use, see the accompanying README file.
- *
- * This file contains initialization logic for the JPEG compressor.
- * This routine is in charge of selecting the modules to be executed and
- * making an initialization call to each one.
- *
- * Logically, this code belongs in jcmaster.c.  It's split out because
- * linking this routine implies linking the entire compression library.
- * For a transcoding-only application, we want to be able to use jcmaster.c
- * without linking in the whole library.
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 #define JPEG_INTERNALS
 #include "jinclude16.h"

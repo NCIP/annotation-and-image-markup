@@ -1,14 +1,10 @@
-/*
- *
- *  Copyright (c) 2008-2012, OFFIS e.V. and ICSMED AG, Oldenburg, Germany
- *  All rights reserved.  See COPYRIGHT file for details.
- *
- *  Source file for class DRTReferencedReferenceImageSequenceInRTBeamsModule
- *
- *  Generated automatically from DICOM PS 3.3-2007
- *  File created on 2012-02-01 16:51:15 
- *
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 
 #include "dcmtk/config/osconfig.h"     // make sure OS specific configuration is included first

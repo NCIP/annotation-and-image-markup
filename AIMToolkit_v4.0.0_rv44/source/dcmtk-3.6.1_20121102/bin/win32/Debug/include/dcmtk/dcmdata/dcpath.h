@@ -1,24 +1,10 @@
-/*
- *
- *  Copyright (C) 2008-2012, OFFIS e.V.
- *  All rights reserved.  See COPYRIGHT file for details.
- *
- *  This software and supporting documentation were developed by
- *
- *    OFFIS e.V.
- *    R&D Division Health
- *    Escherweg 2
- *    D-26121 Oldenburg, Germany
- *
- *
- *  Module:  dcmdata
- *
- *  Author:  Michael Onken
- *
- *  Purpose: Class declarations for accessing DICOM dataset structures (items,
- *           sequences and leaf elements via string-based path access.
- *
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 #ifndef DCPATH_H
 #define DCPATH_H

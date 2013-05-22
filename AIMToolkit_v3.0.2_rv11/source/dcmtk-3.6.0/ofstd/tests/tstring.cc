@@ -1,46 +1,10 @@
-/*
- *
- *  Copyright (C) 1997-2010, OFFIS e.V.
- *  All rights reserved.  See COPYRIGHT file for details.
- *
- *  This software and supporting documentation were developed by
- *
- *    OFFIS e.V.
- *    R&D Division Health
- *    Escherweg 2
- *    D-26121 Oldenburg, Germany
- *
- *
- *  Module:  ofstd
- *
- *  Purpose: test program for C++ string class
- *
- *  This file is derived from a file with the following copyright statement:
- *  Copyright (C) 1994 Free Software Foundation
- *
- *  This file is part of the GNU ANSI C++ Library.  This library is free
- *  software; you can redistribute it and/or modify it under the terms of
- *  the GNU General Public License as published by the Free Software
- *  Foundation; either version 2, or (at your option) any later version.
- *
- *  This library is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this library; see the file COPYING.  If not, write to the Free
- *  Software Foundation, 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
- *
- *
- *  Last Update:      $Author: joergr $
- *  Update Date:      $Date: 2010-10-14 13:15:16 $
- *  CVS/RCS Revision: $Revision: 1.10 $
- *  Status:           $State: Exp $
- *
- *  CVS/RCS Log at end of file
- *
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 #include "dcmtk/config/osconfig.h"     /* include OS specific configuration first */
 

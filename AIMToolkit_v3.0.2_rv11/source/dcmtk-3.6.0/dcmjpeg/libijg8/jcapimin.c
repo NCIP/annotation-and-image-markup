@@ -1,20 +1,10 @@
-/*
- * jcapimin.c
- *
- * Copyright (C) 1994-1998, Thomas G. Lane.
- * This file is part of the Independent JPEG Group's software.
- * For conditions of distribution and use, see the accompanying README file.
- *
- * This file contains application interface code for the compression half
- * of the JPEG library.  These are the "minimum" API routines that may be
- * needed in either the normal full-compression case or the transcoding-only
- * case.
- *
- * Most of the routines intended to be called directly by an application
- * are in this file or in jcapistd.c.  But also see jcparam.c for
- * parameter-setup helper routines, jcomapi.c for routines shared by
- * compression and decompression, and jctrans.c for the transcoding case.
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 #define JPEG_INTERNALS
 #include "jinclude8.h"

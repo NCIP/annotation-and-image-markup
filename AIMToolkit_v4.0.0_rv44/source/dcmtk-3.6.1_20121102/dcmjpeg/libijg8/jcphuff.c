@@ -1,16 +1,10 @@
-/*
- * jcphuff.c
- *
- * Copyright (C) 1995-1998, Thomas G. Lane.
- * This file is part of the Independent JPEG Group's software.
- * For conditions of distribution and use, see the accompanying README file.
- *
- * This file contains Huffman entropy encoding routines for progressive JPEG.
- *
- * We do not support output suspension in this module, since the library
- * currently does not allow multiple-scan files to be written with output
- * suspension.
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 #define JPEG_INTERNALS
 #include "jinclude8.h"

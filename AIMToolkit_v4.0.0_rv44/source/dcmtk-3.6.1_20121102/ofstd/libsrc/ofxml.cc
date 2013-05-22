@@ -1,23 +1,10 @@
-/*
- *
- *  Copyright (C) 2011-2012, OFFIS e.V.
- *  All rights reserved.  See COPYRIGHT file for details.
- *
- *  This software and supporting documentation were slightly modified by
- *
- *    OFFIS e.V.
- *    R&D Division Health
- *    Escherweg 2
- *    D-26121 Oldenburg, Germany
- *
- *  For the original copyright, see the following paragraphs.
- *  All modifications in the code are marked with a "DCMTK:" comment.
- *
- *  Module:  ofstd
- *
- *  Purpose: Simple non-validating XML parser
- *
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 /**
  ****************************************************************************

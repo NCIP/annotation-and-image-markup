@@ -1,15 +1,10 @@
-/*
- *
- *  Copyright (c) 2008-2012, OFFIS e.V. and ICSMED AG, Oldenburg, Germany
- *  All rights reserved.  See COPYRIGHT file for details.
- *
- *  Header file for class DRTTypes
- *
- *  Generated manually based on dsrtypes.h
- *  File created on 2008-12-05
- *  Last modified on 2012-10-24 by Riesmeier
- *
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 
 #ifndef DRTTYPES_H

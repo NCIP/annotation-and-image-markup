@@ -1,34 +1,10 @@
-/*
- *
- *  Copyright (C) 2000-2011, OFFIS e.V.
- *  All rights reserved.  See COPYRIGHT file for details.
- *
- *  This software and supporting documentation were developed by
- *
- *    OFFIS e.V.
- *    R&D Division Health
- *    Escherweg 2
- *    D-26121 Oldenburg, Germany
- *
- *
- *  Module:  ofstd
- *
- *  Author:  Marco Eichelberg
- *
- *  Purpose: Provides operating system independent abstractions for basic
- *           multi-thread concepts: threads, thread specific data,
- *           semaphores, mutexes and read/write locks. The implementation
- *           of these classes supports the Solaris, POSIX and Win32
- *           multi-thread APIs.
- *
- *  Last Update:      $Author: onken $
- *  Update Date:      $Date: 2011-01-04 14:47:11 $
- *  CVS/RCS Revision: $Revision: 1.22 $
- *  Status:           $State: Exp $
- *
- *  CVS/RCS Log at end of file
- *
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 #include "dcmtk/config/osconfig.h"
 

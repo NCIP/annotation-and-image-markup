@@ -1,23 +1,10 @@
-/*
- *
- *  Copyright (C) 1998-2012, OFFIS e.V.
- *  All rights reserved.  See COPYRIGHT file for details.
- *
- *  This software and supporting documentation were developed by
- *
- *    OFFIS e.V.
- *    R&D Division Health
- *    Escherweg 2
- *    D-26121 Oldenburg, Germany
- *
- *
- *  Module:  ofstd
- *
- *  Author:  Joerg Riesmeier
- *
- *  Purpose: Template class for command line arguments (Source)
- *
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 
 #include "dcmtk/config/osconfig.h"

@@ -1,15 +1,10 @@
-/*
- * jcmaster.c
- *
- * Copyright (C) 1991-1998, Thomas G. Lane.
- * This file is part of the Independent JPEG Group's software.
- * For conditions of distribution and use, see the accompanying README file.
- *
- * This file contains master control logic for the JPEG compressor.
- * These routines are concerned with parameter validation, initial setup,
- * and inter-pass control (determining the number of passes and the work 
- * to be done in each pass).
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 #define JPEG_INTERNALS
 #include "jinclude12.h"

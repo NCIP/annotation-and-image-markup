@@ -1,15 +1,9 @@
-/*
-**
-** Author: Andrew Hewett                Created: 1998.09.03
-** 
-** Module: dimget
-**
-** Purpose: 
-**      This file contains the routines which help with
-**      query/retrieve services using the C-GET operation.
-**
-**      Module Prefix: DIMSE_
-**
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
 
 /* 

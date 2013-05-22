@@ -1,30 +1,10 @@
-/*
- *
- *  Copyright (C) 1994-2010, OFFIS e.V.
- *  All rights reserved.  See COPYRIGHT file for details.
- *
- *  This software and supporting documentation were developed by
- *
- *    OFFIS e.V.
- *    R&D Division Health
- *    Escherweg 2
- *    D-26121 Oldenburg, Germany
- *
- *
- *  Module:  dcmdata
- *
- *  Author:  Gerd Ehlers, Andreas Barth
- *
- *  Purpose: Interface of class DcmDicomDir
- *
- *  Last Update:      $Author: uli $
- *  Update Date:      $Date: 2010-11-15 13:58:43 $
- *  CVS/RCS Revision: $Revision: 1.28 $
- *  Status:           $State: Exp $
- *
- *  CVS/RCS Log at end of file
- *
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 #ifndef DCDICDIR_H
 #define DCDICDIR_H

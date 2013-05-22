@@ -1,30 +1,10 @@
-/*
- *
- *  Copyright (C) 2008-2010, OFFIS e.V.
- *  All rights reserved.  See COPYRIGHT file for details.
- *
- *  This software and supporting documentation were developed by
- *
- *    OFFIS e.V.
- *    R&D Division Health
- *    Escherweg 2
- *    D-26121 Oldenburg, Germany
- *
- *
- *  Module:  dcmnet
- *
- *  Author:  Michael Onken
- *
- *  Purpose: Base class for Service Class Users (SCUs)
- *
- *  Last Update:      $Author: onken $
- *  Update Date:      $Date: 2010-12-21 09:37:36 $
- *  CVS/RCS Revision: $Revision: 1.16 $
- *  Status:           $State: Exp $
- *
- *  CVS/RCS Log at end of file
- *
- */
+/*L
+*  Copyright Northwestern University
+*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+*
+*  Distributed under the OSI-approved BSD 3-Clause License.
+*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+*/
 
 #include "dcmtk/config/osconfig.h"  /* make sure OS specific configuration is included first */
 
