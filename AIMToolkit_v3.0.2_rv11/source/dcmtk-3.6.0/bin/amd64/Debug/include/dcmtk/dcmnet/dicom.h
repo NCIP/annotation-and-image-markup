@@ -6,38 +6,6 @@
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
 
-/*
-**          dicom.h
-**
-**  This header defines public typedefs for the DICOM software produced
-**  by the CEN Dicom Development Team.  These definitions are
-**  meant to be used in a number of packages and need to be in a central
-**  location.
-**
-**  The header file has evolved from a version written for the
-**  RSNA'92 InfoRAD DICOM Demonstration by:
-**
-**      Stephen Moore (smm@wuerl.wustl.edu)
-**      Electronic Radiology Laboratory
-**      Mallinckrodt Institute of Radiology
-**      Washington University School of Medicine
-**      23-May-1992
-**
-**
-**  Modifications:
-**      Andrew Hewett
-**      OFFIS/University of Oldenburg, Germany.
-**
-**
-** Last Update:      $Author: joergr $
-** Update Date:      $Date: 2010-12-01 08:26:10 $
-** CVS/RCS Revision: $Revision: 1.14 $
-** Status:           $State: Exp $
-**
-** CVS/RCS Log at end of file
-**
-*/
-
 #ifndef DICOM_H
 #define DICOM_H
 

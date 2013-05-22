@@ -6,7 +6,6 @@
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
 
-
 #include "dcmtk/config/osconfig.h"    /* make sure OS specific configuration is included first */
 
 #include "dcmtk/ofstd/oftest.h"

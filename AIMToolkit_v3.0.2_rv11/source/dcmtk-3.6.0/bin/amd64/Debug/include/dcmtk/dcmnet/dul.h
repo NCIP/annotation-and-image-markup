@@ -6,23 +6,6 @@
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
 
-/*
-**        DICOM 93
-**        Electronic Radiology Laboratory
-**      Mallinckrodt Institute of Radiology
-**    Washington University School of Medicine
-**
-** Module Name(s):
-** Author, Date:  Stephen M. Moore, 14-Apr-1993
-** Intent:        This file defines the public structures and constants
-**                and the function prototypes for the DUL (DICOM Upper
-**                Layer) facility.
-** Last Update:   $Author: joergr $, $Date: 2010-12-01 08:26:10 $
-** Revision:      $Revision: 1.31 $
-** Status:        $State: Exp $
-*/
-
-
 #ifndef DUL_IS_IN
 #define DUL_IS_IN 1
 
