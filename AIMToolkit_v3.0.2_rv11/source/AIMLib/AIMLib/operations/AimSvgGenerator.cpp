@@ -1,10 +1,11 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
+
 
 #include "../stdafx.h"
 
@@ -117,7 +118,7 @@ void AimSvgGenerator::ConvertPointToSvg(const Point& point, std::string &strBuff
 	std::string xmlToReturn;
 
 	// TODO
-	
+
 }
 
 void AimSvgGenerator::ConvertMultiPointToSvg(aim_lib::MultiPoint &multiPoin, std::string &strBuffer, int nestingLevel)

@@ -1,4 +1,4 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
@@ -60,14 +60,14 @@ void UTF16ToUTF8(const std::wstring& utf16, std::string& utf8)
 		}
 	}
 }
- 
+
 FILE* altovawfopen( const std::wstring& filename, const std::wstring& modes)
 {
 	std::string afilename;
     std::string amodes;
 	UTF16ToUTF8( filename, afilename);
     UTF16ToUTF8( modes, amodes);
- 
+
 	return fopen( afilename.c_str(), amodes.c_str());
 }
 
@@ -83,7 +83,7 @@ bool XercesTreeOperations::IsEqualString(const XMLCh* a, const char_type* b)
 			return false;
 		++a, ++b;
 	}
-	return (*a == *b);	// terminator	
+	return (*a == *b);	// terminator
 }
 
 #endif
@@ -121,7 +121,7 @@ static string_type GetTextContent(const xercesc::DOMNode* pNode)
 				}
 			}
 			return result;
-		}		
+		}
 	}
 	return string_type();
 }
@@ -134,24 +134,24 @@ static void FindDeclarationsForNamespace(xercesc::DOMNode* pNode, const string_t
 	xercesc::DOMNamedNodeMap* attrs = pNode->getAttributes();
 	if (attrs == 0)
 		return;
-	
+
 	XMLSize_t length = attrs->getLength();
 	for (XMLSize_t index = 0; index != length; ++index)
-	{		
+	{
 		xercesc::DOMNode* att = attrs->item(index);
 		if (string_type(XercesUnstringTemp(att->getPrefix())) == string_type(_T("xmlns")))
 		{
 			if (string_type(XercesUnstringTemp(att->getNodeValue())) == uri)
 			{
-				declarations.push_back(att);								
+				declarations.push_back(att);
 			}
-			else 
+			else
 			{
 				for (std::vector<xercesc::DOMNode*>::iterator it = declarations.begin(); it != declarations.end(); )
 				{
 					xercesc::DOMNode* cur = *it;
-					
-					if (xercesc::XMLString::compareString(cur->getLocalName(), att->getLocalName()) == 0)	
+
+					if (xercesc::XMLString::compareString(cur->getLocalName(), att->getLocalName()) == 0)
 						declarations.erase(it);
 					else
 						++it;
@@ -165,7 +165,7 @@ string_type FindPrefixForNamespace(xercesc::DOMNode* node, const string_type& ur
 {
 	if (uri == string_type(_T("http://www.w3.org/XML/1998/namespace")))
 		return string_type(_T("xml"));
-		
+
 	if (uri == string_type(_T("http://www.w3.org/2000/xmlns/")))
 		return string_type(_T("xmlns"));
 
@@ -217,7 +217,7 @@ static string_type GetUnusedPrefixForNode(xercesc::DOMNode* node, int n, const s
 	{
 		n++;
 		if (n > 0 || prefixHint.empty())
-		{	
+		{
             tstringstream sspp( pp );
             sspp << n;
             pp += sspp.str();
@@ -225,7 +225,7 @@ static string_type GetUnusedPrefixForNode(xercesc::DOMNode* node, int n, const s
 
 		if (node->getNodeType() != xercesc::DOMNode::ELEMENT_NODE)
 			return pp;
-	
+
 		if (node->getAttributes()->getNamedItemNS(XercesStringTemp(_T("http://www.w3.org/2000/xmlns/")), XercesStringTemp(pp)) != 0)
 			continue;
 
@@ -273,13 +273,13 @@ bool XercesTreeOperations::IsMember( xercesc::DOMNode* pNode, const altova::Memb
 		pName = pNode->getNodeName();
 
 	return IsEqualString(pName, pMember->LocalName) &&
-		IsEqualString(pNode->getNamespaceURI(), pMember->NamespaceURI);			
+		IsEqualString(pNode->getNamespaceURI(), pMember->NamespaceURI);
 }
 
 
-bool XercesTreeOperations::IsValid(xercesc::DOMNode* pNode) 
-{ 
-	return pNode != 0; 
+bool XercesTreeOperations::IsValid(xercesc::DOMNode* pNode)
+{
+	return pNode != 0;
 }
 
 XercesTreeOperations::AllIterator XercesTreeOperations::GetElements(xercesc::DOMNode* pNode)
@@ -304,7 +304,7 @@ void XercesTreeOperations::SetTextValue(xercesc::DOMNode* pNode, const string_ty
 }
 
 string_type XercesTreeOperations::GetTextValue(xercesc::DOMNode* pNode)
-{	
+{
 	return GetTextContent(pNode);
 }
 
@@ -337,7 +337,7 @@ void XercesTreeOperations::SetValue(xercesc::DOMNode* pNode, const altova::Membe
 		}
 
 		pNode->appendChild(pNode->getOwnerDocument()->createTextNode(bValue));
-	}			
+	}
 }
 
 void XercesTreeOperations::SetValue(xercesc::DOMNode* pNode, const altova::MemberInfo* pMemberInfo, const string_type& sValue)
@@ -354,7 +354,7 @@ void XercesTreeOperations::SetValue(xercesc::DOMNode* pNode, const altova::Membe
 	}
 
 	string_type prefix = FindPrefixForNamespace(pNode, qname.Uri);
-	
+
 	if (prefix.empty())
 	{
 		prefix = FindUnusedPrefix(pNode, qname.Prefix);
@@ -443,7 +443,7 @@ xercesc::DOMNode* XercesTreeOperations::AddElement(xercesc::DOMNode* pNode, cons
 	if ( pDoc == 0 )
 		pDoc = ( xercesc::DOMDocument* )pNode;
 	xercesc::DOMNode* pNewNode = pDoc->createElementNS(
-		XercesStringTemp(pMemberInfo->NamespaceURI), 
+		XercesStringTemp(pMemberInfo->NamespaceURI),
 		XercesStringTemp(prefix + pMemberInfo->LocalName));
 	pNode->appendChild(pNewNode);
 	return pNewNode;
@@ -465,7 +465,7 @@ xercesc::DOMNode* XercesTreeOperations::AddElementSpecial(xercesc::DOMNode* pNod
 	if ( pDoc == 0 )
 		pDoc = ( xercesc::DOMDocument* )pNode;
 	xercesc::DOMElement* pNewNode = pDoc->createElementNS(
-		XercesStringTemp(pBaseMemberInfo->NamespaceURI), 
+		XercesStringTemp(pBaseMemberInfo->NamespaceURI),
  		XercesStringTemp(prefix + pBaseMemberInfo->LocalName));
 
 	XercesTreeOperations::SetAttribute(pNewNode, _T("type"), _T("http://www.w3.org/2001/XMLSchema-instance"), prefix + pTypeInfo->LocalName);
@@ -535,9 +535,9 @@ altova::QName XercesTreeOperations::CastToQName(const xercesc::DOMNode* pNode, c
 	if (i == string_type::npos)
 	{
 		string_type defaultNsUri = XercesUnstringTemp(pNode->lookupNamespaceURI(0));
-		
+
 		return altova::QName(defaultNsUri, value);
-	}	
+	}
 
 	string_type prefix = value.substr(0, i);
 	string_type local = value.substr(i+1);
@@ -585,7 +585,7 @@ void XercesTreeOperations::RemoveAttribute(xercesc::DOMNode* pNode, const altova
 				cur->getNodeType() == xercesc::DOMNode::CDATA_SECTION_NODE)
 			{
 				pNode->removeChild(cur);
-			}			
+			}
 		}
 	}
 }
@@ -612,14 +612,14 @@ void XercesTreeOperations::RemoveElement(xercesc::DOMNode* pNode, const altova::
 			pNode->removeChild(cur);
 			break;
 		}
-	}	
+	}
 }
 
 
 XercesTreeOperations::DocumentType XercesTreeOperations::LoadDocument(
 	const string_type& filename)
 {
-	try 
+	try
 	{
 		xercesc::XercesDOMParser parser;
 		xercesc::DefaultHandler defaultHandler;
@@ -682,17 +682,17 @@ XercesTreeOperations::DocumentType XercesTreeOperations::LoadXml(const string_ty
 		parser.setErrorHandler(&defaultHandler);
 		parser.setDoNamespaces(true);
 
-		xercesc::MemBufInputSource source( 
-			( XMLByte* ) xml.data(), 
-			xml.size() * sizeof( char_type ), 
+		xercesc::MemBufInputSource source(
+			( XMLByte* ) xml.data(),
+			xml.size() * sizeof( char_type ),
 			XercesStringTemp( _T("String")));
-		
+
 		#ifdef _UNICODE
 		source.setEncoding( XercesStringTemp( _T("UTF-16")) );
 		#endif
 		parser.parse(source);
 		DocumentType doc = parser.adoptDocument();
-		return doc;		
+		return doc;
 	}
 	catch (xercesc::XMLException& error)
 	{
@@ -717,14 +717,14 @@ XercesTreeOperations::DocumentType XercesTreeOperations::LoadFromBinary(const st
 		parser.setErrorHandler(&defaultHandler);
 		parser.setDoNamespaces(true);
 
-		xercesc::MemBufInputSource source( 
-			( XMLByte* ) &*binary.begin(), 
-			binary.size(), 
+		xercesc::MemBufInputSource source(
+			( XMLByte* ) &*binary.begin(),
+			binary.size(),
 			"String");
 
 		parser.parse(source);
 		DocumentType doc = parser.adoptDocument();
-		return doc;		
+		return doc;
 	}
 	catch (xercesc::XMLException& error)
 	{
@@ -775,7 +775,7 @@ string_type XercesTreeOperations::SaveXml(const DocumentType& document, bool pre
 		{
 			pLSSerializer->getDomConfig()->setParameter(xercesc::XMLUni::fgDOMWRTFormatPrettyPrint, true);
 		}
-		HoldXMLString resultXML(pLSSerializer->writeToString(document));    
+		HoldXMLString resultXML(pLSSerializer->writeToString(document));
 
 		string_type result = XercesUnstringTemp(resultXML);
 		return result;
@@ -818,7 +818,7 @@ std::vector<unsigned char> XercesTreeOperations::SaveToBinary(const DocumentType
 
 void XercesTreeOperations::SaveToBinary( std::vector<unsigned char>& result, const DocumentType& document, bool prettyPrint, const string_type& encoding, bool bBigEndian, bool bBOM, bool bIncludeEncoding )
 {
-	try 
+	try
 	{
 		// this is going to leak on exception:
 
@@ -1027,7 +1027,7 @@ void XercesTreeOperations::SetAttribute(xercesc::DOMNode* node, const string_typ
 		else
 			prefix = prefix2;
 	}
-	
+
 	if (!prefix.empty())
 		prefix += _T(":");
 

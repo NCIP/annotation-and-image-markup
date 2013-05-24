@@ -1,9 +1,12 @@
-/*L
+/*
+  Classname: GeometricShape
+
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+
 */
 
 #if !defined(EA_79F62C10_77C9_403b_AAFC_0F6585358882__INCLUDED_)

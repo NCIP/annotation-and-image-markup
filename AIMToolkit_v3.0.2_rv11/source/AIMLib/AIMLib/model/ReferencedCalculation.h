@@ -1,9 +1,12 @@
-/*L
+/*
+  Classname: ReferencedCalculation
+
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+
 */
 
 #if !defined(EA_5636AF95_4798_4b34_A84A_646382B3D517__INCLUDED_)

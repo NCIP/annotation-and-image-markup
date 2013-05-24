@@ -1,10 +1,25 @@
-/*L
-*  Copyright Northwestern University
-*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
-*
-*  Distributed under the OSI-approved BSD 3-Clause License.
-*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
-*/
+/*
+ *
+ *  Copyright (C) 2002-2011, OFFIS e.V.
+ *  All rights reserved.  See COPYRIGHT file for details.
+ *
+ *  This software and supporting documentation were developed by
+ *
+ *    OFFIS e.V.
+ *    R&D Division Health
+ *    Escherweg 2
+ *    D-26121 Oldenburg, Germany
+ *
+ *
+ *
+ *  Module:  ofstd
+ *
+ *  Author:  Marco Eichelberg
+ *
+ *  Purpose: general purpose 32-bit CRC in C++
+ *           Code is based on the CRC32 implementation (C)1986 Gary S. Brown
+ *
+ */
 
 
 #ifndef OFCRC32_H

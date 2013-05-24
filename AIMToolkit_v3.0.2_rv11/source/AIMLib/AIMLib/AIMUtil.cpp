@@ -1,10 +1,11 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
+
 
 #include "stdafx.h"
 #include <limits.h>
@@ -83,21 +84,21 @@ DateTime AIMUtil::DateTimeConvert(const OFDateTime& ofDateTimeIn)
 //
 //	if (tmTime == NULL)
 //		return altova::DateTime();
-//	
+//
 //	return altova::DateTime(1900+tmTime->tm_year, tmTime->tm_mon+1, tmTime->tm_mday, tmTime->tm_hour, tmTime->tm_min, tmTime->tm_sec);
 //}
 
 altova::DateTime AIMUtil::DateToAltovaDateTime(const aim_lib::Date& dateIn)
 {
 	altova::DateTime altovaDateTime(dateIn.GetYear(), dateIn.GetMonth(), dateIn.GetDay(), 0, 0, 0.0);
-	
+
 	return altovaDateTime;
 }
 
 altova::DateTime AIMUtil::DateTimeToAltovaDateTime(const aim_lib::DateTime& timeIn)
 {
 	altova::DateTime altovaDateTime(timeIn.GetYear(), timeIn.GetMonth(), timeIn.GetDay(), timeIn.GetHour(), timeIn.GetMinute(), timeIn.GetSecond());
-	
+
 	return altovaDateTime;
 }
 //
@@ -206,7 +207,7 @@ std::string AIMUtil::IntToString(int numIn)
 int AIMUtil::StringToInt(const std::string& strIn)
 {
 	int retVal = atoi(strIn.data());
-	//errno; 
+	//errno;
 	assert(retVal != INT_MAX || retVal != INT_MIN);
 
 	return retVal;

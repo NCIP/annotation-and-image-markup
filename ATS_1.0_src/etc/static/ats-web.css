@@ -1,9 +1,8 @@
-/*L
-*  Copyright Northwestern University
-*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
-*
-*  Distributed under the OSI-approved BSD 3-Clause License.
-*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+/* 
+    Document   : ats-web
+    Created on : Jun 23, 2011, 4:22:23 PM
+    Author     : alansnyder
+    Description: The style-sheet for Aim Template Service when viewed from a web browsers.
 */
 
 body, input{

@@ -1,9 +1,12 @@
-/*L
+/*
+  Classname: ImagingObservationCharacteristic
+
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+
 */
 
 #if !defined(EA_E1A94461_5368_4ac7_8E5F_2F027802D84F__INCLUDED_)

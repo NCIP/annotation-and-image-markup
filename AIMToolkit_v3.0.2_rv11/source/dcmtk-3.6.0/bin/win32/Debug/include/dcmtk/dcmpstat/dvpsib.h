@@ -1,10 +1,32 @@
-/*L
-*  Copyright Northwestern University
-*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
-*
-*  Distributed under the OSI-approved BSD 3-Clause License.
-*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
-*/
+/*
+ *
+ *  Copyright (C) 1998-2010, OFFIS e.V.
+ *  All rights reserved.  See COPYRIGHT file for details.
+ *
+ *  This software and supporting documentation were developed by
+ *
+ *    OFFIS e.V.
+ *    R&D Division Health
+ *    Escherweg 2
+ *    D-26121 Oldenburg, Germany
+ *
+ *
+ *
+ *  Module: dcmpstat
+ *
+ *  Author: Marco Eichelberg
+ *
+ *  Purpose:
+ *    classes: DVPSImageBoxContent
+ *
+ *  Last Update:      $Author: joergr $
+ *  Update Date:      $Date: 2010-10-14 13:16:36 $
+ *  CVS/RCS Revision: $Revision: 1.24 $
+ *  Status:           $State: Exp $
+ *
+ *  CVS/RCS Log at end of file
+ *
+ */
 
 #ifndef DVPSIB_H
 #define DVPSIB_H

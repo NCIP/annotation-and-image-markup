@@ -1,4 +1,4 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
@@ -330,6 +330,6 @@ const DSRCodedEntryValue AIMCodes::CreateAimCodedEntryValue(const std::string& c
 //	modalities["SM"]		= "Slide Microscopy";
 //	modalities["US"]		= "Ultrasound";
 //	modalities["XA"]		= "X-Ray Angiography";
-//	
+//
 //	return modalities;
 //}

@@ -1,9 +1,12 @@
-/*L
+/*
+  Classname: TextAnnotation
+
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+
 */
 
 #if !defined(EA_05EAA3AC_2C35_449f_8F51_8457072AA732__INCLUDED_)

@@ -4,7 +4,7 @@
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
-*/
+L*/
 
 #if !defined(EA_F006A3FC_7C5D_4991_A944_11205A5CF548__INCLUDED_)
 #define EA_F006A3FC_7C5D_4991_A944_11205A5CF548__INCLUDED_

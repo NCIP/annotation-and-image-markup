@@ -1,10 +1,28 @@
-/*L
-*  Copyright Northwestern University
-*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
-*
-*  Distributed under the OSI-approved BSD 3-Clause License.
-*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
-*/
+/*
+ *
+ *  Copyright (C) 1999-2012, OFFIS e.V.
+ *  All rights reserved.  See COPYRIGHT file for details.
+ *
+ *
+ *  This software and supporting documentation were developed by
+ *
+ *    OFFIS e.V.
+ *    R&D Division Health
+ *    Escherweg 2
+ *    D-26121 Oldenburg, Germany
+ *
+ *
+ *  Module:  dcmpstat
+ *
+ *  Authors: Marco Eichelberg
+ *
+ *  Purpose
+ *    sample application that reads multiple images and (optionally)
+ *    presentation states and creates a print job consisting of
+ *    stored print and hardcopy grayscale images.
+ *    Non-grayscale transformations in the presentation state are ignored.
+ *
+ */
 
 
 #include "dcmtk/config/osconfig.h"    /* make sure OS specific configuration is included first */

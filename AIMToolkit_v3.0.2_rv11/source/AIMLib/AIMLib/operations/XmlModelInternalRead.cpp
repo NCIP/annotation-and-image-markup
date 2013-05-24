@@ -1,10 +1,11 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
+
 
 #include "../stdafx.h"
 #include "../model/AimHeaders.h"
@@ -52,7 +53,7 @@ ImageAnnotation* XmlModelInternal::readXmlNodeImageAnnotation(CImageAnnotation& 
 		// Precedent Referenced Annotation UID
 		pImgAnnotation->SetPrecedentReferencedAnnotationUID(xmlImgAnnotation.precedentReferencedAnnotationUID.exists() ? xmlImgAnnotation.precedentReferencedAnnotationUID : _emptyStr);
 
-		
+
 		// PORTABILITY NOTE: Linux wants to have const references when passing arguments, but we don't get that from Altova code.
 		// Also, Linux cannot pass temp variables as const references to methods
 		// That's why we need to have two intermediate variables for each set method
@@ -272,7 +273,7 @@ AnnotationOfAnnotation* XmlModelInternal::readXmlNodeAnnotationOfAnnotation(CAnn
 	return pAnnAnnotation;
 }
 
-// User 
+// User
 const User XmlModelInternal::readXmlNode(CUser& xmlUser)
 {
 	User user;
@@ -768,7 +769,7 @@ const CalcResultVector XmlModelInternal::readXmlNode(AIMXML::CcalculationResultC
 				calculationResult.SetType(CalculationResult::StringToCalculationResultType(iter->type));
 			calculationResult.SetNumberOfDimensions(iter->numberOfDimensions.exists() ? (int)iter->numberOfDimensions : 0);
 			calculationResult.SetUnitOfMeasure(iter->unitOfMeasure.exists() ? iter->unitOfMeasure : _emptyStr);
-			
+
 			if (iter->calculationDataCollection.exists())
 			{
 				CcalculationDataCollectionType xmlCalculationDatum = iter->calculationDataCollection.first();
@@ -799,7 +800,7 @@ const ReferencedCalcVector XmlModelInternal::readXmlNode(AIMXML::CreferencedCalc
 		{
 			ReferencedCalculation referencedCalculation;
 			referencedCalculation.SetUniqueIdentifier(iter->uniqueIdentifier.exists() ? iter->uniqueIdentifier : _emptyStr);
-			
+
 			referencedCalculations.push_back(referencedCalculation);
 		}
 	}
@@ -935,7 +936,7 @@ const TextAnnotationVector XmlModelInternal::readXmlNode(AIMXML::CtextAnnotation
 			if (iter->multiPoint.exists() && iter->multiPoint.first().MultiPoint.exists())
 			{
 				CMultiPoint xmlMultiPoint = iter->multiPoint.first().MultiPoint.first();
-				
+
 				MultiPoint multiPoint;
 				multiPoint.SetIncludeFlag(xmlMultiPoint.includeFlag.exists() ? xmlMultiPoint.includeFlag : true);
 				multiPoint.SetShapeIdentifier(xmlMultiPoint.shapeIdentifier.exists() ? xmlMultiPoint.shapeIdentifier : -1);
@@ -1129,7 +1130,7 @@ const SpatialCoordPtrVector XmlModelInternal::readXmlNode(CspatialCoordinateColl
 				assert(false); // Unknown spatial coordinate type
 
 		}
-			
+
 		// Sort coordinates according to their CoordianteIndex
 		std::sort(spatialCoords.begin(), spatialCoords.end(), SpatialCoordinate::SpatialCoordinateSortPredicate);
 	}

@@ -1,10 +1,37 @@
-/*L
-*  Copyright Northwestern University
-*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
-*
-*  Distributed under the OSI-approved BSD 3-Clause License.
-*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
-*/
+/*
+ * jdmerge.c
+ *
+ * Copyright (C) 1994-1996, Thomas G. Lane.
+ * This file is part of the Independent JPEG Group's software.
+ * For conditions of distribution and use, see the accompanying README file.
+ *
+ *
+ * This file contains code for merged upsampling/color conversion.
+ *
+ * This file combines functions from jdsample.c and jdcolor.c;
+ * read those files first to understand what's going on.
+ *
+ * When the chroma components are to be upsampled by simple replication
+ * (ie, box filtering), we can save some work in color conversion by
+ * calculating all the output pixels corresponding to a pair of chroma
+ * samples at one time.  In the conversion equations
+ *	R = Y           + K1 * Cr
+ *	G = Y + K2 * Cb + K3 * Cr
+ *	B = Y + K4 * Cb
+ * only the Y term varies among the group of pixels corresponding to a pair
+ * of chroma samples, so the rest of the terms can be calculated just once.
+ * At typical sampling ratios, this eliminates half or three-quarters of the
+ * multiplications needed for color conversion.
+ *
+ * This file currently provides implementations for the following cases:
+ *	YCbCr => RGB color conversion only.
+ *	Sampling ratios of 2h1v or 2h2v.
+ *	No scaling needed at upsample time.
+ *	Corner-aligned (non-CCIR601) sampling alignment.
+ * Other special cases could be added, but in most applications these are
+ * the only common cases.  (For uncommon cases we fall back on the more
+ * general code in jdsample.c and jdcolor.c.)
+ */
 
 #define JPEG_INTERNALS
 #include "jinclude8.h"

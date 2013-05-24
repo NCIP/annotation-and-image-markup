@@ -1,11 +1,10 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
-
 
 #include "StdAfx.h"
 #include "AIMOntology-typeinfo.h"
@@ -17,7 +16,7 @@ namespace AIMOntology
 const altova::Binder binder = { namespaces, types, members, facets };
 
 // Array of all namespaces with pointers to types:
-const altova::NamespaceInfo namespaces[] = 
+const altova::NamespaceInfo namespaces[] =
 {
 	{ &binder, _T("http://www.radiology.northwestern.edu/aim/1/ontology/1"), _T("aim"), _altova_tif_aim, _altova_til_aim },
 	{ &binder, _T("http://www.w3.org/2001/XMLSchema"), _T("xs"), _altova_tif_xs, _altova_til_xs },
@@ -25,7 +24,7 @@ const altova::NamespaceInfo namespaces[] =
 };
 
 // Array of all types with pointers to members:
-const altova::TypeInfo types[] = 
+const altova::TypeInfo types[] =
 {
 	{ &binder, _altova_ni_aim, _T("AnatomicEntityXML"), _altova_ti_xs_altova_CanyType, _altova_mif_aim_altova_CAnatomicEntityXML, _altova_mil_aim_altova_CAnatomicEntityXML,  ~0 , altova::Whitespace_Unknown },
 	{ &binder, _altova_ni_aim, _T("AnnotationDescriptionXML"), _altova_ti_xs_altova_CanyType, _altova_mif_aim_altova_CAnnotationDescriptionXML, _altova_mil_aim_altova_CAnnotationDescriptionXML,  ~0 , altova::Whitespace_Unknown },
@@ -90,7 +89,7 @@ const altova::TypeInfo types[] =
 { 0 },
 };
 
-const altova::MemberInfo members[] = 
+const altova::MemberInfo members[] =
 {
 	{ &binder, _T("http://www.radiology.northwestern.edu/aim/1/ontology/1"), _T("codeMeaning"), _altova_ti_aim_altova_CAnatomicEntityXML, _altova_ti_xs_altova_CstringType, MemberFlags_None, 1, 1 },
 	{ &binder, _T("http://www.radiology.northwestern.edu/aim/1/ontology/1"), _T("codingSchemeDesignator"), _altova_ti_aim_altova_CAnatomicEntityXML, _altova_ti_xs_altova_CstringType, MemberFlags_None, 1, 1 },
@@ -137,33 +136,33 @@ const altova::MemberInfo members[] =
 { 0 },
 };
 
-const altova::FacetInfo facets[] = 
+const altova::FacetInfo facets[] =
 {
 	// ENTITIES
 	{ 0, _T("whitespace"), _T("collapse"), 0 },
-	{ 0, _T("minLength"), _T("1"), 1 }, 
+	{ 0, _T("minLength"), _T("1"), 1 },
 	{ 0, 0, 0, 0 },
 	// IDREFS
 	{ 0, _T("whitespace"), _T("collapse"), 0 },
-	{ 0, _T("minLength"), _T("1"), 1 }, 
+	{ 0, _T("minLength"), _T("1"), 1 },
 	{ 0, 0, 0, 0 },
 	// NCName
-	{ 0, _T("pattern"), _T("[\\i-[:]][\\c-[:]]*"), 0 }, 
+	{ 0, _T("pattern"), _T("[\\i-[:]][\\c-[:]]*"), 0 },
 	{ 0, 0, 0, 0 },
 	// NMTOKEN
-	{ 0, _T("pattern"), _T("\\c+"), 0 }, 
+	{ 0, _T("pattern"), _T("\\c+"), 0 },
 	{ 0, 0, 0, 0 },
 	// NMTOKENS
 	{ 0, _T("whitespace"), _T("collapse"), 0 },
-	{ 0, _T("minLength"), _T("1"), 1 }, 
-	{ 0, _T("pattern"), _T("\\c+"), 0 }, 
-	{ 0, _T("pattern"), _T("\\c+"), 0 }, 
+	{ 0, _T("minLength"), _T("1"), 1 },
+	{ 0, _T("pattern"), _T("\\c+"), 0 },
+	{ 0, _T("pattern"), _T("\\c+"), 0 },
 	{ 0, 0, 0, 0 },
 	// NOTATION
 	{ 0, _T("whitespace"), _T("collapse"), 0 },
 	{ 0, 0, 0, 0 },
 	// Name
-	{ 0, _T("pattern"), _T("\\i\\c*"), 0 }, 
+	{ 0, _T("pattern"), _T("\\i\\c*"), 0 },
 	{ 0, 0, 0, 0 },
 	// QName
 	{ 0, _T("whitespace"), _T("collapse"), 0 },
@@ -178,8 +177,8 @@ const altova::FacetInfo facets[] =
 	{ 0, _T("whitespace"), _T("collapse"), 0 },
 	{ 0, 0, 0, 0 },
 	// byte
-	{ 0, _T("minInclusive"), _T("-128"), 0 }, 
-	{ 0, _T("maxInclusive"), _T("127"), 0 }, 
+	{ 0, _T("minInclusive"), _T("-128"), 0 },
+	{ 0, _T("maxInclusive"), _T("127"), 0 },
 	{ 0, 0, 0, 0 },
 	// date
 	{ 0, _T("whitespace"), _T("collapse"), 0 },
@@ -218,38 +217,38 @@ const altova::FacetInfo facets[] =
 	{ 0, _T("whitespace"), _T("collapse"), 0 },
 	{ 0, 0, 0, 0 },
 	// int
-	{ 0, _T("minInclusive"), _T("-2147483648"), 0 }, 
-	{ 0, _T("maxInclusive"), _T("2147483647"), 0 }, 
+	{ 0, _T("minInclusive"), _T("-2147483648"), 0 },
+	{ 0, _T("maxInclusive"), _T("2147483647"), 0 },
 	{ 0, 0, 0, 0 },
 	// integer
-	{ 0, _T("fractionDigits"), _T("0"), 0 }, 
-	{ 0, _T("pattern"), _T("[\\-+]?[0-9]+"), 0 }, 
+	{ 0, _T("fractionDigits"), _T("0"), 0 },
+	{ 0, _T("pattern"), _T("[\\-+]?[0-9]+"), 0 },
 	{ 0, 0, 0, 0 },
 	// language
-	{ 0, _T("pattern"), _T("[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*"), 0 }, 
+	{ 0, _T("pattern"), _T("[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*"), 0 },
 	{ 0, 0, 0, 0 },
 	// long
-	{ 0, _T("minInclusive"), _T("-9223372036854775808"), 0 }, 
-	{ 0, _T("maxInclusive"), _T("9223372036854775807"), 0 }, 
+	{ 0, _T("minInclusive"), _T("-9223372036854775808"), 0 },
+	{ 0, _T("maxInclusive"), _T("9223372036854775807"), 0 },
 	{ 0, 0, 0, 0 },
 	// negativeInteger
-	{ 0, _T("maxInclusive"), _T("-1"), 0 }, 
+	{ 0, _T("maxInclusive"), _T("-1"), 0 },
 	{ 0, 0, 0, 0 },
 	// nonNegativeInteger
-	{ 0, _T("minInclusive"), _T("0"), 0 }, 
+	{ 0, _T("minInclusive"), _T("0"), 0 },
 	{ 0, 0, 0, 0 },
 	// nonPositiveInteger
-	{ 0, _T("maxInclusive"), _T("0"), 0 }, 
+	{ 0, _T("maxInclusive"), _T("0"), 0 },
 	{ 0, 0, 0, 0 },
 	// normalizedString
 	{ 0, _T("whitespace"), _T("replace"), 0 },
 	{ 0, 0, 0, 0 },
 	// positiveInteger
-	{ 0, _T("minInclusive"), _T("1"), 0 }, 
+	{ 0, _T("minInclusive"), _T("1"), 0 },
 	{ 0, 0, 0, 0 },
 	// short
-	{ 0, _T("minInclusive"), _T("-32768"), 0 }, 
-	{ 0, _T("maxInclusive"), _T("32767"), 0 }, 
+	{ 0, _T("minInclusive"), _T("-32768"), 0 },
+	{ 0, _T("maxInclusive"), _T("32767"), 0 },
 	{ 0, 0, 0, 0 },
 	// string
 	{ 0, _T("whitespace"), _T("preserve"), 0 },
@@ -261,16 +260,16 @@ const altova::FacetInfo facets[] =
 	{ 0, _T("whitespace"), _T("collapse"), 0 },
 	{ 0, 0, 0, 0 },
 	// unsignedByte
-	{ 0, _T("maxInclusive"), _T("255"), 0 }, 
+	{ 0, _T("maxInclusive"), _T("255"), 0 },
 	{ 0, 0, 0, 0 },
 	// unsignedInt
-	{ 0, _T("maxInclusive"), _T("4294967295"), 0 }, 
+	{ 0, _T("maxInclusive"), _T("4294967295"), 0 },
 	{ 0, 0, 0, 0 },
 	// unsignedLong
-	{ 0, _T("maxInclusive"), _T("18446744073709551615"), 0 }, 
+	{ 0, _T("maxInclusive"), _T("18446744073709551615"), 0 },
 	{ 0, 0, 0, 0 },
 	// unsignedShort
-	{ 0, _T("maxInclusive"), _T("65535"), 0 }, 
+	{ 0, _T("maxInclusive"), _T("65535"), 0 },
 	{ 0, 0, 0, 0 },
 { 0 },
 };

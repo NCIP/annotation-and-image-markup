@@ -1,9 +1,12 @@
-/*L
+/*
+  Classname: Segmentation
+
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+
 */
 
 #if !defined(EA_AB0E9BDB_0D6C_4f66_A6CA_72CFC0EDF1D0__INCLUDED_)

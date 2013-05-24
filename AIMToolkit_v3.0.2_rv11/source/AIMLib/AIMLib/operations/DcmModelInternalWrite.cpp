@@ -1,10 +1,11 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
+
 
 #include "../stdafx.h"
 #include "DcmModelInternal.h"
@@ -75,7 +76,7 @@ DSRDocument* DcmModelInternal::CreateDSRDocument(const AnnotationPtrVector& anno
 #endif
 
 	// GENERAL NOTE:
-	// Though we claim to support multiple annotations per document, 
+	// Though we claim to support multiple annotations per document,
 	// XML version can really store only one annotation.
 	// There is no annotation container element in the model.
 	// But the DICOM template is desinged to accomodate multiple annotations.
@@ -781,7 +782,7 @@ void DcmModelInternal::PopulateAnnotationOfAnnotation(Annotation& annotation, DS
 
 			nodeId = doc.getTree().goUp(); // step out to the Referenced Annotation container level
 		}
-	
+
 		nodeId = doc.getTree().goUp(); // step out to the Annotation of Annotation level
 	}
 
@@ -1480,7 +1481,7 @@ void DcmModelInternal::PopulateSegmentationContainer(ImageAnnotation& annotation
 			nodeId = doc.getTree().goUp(); // step out of the item
 		}
 
-		//nodeId = doc.getTree().goUp(); // step out of the Segmentation container - 
+		//nodeId = doc.getTree().goUp(); // step out of the Segmentation container -
 	}
 }
 
@@ -1645,7 +1646,7 @@ void DcmModelInternal::PopulateGeometricShapeEntry(aim_lib::ImageAnnotation &ann
 			dsrImage.getFrameList().addOnlyNewItem(referencedFrameNumber);
 		nodeId = doc.getTree().addContentItem(DSRTypes::RT_selectedFrom, DSRTypes::VT_Image, DSRTypes::AM_belowCurrent);
 		ofCondition = doc.getTree().getCurrentContentItem().setImageReference(dsrImage);
-		
+
 		nodeId = doc.getTree().goUp(); // step out of the Image Reference container
 
 //		nodeId = doc.getTree().goUp(); // step out of the Scoord container
@@ -1701,7 +1702,7 @@ const Image* DcmModelInternal::FindDICOMImage(const ImageAnnotation &annotation,
 //	ImageReferencePtrVector imgRefs = annotation.GetImageReferenceCollection();
 //	ImageReference* pImgRef;
 //	bool isFound = false;
-//	
+//
 //	for(ImageReferencePtrVector::iterator iter = imgRefs.begin(); !isFound && iter < imgRefs.end(); iter++)
 //	{
 //		pImgRef = *iter;

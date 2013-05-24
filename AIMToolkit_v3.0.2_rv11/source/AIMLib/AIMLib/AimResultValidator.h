@@ -1,4 +1,4 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
@@ -18,7 +18,7 @@ namespace aim_lib
 		AimOFCondition();
 		AimOFCondition(const OFCondition& ofCondition);
 		virtual ~AimOFCondition(void);
-	
+
 		inline OFBool good() const
 		{
 			return _condition.good();

@@ -1,9 +1,12 @@
-/*L
+/*
+  Classname: TwoDimensionSpatialCoordinate
+
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+
 */
 
 #if !defined(EA_4FC2DA23_0450_426e_8B36_867467058ADE__INCLUDED_)

@@ -1,10 +1,14 @@
-/*L
-*  Copyright Northwestern University
-*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
-*
-*  Distributed under the OSI-approved BSD 3-Clause License.
-*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
-*/
+/*
+ * jmorecfg.h
+ *
+ * Copyright (C) 1991-1998, Thomas G. Lane.
+ * This file is part of the Independent JPEG Group's software.
+ * For conditions of distribution and use, see the accompanying README file.
+ *
+ * This file contains additional configuration options that customize the
+ * JPEG software for special applications or support machine-dependent
+ * optimizations.  Most users will not need to touch this file.
+ */
 
 
 /*

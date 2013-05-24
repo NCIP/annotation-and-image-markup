@@ -1,10 +1,33 @@
-/*L
-*  Copyright Northwestern University
-*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
-*
-*  Distributed under the OSI-approved BSD 3-Clause License.
-*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
-*/
+/*
+ *
+ *  Copyright (C) 1996-2010, OFFIS e.V.
+ *  All rights reserved.  See COPYRIGHT file for details.
+ *
+ *
+ *  This software and supporting documentation were developed by
+ *
+ *    OFFIS e.V.
+ *    R&D Division Health
+ *    Escherweg 2
+ *    D-26121 Oldenburg, Germany
+ *
+ *
+ *  Module:  dcmwlm
+ *
+ *  Author:  Marco Eichelberg
+ *
+ *  Purpose:
+ *   Program to read a DICOM worklist file and pass (nearly) all tags
+ *   to a WWW CGI perl script (as hexadecimal encoded ASCII via stdout).
+ *
+ *  Last Update:      $Author: joergr $
+ *  Update Date:      $Date: 2010-10-14 13:20:03 $
+ *  CVS/RCS Revision: $Revision: 1.5 $
+ *  Status:           $State: Exp $
+ *
+ *  CVS/RCS Log at end of file
+ *
+ */
 
 #include "dcmtk/config/osconfig.h"    /* make sure OS specific configuration is included first */
 

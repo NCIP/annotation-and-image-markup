@@ -1,10 +1,15 @@
-/*L
-*  Copyright Northwestern University
-*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
-*
-*  Distributed under the OSI-approved BSD 3-Clause License.
-*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
-*/
+// Module:  Log4CPLUS
+// File:    config-macosx.h
+// Created: 7/2003
+// Author:  Christopher R. Bailey
+//
+//
+// Copyright (C) Tad E. Smith  All rights reserved.
+//
+// This software is published under the terms of the Apache Software
+// License version 1.1, a copy of which has been included with this
+// distribution in the LICENSE.APL file.
+//
 
 /** @file */
 

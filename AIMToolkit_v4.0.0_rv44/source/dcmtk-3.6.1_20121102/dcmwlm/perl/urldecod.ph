@@ -1,9 +1,29 @@
-#L
-#  Copyright Northwestern University
-#  Copyright Stanford University (ATB 1.0 and ATS 1.0)
+#!/usr/local/bin/perl
 #
-#  Distributed under the OSI-approved BSD 3-Clause License.
-#  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+# Copyright & Disclaimer.
+#	This set of routines may be freely distributed, modified and
+#	used, provided this copyright & disclaimer remains intact.
+#	This package is used at your own risk, if it does what you
+#	want, good; if it doesn't, modify it or use something else--but
+#	don't blame me. Support level = negligable (i.e. mail bugs but
+#	not requests for extensions)
+#
+# Module: dcmwlm (WWW Component)
+#
+# Author:
+# 	James Tappin: sjt@xun8.sr.bham.ac.uk
+#	School of Physics & Space Research University of Birmingham
+#	Feb 1993.
+#
+# Purpose:
+#   The CGI_HANDLERS deal with basic CGI POST or GET method request
+#   elements such as those delivered by an HTTPD form, i.e. a url
+#   encoded line of "=" separated key=value pairs separated by &'s
+#
+# Renamed from "cgi_handlers.pl" to "urldecod.ph" to conform to
+# ISO High Sierra file naming conventions.
+#
+#
 
 
 # Routines:

@@ -1,9 +1,12 @@
-/*L
+/*
+  Classname: SpatialCoordinate
+
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+
 */
 
 #if !defined(EA_29368214_BC70_483a_BBE0_6EE2D4B42E46__INCLUDED_)

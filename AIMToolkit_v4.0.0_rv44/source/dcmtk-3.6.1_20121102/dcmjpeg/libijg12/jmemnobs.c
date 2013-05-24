@@ -1,10 +1,20 @@
-/*L
-*  Copyright Northwestern University
-*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
-*
-*  Distributed under the OSI-approved BSD 3-Clause License.
-*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
-*/
+/*
+ * jmemnobs.c
+ *
+ * Copyright (C) 1992-1996, Thomas G. Lane.
+ * This file is part of the Independent JPEG Group's software.
+ * For conditions of distribution and use, see the accompanying README file.
+ *
+ *
+ * This file provides a really simple implementation of the system-
+ * dependent portion of the JPEG memory manager.  This implementation
+ * assumes that no backing-store files are needed: all required space
+ * can be obtained from malloc().
+ * This is very portable in the sense that it'll compile on almost anything,
+ * but you'd better have lots of main memory (or virtual memory) if you want
+ * to process big images.
+ * Note that the max_memory_to_use option is ignored by this implementation.
+ */
 
 #define JPEG_INTERNALS
 #include "jinclude12.h"

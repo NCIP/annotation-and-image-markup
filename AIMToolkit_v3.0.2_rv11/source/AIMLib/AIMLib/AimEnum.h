@@ -1,4 +1,4 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
@@ -10,17 +10,17 @@
 #define _AIMLIB_AIM_ENUM_INCLUDED_
 
 #include <string>
+#include <map>
 
 namespace aim_lib
 {
-	enum AIMLIB_API CalculationResultType
+	enum AIMLIB_API AimVersion
 	{
-		InvalidCalculationResultType = -1,
-		Scalar = 0,
-		Vector = 1,
-		Histogram = 2,
-		Matrix = 3,
-		Array = 4
+		AIMv1_0,
+		AIMv2_0,
+		AIMv3_0_1,
+		AIMv3_0_2,
+		AIMv4_0
 	};
 
 	enum AIMLIB_API ComparisonOperatorType
@@ -40,6 +40,8 @@ namespace aim_lib
 	public:
 		static const std::string ComparisonOperatorTypeToString(const ComparisonOperatorType& type);
 		static const ComparisonOperatorType StringToComparisonOperatorType(const std::string& stringType);
+
+		static const std::string GetAimVersionString(AimVersion aimVersion);
 
 	protected:
 		AimEnum();

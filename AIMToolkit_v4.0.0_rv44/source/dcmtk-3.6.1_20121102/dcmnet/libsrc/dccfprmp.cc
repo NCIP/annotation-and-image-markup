@@ -1,10 +1,26 @@
-/*L
-*  Copyright Northwestern University
-*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
-*
-*  Distributed under the OSI-approved BSD 3-Clause License.
-*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
-*/
+/*
+ *
+ *  Copyright (C) 2003-2010, OFFIS e.V.
+ *  All rights reserved.  See COPYRIGHT file for details.
+ *
+ *
+ *  This software and supporting documentation were developed by
+ *
+ *    OFFIS e.V.
+ *    R&D Division Health
+ *    Escherweg 2
+ *    D-26121 Oldenburg, Germany
+ *
+ *
+ *  Module:  dcmnet
+ *
+ *  Author:  Marco Eichelberg
+ *
+ *  Purpose:
+ *    class DcmProfileEntry
+ *    class DcmProfileMap
+ *
+ */
 
 #include "dcmtk/config/osconfig.h"
 #include "dcmtk/dcmnet/dccfprmp.h" /* for class DcmProfileMap */

@@ -1,10 +1,11 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
+
 
 #include "../stdafx.h"
 #include "DcmModelInternal.h"
@@ -144,10 +145,10 @@ OFCondition DcmModelInternal::LoadAnnotationsFromDSRDocument(AnnotationPtrVector
 	size_t annotationsContainerId = GO_TO_NAMED_NODE1(_dsrCode);
 	if (annotationsContainerId > 0/* && _pDoc->getTree().goDown() > 0*/)
 	{
-		// NOTE: Reading annotation is based on the fact that SR Tree 
+		// NOTE: Reading annotation is based on the fact that SR Tree
 		// has unique _ordered_ nodeId for each node in the tree.
 		// This allows us to assume that all nodes which satisfy
-		// (annotationNodeId < nodeId < nextAnnotationNodeId) 
+		// (annotationNodeId < nodeId < nextAnnotationNodeId)
 		// belong to the current annotation.
 
 		// Store node IDs of all annotations in the document
@@ -242,7 +243,7 @@ ImageAnnotation* DcmModelInternal::ReadImageAnnotation(size_t imgAnnotationNodeI
 	if (userNodeId > 0)
 	{
 		_dsrCode = GetCode();
-		if (_dsrCode.isValid() && _dsrCode.getCodeValue() == "121006" && 
+		if (_dsrCode.isValid() && _dsrCode.getCodeValue() == "121006" &&
 			_pDoc->getTree().goDown() > 0) // if non-empty Person
 		{
 			User user = this->ReadUser();
@@ -413,7 +414,7 @@ AnnotationOfAnnotation* DcmModelInternal::ReadAnnotationOfAnnotation(size_t annA
 	if (userNodeId > 0)
 	{
 		_dsrCode = GetCode();
-		if (_dsrCode.isValid() && _dsrCode.getCodeValue() == "121006" && 
+		if (_dsrCode.isValid() && _dsrCode.getCodeValue() == "121006" &&
 			_pDoc->getTree().goDown() > 0) // if non-empty Person
 		{
 			User user = this->ReadUser();
@@ -689,7 +690,7 @@ ImageReferencePtrVector DcmModelInternal::ReadImageLibrary(size_t annotationNode
 	DSRCodedEntryValue dsrImgLib = DSR_CDE("111028", "DCM", "Image Library");
 	size_t imgLibraryNodeId = GO_TO_NAMED_NODE1(dsrImgLib);
 	// There is only one Image Library in the AIM SR document
-	//while (imgLibraryNodeId > 0 && 
+	//while (imgLibraryNodeId > 0 &&
 	//	imgLibraryNodeId < annotationNodeId && imgLibraryNodeId > nextAnnotationNodeId)
 	//{
 	//	imgLibraryNodeId = GO_TO_NEXT_NAMED_NODE1(dsrImgLib);
@@ -711,7 +712,7 @@ ImageReferencePtrVector DcmModelInternal::ReadImageLibrary(size_t annotationNode
 				// We expect at least one image in the study
 				assert(newStudy.GetSeries().GetImageCollection().size() > 0);
 
-				// Either create a new study/series if one doesn't exist, 
+				// Either create a new study/series if one doesn't exist,
 				// or add image information to an existing study/series
 				bool bAdded = false;
 				for(ImageReferencePtrVector::iterator iter = imageReferences.begin(); !bAdded && iter < imageReferences.end(); iter++)
@@ -826,12 +827,12 @@ AnatomicEntity DcmModelInternal::ReadAnatomicEntityEntry()
 			{
 				assert(false); // unknown content node
 			}
-		} 
+		}
 		while(_pDoc->getTree().gotoNext() > 0);
 
 		if (anatomicEntityChars.size() > 0)
 			anatomicEntity.SetAnatomicEntityCharacteristicCollection(anatomicEntityChars);
-		
+
 		nodeId = _pDoc->getTree().goUp();
 	}
 
@@ -880,9 +881,9 @@ AnatomicEntityCharacteristic DcmModelInternal::ReadAnatomicEntityCharacteristicE
 			{
 				assert(false); // unknown content node
 			}
-		} 
+		}
 		while(_pDoc->getTree().gotoNext() > 0);
-		
+
 		nodeId = _pDoc->getTree().goUp();
 	}
 
@@ -962,7 +963,7 @@ ImagingObservation DcmModelInternal::ReadImagingObservationEntry()
 
 		if (imagingObsCharacteristics.size() > 0)
 			imagingObservation.SetImagingObservationCharacteristicCollection(imagingObsCharacteristics);
-		
+
 		nodeId = _pDoc->getTree().goUp();
 	}
 
@@ -1377,7 +1378,7 @@ CalculationResult DcmModelInternal::ReadCalculationResultEntry()
 			}
 			else if (ofString == "zzz039")
 			{
-				// Calculation Dimension 
+				// Calculation Dimension
 				if (_pDoc->getTree().goDown() > 0)
 				{
 					Dimension dim;
@@ -1658,7 +1659,7 @@ Inference DcmModelInternal::ReadInferenceEntry()
 			{
 				assert(false); // unknown content node
 			}
-		} 
+		}
 		while(_pDoc->getTree().gotoNext() > 0);
 
 		nodeId = _pDoc->getTree().goUp();
@@ -1701,7 +1702,7 @@ AimStatus DcmModelInternal::ReadAimStatus()
 			{
 				assert(false); // unknown content node
 			}
-		} 
+		}
 		while(_pDoc->getTree().gotoNext() > 0);
 
 		nodeId = _pDoc->getTree().goUp();
@@ -1877,7 +1878,7 @@ TextAnnotation DcmModelInternal::ReadTextAnnotationContainer()
 				std::auto_ptr<GeometricShape> pGeoShape(this->ReadGeoShape());
 				if(pGeoShape.get() != NULL)
 				{
-					assert(pGeoShape->GetShapeType() == GeometricShape::SHT_Multipoint && 
+					assert(pGeoShape->GetShapeType() == GeometricShape::SHT_Multipoint &&
 						pGeoShape->GetSpatialCoordinateCollection().size() > 0 &&
 						pGeoShape->GetSpatialCoordinateCollection().size() <= 2);
 

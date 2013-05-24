@@ -4,7 +4,7 @@
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
-*/
+L*/
 
 #ifndef _AIMConverter_ConverterUtil_Class
 #define _AIMConverter_ConverterUtil_Class

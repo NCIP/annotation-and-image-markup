@@ -4,7 +4,7 @@
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
-*/
+L*/
 
 #if !defined(_AIMLIB_AIM_ENUM_INCLUDED_)
 #define _AIMLIB_AIM_ENUM_INCLUDED_

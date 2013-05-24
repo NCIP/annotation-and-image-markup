@@ -1,10 +1,11 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
+
 
 #include "../stdafx.h"
 
@@ -103,7 +104,7 @@ void ImageAnnotation::SetSegmentationCollection(const SegmentationVector& segmen
 }
 
 void ImageAnnotation::SetGeometricShapeCollection(const GeoShapePtrVector& geometricShapes){
-	
+
 	this->FreeAllShapes();
 
 	_geometricShapeCollection.reserve(geometricShapes.size());
@@ -113,7 +114,7 @@ void ImageAnnotation::SetGeometricShapeCollection(const GeoShapePtrVector& geome
 }
 
 void ImageAnnotation::SetImageReferenceCollection(const ImageReferencePtrVector& imageReferences){
-	
+
 	this->FreeAllImages();
 
 	_imageReferenceCollection.reserve(imageReferences.size());

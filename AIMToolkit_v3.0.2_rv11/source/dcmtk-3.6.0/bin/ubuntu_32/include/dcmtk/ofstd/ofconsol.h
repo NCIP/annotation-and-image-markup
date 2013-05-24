@@ -1,10 +1,61 @@
-/*L
-*  Copyright Northwestern University
-*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
-*
-*  Distributed under the OSI-approved BSD 3-Clause License.
-*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
-*/
+/*
+ *
+ *  Copyright (C) 1999-2010, OFFIS e.V.
+ *  All rights reserved.  See COPYRIGHT file for details.
+ *
+ *  This software and supporting documentation were developed by
+ *
+ *    OFFIS e.V.
+ *    R&D Division Health
+ *    Escherweg 2
+ *    D-26121 Oldenburg, Germany
+ *
+ *
+ *
+ *  Module:  ofstd
+ *
+ *  Author:  Marco Eichelberg
+ *
+ *  Purpose: Define general purpose facility for console output
+ *
+ *  class OFConsole and its global instance, ofConsole,
+ *  provide access to the standard console output and error streams
+ *  in a way that allows multiple threads to concurrently create output
+ *  even if that output is redirected, e. g. to file or memory.
+ *  Protection is implemented if the module is compiled with -DWITH_THREADS
+ *  and is based on Mutexes.
+ *
+ *  In cases where DCMTK is used for GUI development, the fact that the
+ *  libraries send many error messages to the standard or error streams
+ *  are annoying since these streams are not present in a GUI environment.
+ *  Either the messages just go lost or they even cause the GUI
+ *  application to fail.  This file introduces aliases for the standard
+ *  stream handles called COUT and CERR, which are normally only
+ *  preprocessor macros for cout and cerr, respectively. If the
+ *  toolkit is compiled with the flag DCMTK_GUI defined, however, these
+ *  streams are created as OFOStringStream. This will allow a GUI based
+ *  application to extract the messages and either present them to the
+ *  user or store them in a log file.
+ *
+ *  GUI based applications making use of this feature should periodically
+ *  check and clear these streams in order to avoid increasing consumption
+ *  of heap memory.
+ *
+ *  Caveat 1: The DCMTK command line tools do not yet support the DCMTK_GUI
+ *  flag, and will most likely exhibit all kinds of undesired behaviour
+ *  if this flag is used.
+ *
+ *  Caveat 2: The direct use of the COUT and CERR macros is unsafe
+ *  in multithread applications. Use ofConsole instead.
+ *
+ *  Last Update:      $Author: joergr $
+ *  Update Date:      $Date: 2010-10-14 13:15:50 $
+ *  CVS/RCS Revision: $Revision: 1.21 $
+ *  Status:           $State: Exp $
+ *
+ *  CVS/RCS Log at end of file
+ *
+ */
 
 
 #ifndef OFCONSOL_H

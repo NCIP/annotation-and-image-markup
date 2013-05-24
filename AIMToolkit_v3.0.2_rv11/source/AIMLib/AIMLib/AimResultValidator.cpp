@@ -1,4 +1,4 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
@@ -6,7 +6,8 @@
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
 
-// DCMTK debug helper classes. These classes are used in debug builds instead of the 
+
+// DCMTK debug helper classes. These classes are used in debug builds instead of the
 // standard DCMTK counterparts.
 
 #include "dcmtk/ofstd/ofcond.h"

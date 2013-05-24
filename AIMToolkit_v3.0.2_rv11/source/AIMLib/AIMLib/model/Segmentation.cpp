@@ -1,10 +1,11 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
+
 
 #include "../stdafx.h"
 
@@ -30,7 +31,7 @@ Segmentation& Segmentation::operator= (const Segmentation &segmentation){
 	_sopClassUID				= segmentation._sopClassUID;
 	_referencedSopInstanceUID	= segmentation._referencedSopInstanceUID;
 	_segmentNumber				= segmentation._segmentNumber;
-	
+
 	this->SetImagingObservation(segmentation.GetImagingObservation());
 
 	return *this;

@@ -1,9 +1,12 @@
-/*L
+/*
+  Classname: DICOMImageReference
+
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
+
 */
 
 #if !defined(EA_C478B177_C5B5_4a65_9D4C_43F8A195539C__INCLUDED_)

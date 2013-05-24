@@ -1,10 +1,20 @@
-/*L
-*  Copyright Northwestern University
-*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
-*
-*  Distributed under the OSI-approved BSD 3-Clause License.
-*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
-*/
+/*
+ * jddiffct.c
+ *
+ * Copyright (C) 1994-1998, Thomas G. Lane.
+ * This file is part of the Independent JPEG Group's software.
+ * For conditions of distribution and use, see the accompanying README file.
+ *
+ *
+ * This file contains the [un]difference buffer controller for decompression.
+ * This controller is the top level of the lossless JPEG decompressor proper.
+ * The difference buffer lies between the entropy decoding and
+ * prediction/undifferencing steps.  The undifference buffer lies between the
+ * prediction/undifferencing and scaling steps.
+ *
+ * In buffered-image mode, this controller is the interface between
+ * input-oriented processing and output-oriented processing.
+ */
 
 #define JPEG_INTERNALS
 #include "jinclude16.h"

@@ -1,10 +1,11 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
+
 
 #include "../stdafx.h"
 #include <limits.h>
@@ -176,7 +177,7 @@ bool ModelValidator::isValid(const AnatomicEntityCharacteristic& anatomicEntityC
 			RETURN_WITH_ERROR("Anatomic Enity Characteristic's Confidence is not set");
 	}
 
-	for (CharacteristicQuantificationPtrVector::const_iterator iter = anatomicEntityChar.GetCharacteristicQuantificationCollection().begin(); 
+	for (CharacteristicQuantificationPtrVector::const_iterator iter = anatomicEntityChar.GetCharacteristicQuantificationCollection().begin();
 		iter < anatomicEntityChar.GetCharacteristicQuantificationCollection().end(); iter++)
 	{
 		if (*iter != NULL)
@@ -236,7 +237,7 @@ bool ModelValidator::isValid(const ImagingObservationCharacteristic& imagingObsC
 	RETURN_IF_STR_EMPTY(imagingObsChar.GetCodingSchemeDesignator(), "Imaging Observation Characteristic Coding Scheme Designator");
 	RETURN_IF_STR_EMPTY(imagingObsChar.GetLabel(), "Label");
 
-	for (CharacteristicQuantificationPtrVector::const_iterator iter = imagingObsChar.GetCharacteristicQuantificationCollection().begin(); 
+	for (CharacteristicQuantificationPtrVector::const_iterator iter = imagingObsChar.GetCharacteristicQuantificationCollection().begin();
 		iter < imagingObsChar.GetCharacteristicQuantificationCollection().end(); iter++)
 	{
 		if (*iter != NULL)
@@ -261,7 +262,7 @@ bool ModelValidator::isValid(const ImagingObservationCharacteristic& imagingObsC
 	//if (result.find("ERROR") == 0)
 	//	RETURN_WITH_ERROR(result);
 
-	return true;	
+	return true;
 }
 
 bool ModelValidator::isValid(const Equipment& equipment, bool allowDefaults/* = false*/)
@@ -526,7 +527,7 @@ bool ModelValidator::isValid(const Scale& scale, bool allowDefaults/* = false*/)
 bool ModelValidator::isValid(const Interval& interval, bool allowDefaults/* = false*/)
 {
 	RETURN_IF_STR_EMPTY(interval.GetUcumString(), "UcumString");
-	
+
 	if (interval.GetMinValue() > interval.GetMaxValue())
 		RETURN_WITH_ERROR("Interval MinValue is greater than MaxValue");
 
@@ -545,7 +546,7 @@ bool ModelValidator::isValid(const Interval& interval, bool allowDefaults/* = fa
 		RETURN_WITH_ERROR("Interval's Min Operator is not set to a valid value");
 		break;
 	}
-	
+
 	return true;
 }
 
@@ -761,7 +762,7 @@ bool ModelValidator::isValid(const Date& date, bool allowDefaults /*= false*/)
 
 	// Check day
 	int day = date.GetDay();
-	
+
 	// 1582 - Gregorian calendar switch.
 	// No dates exist between october 4 and October 15
 	if (date.GetYear() == 1582 && date.GetMonth() == 10 && day > 4 && day < 15)
@@ -794,7 +795,7 @@ bool ModelValidator::isValid(const Time& time, bool allowDefaults /*= false*/)
 	RETURN_IF_RANGE_NOT_VALID(time.GetMinute(), 0, 59, "Minutes");
 	if (time.GetSecond() < 0.0)
 		RETURN_WITH_ERROR("Seconds cannot have negative value");
-	
+
 	return true;
 }
 

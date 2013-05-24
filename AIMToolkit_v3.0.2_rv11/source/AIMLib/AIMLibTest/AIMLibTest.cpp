@@ -1,10 +1,11 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
+
 
 #include "stdafx.h"
 #include <iostream>
@@ -284,7 +285,7 @@ static AnnotationPtrVector test_load_annotations(TestDocumentType dtType, const 
 		//	pAnnotation = *iter;
 
 		//	delete pAnnotation;
-		//	
+		//
 		//}
 
 		// Read from string
@@ -349,7 +350,7 @@ static void test_save_annotation(Annotation* pAnnotation, TestDocumentType dtTyp
 }
 
 /*
-	Creates test Image Annotation object. 
+	Creates test Image Annotation object.
 	NOTE: After using the object, it needs to be deallocated.
 */
 static ImageAnnotation* create_image_annotation()
@@ -818,7 +819,7 @@ static ImageAnnotation* create_image_annotation()
 	SegmentationVector segmentationCollection;
 	Segmentation segmentation;
 	segmentation.SetSopInstanceUID("1.2.840.10008.5.1.4.1.1.1.999999999.3"); // Segmentation's SOP Instance UID
-	segmentation.SetSopClassUID("1.2.840.10008.5.1.4.1.1.66.4"); // Segmentation Storage SOP Class UID 
+	segmentation.SetSopClassUID("1.2.840.10008.5.1.4.1.1.66.4"); // Segmentation Storage SOP Class UID
 	segmentation.SetReferencedSopInstanceUID("1.2.840.10008.5.1.4.1.1.1.999999999.1"); // Image SOP Instance UID
 	segmentation.SetSegmentNumber(1);
 	imagingObservation = ImagingObservation();
@@ -843,7 +844,7 @@ static ImageAnnotation* create_image_annotation()
 	// Segmentation 2
 	segmentation = Segmentation();
 	segmentation.SetSopInstanceUID("1.2.840.10008.5.1.4.1.1.999999999.3"); // Segmentation's SOP Instance UID
-	segmentation.SetSopClassUID("1.2.840.10008.5.1.4.1.1.66.4"); // Segmentation Storage SOP Class UID 
+	segmentation.SetSopClassUID("1.2.840.10008.5.1.4.1.1.66.4"); // Segmentation Storage SOP Class UID
 	segmentation.SetReferencedSopInstanceUID("1.2.840.10008.5.1.4.1.1.1.999999999.2"); // Image SOP Instance UID
 	segmentation.SetSegmentNumber(2);
 	imagingObservation = ImagingObservation();
@@ -865,8 +866,8 @@ static ImageAnnotation* create_image_annotation()
 	segmentationCollection.push_back(segmentation);
 	// Segmentation 3
 	segmentation = Segmentation();
-	segmentation.SetSopInstanceUID("1.2.3.4.5.6.7.8.9"); // 
-	segmentation.SetSopClassUID("1.2.840.10008.5.1.4.1.1.66.4"); // Segmentation Storage SOP Class UID 
+	segmentation.SetSopInstanceUID("1.2.3.4.5.6.7.8.9"); //
+	segmentation.SetSopClassUID("1.2.840.10008.5.1.4.1.1.66.4"); // Segmentation Storage SOP Class UID
 	segmentation.SetReferencedSopInstanceUID("1.2.840.10008.5.1.4.1.1.1.999999999.1"); // Referenced image SOP Instance UID
 	segmentation.SetSegmentNumber(3);
 	imagingObservation = ImagingObservation();
@@ -952,7 +953,7 @@ static ImageAnnotation* create_image_annotation()
 
 
 /*
-	Creates test Annotation Of Annotation object. 
+	Creates test Annotation Of Annotation object.
 	NOTE: After using the object, it needs to be deallocated.
 */
 static AnnotationOfAnnotation* create_annotation_of_annotation()

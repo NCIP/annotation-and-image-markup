@@ -1,10 +1,11 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
+
 
 #include "../stdafx.h"
 #include "../model/AimHeaders.h"
@@ -33,7 +34,7 @@ XmlModelInternal::~XmlModelInternal(void)
 }
 
 /*
-* 
+*
 */
 void XmlModelInternal::createXmlNode(CAIMXML& xmlDoc, Annotation* pAnnotation)
 {
@@ -101,8 +102,8 @@ void XmlModelInternal::createXmlNodeAnnotationOfAnnotation(AIMXML::CAnnotationOf
 		CcalculationCollectionType xmlCalculations = xmlAnnotation.calculationCollection.append();
 		for(CalculationVector::const_iterator iter = calculations.begin(); iter < calculations.end(); iter++)
 			this->createXmlNode(xmlCalculations, *iter);
-	}	
-		
+	}
+
 	// Inference
 	const InferenceVector& inferences = annAnnotation.GetInferenceCollection();
 	if (inferences.size() > 0)
@@ -118,7 +119,7 @@ void XmlModelInternal::createXmlNodeAnnotationOfAnnotation(AIMXML::CAnnotationOf
 		CuserType xmlUserContainer = xmlAnnotation.user.append();
 		this->createXmlNode(xmlUserContainer, annAnnotation.GetUser());
 	}
-	
+
 	// Equipment
 	if (annAnnotation.GetEquipment() != NULL)
 	{
@@ -133,8 +134,8 @@ void XmlModelInternal::createXmlNodeAnnotationOfAnnotation(AIMXML::CAnnotationOf
 		CanatomicEntityCollectionType xmlAnatomicEntities = xmlAnnotation.anatomicEntityCollection.append();
 		for(AnatomicEntityVector::const_iterator iter = anatomicEntities.begin(); iter < anatomicEntities.end(); iter++)
 			this->createXmlNode(xmlAnatomicEntities, *iter);
-	}	
-	
+	}
+
 	// Imaging Observation
 	const ImagingObservationVector& imagingObservations = annAnnotation.GetImagingObservationCollection();
 	if (imagingObservations.size() > 0)
@@ -229,14 +230,14 @@ void XmlModelInternal::createXmlNodeImageAnnotation(AIMXML::CImageAnnotation& xm
 		CuserType xmlUserContainer = xmlAnnotation.user.append();
 		this->createXmlNode(xmlUserContainer, annotation.GetUser());
 	}
-	
+
 	// Equipment
 	if (annotation.GetEquipment() != NULL)
 	{
 		CequipmentType xmlEquipmentContainer = xmlAnnotation.equipment.append();
 		this->createXmlNode(xmlEquipmentContainer, annotation.GetEquipment());
 	}
-	
+
 	// Anatomic Entity
 	const AnatomicEntityVector& anatomicEntities = annotation.GetAnatomicEntityCollection();
 	if (anatomicEntities.size() > 0)
@@ -244,8 +245,8 @@ void XmlModelInternal::createXmlNodeImageAnnotation(AIMXML::CImageAnnotation& xm
 		CanatomicEntityCollectionType xmlAnatomicEntities = xmlAnnotation.anatomicEntityCollection.append();
 		for(AnatomicEntityVector::const_iterator iter = anatomicEntities.begin(); iter < anatomicEntities.end(); iter++)
 			this->createXmlNode(xmlAnatomicEntities, *iter);
-	}	
-	
+	}
+
 	// Imaging Observation
 	const ImagingObservationVector& imagingObservations = annotation.GetImagingObservationCollection();
 	if (imagingObservations.size() > 0)
@@ -430,13 +431,13 @@ void XmlModelInternal::createXmlNode(AIMXML::CimageReferenceCollectionType& xmlP
 {
 	switch (imageReference.GetImageReferenceType())
 	{
-		case ImageReference::T_DICOM_IMAGE_REF:   
+		case ImageReference::T_DICOM_IMAGE_REF:
 		{
 			AIMXML::CDICOMImageReference xmlDICOMImageReference = xmlParent.ImageReference.appendSpecial(AIMXML::_altova_ti_altova_CDICOMImageReference);
-			const DICOMImageReference& dicomImageReference = (const DICOMImageReference&)imageReference; 
+			const DICOMImageReference& dicomImageReference = (const DICOMImageReference&)imageReference;
 
 			xmlDICOMImageReference.cagridId = 0;
-			
+
 			// ImageStudy
 			const ImageStudy& study = dicomImageReference.GetStudy();
 			AIMXML::CImageStudy xmlImageStudy = xmlDICOMImageReference.imageStudy.append().ImageStudy.append();
@@ -444,7 +445,7 @@ void XmlModelInternal::createXmlNode(AIMXML::CimageReferenceCollectionType& xmlP
 			xmlImageStudy.instanceUID	= _T(study.GetInstanceUID());
 			xmlImageStudy.startDate		= AIMUtil::DateToAltovaDateTime(study.GetStartDate());
 			xmlImageStudy.startTime		= _T(study.GetStartTime().GetDicomFormatedTime());
-			
+
 			const ImageSeries& series = study.GetSeries();
 			CImageSeries xmlImageSeries = xmlImageStudy.imageSeries.append().ImageSeries.append();
 
@@ -504,7 +505,7 @@ void XmlModelInternal::createXmlNode(AIMXML::CpresentationStateCollectionType& x
 void XmlModelInternal::createXmlNode(AIMXML::CgeometricShapeCollectionType& xmlParent, const aim_lib::GeometricShape& geometricShape)
 {
     CGeometricShape* pXmlGeometricShape = NULL;
-	
+
 	switch (geometricShape.GetShapeType())
 	{
 		case GeometricShape::SHT_Circle:
@@ -518,25 +519,25 @@ void XmlModelInternal::createXmlNode(AIMXML::CgeometricShapeCollectionType& xmlP
 			AIMXML::CPoint xmlPoint = xmlParent.GeometricShape.appendSpecial(AIMXML::_altova_ti_altova_CPoint);
 			pXmlGeometricShape = &xmlPoint;
 			break;
-		}	
+		}
 		case GeometricShape::SHT_Ellipse:
 		{
 			AIMXML::CEllipse xmlEllipse = xmlParent.GeometricShape.appendSpecial(AIMXML::_altova_ti_altova_CEllipse);
 			pXmlGeometricShape = &xmlEllipse;
 			break;
-		}	
+		}
 		case GeometricShape::SHT_Polyline:
 		{
 			AIMXML::CPolyline xmlPolyline = xmlParent.GeometricShape.appendSpecial(AIMXML::_altova_ti_altova_CPolyline);
 			pXmlGeometricShape = &xmlPolyline;
 			break;
-		}	
+		}
 		case GeometricShape::SHT_Multipoint:
 		{
 			AIMXML::CMultiPoint xmlMultiPoint = xmlParent.GeometricShape.appendSpecial(AIMXML::_altova_ti_altova_CMultiPoint);
 			pXmlGeometricShape = &xmlMultiPoint;
 			break;
-		}	
+		}
 	}
 
 	if (pXmlGeometricShape == NULL)
@@ -964,7 +965,7 @@ void XmlModelInternal::createXmlNode(CcalculationDataCollectionType& xmlParent, 
 
 	xmlCalculationData.cagridId		= 0;
 	xmlCalculationData.dataValue	= data.GetValue();
-	
+
 	const CoordinateVector& coordinates = data.GetCoordinateCollection();
 //	if (coordinates.size() > 0)
 	{

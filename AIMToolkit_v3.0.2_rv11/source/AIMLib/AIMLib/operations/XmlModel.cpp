@@ -1,10 +1,11 @@
-/*L
+/*
 *  Copyright Northwestern University
 *  Copyright Stanford University (ATB 1.0 and ATS 1.0)
 *
 *  Distributed under the OSI-approved BSD 3-Clause License.
 *  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
 */
+
 
 #include "../stdafx.h"
 #include "../model/AimHeaders.h"
@@ -20,7 +21,7 @@
 // xerces include
 #include "xercesc/util/PlatformUtils.hpp"
 // Other include files, declarations, and non-Xerces-C++ initializations.
-XERCES_CPP_NAMESPACE_USE 
+XERCES_CPP_NAMESPACE_USE
 
 #include <iostream>
 
@@ -50,7 +51,7 @@ void XmlModel::WriteAnnotationToFile(const Annotation& annotation, const std::st
 	CAIMXML xmlDoc = CAIMXML::CreateDocument();
 
 	XmlModelInternal xmlModelInt;
-	xmlModelInt.createXmlNode(xmlDoc, &const_cast<Annotation&>(annotation)); 
+	xmlModelInt.createXmlNode(xmlDoc, &const_cast<Annotation&>(annotation));
 
 	xmlDoc.SaveToFile(fileName, true);
 
@@ -73,7 +74,7 @@ void XmlModel::WriteAnnotationsToFile(const AnnotationPtrVector& annotations, co
 	CAIMXML xmlDoc = CAIMXML::CreateDocument();
 
 	XmlModelInternal xmlModelInt;
-	xmlModelInt.createXmlNodes(xmlDoc, annotations); 
+	xmlModelInt.createXmlNodes(xmlDoc, annotations);
 
 	xmlDoc.SaveToFile(fileName, true);
 
@@ -103,7 +104,7 @@ std::string::size_type XmlModel::WriteAnnotationToXmlString(Annotation* pAnnotat
 	CAIMXML xmlDoc = CAIMXML::CreateDocument();
 
 	XmlModelInternal xmlModelInt;
-	xmlModelInt.createXmlNode(xmlDoc, pAnnotation); 
+	xmlModelInt.createXmlNode(xmlDoc, pAnnotation);
 
 	std::string retXml = xmlDoc.SaveToString(true);
 
@@ -134,7 +135,7 @@ std::string::size_type XmlModel::WriteAnnotationsToXmlString(const AnnotationPtr
 	CAIMXML xmlDoc = CAIMXML::CreateDocument();
 
 	XmlModelInternal xmlModelInt;
-	xmlModelInt.createXmlNodes(xmlDoc, annotations); 
+	xmlModelInt.createXmlNodes(xmlDoc, annotations);
 
 	std::string retXml = xmlDoc.SaveToString(true);
 

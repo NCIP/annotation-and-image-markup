@@ -1,10 +1,23 @@
-/*L
-*  Copyright Northwestern University
-*  Copyright Stanford University (ATB 1.0 and ATS 1.0)
-*
-*  Distributed under the OSI-approved BSD 3-Clause License.
-*  See http://ncip.github.com/annotation-and-image-markup/LICENSE.txt for details.
-*/
+/*
+ * jdpred.c
+ *
+ * Copyright (C) 1998, Thomas G. Lane.
+ * This file is part of the Independent JPEG Group's software.
+ * For conditions of distribution and use, see the accompanying README file.
+ *
+ *
+ * This file contains sample undifferencing (reconstruction) for lossless JPEG.
+ *
+ * In order to avoid paying the performance penalty of having to check the
+ * predictor being used and the row being processed for each call of the
+ * undifferencer, and to promote optimization, we have separate undifferencing
+ * functions for each case.
+ *
+ * We are able to avoid duplicating source code by implementing the predictors
+ * and undifferencers as macros.  Each of the undifferencing functions are
+ * simply wrappers around an UNDIFFERENCE macro with the appropriate PREDICTOR
+ * macro passed as an argument.
+ */
 
 #define JPEG_INTERNALS
 #include "jinclude16.h"
