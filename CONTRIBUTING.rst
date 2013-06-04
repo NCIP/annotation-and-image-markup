@@ -17,7 +17,10 @@ Getting Started
 
 * Fork the repository on GitHub to publish any proposed changes
 
-* Submit a ticket for your issue at https://tracker.nci.nih.gov/browse/AIM
+* Submit a ticket for your issue at 
+              * [AIM - Information Model(AIM)] (https://tracker.nci.nih.gov/browse/AIM)
+              * [AIM - Enterprise Service(AIMES)] (https://tracker.nci.nih.gov/browse/AIMES)
+              * [ AIM - Workstation (AIMWS)] (https://tracker.nci.nih.gov/browse/AIMWS)
   assuming one does not already exist.
 
   - Click on https://tracker.nci.nih.gov/secure/CreateIssue.jspa?pid=10002&issuetype=8 to get a jira account.
@@ -69,8 +72,11 @@ Submitting Changes
 .. If the project uses an issue tracker, use the next bullet.
    Otherwise, remove the next bullet.  Delete this note either way.
 
-* Update your https://tracker.nci.nih.gov/browse/AIM ticket to mark that you have submitted
-  code and are ready for it to be reviewed.
+* Update your 
+* [AIM - Information Model(AIM)] (https://tracker.nci.nih.gov/browse/AIM)
+* [AIM - Enterprise Service(AIMES)] (https://tracker.nci.nih.gov/browse/AIMES)
+* [ AIM - Workstation (AIMWS)] (https://tracker.nci.nih.gov/browse/AIMWS) 
+  ticket to mark that you have submitted code and are ready for it to be reviewed.
 
   - Include a link to the pull request in the ticket
 
