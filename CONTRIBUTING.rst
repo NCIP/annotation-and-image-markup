@@ -73,9 +73,9 @@ Submitting Changes
    Otherwise, remove the next bullet.  Delete this note either way.
 
 * Update your 
-* [AIM - Information Model(AIM)] (https://tracker.nci.nih.gov/browse/AIM)
-* [AIM - Enterprise Service(AIMES)] (https://tracker.nci.nih.gov/browse/AIMES)
-* [ AIM - Workstation (AIMWS)] (https://tracker.nci.nih.gov/browse/AIMWS) 
+   * [AIM - Information Model(AIM)] (https://tracker.nci.nih.gov/browse/AIM)
+   * [AIM - Enterprise Service(AIMES)] (https://tracker.nci.nih.gov/browse/AIMES)
+   * [ AIM - Workstation (AIMWS)] (https://tracker.nci.nih.gov/browse/AIMWS) 
   ticket to mark that you have submitted code and are ready for it to be reviewed.
 
   - Include a link to the pull request in the ticket
