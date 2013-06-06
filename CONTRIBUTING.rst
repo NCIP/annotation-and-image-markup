@@ -18,9 +18,9 @@ Getting Started
 * Fork the repository on GitHub to publish any proposed changes
 
 * Submit a ticket for your issue at 
-              * [AIM - Information Model(AIM)] (https://tracker.nci.nih.gov/browse/AIM)
-              * [AIM - Enterprise Service(AIMES)] (https://tracker.nci.nih.gov/browse/AIMES)
-              * [ AIM - Workstation (AIMWS)] (https://tracker.nci.nih.gov/browse/AIMWS)
+              * `AIM - Information Model(AIM)`_. 
+              * `AIM - Enterprise Service(AIMES)`_.
+              * `AIM - Workstation (AIMWS)`_.
   assuming one does not already exist.
 
   - Click on https://tracker.nci.nih.gov/secure/CreateIssue.jspa?pid=10002&issuetype=8 to get a jira account.
@@ -28,6 +28,9 @@ Getting Started
   - Make sure you fill in the earliest version that you know has the issue.
 
 .. _`GitHub Account`: https://github.com/signup/free
+.. _`AIM - Information Model(AIM)`: https://tracker.nci.nih.gov/browse/AIM
+.. _`AIM - Enterprise Service(AIMES)`: https://tracker.nci.nih.gov/browse/AIMES
+.. _`AIM - Workstation (AIMWS)`: https://tracker.nci.nih.gov/browse/AIMWS
 
 --------------
 Making Changes
@@ -73,9 +76,9 @@ Submitting Changes
    Otherwise, remove the next bullet.  Delete this note either way.
 
 * Update your 
-   * [AIM - Information Model(AIM)] (https://tracker.nci.nih.gov/browse/AIM)
-   * [AIM - Enterprise Service(AIMES)] (https://tracker.nci.nih.gov/browse/AIMES)
-   * [ AIM - Workstation (AIMWS)] (https://tracker.nci.nih.gov/browse/AIMWS) 
+   * `AIM - Information Model(AIM)`_. 
+   * `AIM - Enterprise Service(AIMES)`_.
+   * `AIM - Workstation (AIMWS)`_.
   ticket to mark that you have submitted code and are ready for it to be reviewed.
 
   - Include a link to the pull request in the ticket
