@@ -21,10 +21,3 @@ You will find more details about AIM in the following links:
 .. _'AIM  Workstation (AIMWS)' : https://tracker.nci.nih.gov/browse/AIMWS
 .. _'AIM Wiki' : https://wiki.nci.nih.gov/display/AIM/Annotation+and+Image+Markup+-+AIM
 .. _'AIM Github' : https://github.com/NCIP/annotation-and-image-markup
-
-
-Please join us in further developing and improving Annotation and Markup(AIM.
-
-Place a copy of the README file in the master branch of the repository on Github. Github will render the content of the README file on its top-level page for the project repository. The file may be optionally named "README.txt", "README.md", or "README.rst" depending on the markup language used.
-
-If the project has separate Documents and/or Data repositories add a bullet to the above template to link to them. Furthermore, each repository will have its own README.
