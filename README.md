@@ -12,7 +12,7 @@ The AIM project includes the following.
    * The AIM Template Builder is a Java application that allows you to build templates that are compatible with the AIM Model. Templates are a set of well-defined questions and answer choices that facilitate collecting information for a study. The AIM Template Builder has replaced the AIM Template Manager.
    * AIM on ClearCanvas Workstation is a reference implementation of the AIM Model. AIM on ClearCanvas Workstation demonstrat
 
-It is written in C, C++, Visual C++, Java using other technologies.
+It is written in C, C++, Visual C++, Java using XML and ClearCanvas Workstation.
 
 The goal of Annotation and Image Markup Project is to develop a mechanism, for modeling, capturing, and serializing image annotation and markup data that can be adopted as a standard by the medical imaging community. 
   
