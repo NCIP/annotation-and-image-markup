@@ -13,7 +13,6 @@ The AIM project includes the following.
    * AIM on ClearCanvas Workstation is a reference implementation of the AIM Model. AIM on ClearCanvas Workstation demonstrat
 
 It is written in C, C++, Visual C++, Java using XML and ClearCanvas Workstation.
-
 The goal of Annotation and Image Markup Project is to develop a mechanism, for modeling, capturing, and serializing image annotation and markup data that can be adopted as a standard by the medical imaging community. 
   
 AIM is distrubuted under the BSD 3-Clause License.
