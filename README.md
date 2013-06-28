@@ -19,7 +19,7 @@ AIM is distrubuted under the BSD 3-Clause License.
 Please see the NOTICE and LICENSE files for details.
 
 You will find more details about AIM in the following links:
-  * [Community Wiki] (https://wiki.nci.nih.gov/display/AIM/Annotation+and+Image+Markup+-+AIM)
+  * [Community Wiki] (https://wiki.nci.nih.gov/x/z4X3Ag)
   * Issue Tracker 
    * [AIM - Information Model(AIM)] (https://tracker.nci.nih.gov/browse/AIM)
    * [AIM - Enterprise Service(AIMES)] (https://tracker.nci.nih.gov/browse/AIMES)
