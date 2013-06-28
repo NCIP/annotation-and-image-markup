@@ -25,5 +25,6 @@ You will find more details about AIM in the following links:
    * [AIM - Enterprise Service(AIMES)] (https://tracker.nci.nih.gov/browse/AIMES)
    * [ AIM - Workstation (AIMWS)] (https://tracker.nci.nih.gov/browse/AIMWS)
   * [Code Repository] (https://github.com/NCIP/annotation-and-image-markup)
+  * [View Website] (http://imaging.fsm.northwestern.edu/templates/web)
 
 Please join us in further developing and improving Annotation and Markup(AIM).
