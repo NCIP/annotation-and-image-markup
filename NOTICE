@@ -1,4 +1,4 @@
-Annotation and Image Markup
+Annotation and Image Markup (AIM)
 Copyright (c) 2007 - 2013, Northwestern University 
 Copyright (c) 2010 - 2012, Northwestern University and Stanford University for ATB 1.0 and ATS 1.0
 
@@ -12,8 +12,9 @@ In 2013, as part of the National Cancer Informatics Program (NCIP) Open Developm
 the Annotation and Image Markup(AIM) source code was migrated to GitHub to allow further development by the broader
 community.
 
------------------------------------------------------------------------
-The AIM toolkit contains code from third parties that have different copyrights.
+-------------------------------------------------------------------------------------------------------------------
+
+AIM contains code from third parties that have different copyrights.
 They are:
    1) DCMTK modules:Copyright by 1994-2012, OFFIS e.V. R&D Division Health Escherweg 2, 26121 Oldenburg, Germany
    
