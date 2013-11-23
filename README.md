@@ -19,11 +19,12 @@ AIM is distrubuted under the BSD 3-Clause License.
 Please see the NOTICE and LICENSE files for details.
 
 You will find more details about AIM in the following links:
-  * [Community Wiki] (https://wiki.nci.nih.gov/display/AIM/Annotation+and+Image+Markup+-+AIM)
+  * [Community Wiki] (https://wiki.nci.nih.gov/x/z4X3Ag)
   * Issue Tracker 
    * [AIM - Information Model(AIM)] (https://tracker.nci.nih.gov/browse/AIM)
    * [AIM - Enterprise Service(AIMES)] (https://tracker.nci.nih.gov/browse/AIMES)
    * [ AIM - Workstation (AIMWS)] (https://tracker.nci.nih.gov/browse/AIMWS)
   * [Code Repository] (https://github.com/NCIP/annotation-and-image-markup)
+  * [View Website] (http://imaging.fsm.northwestern.edu/templates/web)
 
 Please join us in further developing and improving Annotation and Markup(AIM).
