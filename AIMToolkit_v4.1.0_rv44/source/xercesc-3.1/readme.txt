@@ -1,1 +1,0 @@
-xerces-c 3.1.1 for VC9 downloaded on 1-18-2011
