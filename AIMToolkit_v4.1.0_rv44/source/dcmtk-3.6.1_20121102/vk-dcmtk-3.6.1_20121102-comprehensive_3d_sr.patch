@@ -1,0 +1,408 @@
+diff -raupN dcmtk-3.6.1_20121102//dcmdata/include/dcmtk/dcmdata/dcuid.h dcmtk-3.6.1_20121102-my//dcmdata/include/dcmtk/dcmdata/dcuid.h
+--- dcmtk-3.6.1_20121102//dcmdata/include/dcmtk/dcmdata/dcuid.h	2012-11-02 08:35:36.000000000 -0500
++++ dcmtk-3.6.1_20121102-my//dcmdata/include/dcmtk/dcmdata/dcuid.h	2013-01-14 16:44:47.022924500 -0600
+@@ -436,6 +436,7 @@ DCMTK_DCMDATA_EXPORT unsigned long dcmGu
+ #define UID_BasicTextSRStorage                                     "1.2.840.10008.5.1.4.1.1.88.11"
+ #define UID_EnhancedSRStorage                                      "1.2.840.10008.5.1.4.1.1.88.22"
+ #define UID_ComprehensiveSRStorage                                 "1.2.840.10008.5.1.4.1.1.88.33"
++#define UID_Comprehensive3DSRStorage                               "1.2.840.10008.5.1.4.1.1.88.34"
+ #define UID_ProcedureLogStorage                                    "1.2.840.10008.5.1.4.1.1.88.40"
+ #define UID_MammographyCADSRStorage                                "1.2.840.10008.5.1.4.1.1.88.50"
+ #define UID_KeyObjectSelectionDocumentStorage                      "1.2.840.10008.5.1.4.1.1.88.59"
+diff -raupN dcmtk-3.6.1_20121102//dcmsr/include/dcmtk/dcmsr/dsrc3dcc.h dcmtk-3.6.1_20121102-my//dcmsr/include/dcmtk/dcmsr/dsrc3dcc.h
+--- dcmtk-3.6.1_20121102//dcmsr/include/dcmtk/dcmsr/dsrc3dcc.h	1969-12-31 18:00:00.000000000 -0600
++++ dcmtk-3.6.1_20121102-my//dcmsr/include/dcmtk/dcmsr/dsrc3dcc.h	2013-01-14 16:44:46.971918000 -0600
+@@ -0,0 +1,65 @@
++
++#ifndef DSRC3DCC_H
++#define DSRC3DCC_H
++
++#include "dcmtk/config/osconfig.h"   /* make sure OS specific configuration is included first */
++
++#include "dcmtk/dcmsr/dsriodcc.h"
++
++
++/*---------------------*
++ *  class declaration  *
++ *---------------------*/
++
++/** Class for checking the content relationship constraints of the Extensible SR IOD
++ */
++class DCMTK_DCMSR_EXPORT DSRComprehensive3DSRConstraintChecker
++  : public DSRIODConstraintChecker
++{
++
++  public:
++
++    /** default constructor
++     */
++    DSRComprehensive3DSRConstraintChecker();
++
++    /** destructor
++     */
++    virtual ~DSRComprehensive3DSRConstraintChecker();
++
++    /** check whether by-reference relationships are allowed for this SR IOD
++     ** @return always returns OFTrue, i.e. by-reference relationships are allowed
++     */
++    virtual OFBool isByReferenceAllowed() const;
++
++    /** check whether this SR IOD requires template support
++     ** @return always returns OFFalse, i.e. template support is not required
++     */
++    virtual OFBool isTemplateSupportRequired() const;
++
++    /** get identifier of the root template
++     ** @return always returns NULL (no template required)
++     */
++    virtual const char *getRootTemplateIdentifier() const;
++
++    /** get the associated document type of the SR IOD
++     ** @return document type (DSRTypes::DT_ExtensibleSR)
++     */
++    virtual E_DocumentType getDocumentType() const;
++
++    /** check whether specified content relationship is allowed for this IOD
++     ** @param  sourceValueType   value type of the source content item to be checked
++     *  @param  relationshipType  type of relationship between source and target item
++     *  @param  targetValueType   value type of the target content item to be checked
++     *  @param  byReference       optional flag indicating whether the node/relationship
++     *                            should be added by-value (default) or by-reference
++     ** @return OFTrue if content relationship is allowed, OFFalse otherwise
++     */
++    virtual OFBool checkContentRelationship(const E_ValueType sourceValueType,
++                                            const E_RelationshipType relationshipType,
++                                            const E_ValueType targetValueType,
++                                            const OFBool byReference = OFFalse) const;
++};
++
++
++#endif
+diff -raupN dcmtk-3.6.1_20121102//dcmsr/include/dcmtk/dcmsr/dsrtypes.h dcmtk-3.6.1_20121102-my//dcmsr/include/dcmtk/dcmsr/dsrtypes.h
+--- dcmtk-3.6.1_20121102//dcmsr/include/dcmtk/dcmsr/dsrtypes.h	2012-11-02 08:35:36.000000000 -0500
++++ dcmtk-3.6.1_20121102-my//dcmsr/include/dcmtk/dcmsr/dsrtypes.h	2013-01-14 16:39:29.737634300 -0600
+@@ -393,6 +393,8 @@ class DCMTK_DCMSR_EXPORT DSRTypes
+         DT_EnhancedSR,
+         /// DICOM IOD: Comprehensive SR
+         DT_ComprehensiveSR,
++        /// DICOM IOD: Comprehensive 3D SR
++        DT_Comprehensive3DSR,
+         /// DICOM IOD: Key Object Selection Document
+         DT_KeyObjectSelectionDocument,
+         /// DICOM IOD: Mammography CAD SR
+diff -raupN dcmtk-3.6.1_20121102//dcmsr/libsrc/CMakeLists.txt dcmtk-3.6.1_20121102-my//dcmsr/libsrc/CMakeLists.txt
+--- dcmtk-3.6.1_20121102//dcmsr/libsrc/CMakeLists.txt	2012-11-02 08:35:36.000000000 -0500
++++ dcmtk-3.6.1_20121102-my//dcmsr/libsrc/CMakeLists.txt	2013-01-14 16:46:52.530361900 -0600
+@@ -1,5 +1,5 @@
+ # create library from source files
+-DCMTK_ADD_LIBRARY(dcmsr dsrcitem dsrcodtn dsrcodvl dsrcomtn dsrcomvl dsrcontn dsrcsidl dsrdattn dsrdoc dsrdoctn dsrdoctr dsrdtitn dsrimgfr dsrimgtn dsrimgvl dsrnumtn dsrnumvl dsrpnmtn dsrrefin dsrreftn dsrscogr dsrsc3gr dsrscotn dsrsc3tn dsrscovl dsrsc3vl dsrsoprf dsrstrvl dsrtcodt dsrtcosp dsrtcotn dsrtcoto dsrtcovl dsrtextn dsrtimtn dsrtncsr dsrtree dsrtypes dsruidtn dsrwavch dsrwavtn dsrwavvl dsrxmlc dsrxmld dsriodcc dsrbascc dsrenhcc dsrcomcc dsrkeycc dsrmamcc dsrchecc dsrcolcc dsrprocc dsrxrdcc dsrspecc dsrmaccc dsrimpcc)
++DCMTK_ADD_LIBRARY(dcmsr dsrcitem dsrcodtn dsrcodvl dsrcomtn dsrcomvl dsrcontn dsrcsidl dsrdattn dsrdoc dsrdoctn dsrdoctr dsrdtitn dsrimgfr dsrimgtn dsrimgvl dsrnumtn dsrnumvl dsrpnmtn dsrrefin dsrreftn dsrscogr dsrsc3gr dsrscotn dsrsc3tn dsrscovl dsrsc3vl dsrsoprf dsrstrvl dsrtcodt dsrtcosp dsrtcotn dsrtcoto dsrtcovl dsrtextn dsrtimtn dsrtncsr dsrtree dsrtypes dsruidtn dsrwavch dsrwavtn dsrwavvl dsrxmlc dsrxmld dsriodcc dsrbascc dsrenhcc dsrcomcc dsrc3dcc dsrkeycc dsrmamcc dsrchecc dsrcolcc dsrprocc dsrxrdcc dsrspecc dsrmaccc dsrimpcc)
+ 
+ DCMTK_TARGET_LINK_MODULES(dcmsr ofstd oflog dcmdata dcmimgle dcmimage)
+ DCMTK_TARGET_LINK_LIBRARIES(dcmsr ${LIBXML_LIBS})
+diff -raupN dcmtk-3.6.1_20121102//dcmsr/libsrc/Makefile.dep dcmtk-3.6.1_20121102-my//dcmsr/libsrc/Makefile.dep
+--- dcmtk-3.6.1_20121102//dcmsr/libsrc/Makefile.dep	2012-11-02 08:35:36.000000000 -0500
++++ dcmtk-3.6.1_20121102-my//dcmsr/libsrc/Makefile.dep	2013-01-14 16:52:11.618881000 -0600
+@@ -107,6 +107,115 @@ dsrbascc.o: dsrbascc.cc ../../config/inc
+  ../../dcmdata/include/dcmtk/dcmdata/dcvrof.h \
+  ../../dcmdata/include/dcmtk/dcmdata/cmdlnarg.h \
+  ../include/dcmtk/dcmsr/dsdefine.h
++dsrc3dcc.o: dsrc3dcc.cc ../../config/include/dcmtk/config/osconfig.h \
++ ../include/dcmtk/dcmsr/dsrc3dcc.h ../include/dcmtk/dcmsr/dsriodcc.h \
++ ../include/dcmtk/dcmsr/dsrtypes.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dctk.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dctypes.h \
++ ../../oflog/include/dcmtk/oflog/oflog.h \
++ ../../oflog/include/dcmtk/oflog/logger.h \
++ ../../oflog/include/dcmtk/oflog/config.h \
++ ../../ofstd/include/dcmtk/ofstd/ofdefine.h \
++ ../../ofstd/include/dcmtk/ofstd/ofcast.h \
++ ../../ofstd/include/dcmtk/ofstd/ofexport.h \
++ ../../ofstd/include/dcmtk/ofstd/ofstdinc.h \
++ ../../oflog/include/dcmtk/oflog/config/defines.h \
++ ../../oflog/include/dcmtk/oflog/helpers/threadcf.h \
++ ../../oflog/include/dcmtk/oflog/loglevel.h \
++ ../../oflog/include/dcmtk/oflog/streams.h \
++ ../../oflog/include/dcmtk/oflog/tstring.h \
++ ../../ofstd/include/dcmtk/ofstd/ofstring.h \
++ ../../ofstd/include/dcmtk/ofstd/oftypes.h \
++ ../../ofstd/include/dcmtk/ofstd/ofstream.h \
++ ../../oflog/include/dcmtk/oflog/spi/apndatch.h \
++ ../../oflog/include/dcmtk/oflog/appender.h \
++ ../../oflog/include/dcmtk/oflog/layout.h \
++ ../../oflog/include/dcmtk/oflog/helpers/lloguser.h \
++ ../../oflog/include/dcmtk/oflog/helpers/property.h \
++ ../../ofstd/include/dcmtk/ofstd/ofmap.h \
++ ../../ofstd/include/dcmtk/ofstd/oflist.h \
++ ../../oflog/include/dcmtk/oflog/helpers/timehelp.h \
++ ../../oflog/include/dcmtk/oflog/spi/logevent.h \
++ ../../oflog/include/dcmtk/oflog/ndc.h \
++ ../../oflog/include/dcmtk/oflog/helpers/threads.h \
++ ../../oflog/include/dcmtk/oflog/helpers/pointer.h \
++ ../../ofstd/include/dcmtk/ofstd/ofstack.h \
++ ../../ofstd/include/dcmtk/ofstd/ofaptr.h \
++ ../../oflog/include/dcmtk/oflog/spi/filter.h \
++ ../../oflog/include/dcmtk/oflog/spi/logfact.h \
++ ../../oflog/include/dcmtk/oflog/logmacro.h \
++ ../../ofstd/include/dcmtk/ofstd/ofconapp.h \
++ ../../ofstd/include/dcmtk/ofstd/ofcmdln.h \
++ ../../ofstd/include/dcmtk/ofstd/ofconsol.h \
++ ../../ofstd/include/dcmtk/ofstd/ofthread.h \
++ ../../ofstd/include/dcmtk/ofstd/offile.h \
++ ../../ofstd/include/dcmtk/ofstd/ofstd.h \
++ ../../ofstd/include/dcmtk/ofstd/ofcond.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcdefine.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcswap.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcerror.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcxfer.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvr.h \
++ ../../ofstd/include/dcmtk/ofstd/ofglobal.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcistrma.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcostrma.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcuid.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dctagkey.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dctag.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcdicent.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dchashdi.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcdict.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcdeftag.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcobject.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcstack.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcelem.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcitem.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dclist.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcpcache.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcmetinf.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcdatset.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcsequen.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcfilefo.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcdicdir.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcdirrec.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrulup.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrul.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcpixseq.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcofsetl.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcbytstr.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrae.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvras.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrcs.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrda.h \
++ ../../ofstd/include/dcmtk/ofstd/ofdate.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrds.h \
++ ../../ofstd/include/dcmtk/ofstd/ofvector.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrdt.h \
++ ../../ofstd/include/dcmtk/ofstd/ofdatime.h \
++ ../../ofstd/include/dcmtk/ofstd/oftime.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvris.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrtm.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrui.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcchrstr.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrlo.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrlt.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrpn.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrsh.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrst.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrut.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrobow.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcpixel.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrpobw.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcovlay.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrat.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrss.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrus.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrsl.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrfl.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrfd.h \
++ ../../dcmdata/include/dcmtk/dcmdata/dcvrof.h \
++ ../../dcmdata/include/dcmtk/dcmdata/cmdlnarg.h \
++ ../include/dcmtk/dcmsr/dsdefine.h
+ dsrchecc.o: dsrchecc.cc ../../config/include/dcmtk/config/osconfig.h \
+  ../include/dcmtk/dcmsr/dsrchecc.h ../include/dcmtk/dcmsr/dsriodcc.h \
+  ../include/dcmtk/dcmsr/dsrtypes.h \
+@@ -5622,7 +5731,8 @@ dsrtypes.o: dsrtypes.cc ../../config/inc
+  ../include/dcmtk/dcmsr/dsrwavtn.h ../include/dcmtk/dcmsr/dsrcontn.h \
+  ../include/dcmtk/dcmsr/dsrreftn.h ../include/dcmtk/dcmsr/dsrbascc.h \
+  ../include/dcmtk/dcmsr/dsriodcc.h ../include/dcmtk/dcmsr/dsrenhcc.h \
+- ../include/dcmtk/dcmsr/dsrcomcc.h ../include/dcmtk/dcmsr/dsrkeycc.h \
++ ../include/dcmtk/dcmsr/dsrcomcc.h ../include/dcmtk/dcmsr/dsrc3dcc.h \
++ ../include/dcmtk/dcmsr/dsrkeycc.h \
+  ../include/dcmtk/dcmsr/dsrmamcc.h ../include/dcmtk/dcmsr/dsrchecc.h \
+  ../include/dcmtk/dcmsr/dsrcolcc.h ../include/dcmtk/dcmsr/dsrprocc.h \
+  ../include/dcmtk/dcmsr/dsrxrdcc.h ../include/dcmtk/dcmsr/dsrspecc.h \
+diff -raupN dcmtk-3.6.1_20121102//dcmsr/libsrc/Makefile.in dcmtk-3.6.1_20121102-my//dcmsr/libsrc/Makefile.in
+--- dcmtk-3.6.1_20121102//dcmsr/libsrc/Makefile.in	2012-11-02 08:35:36.000000000 -0500
++++ dcmtk-3.6.1_20121102-my//dcmsr/libsrc/Makefile.in	2013-01-14 16:53:05.291196500 -0600
+@@ -30,8 +30,8 @@ objs = dsrdoc.o dsrtree.o dsrtncsr.o dsr
+ 	dsruidtn.o dsrpnmtn.o dsrscotn.o dsrsc3tn.o dsrtcotn.o dsrcomtn.o \
+ 	dsrimgtn.o dsrwavtn.o dsrcontn.o dsrreftn.o dsrsoprf.o dsrrefin.o \
+ 	dsrcsidl.o dsrxmlc.o dsrxmld.o dsriodcc.o dsrbascc.o dsrenhcc.o \
+-	dsrcomcc.o dsrkeycc.o dsrmamcc.o dsrchecc.o dsrcolcc.o dsrprocc.o \
+-	dsrxrdcc.o dsrspecc.o dsrmaccc.o dsrimpcc.o
++	dsrcomcc.o dsrc3dcc.o dsrkeycc.o dsrmamcc.o dsrchecc.o dsrcolcc.o \
++	dsrprocc.o dsrxrdcc.o dsrspecc.o dsrmaccc.o dsrimpcc.o
+ library = libdcmsr.$(LIBEXT)
+ 
+ 
+diff -raupN dcmtk-3.6.1_20121102//dcmsr/libsrc/dsrc3dcc.cc dcmtk-3.6.1_20121102-my//dcmsr/libsrc/dsrc3dcc.cc
+--- dcmtk-3.6.1_20121102//dcmsr/libsrc/dsrc3dcc.cc	1969-12-31 18:00:00.000000000 -0600
++++ dcmtk-3.6.1_20121102-my//dcmsr/libsrc/dsrc3dcc.cc	2013-01-14 16:44:46.997421200 -0600
+@@ -0,0 +1,119 @@
++
++#include "dcmtk/config/osconfig.h"    /* make sure OS specific configuration is included first */
++
++#include "dcmtk/dcmsr/dsrc3dcc.h"
++
++
++DSRComprehensive3DSRConstraintChecker::DSRComprehensive3DSRConstraintChecker()
++  : DSRIODConstraintChecker()
++{
++}
++
++
++DSRComprehensive3DSRConstraintChecker::~DSRComprehensive3DSRConstraintChecker()
++{
++}
++
++
++OFBool DSRComprehensive3DSRConstraintChecker::isByReferenceAllowed() const
++{
++    return OFTrue;
++}
++
++
++OFBool DSRComprehensive3DSRConstraintChecker::isTemplateSupportRequired() const
++{
++    return OFFalse;
++}
++
++
++const char *DSRComprehensive3DSRConstraintChecker::getRootTemplateIdentifier() const
++{
++    return NULL;
++}
++
++
++DSRTypes::E_DocumentType DSRComprehensive3DSRConstraintChecker::getDocumentType() const
++{
++    return DT_Comprehensive3DSR;
++}
++
++
++OFBool DSRComprehensive3DSRConstraintChecker::checkContentRelationship(const E_ValueType sourceValueType,
++                                                                     const E_RelationshipType relationshipType,
++                                                                     const E_ValueType targetValueType,
++                                                                     const OFBool byReference) const
++{
++    /* the following code implements the contraints of table A.35.X-2 in DICOM PS3.3 */
++    OFBool result = OFFalse;
++    /* row 1 of the table */
++    if ((relationshipType == RT_contains) && (sourceValueType == VT_Container))
++    {
++        result = (targetValueType == VT_Text)     || (targetValueType == VT_Code)      || (targetValueType == VT_Num)       ||
++                 (targetValueType == VT_DateTime) || (targetValueType == VT_Date)      || (targetValueType == VT_Time)      ||
++                 (targetValueType == VT_UIDRef)   || (targetValueType == VT_PName)     || (targetValueType == VT_SCoord)    ||
++                 (targetValueType == VT_SCoord3D) || (targetValueType == VT_TCoord)    || (targetValueType == VT_Composite) ||
++                 (targetValueType == VT_Image)    || (targetValueType == VT_Waveform)  ||
++                 ((targetValueType == VT_Container) && !byReference /* only by-value */);
++    }
++    /* row 2 of the table */
++    else if ((relationshipType == RT_hasObsContext) && ((sourceValueType == VT_Container) ||
++        (sourceValueType == VT_Text) || (sourceValueType == VT_Code) || (sourceValueType == VT_Num)))
++    {
++        result = (targetValueType == VT_Text)     || (targetValueType == VT_Code)  || (targetValueType == VT_Num)  ||
++                 (targetValueType == VT_DateTime) || (targetValueType == VT_Date)  || (targetValueType == VT_Time) ||
++                 (targetValueType == VT_UIDRef)   || (targetValueType == VT_PName) || (targetValueType == VT_Composite);
++    }
++    /* row 3 of the table */
++    else if ((relationshipType == RT_hasAcqContext) && ((sourceValueType == VT_Container) || (sourceValueType == VT_Image) ||
++        (sourceValueType == VT_Waveform) || (sourceValueType == VT_Composite) || (sourceValueType == VT_Num)))
++    {
++        result = (targetValueType == VT_Text)     || (targetValueType == VT_Code)  || (targetValueType == VT_Num)  ||
++                 (targetValueType == VT_DateTime) || (targetValueType == VT_Date)  || (targetValueType == VT_Time) ||
++                 (targetValueType == VT_UIDRef)   || (targetValueType == VT_PName) || (targetValueType == VT_Container);
++    }
++    /* row 4 of the table */
++    else if ((relationshipType == RT_hasConceptMod) && !byReference /* only by-value */)
++    {
++        result = (targetValueType == VT_Text) || (targetValueType == VT_Code);
++    }
++    /* row 5 of the table */
++    else if ((relationshipType == RT_hasProperties) &&
++        ((sourceValueType == VT_Text) || (sourceValueType == VT_Code) || (sourceValueType == VT_Num)))
++    {
++        result = (targetValueType == VT_Text)     || (targetValueType == VT_Code)      || (targetValueType == VT_Num)    ||
++                 (targetValueType == VT_DateTime) || (targetValueType == VT_Date)      || (targetValueType == VT_Time)   ||
++                 (targetValueType == VT_UIDRef)   || (targetValueType == VT_PName)     || (targetValueType == VT_Image)  ||
++                 (targetValueType == VT_Waveform) || (targetValueType == VT_Composite) || (targetValueType == VT_SCoord) ||
++                 (targetValueType == VT_SCoord3D) || (targetValueType == VT_TCoord)    || (targetValueType == VT_Container);
++    }
++    /* row 6 of the table */
++    else if ((relationshipType == RT_hasProperties) && (sourceValueType == VT_PName))
++    {
++        result = (targetValueType == VT_Text) || (targetValueType == VT_Code) || (targetValueType == VT_DateTime) ||
++                 (targetValueType == VT_Date) || (targetValueType == VT_Time) || (targetValueType == VT_UIDRef)   ||
++                 (targetValueType == VT_PName);
++    }
++    /* row 7 of the table */
++    else if ((relationshipType == RT_inferredFrom) &&
++        ((sourceValueType == VT_Text) || (sourceValueType == VT_Code) || (sourceValueType == VT_Num)))
++    {
++        result = (targetValueType == VT_Text)     || (targetValueType == VT_Code)      || (targetValueType == VT_Num)    ||
++                 (targetValueType == VT_DateTime) || (targetValueType == VT_Date)      || (targetValueType == VT_Time)   ||
++                 (targetValueType == VT_UIDRef)   || (targetValueType == VT_PName)     || (targetValueType == VT_Image)  ||
++                 (targetValueType == VT_Waveform) || (targetValueType == VT_Composite) || (targetValueType == VT_SCoord) ||
++                 (targetValueType == VT_SCoord3D) || (targetValueType == VT_TCoord)    || (targetValueType == VT_Container);
++    }
++    /* row 8 of the table */
++    else if ((relationshipType == RT_selectedFrom) && (sourceValueType == VT_SCoord))
++    {
++        result = (targetValueType == VT_Image);
++    }
++    /* row 9 of the table */
++    else if ((relationshipType == RT_selectedFrom) && (sourceValueType == VT_TCoord))
++    {
++        result = (targetValueType == VT_SCoord) || (targetValueType == VT_SCoord3D) || (targetValueType == VT_Image) ||
++                 (targetValueType == VT_Waveform);
++    }
++    return result;
++}
+diff -raupN dcmtk-3.6.1_20121102//dcmsr/libsrc/dsrsc3vl.cc dcmtk-3.6.1_20121102-my//dcmsr/libsrc/dsrsc3vl.cc
+--- dcmtk-3.6.1_20121102//dcmsr/libsrc/dsrsc3vl.cc	2012-11-02 08:35:36.000000000 -0500
++++ dcmtk-3.6.1_20121102-my//dcmsr/libsrc/dsrsc3vl.cc	2013-01-14 21:48:08.388564300 -0600
+@@ -265,6 +265,7 @@ OFCondition DSRSpatialCoordinates3DValue
+         GraphicType = coordinatesValue.GraphicType;
+         GraphicDataList = coordinatesValue.GraphicDataList;
+         FrameOfReferenceUID = coordinatesValue.FrameOfReferenceUID;
++        FiducialUID = coordinatesValue.FiducialUID;
+     }
+     return result;
+ }
+diff -raupN dcmtk-3.6.1_20121102//dcmsr/libsrc/dsrtypes.cc dcmtk-3.6.1_20121102-my//dcmsr/libsrc/dsrtypes.cc
+--- dcmtk-3.6.1_20121102//dcmsr/libsrc/dsrtypes.cc	2012-11-02 08:35:36.000000000 -0500
++++ dcmtk-3.6.1_20121102-my//dcmsr/libsrc/dsrtypes.cc	2013-01-14 16:47:12.512899300 -0600
+@@ -43,6 +43,7 @@
+ #include "dcmtk/dcmsr/dsrbascc.h"
+ #include "dcmtk/dcmsr/dsrenhcc.h"
+ #include "dcmtk/dcmsr/dsrcomcc.h"
++#include "dcmtk/dcmsr/dsrc3dcc.h"
+ #include "dcmtk/dcmsr/dsrkeycc.h"
+ #include "dcmtk/dcmsr/dsrmamcc.h"
+ #include "dcmtk/dcmsr/dsrchecc.h"
+@@ -270,6 +271,7 @@ static const S_DocumentTypeNameMap Docum
+     {DSRTypes::DT_BasicTextSR,                         UID_BasicTextSRStorage,                         OFFalse, "SR", "Basic Text SR"},
+     {DSRTypes::DT_EnhancedSR,                          UID_EnhancedSRStorage,                          OFFalse, "SR", "Enhanced SR"},
+     {DSRTypes::DT_ComprehensiveSR,                     UID_ComprehensiveSRStorage,                     OFFalse, "SR", "Comprehensive SR"},
++    {DSRTypes::DT_Comprehensive3DSR,                   UID_Comprehensive3DSRStorage,                   OFFalse, "SR", "Comprehensive 3D SR"},
+     {DSRTypes::DT_KeyObjectSelectionDocument,          UID_KeyObjectSelectionDocumentStorage,          OFFalse, "KO", "Key Object Selection Document"},
+     {DSRTypes::DT_MammographyCadSR,                    UID_MammographyCADSRStorage,                    OFFalse, "SR", "Mammography CAD SR"},
+     {DSRTypes::DT_ChestCadSR,                          UID_ChestCADSRStorage,                          OFFalse, "SR", "Chest CAD SR"},
+@@ -1335,6 +1337,9 @@ DSRIODConstraintChecker *DSRTypes::creat
+         case DT_ComprehensiveSR:
+             checker = new DSRComprehensiveSRConstraintChecker();
+             break;
++        case DT_Comprehensive3DSR:
++            checker = new DSRComprehensive3DSRConstraintChecker();
++            break;
+         case DT_KeyObjectSelectionDocument:
+             checker = new DSRKeyObjectSelectionDocumentConstraintChecker();
+             break;
