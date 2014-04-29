@@ -1,0 +1,95 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AIM.Annotation.Configuration" GeneratedClassName="AimSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SaveXmlToDesktop" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SendNewXmlAnnotationsToGrid" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="StoreXmlAnnotationsLocally" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="StoreXmlInMyDocuments" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LocalAnnotationsFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserRoleInTrial" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserLoginName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserNumberWitinRoleOfClinicalTrial" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="RequireUserInfo" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="RequireMarkupInAnnotation" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LocalTemplatesFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SendQueuesNames" Type="GeneralUtilities.Collections.XmlSerializableStringDictionary" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DefaultMarkupColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Yellow</Value>
+    </Setting>
+    <Setting Name="UseRandomDefaultMarkupColor" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SelectedTemplatePathName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BaseUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://secure01.cci.emory.edu</Value>
+    </Setting>
+    <Setting Name="Port" Type="System.String" Scope="User">
+      <Value Profile="(Default)">8443</Value>
+    </Setting>
+    <Setting Name="AllowUntrustedCertificates" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TargetUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Parameters" Type="GeneralUtilities.Collections.XmlSerializableStringDictionary" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AimUserGuidePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://wiki.nci.nih.gov/x/YwI8Cg</Value>
+    </Setting>
+    <Setting Name="UserLastSavedTree" Type="GeneralUtilities.Collections.XmlSerializableStringDictionary" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UseCrosshairsForTextCallouts" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ValidationService" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ResetTemplateAfterAnnotationCreation" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="RestoreSavedAimTemplateTree" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AlwaysPromptOnRestoringTemplateData" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LoginNameMarkupColors" Type="GeneralUtilities.Collections.XmlSerializableStringToColorDictionary" Scope="User">
+      <Value Profile="(Default)">
+     &lt;dictionary /&gt;
+    </Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

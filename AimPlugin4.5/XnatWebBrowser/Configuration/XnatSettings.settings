@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="XnatWebBrowser.Configuration" GeneratedClassName="XnatSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="XnatUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://central.xnat.org</Value>
+    </Setting>
+    <Setting Name="DownloadFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DownloadCheckInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

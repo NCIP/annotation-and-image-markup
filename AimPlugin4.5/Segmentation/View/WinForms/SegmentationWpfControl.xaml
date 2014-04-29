@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="Segmentation.View.WinForms.SegmentationWpfControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:l="clr-namespace:Segmentation.View.WinForms"
+             xmlns:System="clr-namespace:System;assembly=mscorlib" mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <UserControl.Resources>
+        <l:SegToStringConverter x:Key="SegToStringConverter" />
+        <Style TargetType="ComboBoxItem">
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+    </UserControl.Resources>
+    <ScrollViewer HorizontalAlignment="Stretch">
+        <Grid>
+            <ComboBox ItemsSource="{Binding Component.SegmentationTree.AllSegs}" Name="_comboBoxSegmentationNames"
+                  VerticalAlignment="Top" MinWidth="168" HorizontalAlignment="Stretch" Margin="122,10,10,0"
+                  SelectedItem="{Binding Component.SegmentationTree.SelectedSeg}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Converter={StaticResource SegToStringConverter}}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <TextBlock Text="Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" FontWeight="Bold" />
+            <Grid IsEnabled="{Binding  Component.SegmentationTree.SelectedSeg.Editable, TargetNullValue=false, FallbackValue=false}" >
+                <TextBlock Text="Segmentation Description:" HorizontalAlignment="Left" TextWrapping="Wrap"
+                       VerticalAlignment="Top" Margin="10,41,0,0" Height="48" Width="107" FontWeight="Bold" />
+                <TextBox Name="_textBoxSeriesDescription" HorizontalAlignment="Stretch" Height="74" TextWrapping="Wrap"
+                     Text="{Binding Component.SegmentationTree.SelectedSeg.Description}" VerticalAlignment="Top" MinWidth="168"
+                     Margin="122,41,10,0" />
+                <ComboBox Name="_comboBoxCategory" HorizontalAlignment="Stretch" VerticalAlignment="Top" MinWidth="168"
+                      Margin="122,145,10,0" ItemsSource="{Binding Component.SegmentationTree.SelectedSeg.AvailableCategories}"
+                      SelectedItem="{Binding Component.SegmentationTree.SelectedSeg.SelectedCategory}" />
+                <TextBlock Text="Selected Category:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,148,0,0"
+                       FontWeight="Bold" />
+                <TextBlock Text="Type:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,172,0,0"
+                       FontWeight="Bold" />
+                <ComboBox x:Name="_comboBoxType" HorizontalAlignment="Stretch" VerticalAlignment="Top" MinWidth="168"
+                      Margin="122,172,10,0" ItemsSource="{Binding Component.SegmentationTree.SelectedSeg.SelectedCategory.Types}"
+                      SelectedItem="{Binding  Component.SegmentationTree.SelectedSeg.SelectedCategory.SelectedType}"
+                      IsEnabled="{Binding  Component.SegmentationTree.SelectedSeg.SelectedCategory.ShowTypes, TargetNullValue=false, FallbackValue=false}" />
+                <TextBlock Text="Modifier:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,199,0,0"
+                       RenderTransformOrigin="0.447,2.692" FontWeight="Bold" />
+                <ComboBox x:Name="_comboBoxModifier" HorizontalAlignment="Stretch" VerticalAlignment="Top" MinWidth="168"
+                      Margin="122,199,10,0" RenderTransformOrigin="0.475,2.682"
+                      ItemsSource="{Binding Component.SegmentationTree.SelectedSeg.SelectedCategory.SelectedType.TypeModifiers}"
+                      SelectedItem="{Binding  Component.SegmentationTree.SelectedSeg.SelectedCategory.SelectedType.SelectedTypeModifier}"
+                      IsEnabled="{Binding  Component.SegmentationTree.SelectedSeg.SelectedCategory.SelectedType.ShowModifiers, TargetNullValue=false, FallbackValue=false}" />
+                <TextBlock Text="Anatomic Region:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,226,0,0"
+                       RenderTransformOrigin="0.447,2.692" FontWeight="Bold" />
+                <ComboBox x:Name="_comboBoxAnatomicRegion" HorizontalAlignment="Stretch" VerticalAlignment="Top" MinWidth="168"
+                      Margin="122,226,10,0" RenderTransformOrigin="0.475,2.682"
+                      ItemsSource="{Binding Component.SegmentationTree.SelectedSeg.SelectedCategory.AnatomicRegions}"
+                      SelectedItem="{Binding  Component.SegmentationTree.SelectedSeg.SelectedCategory.SelectedAnatomicRegion}"
+                      IsEnabled="{Binding  Component.SegmentationTree.SelectedSeg.SelectedCategory.ShowAnatomicRegions, TargetNullValue=false, FallbackValue=false}" />
+                <ComboBox x:Name="_comboBoxAnatomicRegionModifier" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                      MinWidth="168" Margin="122,253,10,0" RenderTransformOrigin="0.475,2.682"
+                      ItemsSource="{Binding Component.SegmentationTree.SelectedSeg.SelectedCategory.SelectedAnatomicRegion.AnatomicRegionModifiers}"
+                      SelectedItem="{Binding  Component.SegmentationTree.SelectedSeg.SelectedCategory.SelectedAnatomicRegion.SelectedAnatomicRegionModifier}"
+                      IsEnabled="{Binding  Component.SegmentationTree.SelectedSeg.SelectedCategory.SelectedAnatomicRegion.ShowAnatomicRegionModifiers, TargetNullValue=false, FallbackValue=false}" />
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Anatomic Region Modifier:"
+                       VerticalAlignment="Top" Margin="10,253,0,0" Height="41" Width="96" FontWeight="Bold" />
+            </Grid>
+
+            <Button Name="_buttonCreateSegmentation"
+                Content="Create Segmentation" HorizontalAlignment="Left" VerticalAlignment="Top" Width="143" Margin="10,575,0,10"
+                Click="CreateSegmentationButtonClick">
+                <Button.IsEnabled>
+                    <Binding Path="Component.SegmentationTree.SelectedSeg.Valid" TargetNullValue="false" FallbackValue="false" />
+                </Button.IsEnabled>
+            </Button>
+            <ScrollViewer HorizontalAlignment="Stretch" Height="146" VerticalAlignment="Top" MinWidth="280" Margin="10,299,10,0">
+                <StackPanel>
+                    <ItemsControl ItemsSource="{Binding Component.SelectedSegGraphics}"
+                              Name="_itemsControl" VerticalAlignment="Top">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <l:RoiWpfControl HorizontalAlignment="Left" VerticalAlignment="Top"
+                                             DataContext="{Binding }" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer>
+            <TextBlock Text="Segmentation Properties:" HorizontalAlignment="Left" VerticalAlignment="Top"
+                   Margin="10,120,0,0" FontWeight="Bold" />
+            <Slider HorizontalAlignment="Left" VerticalAlignment="Top" Width="168" Margin="122,450,0,0" LargeChange="0.25"
+                Maximum="1" TickFrequency="0.25" TickPlacement="BottomRight"
+                Value="{Binding Component.SelectedSegOpacity}" 
+                IsEnabled="{Binding Component.SegmentationTree.SelectedSeg.ShowOpacitySlider, TargetNullValue=false, FallbackValue=false}"/>
+            <TextBlock Text="Opacity:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,450,0,0"
+                   RenderTransformOrigin="0.447,2.692" FontWeight="Bold" />
+            <GroupBox Header="Volume ROIs :    " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,471,0,0"
+                  Height="99" Width="280" FontWeight="Bold">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="31*" />
+                        <ColumnDefinition Width="37*" />
+                        <ColumnDefinition Width="200*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Volume:" VerticalAlignment="Top"
+                           Margin="10,10,0,0" Grid.ColumnSpan="2" />
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Mean:" VerticalAlignment="Top"
+                           Margin="10,31,0,0" Grid.ColumnSpan="2" />
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Std Dev:" VerticalAlignment="Top"
+                           Margin="10,52,0,0" Grid.ColumnSpan="2" />
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"
+                	Margin="10,10,0,0" Grid.Column="2" >
+                    <Run Text="{Binding Component.SegmentationTree.SelectedSeg.Volume, StringFormat={}{0:#.00} mm^3, TargetNullValue='', FallbackValue=''}"></Run>
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Component.SegmentationTree.SelectedSeg.PixelIntensityMean, StringFormat={}{0:#.00}, TargetNullValue='', FallbackValue=''}" VerticalAlignment="Top"
+                	Margin="10,31,0,0" Grid.Column="2" />
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Component.SegmentationTree.SelectedSeg.PixelIntensityStandardDeviation, StringFormat={}{0:#.00}, TargetNullValue='', FallbackValue=''}" VerticalAlignment="Top"
+                	Margin="10,51,0,0" Grid.Column="2" />
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

@@ -1,0 +1,16 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AimDataService.Configuration" GeneratedClassName="SearchSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AimSearchHiddenColumns" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Value>
+    </Setting>
+    <Setting Name="AimDataServiceUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://imaging.cci.emory.edu/rest/aime-test/middleware/services/AIME/AIME4</Value>
+    </Setting>
+    <Setting Name="SecureTokenServiceLoginUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://imaging.cci.emory.edu/rest/aime-test/middleware/securityTokenService</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

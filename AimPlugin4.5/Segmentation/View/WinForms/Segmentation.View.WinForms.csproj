@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{804C9625-A899-428E-B84B-6D4FC5818FE9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Segmentation.View.WinForms</RootNamespace>
+    <AssemblyName>Segmentation.View.WinForms</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>$(SolutionDir)..\ReferencedAssemblies\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\AimConfigurationComponentView.cs" />
+    <Compile Include="Configuration\SegmentationConfigurationComponentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configuration\SegmentationConfigurationComponentControl.Designer.cs">
+      <DependentUpon>SegmentationConfigurationComponentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoiWpfControl.xaml.cs">
+      <DependentUpon>RoiWpfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentationComponentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SegmentationComponentControl.Designer.cs">
+      <DependentUpon>SegmentationComponentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentationComponentView.cs" />
+    <Compile Include="SegmentationWpfControl.xaml.cs">
+      <DependentUpon>SegmentationWpfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SegToStringConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\source_cc\Common\ClearCanvas.Common.csproj">
+      <Project>{f6ead428-e6cf-4df6-b2f3-d33d532c5343}</Project>
+      <Name>ClearCanvas.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\source_cc\Desktop\ClearCanvas.Desktop.csproj">
+      <Project>{26e9a01a-64b5-42c5-8252-fbb30df9cec7}</Project>
+      <Name>ClearCanvas.Desktop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\source_cc\Desktop\View\WinForms\ClearCanvas.Desktop.View.WinForms.csproj">
+      <Project>{bb434ec3-a580-4744-a635-a2b4029c66de}</Project>
+      <Name>ClearCanvas.Desktop.View.WinForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\source_cc\ImageViewer\ClearCanvas.ImageViewer.csproj">
+      <Project>{85100D3E-471C-47C9-9687-ABF25F617ED7}</Project>
+      <Name>ClearCanvas.ImageViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Segmentation.csproj">
+      <Project>{a393d687-d910-4cb7-aa8a-6e5fb94e3d3c}</Project>
+      <Name>Segmentation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Configuration\SegmentationConfigurationComponentControl.resx">
+      <DependentUpon>SegmentationConfigurationComponentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SegmentationComponentControl.resx">
+      <DependentUpon>SegmentationComponentControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="RoiWpfControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SegmentationWpfControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

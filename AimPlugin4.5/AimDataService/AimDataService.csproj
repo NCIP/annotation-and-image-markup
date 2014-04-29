@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6FF2FA68-C048-410C-BA1F-DA5F42A0E2FC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AimDataService</RootNamespace>
+    <AssemblyName>StsAimDataService</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AimDataService.cs" />
+    <Compile Include="AimDataServiceLoginComponent.cs" />
+    <Compile Include="AimDataServiceLoginTool.cs" />
+    <Compile Include="AimDataServiceSearchCommand.cs" />
+    <Compile Include="AimDataServiceSearchCoordinator.cs" />
+    <Compile Include="AimDataServiceSearchCriteriaComponent.cs" />
+    <Compile Include="AimDataServiceExplorer.cs" />
+    <Compile Include="AimDataServiceSearchResultsComponent.cs" />
+    <Compile Include="AimeLoginResult.cs" />
+    <Compile Include="AimeSearchCriteria.cs" />
+    <Compile Include="AimeWebService.cs" />
+    <Compile Include="AimeSearchResult.cs" />
+    <Compile Include="ApiKeyCredentials.cs" />
+    <Compile Include="Configuration\AimDataServiceConfigurationComponent.cs" />
+    <Compile Include="Configuration\AimDataServiceConfigurationPageProvider.cs" />
+    <Compile Include="Configuration\SearchSettings.cs" />
+    <Compile Include="ICredentials.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Configuration\SearchSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>SearchSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RetrieveAnnotationTool.cs" />
+    <Compile Include="SR.Designer.cs">
+      <DependentUpon>SR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\source_cc\Common\ClearCanvas.Common.csproj">
+      <Project>{F6EAD428-E6CF-4DF6-B2F3-D33D532C5343}</Project>
+      <Name>ClearCanvas.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\source_cc\Desktop\ClearCanvas.Desktop.csproj">
+      <Project>{26E9A01A-64B5-42C5-8252-FBB30DF9CEC7}</Project>
+      <Name>ClearCanvas.Desktop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\source_cc\Desktop\Explorer\ClearCanvas.Desktop.Explorer.csproj">
+      <Project>{085823EA-DDAE-4DAF-A99D-17F75A03CF23}</Project>
+      <Name>ClearCanvas.Desktop.Explorer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\source_cc\Dicom\ClearCanvas.Dicom.csproj">
+      <Project>{ad9ece2b-8268-4115-8dc8-860fbd011fff}</Project>
+      <Name>ClearCanvas.Dicom</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\source_cc\ImageViewer\ClearCanvas.ImageViewer.csproj">
+      <Project>{85100D3E-471C-47C9-9687-ABF25F617ED7}</Project>
+      <Name>ClearCanvas.ImageViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\source_cc\ImageViewer\Common\ClearCanvas.ImageViewer.Common.csproj">
+      <Project>{fefd73c5-8541-47d2-bbdb-ff61dea28291}</Project>
+      <Name>ClearCanvas.ImageViewer.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AIM.Annotation\AIM.Annotation.csproj">
+      <Project>{7BBA1CE8-86AD-4CA3-ACEE-0BF84F7CE48D}</Project>
+      <Name>AIM.Annotation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Configuration\SearchSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>SearchSettings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\AimRetrieveColumnsToolLarge.png" />
+    <EmbeddedResource Include="Icons\AimRetrieveColumnsToolMedium.png" />
+    <EmbeddedResource Include="Icons\AimRetrieveColumnsToolSmall.png" />
+    <EmbeddedResource Include="Icons\AIMRetrieveToolLarge.png" />
+    <EmbeddedResource Include="Icons\AIMRetrieveToolMedium.png" />
+    <EmbeddedResource Include="Icons\AIMRetrieveToolSmall.png" />
+    <EmbeddedResource Include="Icons\RetrieveProgressToolCancelLarge.png" />
+    <EmbeddedResource Include="Icons\RetrieveProgressToolCancelMedium.png" />
+    <EmbeddedResource Include="Icons\RetrieveProgressToolCancelSmall.png" />
+    <EmbeddedResource Include="Icons\RetrieveProgressToolClearCompletedLarge.png" />
+    <EmbeddedResource Include="Icons\RetrieveProgressToolClearCompletedMedium.png" />
+    <EmbeddedResource Include="Icons\RetrieveProgressToolClearCompletedSmall.png" />
+    <EmbeddedResource Include="SR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="AIM.Annotation.View.WinForms.Wpf.GroupLabelWpfControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <GroupBox Margin="0,0,0,0" Name="_groupBox">
+            <GroupBox.Header>
+                <TextBlock Name="_label" FontWeight="Bold"/>
+            </GroupBox.Header>
+            <StackPanel Margin="0,0,0,0" Name="_stackPanel" />
+        </GroupBox>
+    </Grid>
+</UserControl>

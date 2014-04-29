@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="SegmentationCodes">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element name="Category">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="Type">
+								<xs:complexType>
+									<xs:sequence minOccurs="0" maxOccurs="unbounded">
+										<xs:element name="Modifier">
+											<xs:complexType>
+												<xs:attribute name="codeValue" type="xs:string" use="required"/>
+												<xs:attribute name="codeMeaning" type="xs:string" use="required"/>
+												<xs:attribute name="codingScheme" type="xs:string" use="required"/>
+												<xs:attribute name="cid" type="xs:string"/>
+												<xs:attribute name="contextGroupName" type="xs:string"/>
+												<xs:attribute name="SNOMEDCTConceptID" type="xs:string"/>
+												<xs:attribute name="UMLSConceptUID" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="codeValue" type="xs:string" use="required"/>
+									<xs:attribute name="codeMeaning" type="xs:string" use="required"/>
+									<xs:attribute name="codingScheme" type="xs:string" use="required"/>
+									<xs:attribute name="cid" type="xs:string"/>
+									<xs:attribute name="contextGroupName" type="xs:string"/>
+									<xs:attribute name="SNOMEDCTConceptID" type="xs:string"/>
+									<xs:attribute name="UMLSConceptUID" type="xs:string"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="codeValue" type="xs:string" use="required"/>
+						<xs:attribute name="codeMeaning" type="xs:string" use="required"/>
+						<xs:attribute name="codingScheme" type="xs:string" use="required"/>
+						<xs:attribute name="cid" type="xs:string"/>
+						<xs:attribute name="contextGroupName" type="xs:string"/>
+						<xs:attribute name="SNOMEDCTConceptID" type="xs:string"/>
+						<xs:attribute name="UMLSConceptUID" type="xs:string"/>
+						<xs:attribute name="showAnatomy" type="xs:boolean" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

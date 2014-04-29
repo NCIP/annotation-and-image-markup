@@ -1,0 +1,107 @@
+<html>
+<head>
+    <style type="text/css">
+        body
+        {
+            overflow: auto;
+            border-style: inset;
+            border-width: thin;
+            margin: 3px 3px 3px 3px;
+            font-family: Microsoft Sans Serif;
+            font-size: 7.8pt;
+        }
+        .expando
+        {
+            width: 9px;
+            height: 9px;
+            vertical-align: middle;
+        }
+        .aes_header, .ios_header
+        {
+            font-weight: bold;
+        }
+        .aes_content, .ios_content
+        {
+            left: 15px;
+            position: relative;
+        }
+        .aes_summary, .ios_summary
+        {
+        }
+        .ae_header, .io_header
+        {
+        }
+        .ae_content, .io_content
+        {
+            left: 15px;
+            position: relative;
+        }
+        .aecs_header, .iocs_header
+        {
+        }
+        .aecs_content, .iocs_content
+        {
+            left: 15px;
+            position: relative;
+        }
+        .aecs_summary, .iocs_summary
+        {
+        }
+        .aec_header, .ioc_header
+        {
+        }
+        .aec_content, .ioc_content
+        {
+            left: 15px;
+            position: relative;
+        }
+        .charqs_header
+        {
+        }
+        .charqs_content
+        {
+            left: 15px;
+            position: relative;
+        }
+        .charqs_summary
+        {
+        }
+        .charq_header
+        {
+        }
+        .charq_content
+        {
+            left: 15px;
+            position: relative;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        //document.getElementById(trRow.id + '_div').style.backgroundImage = 'url(Images/li_sidenav_plus.gif)';
+
+        var imgPaths; // array of image src paths. 0 - expanded img path; 1 - collapsed img path
+    
+        function toggleDiv(sender, divid) {
+//            alert(imgPaths);
+//            alert(sender.src);
+//            alert(document.getElementById(divid).childNodes[0].className);
+            if (document.getElementById(divid).style.display == 'none') {
+//                sender.src = "data:image/gif;base64,R0lGODlhCwALAIAAAAAA3pn/ZiH5BAEAAAEALAAAAAALAAsAAAIUhA+hkcuO4lmNVindo7qyrIXiGBYAOw==";
+                document.getElementById(divid).style.display = '';
+                sender.src = imgPaths[0];
+            } else {
+                document.getElementById(divid).style.display = 'none';
+                sender.src = imgPaths[1];
+            }
+        }
+
+        // Takes array of image source paths
+        // 0 - expanded img path; 1 - collapsed img path
+        function setupPaths(arrPaths)
+        {
+            imgPaths = arrPaths;
+        }
+        
+    </script>
+</head>

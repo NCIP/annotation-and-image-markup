@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1C04E54-8F41-4DE9-901E-5988DD95476A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIM.Annotation.View.WinForms</RootNamespace>
+    <AssemblyName>AIM.Annotation.View.WinForms</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>$(SolutionDir)..\ReferencedAssemblies\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>%ProgramFiles%\Microsoft.NET\Primary Interop Assemblies\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AimAnnotationComponentView.cs" />
+    <Compile Include="AimAnnotationDetailsComponentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AimAnnotationDetailsComponentControl.Designer.cs">
+      <DependentUpon>AimAnnotationDetailsComponentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AimAnnotationDetailsComponentView.cs" />
+    <Compile Include="AimAnnotationsListComponentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AimAnnotationsListComponentControl.Designer.cs">
+      <DependentUpon>AimAnnotationsListComponentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AimAnnotationsListComponentView.cs" />
+    <Compile Include="AimCodeSequenceDetailsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AimCodeSequenceDetailsControl.Designer.cs">
+      <DependentUpon>AimCodeSequenceDetailsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AimDetailsListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AimDetailsListControl.Designer.cs">
+      <DependentUpon>AimDetailsListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AimDetailsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AimDetailsControl.Designer.cs">
+      <DependentUpon>AimDetailsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AimWinFormsUtil.cs" />
+    <Compile Include="Configuration\AimConfigurationComponentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configuration\AimConfigurationComponentControl.Designer.cs">
+      <DependentUpon>AimConfigurationComponentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\AimConfigurationComponentView.cs" />
+    <Compile Include="Configuration\AimMarkupColorComponentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configuration\AimMarkupColorComponentControl.Designer.cs">
+      <DependentUpon>AimMarkupColorComponentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\AimMarkupColorComponentView.cs" />
+    <Compile Include="ExtendedOpenFilesDialogProvider.cs" />
+    <Compile Include="ToolTipLinkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInfoForm.Designer.cs">
+      <DependentUpon>UserInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\AimAnnotationComponentWpfControl.xaml.cs">
+      <DependentUpon>AimAnnotationComponentWpfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\AimAnnotationComponentWpfHost.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wpf\AimAnnotationComponentWpfHost.Designer.cs">
+      <DependentUpon>AimAnnotationComponentWpfHost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\AnatomicEntityCharacteristicWpfControl.xaml.cs">
+      <DependentUpon>AnatomicEntityCharacteristicWpfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\AnatomicEntityWpfControl.xaml.cs">
+      <DependentUpon>AnatomicEntityWpfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\AnnotationNameWpfControl.xaml.cs">
+      <DependentUpon>AnnotationNameWpfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\CalculationWpfControl.xaml.cs">
+      <DependentUpon>CalculationWpfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\CharacteristicQuantificationDetailsWpfControl.xaml.cs">
+      <DependentUpon>CharacteristicQuantificationDetailsWpfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\CharacteristicQuantificationNumericalWpfControl.xaml.cs">
+      <DependentUpon>CharacteristicQuantificationNumericalWpfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\GroupLabelWpfControl.xaml.cs">
+      <DependentUpon>GroupLabelWpfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\IValidTreeControl.cs" />
+    <Compile Include="Wpf\WpfUtils.cs" />
+    <Compile Include="Wpf\MarkupControl.xaml.cs">
+      <DependentUpon>MarkupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\NodeConfidenceWpfControl.xaml.cs">
+      <DependentUpon>NodeConfidenceWpfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\QuantificationConfidenceWpfControl.xaml.cs">
+      <DependentUpon>QuantificationConfidenceWpfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\GeometricShapeWpfControl.xaml.cs">
+      <DependentUpon>GeometricShapeWpfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\ImagingObservationCharacteristicWpfControl.xaml.cs">
+      <DependentUpon>ImagingObservationCharacteristicWpfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\ImagingObservationWpfControl.xaml.cs">
+      <DependentUpon>ImagingObservationWpfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\InferenceWpfControl.xaml.cs">
+      <DependentUpon>InferenceWpfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wpf\TemplateWpfControl.xaml.cs">
+      <DependentUpon>TemplateWpfControl.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\source_cc\Common\ClearCanvas.Common.csproj">
+      <Project>{F6EAD428-E6CF-4DF6-B2F3-D33D532C5343}</Project>
+      <Name>ClearCanvas.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\source_cc\Desktop\ClearCanvas.Desktop.csproj">
+      <Project>{26E9A01A-64B5-42C5-8252-FBB30DF9CEC7}</Project>
+      <Name>ClearCanvas.Desktop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\source_cc\Desktop\View\WinForms\ClearCanvas.Desktop.View.WinForms.csproj">
+      <Project>{BB434EC3-A580-4744-A635-A2B4029C66DE}</Project>
+      <Name>ClearCanvas.Desktop.View.WinForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\source_cc\ImageViewer\ClearCanvas.ImageViewer.csproj">
+      <Project>{85100D3E-471C-47C9-9687-ABF25F617ED7}</Project>
+      <Name>ClearCanvas.ImageViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GeneralUtilities\GeneralUtilities.csproj">
+      <Project>{96EF8A73-2CAF-4625-BA5F-9FDC685219E5}</Project>
+      <Name>GeneralUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AIM.Annotation.csproj">
+      <Project>{7BBA1CE8-86AD-4CA3-ACEE-0BF84F7CE48D}</Project>
+      <Name>AIM.Annotation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AimAnnotationDetailsComponentControl.resx">
+      <DependentUpon>AimAnnotationDetailsComponentControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AimAnnotationsListComponentControl.resx">
+      <DependentUpon>AimAnnotationsListComponentControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AimCodeSequenceDetailsControl.resx">
+      <DependentUpon>AimCodeSequenceDetailsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AimDetailsListControl.resx">
+      <DependentUpon>AimDetailsListControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AimDetailsControl.resx">
+      <DependentUpon>AimDetailsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuration\AimConfigurationComponentControl.resx">
+      <DependentUpon>AimConfigurationComponentControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuration\AimMarkupColorComponentControl.resx">
+      <DependentUpon>AimMarkupColorComponentControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInfoForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wpf\AimAnnotationComponentWpfHost.resx">
+      <DependentUpon>AimAnnotationComponentWpfHost.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Wpf\AimAnnotationComponentWpfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wpf\AnatomicEntityCharacteristicWpfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wpf\AnatomicEntityWpfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wpf\AnnotationNameWpfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wpf\CalculationWpfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wpf\CharacteristicQuantificationDetailsWpfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wpf\CharacteristicQuantificationNumericalWpfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wpf\GroupLabelWpfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wpf\MarkupControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wpf\NodeConfidenceWpfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wpf\QuantificationConfidenceWpfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wpf\GeometricShapeWpfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wpf\ImagingObservationCharacteristicWpfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wpf\ImagingObservationWpfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wpf\InferenceWpfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wpf\TemplateWpfControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
