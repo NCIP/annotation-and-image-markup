@@ -37,6 +37,7 @@ using ClearCanvas.Common.Utilities;
 using ClearCanvas.Desktop;
 using ClearCanvas.Desktop.Actions;
 using ClearCanvas.Desktop.Tools;
+using XnatWebBrowser.Configuration;
 
 namespace XnatWebBrowser
 {
@@ -92,7 +93,7 @@ namespace XnatWebBrowser
             var component = new XnatWebBrowserComponent();
 
             ApplicationComponent.LaunchAsWorkspace(Context.DesktopWindow, component, SR.WorkspaceName);
-            component.Url = "https://central.xnat.org/";
+            component.Url = XnatSettings.Default.XnatUrl;
             component.SetDocumentTitle("XNAT Imaging");
             component.Go();
             component.Stopped += ComponentStopped;
