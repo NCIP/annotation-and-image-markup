@@ -1,0 +1,105 @@
+/* module-key = 'com.refinedwiki.confluence.plugins.theme.original:print-style', location = 'originaltheme/styles/print.css' */
+/**************************************************
+*
+* Stylesheet used when printing a page
+*
+**************************************************/
+
+#rw_top, #rw_main_top_left, #messageContainer, #rw_main_top_left, #rw_menu_bar, #rw_page_left_column, #rw_attachment_dialog_button,
+#rw_footer, #rw_footer_wrapper, #blue_box, #rw_main_bottom_left, #rw_left_column_show_button,
+#rw_sticky_bar, .blogpost .rw_page td.right, .rw_evaluate, .rw_upgrade, #rw_wrapper .rw_no_print, .rw_custom_section .rw_icon_button, 
+.rw_custom_section .rw_icon_button_active, #attachments_wrapper, #attachments_loader, #rw_wrapper #rw_left_column, #rw_right_column, .rw_content_section #rw_right_column, #rw_blogpost_nav,
+#rw_wrapper #labels-edit, #rw_blog_bar, #rw_blog_logo, #rw_splitter, #rw_menu_bar_wrapper, #rw_side_menu, #rw_simple_menu,
+ul.rw_icon_menu, .rw_blogpost_share, #likes-and-labels-container, #rw_theme_header, .rw_page_buttons, .rw_create_experience, #rw_announcement_banners
+{
+	display:none !important;
+	width:0;
+}
+
+#rw_wrapper, #rw_wrapper #rw_main, #rw_wrapper #rw_main_middle_right, #rw_main #main, .rw_content, 
+#rw_wrapper .rw_content .wiki-content , #rw_wrapper #content, #rw_wrapper .rw_content_section, table.rw_page, 
+#rw_wrapper .rw_content .wiki-content, #rw_wrapper #rw_fullscreen_wrapper.rw_in_fullscreen #rw_fullscreen_container , 
+#rw_wrapper #rw_fullscreen_bg, #blogpost_container, #rw_main_column, #rw_blog_mode .rw_blogpost_content, .rw_has_icon_menu
+{
+	float: none !important;
+	overflow:visible !important;
+	padding:0 !important;
+	margin:0 !important;
+	border:0 !important;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+	background:none;
+}
+
+.rw_content_section #rw_main_column.rw_has_right_column
+{
+	width: 100% !important;
+}
+
+
+
+/* Fix for preventing images in IE to bee to wide */
+.wiki-content img
+{
+	max-width:100% !important;
+}
+
+
+#rw_wrapper #rw_main
+{
+	min-width:0px;
+	width:100% !important;
+}
+
+.blogpost .rw_page td.left
+{
+	display:block;
+	width:100% !important;
+	padding:0;
+	margin:0;
+}
+
+#rw_wrapper .rw_content .comment-content 
+{
+	display:inline;
+	overflow:visible !important;
+}
+
+body #rw_wrapper, body #rw_main_middle_left, body#com-atlassian-confluence
+{
+	background:none !important;
+	padding:0;
+}
+
+body#com-atlassian-confluence
+{
+	background:#ffffff !important;
+}
+
+body .rw_content, body .space_admin #rw_main #main, body #blogpost_container, body #search-results-container {border:0px;}
+body #rw_main #main #rw_wrapper .blogpost .rw_page tbody {display:block;}
+
+/* Labels */
+body #rw_wrapper #labels-section .confluence-label
+{
+	border:0;
+	background:none;
+} 
+
+/* Comment button in blog mode */
+body #rw_blog_mode #comments-section .section-header
+{
+	border:0;
+	background:none;
+}
+body #rw_blog_mode #comments-section .section-header h2 a
+{
+	padding-left:10px;
+}
+
+/* New global sidebar */
+.rw_has_side_menu #rw_wrapper
+{
+    margin:0;
+}

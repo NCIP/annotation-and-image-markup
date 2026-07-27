@@ -1,0 +1,422 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Creating an Algorithm Type 1.0</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<style>.ia-fixed-sidebar, .ia-splitter-left {width: 285px;}.theme-default .ia-splitter #main {margin-left: 285px;}.ia-fixed-sidebar {visibility: hidden;}</style><link data-wrm-batch-type="context" data-wrm-key="_super" href="/styles/91795231/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="context" data-wrm-key="baseurl-checker-resource,atl.general,refined.site,viewcontent,refined.main,main,page,atl.comments,zdu-banner-all,-_super" href="/styles/91795231/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="context" data-wrm-key="refined.aui-design-tokens,-_super" href="/styles/91795231/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="resource" data-wrm-key="com.refinedwiki.confluence.plugins.theme.original:print-style" href="/styles/91795231/com.refinedwiki.confluence.plugins.theme.original_print-style.css" media="print" rel="stylesheet"/><link href="/styles/91795231/atlassian-editor.css" media="all" rel="stylesheet"/><link href="/styles/91795231/custom.css" media="all" rel="stylesheet"/><style type="text/css">
+		.rw_toolbar_menu li .rw_toolbar_dropdown li a:hover
+		{
+			color: #172B4D;
+			background: rgba(9, 30, 66, 0.06);
+		}
+
+		/* Scroll office fix */
+		#com-k15t-confluence-scroll-pdf-launcher:hover
+		{
+			color: #172B4D;
+			background: rgba(9, 30, 66, 0.06);
+		}
+	</style><link href="/styles/91795231/theme-9-1290.css" media="all" rel="stylesheet" type="text/css"/><style type="text/css">
+  #rw_wrapper.rw_effects_popup_shadow .rw_shadow_top { width: calc(100% + 40px); }
+  #rw_wrapper.rw_effects_popup_shadow .rw_shadow_top:after { width: calc(100% - 40px); }
+  #rw_wrapper.rw_effects_popup_border .rw_shadow_top { width: calc(100% + 2px); }
+</style><style type="text/css">
+	/* Key navigation in popup */
+	.rw_key_nav li.rw_selected a {
+        background-color: rgba(199,63,98,1.00) !important;
+        border-color: rgba(199,63,98,1.00) !important;
+                box-shadow: none;
+    }
+    .rw_key_nav li.rw_selected * { color: #fff !important; }
+    .rw_key_nav li.rw_selected a span.rw_item_left { background: none !important; border-color:unset !important;}
+
+	/* Key navigation category menu */
+	#rw_category_menu ul li.rw_active.rw_selected a > span { border-color: rgba(199,63,98,1.00); }
+
+	/* Confluence questions  */
+	.rw_navigation_module_questions ul li.rw_selected { background: rgba(199,63,98,1.00); }
+	.rw_category_dd_theme_dark #rw_category_dropdown_wrapper .rw_navigation_module_questions ul li.rw_selected { background: rgba(199,63,98,1.00); }
+
+	/* Key navigation for page tree */
+	.rw_pagetree_list li.rw_selected > div.rw_icon_content { background: rgba(199,63,98,1.00) !important; border-color: rgba(199,63,98,1.00) !important; }
+	.rw_pagetree_list li.rw_selected > div.rw_icon_content a { color:#fff !important;}
+	.rw_pagetree_list li.rw_selected a {background: none !important; border-color: unset; color:#333 !important;}
+
+	/* Key navigation for activity popup */
+	li.rw_selected div.rw_no_link { background: rgba(199,63,98,1.00) !important; border-color: rgba(199,63,98,1.00) !important; }
+    .rw_popup_design_default .rw_popup .rw_activity_module .rw_selected,
+    .rw_popup_design_confluence .rw_popup .rw_activity_module .rw_selected {
+        background: rgba(199,63,98,1.00) !important;
+    }
+
+	/* Main Key Navigation */
+	.rw_keynavigation_row > div.rw_selected { background: rgba(199,63,98,1.00) !important; color:#fff !important;}
+	.rw_keynavigation_container > div.rw_keynavigation_empty_item { background: none;}
+
+    /* Key Navigation in search module */
+    .rw_search_module_results ul li.rw_selected a {
+        background: rgba(199,63,98,1.00) !important;
+        border-color: rgba(199,63,98,1.00) !important;
+        color: #fff;
+    }
+
+	/* Menu keynav exceptions */
+	#notifications-anchor.rw_selected {background: rgba(199,63,98,1.00) !important; color:#fff !important;}
+
+
+	
+
+	#rw_menu_bar #rw_create_button .aui-button,
+	#rw_inline_dialog_page_menu #rw_create_button .aui-button,
+    .rw_create_blogpost_button.aui-button
+	{
+	  background-image: -moz-linear-gradient(top, #0C66E4, #0a57c3);
+	  background-image: -ms-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: -webkit-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: -o-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: linear-gradient(top,  #0C66E4, #0a57c3);
+	  text-shadow: none;
+	  color: #FFFFFF;
+	}
+
+    #rw_menu_bar #rw_create_button .aui-button,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button,
+    .rw_create_blogpost_button.aui-button
+    {
+      border-color: #0C66E4;
+    }
+    #rw_main #rw_create_button .aui-button:hover,
+    #rw_main #rw_create_button .aui-button:focus,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button:hover,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button:focus,
+    .rw_create_blogpost_button.aui-button:hover,
+    .rw_create_blogpost_button.aui-button:focus
+    {
+      background-image: -moz-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -ms-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -webkit-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -o-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: linear-gradient(top, #1f7cff, #0c5bcb);
+    }
+
+    .rw_create_blogpost_button.aui-button {
+	  border: 0;
+    }
+    .rw_create_blogpost_button.aui-button:hover {
+      color: #FFFFFF;
+	}
+
+
+		
+
+
+    	
+		        #preview #previewArea iframe {
+   overflow: visible;
+}
+
+#rw_search_query {
+    color: #000000;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+color: black;
+opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+color: black;
+}
+
+#rw_space_nav>.rw_item_content a {
+    color: #000000;
+}
+.rw_inline_dialog .rw_pagetree ul.rw_pagetree_list li a, .rw_inline_dialog .rw_pagetree ul.rw_pagetree_list li a:hover, .rw_pagetree.rw_theme_default ul.rw_pagetree_list li a, .rw_pagetree.rw_theme_default ul.rw_pagetree_list li a:hover {
+    color: #000000;
+}
+#rw_left_column>.rw_users_space_macro h3 {
+    color: #000000;
+}
+rw_users_space_macro .rw_help {
+    color: #000000;
+}
+.rw_space_news div span.rw_caption {
+    color: #000000;
+}
+.rw_space_news ul li a span {
+    color: #000000;
+}
+.rw_space_news ul li a .rw_date {
+    color: #000000;
+}
+.rw_pagetree .rw_quick_links_container h5 {
+    color: #000000;
+}    
+.rw_inline_dialog ul.rw_quick_links a, .rw_pagetree.rw_theme_default ul.rw_quick_links a {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_search_result_title {
+    color: #000000;
+}
+.rw_popup_design_confluence #rw_search_result_container ul li a span, .rw_popup_design_confluence #rw_search_result_container ul li:not(.rw_selected) a:hover span {
+    color: #000000;
+}
+.rw_popup_design_confluence #rw_search_result_container ul li a span.rw_search_item_space {
+    color: #000000;
+}
+.page-metadata-wrapper .page-metadata {
+    color: #000000;
+}
+.rw_pagetree .rw_quick_links_container .rw_help {
+    color: #000000;
+}
+.rw_dialog_menu ul li .rw_empty_menu .rw_item_content, .rw_dialog_menu ul li a .rw_item_content {
+    color: #000000;
+}
+#rw_inline_dialog_blogMenu #browse-space-menu ul .rw_section_title, #rw_inline_dialog_spaceMenu #browse-space-menu ul .rw_section_title {
+    color: #000000;
+}
+.rw_dialog_menu ul li .rw_empty_menu .rw_item_icon, .rw_dialog_menu ul li a .rw_item_icon {
+    color: #000000;
+}
+.rw_inline_dialog.rw_has_title .rw_title {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_dd_medium ul li a span.rw_item_content {
+    color: #000000;
+}
+#rw_top_menu_items_container .rw_item_content {
+    color: #000000;
+}
+.rw_dd_medium ul li a span.rw_item_icon {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_dd_medium ul li a span.rw_item_content {
+    color: #000000;
+}
+.rw_dd_medium ul li a span.rw_item_icon {
+    color: #000000;
+}
+.rw_mywork_body .rw_group_result {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_author a {
+    color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_ellipsis a {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_icon {
+   color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_date {
+    color: #000000;
+}
+.rw_small_text {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+.rw_module .rw_module_title>.rw_icon {
+    color: #000000;
+}
+ul.rw_content_list li a .rw_small_text {
+    color: #000000;
+}.rw_small_text {
+    color: #000000;
+}
+#com-atlassian-confluence .aui-dd-parent .aui-dropdown .dropdown-item a, .aui-dropdown2 .aui-dropdown2-section li a {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_icon_right {
+    color: #000000;
+}
+.rw_macro_title .rw_icon {
+    color: #000000;
+}
+.aui-dropdown2.aui-style-default>strong, .aui-dropdown2.aui-style-default .aui-dropdown2-section>strong, .aui-dropdown2-heading {
+    color: #000000;
+}
+.rw_icon, .rw_item_icon {
+    color: #000000
+}
+.rw_module .rw_module_button, .wiki-content .rw_module .rw_module_button {
+    color: #000000;
+}
+.rw_module .rw_module_button, .wiki-content .rw_module .rw_module_button {
+    border: 1px solid #000000;
+    color: #000000;
+}
+.aui-button, a.aui-button, .aui-button:visited {
+    color: #000000;
+}
+ul.rw_horizontal_menu li a {
+    color: #000000;
+}
+.rw_popup a {
+    color: #000000;
+}
+ul.rw_horizontal_menu li a {
+    color: #000000;
+}
+#rw_favorite_popup .rw_group_result {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link {
+    color: #000000;
+}
+.rw_popup a {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link span {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link {
+    color: #000000;
+    border: 1px solid #000000;
+}
+.rw_popup_design_confluence .rw_popup h1 {
+    color: #000000;
+}
+#rw_footer_wrapper.rw_theme_light #rw_footer_content a {
+    color: #FFFFFF;
+}
+#.rw_category_dd_theme_dark #rw_category_dropdown_wrapper {
+    background: #ffffff;
+}
+.rw_popup_design_confluence .rw_dd_medium .rw_item_icon:before {
+    color: #000000;
+}
+rw_footer_wrapper.rw_theme_light #rw_footer_content, #rw_footer_wrapper.rw_theme_light #rw_footer_content p {
+    font-size: 16px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+#rw_footer_wrapper.rw_theme_light {
+    background-color: #123E57;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.rw_iconfont_more:before {
+    content: "\e00d";
+    color: #ffffff;
+}
+#rw_space_nav>.rw_item_actions .rw_icon {
+    color: #000000;
+}
+.rw_mywork_macro .rw_macro_title .rw_recently_worked_on {
+color: #000;
+background: none;
+}
+.rw_recently_worked_on:before {
+content: "\e007";
+}
+.rw_pagetree .rw_expand_collapse a, .wiki-content .rw_pagetree .rw_expand_collapse a {
+    color: #000000;
+}
+.rw_pagetree.rw_theme_public ul.rw_pagetree_list li a, .rw_pagetree.rw_theme_public ul.rw_pagetree_list li a:hover {
+    color: #000000;
+}
+#com-atlassian-confluence .rw_content_menu_solid #rw_menu_bar_wrapper #rw_menu_bar h1 {
+    color: #000000;
+}
+.rw_space_filter_menu li a {
+      color: #000000;
+}
+_public ul.rw_quick_links a {
+    color: #555;
+}
+.rw_item_content {
+    color: #000000;
+}
+.rw_activity_menu .rw_section:last-child {
+    border-bottom: 0;
+    display: none;
+}
+.rw_content_section #rw_left_column>* {
+    margin-bottom: 15px;
+}
+.label-list {
+    color: #000000;
+}
+
+.jira-macro-table-underline-pdfexport {
+  & .aui-lozenge.ghx-label-1 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-2 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-3 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-4 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-5 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-6 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-7 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-8 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-9 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-10 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-11 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-12 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-13 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-14 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-0 {
+      background-color: var(--ds-text, #fff) !important;
+  }
+}
+	
+</style></head>
+<body class="theme-default aui-theme-default">
+<div id="page">
+<div class="aui-page-panel" id="main">
+<div id="main-header">
+<h1 class="pagetitle" id="title-heading">
+<span id="title-text">Creating an Algorithm Type 1.0</span>
+</h1>
+</div>
+<div class="view" id="content">
+<div class="wiki-content group" id="main-content">
+<p>Algorithms are types of calculations that you can add to an AIM template.</p><ol><li><a href="/externalpages/91795231.html">Create a Calculation</a>.</li><li>Click <span class="confluence-embedded-file-wrapper"><img alt="create algorithm type button" class="confluence-embedded-image" draggable="false" src="javascript:void(0)"/></span> to add an algorithm type to the calculation type.<br/> A new panel appears on the right for algorithm attributes.<br/> <span class="confluence-embedded-file-wrapper"><img alt="new panel of algorithm attributes" class="confluence-embedded-image confluence-content-image-border" draggable="false" src="javascript:void(0)" vspace="4"/></span></li><li><p>Provide attributes for the algorithm type.</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh"><p>Field</p></th><th class="confluenceTh"><p>Description</p></th></tr><tr><td class="confluenceTd"><p>Description</p></td><td class="confluenceTd"><p>Explanatory text about the component</p></td></tr><tr><td class="confluenceTd"><p>Unique Identifier</p></td><td class="confluenceTd"><p>Any string that uniquely identifies this algorithm</p></td></tr><tr><td class="confluenceTd"><p>Algorithm Name</p></td><td class="confluenceTd"><p>Algorithm name</p></td></tr><tr><td class="confluenceTd"><p>Algorithm Version</p></td><td class="confluenceTd"><p>Algorithm version</p></td></tr><tr><td class="confluenceTd"><p>MathML</p></td><td class="confluenceTd"><p>An optional mathML representation of the calculation</p></td></tr></tbody></table></div></li><li>Click <strong>Save</strong>.</li></ol></div>
+</div> </div>
+<div id="footer" role="contentinfo">
+<section class="footer-body">
+</section>
+</div>
+</div> </body>
+</html>

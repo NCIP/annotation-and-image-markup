@@ -1,0 +1,44 @@
+
+
+body, p, td, table, tr, .bodytext, .stepfield, .grey {
+	font-family: Verdana, arial, sans-serif;
+	font-size: 13px;
+	line-height: 18px;
+	color: #000000;
+	font-weight: normal;
+}
+#PageContent {
+	text-align: left;
+	background-color: #fff;
+	padding: 0;
+	margin: 0;
+    padding-bottom:20px;
+}
+body {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+    background-color: #f0f0f0;
+}
+
+.toc-macro {
+    font-size: 13px;
+}
+
+.page-metadata, .page-metadata ul li a:link, .page-metadata ul li a:focus, .page-metadata ul li a:hover, .page-metadata ul li a:active, .page-metadata ul li a:visited {
+    font-size: 12px;
+    color: #010101;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.quick-comment-prompt, .quick-comment-loading-container {
+    color: #000;
+}
+
+a.download-all-link {
+    display: none !important;
+}
+a#download-all-link {
+    display: none !important;
+}

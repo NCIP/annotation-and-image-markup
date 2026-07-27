@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Annotation and Image Markup : Changes from AIM 4.0 to AIM 4.2, Revision 2</title>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<style>.ia-fixed-sidebar, .ia-splitter-left {width: 285px;}.theme-default .ia-splitter #main {margin-left: 285px;}.ia-fixed-sidebar {visibility: hidden;}</style><link data-wrm-batch-type="context" data-wrm-key="_super" href="/styles/361531181/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="context" data-wrm-key="baseurl-checker-resource,atl.general,refined.site,viewcontent,refined.main,main,page,atl.comments,zdu-banner-all,-_super" href="/styles/361531181/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="context" data-wrm-key="refined.aui-design-tokens,-_super" href="/styles/361531181/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="resource" data-wrm-key="com.refinedwiki.confluence.plugins.theme.original:print-style" href="/styles/361531181/com.refinedwiki.confluence.plugins.theme.original_print-style.css" media="print" rel="stylesheet"/><link href="/styles/361531181/atlassian-editor.css" media="all" rel="stylesheet"/><link href="/styles/361531181/custom.css" media="all" rel="stylesheet"/><style type="text/css">
+		.rw_toolbar_menu li .rw_toolbar_dropdown li a:hover
+		{
+			color: #172B4D;
+			background: rgba(9, 30, 66, 0.06);
+		}
+
+		/* Scroll office fix */
+		#com-k15t-confluence-scroll-pdf-launcher:hover
+		{
+			color: #172B4D;
+			background: rgba(9, 30, 66, 0.06);
+		}
+	</style><link href="/styles/361531181/theme-9-1290.css" media="all" rel="stylesheet" type="text/css"/><style type="text/css">
+  #rw_wrapper.rw_effects_popup_shadow .rw_shadow_top { width: calc(100% + 40px); }
+  #rw_wrapper.rw_effects_popup_shadow .rw_shadow_top:after { width: calc(100% - 40px); }
+  #rw_wrapper.rw_effects_popup_border .rw_shadow_top { width: calc(100% + 2px); }
+</style><style type="text/css">
+	/* Key navigation in popup */
+	.rw_key_nav li.rw_selected a {
+        background-color: rgba(199,63,98,1.00) !important;
+        border-color: rgba(199,63,98,1.00) !important;
+                box-shadow: none;
+    }
+    .rw_key_nav li.rw_selected * { color: #fff !important; }
+    .rw_key_nav li.rw_selected a span.rw_item_left { background: none !important; border-color:unset !important;}
+
+	/* Key navigation category menu */
+	#rw_category_menu ul li.rw_active.rw_selected a > span { border-color: rgba(199,63,98,1.00); }
+
+	/* Confluence questions  */
+	.rw_navigation_module_questions ul li.rw_selected { background: rgba(199,63,98,1.00); }
+	.rw_category_dd_theme_dark #rw_category_dropdown_wrapper .rw_navigation_module_questions ul li.rw_selected { background: rgba(199,63,98,1.00); }
+
+	/* Key navigation for page tree */
+	.rw_pagetree_list li.rw_selected > div.rw_icon_content { background: rgba(199,63,98,1.00) !important; border-color: rgba(199,63,98,1.00) !important; }
+	.rw_pagetree_list li.rw_selected > div.rw_icon_content a { color:#fff !important;}
+	.rw_pagetree_list li.rw_selected a {background: none !important; border-color: unset; color:#333 !important;}
+
+	/* Key navigation for activity popup */
+	li.rw_selected div.rw_no_link { background: rgba(199,63,98,1.00) !important; border-color: rgba(199,63,98,1.00) !important; }
+    .rw_popup_design_default .rw_popup .rw_activity_module .rw_selected,
+    .rw_popup_design_confluence .rw_popup .rw_activity_module .rw_selected {
+        background: rgba(199,63,98,1.00) !important;
+    }
+
+	/* Main Key Navigation */
+	.rw_keynavigation_row > div.rw_selected { background: rgba(199,63,98,1.00) !important; color:#fff !important;}
+	.rw_keynavigation_container > div.rw_keynavigation_empty_item { background: none;}
+
+    /* Key Navigation in search module */
+    .rw_search_module_results ul li.rw_selected a {
+        background: rgba(199,63,98,1.00) !important;
+        border-color: rgba(199,63,98,1.00) !important;
+        color: #fff;
+    }
+
+	/* Menu keynav exceptions */
+	#notifications-anchor.rw_selected {background: rgba(199,63,98,1.00) !important; color:#fff !important;}
+
+
+	
+
+	#rw_menu_bar #rw_create_button .aui-button,
+	#rw_inline_dialog_page_menu #rw_create_button .aui-button,
+    .rw_create_blogpost_button.aui-button
+	{
+	  background-image: -moz-linear-gradient(top, #0C66E4, #0a57c3);
+	  background-image: -ms-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: -webkit-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: -o-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: linear-gradient(top,  #0C66E4, #0a57c3);
+	  text-shadow: none;
+	  color: #FFFFFF;
+	}
+
+    #rw_menu_bar #rw_create_button .aui-button,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button,
+    .rw_create_blogpost_button.aui-button
+    {
+      border-color: #0C66E4;
+    }
+    #rw_main #rw_create_button .aui-button:hover,
+    #rw_main #rw_create_button .aui-button:focus,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button:hover,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button:focus,
+    .rw_create_blogpost_button.aui-button:hover,
+    .rw_create_blogpost_button.aui-button:focus
+    {
+      background-image: -moz-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -ms-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -webkit-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -o-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: linear-gradient(top, #1f7cff, #0c5bcb);
+    }
+
+    .rw_create_blogpost_button.aui-button {
+	  border: 0;
+    }
+    .rw_create_blogpost_button.aui-button:hover {
+      color: #FFFFFF;
+	}
+
+
+		
+
+
+    	
+		        #preview #previewArea iframe {
+   overflow: visible;
+}
+
+#rw_search_query {
+    color: #000000;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+color: black;
+opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+color: black;
+}
+
+#rw_space_nav>.rw_item_content a {
+    color: #000000;
+}
+.rw_inline_dialog .rw_pagetree ul.rw_pagetree_list li a, .rw_inline_dialog .rw_pagetree ul.rw_pagetree_list li a:hover, .rw_pagetree.rw_theme_default ul.rw_pagetree_list li a, .rw_pagetree.rw_theme_default ul.rw_pagetree_list li a:hover {
+    color: #000000;
+}
+#rw_left_column>.rw_users_space_macro h3 {
+    color: #000000;
+}
+rw_users_space_macro .rw_help {
+    color: #000000;
+}
+.rw_space_news div span.rw_caption {
+    color: #000000;
+}
+.rw_space_news ul li a span {
+    color: #000000;
+}
+.rw_space_news ul li a .rw_date {
+    color: #000000;
+}
+.rw_pagetree .rw_quick_links_container h5 {
+    color: #000000;
+}    
+.rw_inline_dialog ul.rw_quick_links a, .rw_pagetree.rw_theme_default ul.rw_quick_links a {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_search_result_title {
+    color: #000000;
+}
+.rw_popup_design_confluence #rw_search_result_container ul li a span, .rw_popup_design_confluence #rw_search_result_container ul li:not(.rw_selected) a:hover span {
+    color: #000000;
+}
+.rw_popup_design_confluence #rw_search_result_container ul li a span.rw_search_item_space {
+    color: #000000;
+}
+.page-metadata-wrapper .page-metadata {
+    color: #000000;
+}
+.rw_pagetree .rw_quick_links_container .rw_help {
+    color: #000000;
+}
+.rw_dialog_menu ul li .rw_empty_menu .rw_item_content, .rw_dialog_menu ul li a .rw_item_content {
+    color: #000000;
+}
+#rw_inline_dialog_blogMenu #browse-space-menu ul .rw_section_title, #rw_inline_dialog_spaceMenu #browse-space-menu ul .rw_section_title {
+    color: #000000;
+}
+.rw_dialog_menu ul li .rw_empty_menu .rw_item_icon, .rw_dialog_menu ul li a .rw_item_icon {
+    color: #000000;
+}
+.rw_inline_dialog.rw_has_title .rw_title {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_dd_medium ul li a span.rw_item_content {
+    color: #000000;
+}
+#rw_top_menu_items_container .rw_item_content {
+    color: #000000;
+}
+.rw_dd_medium ul li a span.rw_item_icon {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_dd_medium ul li a span.rw_item_content {
+    color: #000000;
+}
+.rw_dd_medium ul li a span.rw_item_icon {
+    color: #000000;
+}
+.rw_mywork_body .rw_group_result {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_author a {
+    color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_ellipsis a {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_icon {
+   color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_date {
+    color: #000000;
+}
+.rw_small_text {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+.rw_module .rw_module_title>.rw_icon {
+    color: #000000;
+}
+ul.rw_content_list li a .rw_small_text {
+    color: #000000;
+}.rw_small_text {
+    color: #000000;
+}
+#com-atlassian-confluence .aui-dd-parent .aui-dropdown .dropdown-item a, .aui-dropdown2 .aui-dropdown2-section li a {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_icon_right {
+    color: #000000;
+}
+.rw_macro_title .rw_icon {
+    color: #000000;
+}
+.aui-dropdown2.aui-style-default>strong, .aui-dropdown2.aui-style-default .aui-dropdown2-section>strong, .aui-dropdown2-heading {
+    color: #000000;
+}
+.rw_icon, .rw_item_icon {
+    color: #000000
+}
+.rw_module .rw_module_button, .wiki-content .rw_module .rw_module_button {
+    color: #000000;
+}
+.rw_module .rw_module_button, .wiki-content .rw_module .rw_module_button {
+    border: 1px solid #000000;
+    color: #000000;
+}
+.aui-button, a.aui-button, .aui-button:visited {
+    color: #000000;
+}
+ul.rw_horizontal_menu li a {
+    color: #000000;
+}
+.rw_popup a {
+    color: #000000;
+}
+ul.rw_horizontal_menu li a {
+    color: #000000;
+}
+#rw_favorite_popup .rw_group_result {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link {
+    color: #000000;
+}
+.rw_popup a {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link span {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link {
+    color: #000000;
+    border: 1px solid #000000;
+}
+.rw_popup_design_confluence .rw_popup h1 {
+    color: #000000;
+}
+#rw_footer_wrapper.rw_theme_light #rw_footer_content a {
+    color: #FFFFFF;
+}
+#.rw_category_dd_theme_dark #rw_category_dropdown_wrapper {
+    background: #ffffff;
+}
+.rw_popup_design_confluence .rw_dd_medium .rw_item_icon:before {
+    color: #000000;
+}
+rw_footer_wrapper.rw_theme_light #rw_footer_content, #rw_footer_wrapper.rw_theme_light #rw_footer_content p {
+    font-size: 16px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+#rw_footer_wrapper.rw_theme_light {
+    background-color: #123E57;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.rw_iconfont_more:before {
+    content: "\e00d";
+    color: #ffffff;
+}
+#rw_space_nav>.rw_item_actions .rw_icon {
+    color: #000000;
+}
+.rw_mywork_macro .rw_macro_title .rw_recently_worked_on {
+color: #000;
+background: none;
+}
+.rw_recently_worked_on:before {
+content: "\e007";
+}
+.rw_pagetree .rw_expand_collapse a, .wiki-content .rw_pagetree .rw_expand_collapse a {
+    color: #000000;
+}
+.rw_pagetree.rw_theme_public ul.rw_pagetree_list li a, .rw_pagetree.rw_theme_public ul.rw_pagetree_list li a:hover {
+    color: #000000;
+}
+#com-atlassian-confluence .rw_content_menu_solid #rw_menu_bar_wrapper #rw_menu_bar h1 {
+    color: #000000;
+}
+.rw_space_filter_menu li a {
+      color: #000000;
+}
+_public ul.rw_quick_links a {
+    color: #555;
+}
+.rw_item_content {
+    color: #000000;
+}
+.rw_activity_menu .rw_section:last-child {
+    border-bottom: 0;
+    display: none;
+}
+.rw_content_section #rw_left_column>* {
+    margin-bottom: 15px;
+}
+.label-list {
+    color: #000000;
+}
+
+.jira-macro-table-underline-pdfexport {
+  & .aui-lozenge.ghx-label-1 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-2 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-3 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-4 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-5 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-6 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-7 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-8 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-9 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-10 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-11 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-12 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-13 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-14 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-0 {
+      background-color: var(--ds-text, #fff) !important;
+  }
+}
+	
+</style></head>
+<body class="theme-default aui-theme-default">
+<div id="page">
+<div class="aui-page-panel" id="main">
+<div id="main-header">
+<div id="breadcrumb-section">
+<ol id="breadcrumbs">
+<li class="first">
+<span><a href="index.html">Annotation and Image Markup</a></span>
+</li>
+<li>
+<span><a href="AIM-Documentation_40599932.html">AIM Documentation</a></span>
+</li>
+<li>
+<span><a href="AIM-Toolkit-Documentation_80152134.html">AIM Toolkit Documentation</a></span>
+</li>
+<li>
+<span><a href="AIM-Model-Change-Logs_106070327.html">AIM Model Change Logs</a></span>
+</li>
+</ol>
+</div>
+<h1 class="pagetitle" id="title-heading">
+<span id="title-text">
+                            Annotation and Image Markup : Changes from AIM 4.0 to AIM 4.2, Revision 2
+                        </span>
+</h1>
+</div>
+<div class="view" id="content">
+<div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class="author"> Klinger, Carolyn (NIH/NCI) [C]</span>, last updated on Jan 29, 2018
+    
+                        </div>
+<div class="wiki-content group" id="main-content">
+<p>The following items have been added to the AIM 4.2.</p><ol><li>An attribute was added to the AnnotationEntity class. The following is a description of “trackingUniqueIdentifier.”<br/><br/>A unique identifier used for tracking a finding or feature, potentially across multiple reporting objects, over time.<br/><span class="confluence-embedded-file-wrapper"><img alt="" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/361531181/361531176.png" data-linked-resource-container-id="361531181" data-linked-resource-container-version="3" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="TrackingUniqueIdentifier.png" data-linked-resource-id="361531176" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/361531181/361531176.png" tabindex="0"/></span><br/><br/></li><li>Two attributes were added to the DicomSegmentationEntity class. Their descriptions follow.<br/><span class="confluence-embedded-file-wrapper"><img alt="" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/361531181/361531179.png" data-linked-resource-container-id="361531181" data-linked-resource-container-version="3" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="StudyseriesInstanceUid.png" data-linked-resource-id="361531179" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/361531181/361531179.png" tabindex="0"/></span><br/><p>“studyInstanceUid” a study instance uid of the DICOM segmentation object.</p><p>“seriesInstanceUid” a series instance uid of the DICOM segmentation object.<br/><br/></p></li><li>The following attributes were added to the AnnotationCollection class:<br/><span class="confluence-embedded-file-wrapper"><img alt="Annotation Collection class attributes" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/361531181/361531180.png" data-linked-resource-container-id="361531181" data-linked-resource-container-version="3" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="AnnotationCollection.png" data-linked-resource-id="361531180" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/361531181/361531180.png" tabindex="0"/></span><br/><ol><li>StudyInstanceUid - type iso:II<br/><strong>Description:</strong> Study Instance UID may or may not be the same as the Study Instance UID from an imaging study. If an annotation collection created is included in the same study as the annotated images, the Study Instance UID would be the same as in the DicomImageReferenceEntity.</li><li>SeriesInstanceUid - type iso:II<br/><strong>Description:</strong> A new Series Instance UID has to be created.</li><li>AccessionNumber - type iso:ST, cardinality 0-1<br/><strong>Description:</strong> accessionNumber may or may not be the same as the SaccessionNumber from an imaging study. If an annotation collection created is included in the same study as the annotated images, the accessionNumber would be the same as in the DicomImageReferenceEntity.<br/><br/></li></ol></li><li>The following attribute was added to the ImageStudy class:<br/><span class="confluence-embedded-file-wrapper"><img alt="" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/361531181/361531183.png" data-linked-resource-container-id="361531181" data-linked-resource-container-version="3" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="ImageStudy.png" data-linked-resource-id="361531183" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/361531181/361531183.png" tabindex="0"/></span><ul><li>AccessionNumber - type iso:ST, cardinality 0-1<br/>An accession number used to create an imaging order for the imaging study.</li></ul></li><li>New AIM statements were added for the Image Annotations group:<br/><span class="confluence-embedded-file-wrapper"><img alt="AIM Image Annotations Group" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/361531181/361531185.png" data-linked-resource-container-id="361531181" data-linked-resource-container-version="3" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="ImageAnnotationsGroup.png" data-linked-resource-id="361531185" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/361531181/361531185.png" tabindex="0"/></span><ol><li>CalculationEntityReferencesSegmentationEntityStatement<br/>A given calculation result is based on the referenced segmentation entity.</li><li>CalculationEntityReferencesMarkupEntityStatement<br/>A given calculation result is based on the markup entity.<br/><br/></li></ol></li><li>The following change was made to the Person class.<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img alt="AIM Person Class" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/361531181/361531187.png" data-linked-resource-container-id="361531181" data-linked-resource-container-version="3" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="PersonClass.png" data-linked-resource-id="361531187" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" height="250" src="/attachments/361531181/361531187.png" tabindex="0"/></span><br/>If the id identifies a group of subjects, sourcePatientGroupId is an identification of a subject within the group. This is common in small animal imaging when multiple subjects are imaged as a group.<ul><li>sourcePatientGroupId - type iso:ST, cardinality 0-1</li></ul></li></ol><p> </p>
+</div>
+<div class="pageSection group">
+<div class="pageSectionHeader">
+<h2 class="pageSectionTitle" id="attachments">Attachments:</h2>
+</div>
+<div align="left" class="greybox">
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/361531181/361531176.png">TrackingUniqueIdentifier.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/361531181/361531179.png">StudyseriesInstanceUid.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/361531181/361531180.png">AnnotationCollection.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/361531181/361531183.png">ImageStudy.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/361531181/361531185.png">ImageAnnotationsGroup.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/361531181/361531187.png">PersonClass.png</a> (image/png)
+                                <br/>
+</div>
+</div>
+</div> </div>
+<div id="footer" role="contentinfo">
+<section class="footer-body">
+<p>Document generated by Confluence on Jul 15, 2026 09:37</p>
+<div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+</section>
+</div>
+</div> </body>
+</html>

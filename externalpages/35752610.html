@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>AIM Terms and Concepts</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<style>.ia-fixed-sidebar, .ia-splitter-left {width: 285px;}.theme-default .ia-splitter #main {margin-left: 285px;}.ia-fixed-sidebar {visibility: hidden;}</style><link data-wrm-batch-type="context" data-wrm-key="_super" href="/styles/35752610/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="context" data-wrm-key="baseurl-checker-resource,atl.general,refined.site,viewcontent,refined.main,main,page,atl.comments,zdu-banner-all,-_super" href="/styles/35752610/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="context" data-wrm-key="refined.aui-design-tokens,-_super" href="/styles/35752610/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="resource" data-wrm-key="com.refinedwiki.confluence.plugins.theme.original:print-style" href="/styles/35752610/com.refinedwiki.confluence.plugins.theme.original_print-style.css" media="print" rel="stylesheet"/><link href="/styles/35752610/atlassian-editor.css" media="all" rel="stylesheet"/><link href="/styles/35752610/custom.css" media="all" rel="stylesheet"/><style type="text/css">
+		.rw_toolbar_menu li .rw_toolbar_dropdown li a:hover
+		{
+			color: #172B4D;
+			background: rgba(9, 30, 66, 0.06);
+		}
+
+		/* Scroll office fix */
+		#com-k15t-confluence-scroll-pdf-launcher:hover
+		{
+			color: #172B4D;
+			background: rgba(9, 30, 66, 0.06);
+		}
+	</style><link href="/styles/35752610/theme-9-1290.css" media="all" rel="stylesheet" type="text/css"/><style type="text/css">
+  #rw_wrapper.rw_effects_popup_shadow .rw_shadow_top { width: calc(100% + 40px); }
+  #rw_wrapper.rw_effects_popup_shadow .rw_shadow_top:after { width: calc(100% - 40px); }
+  #rw_wrapper.rw_effects_popup_border .rw_shadow_top { width: calc(100% + 2px); }
+</style><style type="text/css">
+	/* Key navigation in popup */
+	.rw_key_nav li.rw_selected a {
+        background-color: rgba(199,63,98,1.00) !important;
+        border-color: rgba(199,63,98,1.00) !important;
+                box-shadow: none;
+    }
+    .rw_key_nav li.rw_selected * { color: #fff !important; }
+    .rw_key_nav li.rw_selected a span.rw_item_left { background: none !important; border-color:unset !important;}
+
+	/* Key navigation category menu */
+	#rw_category_menu ul li.rw_active.rw_selected a > span { border-color: rgba(199,63,98,1.00); }
+
+	/* Confluence questions  */
+	.rw_navigation_module_questions ul li.rw_selected { background: rgba(199,63,98,1.00); }
+	.rw_category_dd_theme_dark #rw_category_dropdown_wrapper .rw_navigation_module_questions ul li.rw_selected { background: rgba(199,63,98,1.00); }
+
+	/* Key navigation for page tree */
+	.rw_pagetree_list li.rw_selected > div.rw_icon_content { background: rgba(199,63,98,1.00) !important; border-color: rgba(199,63,98,1.00) !important; }
+	.rw_pagetree_list li.rw_selected > div.rw_icon_content a { color:#fff !important;}
+	.rw_pagetree_list li.rw_selected a {background: none !important; border-color: unset; color:#333 !important;}
+
+	/* Key navigation for activity popup */
+	li.rw_selected div.rw_no_link { background: rgba(199,63,98,1.00) !important; border-color: rgba(199,63,98,1.00) !important; }
+    .rw_popup_design_default .rw_popup .rw_activity_module .rw_selected,
+    .rw_popup_design_confluence .rw_popup .rw_activity_module .rw_selected {
+        background: rgba(199,63,98,1.00) !important;
+    }
+
+	/* Main Key Navigation */
+	.rw_keynavigation_row > div.rw_selected { background: rgba(199,63,98,1.00) !important; color:#fff !important;}
+	.rw_keynavigation_container > div.rw_keynavigation_empty_item { background: none;}
+
+    /* Key Navigation in search module */
+    .rw_search_module_results ul li.rw_selected a {
+        background: rgba(199,63,98,1.00) !important;
+        border-color: rgba(199,63,98,1.00) !important;
+        color: #fff;
+    }
+
+	/* Menu keynav exceptions */
+	#notifications-anchor.rw_selected {background: rgba(199,63,98,1.00) !important; color:#fff !important;}
+
+
+	
+
+	#rw_menu_bar #rw_create_button .aui-button,
+	#rw_inline_dialog_page_menu #rw_create_button .aui-button,
+    .rw_create_blogpost_button.aui-button
+	{
+	  background-image: -moz-linear-gradient(top, #0C66E4, #0a57c3);
+	  background-image: -ms-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: -webkit-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: -o-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: linear-gradient(top,  #0C66E4, #0a57c3);
+	  text-shadow: none;
+	  color: #FFFFFF;
+	}
+
+    #rw_menu_bar #rw_create_button .aui-button,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button,
+    .rw_create_blogpost_button.aui-button
+    {
+      border-color: #0C66E4;
+    }
+    #rw_main #rw_create_button .aui-button:hover,
+    #rw_main #rw_create_button .aui-button:focus,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button:hover,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button:focus,
+    .rw_create_blogpost_button.aui-button:hover,
+    .rw_create_blogpost_button.aui-button:focus
+    {
+      background-image: -moz-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -ms-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -webkit-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -o-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: linear-gradient(top, #1f7cff, #0c5bcb);
+    }
+
+    .rw_create_blogpost_button.aui-button {
+	  border: 0;
+    }
+    .rw_create_blogpost_button.aui-button:hover {
+      color: #FFFFFF;
+	}
+
+
+		
+
+
+    	
+		        #preview #previewArea iframe {
+   overflow: visible;
+}
+
+#rw_search_query {
+    color: #000000;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+color: black;
+opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+color: black;
+}
+
+#rw_space_nav>.rw_item_content a {
+    color: #000000;
+}
+.rw_inline_dialog .rw_pagetree ul.rw_pagetree_list li a, .rw_inline_dialog .rw_pagetree ul.rw_pagetree_list li a:hover, .rw_pagetree.rw_theme_default ul.rw_pagetree_list li a, .rw_pagetree.rw_theme_default ul.rw_pagetree_list li a:hover {
+    color: #000000;
+}
+#rw_left_column>.rw_users_space_macro h3 {
+    color: #000000;
+}
+rw_users_space_macro .rw_help {
+    color: #000000;
+}
+.rw_space_news div span.rw_caption {
+    color: #000000;
+}
+.rw_space_news ul li a span {
+    color: #000000;
+}
+.rw_space_news ul li a .rw_date {
+    color: #000000;
+}
+.rw_pagetree .rw_quick_links_container h5 {
+    color: #000000;
+}    
+.rw_inline_dialog ul.rw_quick_links a, .rw_pagetree.rw_theme_default ul.rw_quick_links a {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_search_result_title {
+    color: #000000;
+}
+.rw_popup_design_confluence #rw_search_result_container ul li a span, .rw_popup_design_confluence #rw_search_result_container ul li:not(.rw_selected) a:hover span {
+    color: #000000;
+}
+.rw_popup_design_confluence #rw_search_result_container ul li a span.rw_search_item_space {
+    color: #000000;
+}
+.page-metadata-wrapper .page-metadata {
+    color: #000000;
+}
+.rw_pagetree .rw_quick_links_container .rw_help {
+    color: #000000;
+}
+.rw_dialog_menu ul li .rw_empty_menu .rw_item_content, .rw_dialog_menu ul li a .rw_item_content {
+    color: #000000;
+}
+#rw_inline_dialog_blogMenu #browse-space-menu ul .rw_section_title, #rw_inline_dialog_spaceMenu #browse-space-menu ul .rw_section_title {
+    color: #000000;
+}
+.rw_dialog_menu ul li .rw_empty_menu .rw_item_icon, .rw_dialog_menu ul li a .rw_item_icon {
+    color: #000000;
+}
+.rw_inline_dialog.rw_has_title .rw_title {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_dd_medium ul li a span.rw_item_content {
+    color: #000000;
+}
+#rw_top_menu_items_container .rw_item_content {
+    color: #000000;
+}
+.rw_dd_medium ul li a span.rw_item_icon {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_dd_medium ul li a span.rw_item_content {
+    color: #000000;
+}
+.rw_dd_medium ul li a span.rw_item_icon {
+    color: #000000;
+}
+.rw_mywork_body .rw_group_result {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_author a {
+    color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_ellipsis a {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_icon {
+   color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_date {
+    color: #000000;
+}
+.rw_small_text {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+.rw_module .rw_module_title>.rw_icon {
+    color: #000000;
+}
+ul.rw_content_list li a .rw_small_text {
+    color: #000000;
+}.rw_small_text {
+    color: #000000;
+}
+#com-atlassian-confluence .aui-dd-parent .aui-dropdown .dropdown-item a, .aui-dropdown2 .aui-dropdown2-section li a {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_icon_right {
+    color: #000000;
+}
+.rw_macro_title .rw_icon {
+    color: #000000;
+}
+.aui-dropdown2.aui-style-default>strong, .aui-dropdown2.aui-style-default .aui-dropdown2-section>strong, .aui-dropdown2-heading {
+    color: #000000;
+}
+.rw_icon, .rw_item_icon {
+    color: #000000
+}
+.rw_module .rw_module_button, .wiki-content .rw_module .rw_module_button {
+    color: #000000;
+}
+.rw_module .rw_module_button, .wiki-content .rw_module .rw_module_button {
+    border: 1px solid #000000;
+    color: #000000;
+}
+.aui-button, a.aui-button, .aui-button:visited {
+    color: #000000;
+}
+ul.rw_horizontal_menu li a {
+    color: #000000;
+}
+.rw_popup a {
+    color: #000000;
+}
+ul.rw_horizontal_menu li a {
+    color: #000000;
+}
+#rw_favorite_popup .rw_group_result {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link {
+    color: #000000;
+}
+.rw_popup a {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link span {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link {
+    color: #000000;
+    border: 1px solid #000000;
+}
+.rw_popup_design_confluence .rw_popup h1 {
+    color: #000000;
+}
+#rw_footer_wrapper.rw_theme_light #rw_footer_content a {
+    color: #FFFFFF;
+}
+#.rw_category_dd_theme_dark #rw_category_dropdown_wrapper {
+    background: #ffffff;
+}
+.rw_popup_design_confluence .rw_dd_medium .rw_item_icon:before {
+    color: #000000;
+}
+rw_footer_wrapper.rw_theme_light #rw_footer_content, #rw_footer_wrapper.rw_theme_light #rw_footer_content p {
+    font-size: 16px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+#rw_footer_wrapper.rw_theme_light {
+    background-color: #123E57;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.rw_iconfont_more:before {
+    content: "\e00d";
+    color: #ffffff;
+}
+#rw_space_nav>.rw_item_actions .rw_icon {
+    color: #000000;
+}
+.rw_mywork_macro .rw_macro_title .rw_recently_worked_on {
+color: #000;
+background: none;
+}
+.rw_recently_worked_on:before {
+content: "\e007";
+}
+.rw_pagetree .rw_expand_collapse a, .wiki-content .rw_pagetree .rw_expand_collapse a {
+    color: #000000;
+}
+.rw_pagetree.rw_theme_public ul.rw_pagetree_list li a, .rw_pagetree.rw_theme_public ul.rw_pagetree_list li a:hover {
+    color: #000000;
+}
+#com-atlassian-confluence .rw_content_menu_solid #rw_menu_bar_wrapper #rw_menu_bar h1 {
+    color: #000000;
+}
+.rw_space_filter_menu li a {
+      color: #000000;
+}
+_public ul.rw_quick_links a {
+    color: #555;
+}
+.rw_item_content {
+    color: #000000;
+}
+.rw_activity_menu .rw_section:last-child {
+    border-bottom: 0;
+    display: none;
+}
+.rw_content_section #rw_left_column>* {
+    margin-bottom: 15px;
+}
+.label-list {
+    color: #000000;
+}
+
+.jira-macro-table-underline-pdfexport {
+  & .aui-lozenge.ghx-label-1 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-2 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-3 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-4 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-5 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-6 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-7 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-8 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-9 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-10 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-11 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-12 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-13 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-14 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-0 {
+      background-color: var(--ds-text, #fff) !important;
+  }
+}
+	
+</style></head>
+<body class="theme-default aui-theme-default">
+<div id="page">
+<div class="aui-page-panel" id="main">
+<div id="main-header">
+<h1 class="pagetitle" id="title-heading">
+<span id="title-text">AIM Terms and Concepts</span>
+</h1>
+</div>
+<div class="view" id="content">
+<div class="wiki-content group" id="main-content">
+<p>This page introduces the caBIG® Annotation and Image Markup (AIM) terms and concepts, helping you relate known medical vocabulary to terms used by the AIM Model version 3.0.</p><div class="panel" style="border-width: 1px;"><div class="panelContent">
+<p>Topics in this guide include:</p><style type="text/css">/*<![CDATA[*/
+div.rbtoc1785161883729 {padding: 0px;}
+div.rbtoc1785161883729 ul {margin-left: 0px;}
+div.rbtoc1785161883729 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class="toc-macro rbtoc1785161883729">
+<ul class="toc-indentation">
+<li><a href="#AIMTermsandConcepts-UnderstandingAIMTermsandConcepts">Understanding AIM Terms and Concepts</a></li>
+<li><a href="#AIMTermsandConcepts-WhatistheProblem?">What is the Problem?</a></li>
+<li><a href="#AIMTermsandConcepts-WhatistheAIMTemplate?">What is the AIM Template?</a></li>
+<li><a href="#AIMTermsandConcepts-WhatisBeingCapturedinanAIMTemplate?">What is Being Captured in an AIM Template?</a></li>
+<li><a href="#AIMTermsandConcepts-AIMTemplateCreationProcess">AIM Template Creation Process</a></li>
+<li><a href="#AIMTermsandConcepts-AIMTemplateManager">AIM Template Manager</a></li>
+<li><a href="#AIMTermsandConcepts-AIMTemplateinAction">AIM Template in Action</a></li>
+</ul>
+</div>
+</div></div><h2 id="AIMTermsandConcepts-UnderstandingAIMTermsandConcepts">Understanding AIM Terms and Concepts</h2><p>AIM uses the three basic concepts in the following table.</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh"><p>Concept</p></th><th class="confluenceTh"><p>Example</p></th></tr><tr><td class="confluenceTd"><p>Imaging Observations</p></td><td class="confluenceTd"><p>"Mass", "lesion", "focus"</p></td></tr><tr><td class="confluenceTd"><p>Anatomic Entities</p></td><td class="confluenceTd"><p>"Occipital lobe", "parietal lobe" "Medial segment of middle lobe of right lung"</p></td></tr><tr><td class="confluenceTd"><p>Inferences (INF)</p></td><td class="confluenceTd"><p>"Speech center involvement", "pleural effusion"," pneumonia"</p></td></tr></tbody></table></div><p>Once we define Observations (OBS) and Anatomic Entities (AE), we can then look at their characteristics.</p><ul><li>"Speculated", "Rim enhancement", "cystic", are all Imaging Observation Characteristics.</li><li>"Dilated", "Ruptured", etc. are examples of Anatomic Entity Characteristics.</li></ul><p>Once we define Imaging Observation Characteristics and Anatomic Entity Characteristics, we can then talk about quantification of these characteristics.</p><ul><li>Quantification of a Characteristic can be "present", "absent", "not applicable", a quartile/percentile/n-tile, an arbitrary scale, a Likert scale, or a FLOAT with a UCUM unit.</li></ul><p>AIM implementors should strive for using these terms consistently as they make up new PAPER/Web templates for projects in anticipation of their implementation in AIM 3.0 and AIM Template 1.0.</p><h2 id="AIMTermsandConcepts-WhatistheProblem?">What is the Problem?</h2><p>Medical knowledge contained within an imaging report is stored in unstructured text format and separated from graphical drawings, typically in a proprietary format on an imaging system. Extracting valuable medical information from free text and combining with drawings from those sources are both time consuming and cumbersome to filter and search.</p><p>The AIM standard captures the descriptive information of an image with user-generated graphical symbols placed on the image into a single common information source. Medical findings are captured using standard vocabularies such as RadLex, SNOMED CT, DICOM, and user-defined terminology.</p><p>Image information captured in the AIM model is anatomic entity and its characteristic, imaging observation and its characteristic, and inference. Existing vocabularies contain thousands of terms that make it difficult for users to search and select criteria for inclusion as an AIM annotation. Typical users desire to make simple and constrained annotations that are reproducible and consistence.</p><h2 id="AIMTermsandConcepts-WhatistheAIMTemplate?">What is the AIM Template?</h2><p>The AIM template XML schema allows an expert to create an XML document containing controlled questions and answers based on known vocabularies such as SNOMED CT, RadLex, LOINC, etc. as well as user-defined terminologies.</p><p>The AIM template XML document can be consumed by an application capable of understanding AIM and AIM templates. A template allows users to choose appropriate semantic image content in a standardized format.</p><h2 id="AIMTermsandConcepts-WhatisBeingCapturedinanAIMTemplate?">What is Being Captured in an AIM Template?</h2><p>An AIM template group consists of one or more AIM templates. It provides a convenient way of organizing a collection of similar templates or templates related to a study.</p><p>An AIM template captures the name, version, description, UID, controlled term applied to the template, authors and creation date of a template. A template consists of a set of predefined questions and related answers to each question for a study. It has one or more components. A component represents a question in a study. It may have one or more answers associated with the component. It can either be Anatomic Entity, Imaging Observation, Inference and Calculation. A label in a component captures a concise textual description of an answer. A detail description is captured in explanatory text attribute. The min and max cardinality represent the minimum and maximum number of answers that can be applied to a component. An item number represents the order in which a component shall be displayed. The “shouldDisplay” attribute captures a Boolean value to determine if a question shall be displayed. In some circumstances, a question has only one answer. There is no need for a user to answer the question as the answer shall be assumed automatically. A question is represented with one or more controlled terms, in “AllowedTerm”. A question may be associated with a non-quantifiable answer that is captured as a controlled term.</p><p>A component can be one of the following types.</p><ul><li>Anatomic Entity</li><li>Anatomic Entity Characteristic, Imaging Observation, Imaging Observation Characteristic, Inference and Calculation</li></ul><p>Anatomic entity may have one or more anatomic entity characteristics. An anatomic entity characteristic contains every attribute that a component has. It has “annotator confidence” that allows a user to enter a level of user’s confidence answering the question in terms of a percentage. A characteristic may have a quantification value.</p><ul><li>Quantile</li><li>Interval</li><li>Scale</li><li>Quantile Non-quantifiable</li><li>Numerical</li></ul><p>Imaging observation may have one or more imaging observation characteristics. An imaging observation characteristic contains every attribute that a component has. It has “annotator confidence” that allows a user to enter a level of user’s confidence answering the question in terms of a percentage. A characteristic may have a of the below quantifications and non-quantifiable.</p><ul><li>Quantile</li><li>Interval</li><li>Scale</li><li>Quantile Non-quantifiable</li><li>Numerical</li></ul><h2 id="AIMTermsandConcepts-AIMTemplateCreationProcess">AIM Template Creation Process</h2><p>The AIM Template Manager is used to generate a set of well-defined questions and corresponding one or more answers to each question in order to facilitate collection of information for a particular purpose, e.g. TCGA GBM study. These questions are contained in AIM XML template file. The file can be consumed by an AIM enabled workstation that will present the questions and answers to a user in a graphical user interface. The workstation captures answers and then exports them as an AIM XML document or AIM DICOM SR, which can be sent to AIM Data Service or DICOM store SCP respectively.</p><h2 id="AIMTermsandConcepts-AIMTemplateManager">AIM Template Manager</h2><p>To facilitate this creation of constrained annotations, the AIM Template Manager provides a web based mechanism to create and store templates locally or in an on-line library. The web based application is based on a new AIM template schema. Instances of AIM templates are created by selecting components to be filled in by an annotator. Terms to be used by an annotator can be selected from standard vocabularies and the use of the terms by an annotator specified. The web browser interface allows for editing, renaming and deletion of a template that belongs to the user. The system automatically validates saved templates against the schema to ensure the future annotation will match the AIM model. An image display application can import the template to instantiate a user interface to capture the constrained annotation.</p><p>For more information, see the <a href="/35756147.html">AIM Template Manager User's Guide</a>.</p><h2 id="AIMTermsandConcepts-AIMTemplateinAction">AIM Template in Action</h2><p>A glioblastoma multiform template was designed to leverage a controlled terminology for describing the 26 subjective MR features of human gliomas that was devised based upon prior work (VASARI project). The features comprehensively describe the morphology of brain tumors visualized on contrast-enhanced MRI. They can be captured as caBIGTM AIM formats, i.e. XML or DICOM SR, on the TCGA Radiology research workstation. MR images of TCGA gliomas are located at the National Biomedical Imaging Archive (NBIA).</p><p>Image annotations and markups are critical to “tagging” content in medical images. AIM annotations will be critical components of future image based research. The AIM project delivers an information model, encoding standards for the structure and content of image annotations, a web application used to create a controlled set of questions and answers that are captured as coded terms for a computer program to process.</p></div>
+</div> </div>
+<div id="footer" role="contentinfo">
+<section class="footer-body">
+</section>
+</div>
+</div> </body>
+</html>

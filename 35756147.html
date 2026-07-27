@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Annotation and Image Markup : AIM Template Manager User's Guide</title>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<style>.ia-fixed-sidebar, .ia-splitter-left {width: 285px;}.theme-default .ia-splitter #main {margin-left: 285px;}.ia-fixed-sidebar {visibility: hidden;}</style><link data-wrm-batch-type="context" data-wrm-key="_super" href="/styles/35756147/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="context" data-wrm-key="baseurl-checker-resource,atl.general,refined.site,viewcontent,refined.main,main,page,atl.comments,zdu-banner-all,-_super" href="/styles/35756147/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="context" data-wrm-key="refined.aui-design-tokens,-_super" href="/styles/35756147/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="resource" data-wrm-key="com.refinedwiki.confluence.plugins.theme.original:print-style" href="/styles/35756147/com.refinedwiki.confluence.plugins.theme.original_print-style.css" media="print" rel="stylesheet"/><link href="/styles/35756147/atlassian-editor.css" media="all" rel="stylesheet"/><link href="/styles/35756147/custom.css" media="all" rel="stylesheet"/><style type="text/css">
+		.rw_toolbar_menu li .rw_toolbar_dropdown li a:hover
+		{
+			color: #172B4D;
+			background: rgba(9, 30, 66, 0.06);
+		}
+
+		/* Scroll office fix */
+		#com-k15t-confluence-scroll-pdf-launcher:hover
+		{
+			color: #172B4D;
+			background: rgba(9, 30, 66, 0.06);
+		}
+	</style><link href="/styles/35756147/theme-9-1290.css" media="all" rel="stylesheet" type="text/css"/><style type="text/css">
+  #rw_wrapper.rw_effects_popup_shadow .rw_shadow_top { width: calc(100% + 40px); }
+  #rw_wrapper.rw_effects_popup_shadow .rw_shadow_top:after { width: calc(100% - 40px); }
+  #rw_wrapper.rw_effects_popup_border .rw_shadow_top { width: calc(100% + 2px); }
+</style><style type="text/css">
+	/* Key navigation in popup */
+	.rw_key_nav li.rw_selected a {
+        background-color: rgba(199,63,98,1.00) !important;
+        border-color: rgba(199,63,98,1.00) !important;
+                box-shadow: none;
+    }
+    .rw_key_nav li.rw_selected * { color: #fff !important; }
+    .rw_key_nav li.rw_selected a span.rw_item_left { background: none !important; border-color:unset !important;}
+
+	/* Key navigation category menu */
+	#rw_category_menu ul li.rw_active.rw_selected a > span { border-color: rgba(199,63,98,1.00); }
+
+	/* Confluence questions  */
+	.rw_navigation_module_questions ul li.rw_selected { background: rgba(199,63,98,1.00); }
+	.rw_category_dd_theme_dark #rw_category_dropdown_wrapper .rw_navigation_module_questions ul li.rw_selected { background: rgba(199,63,98,1.00); }
+
+	/* Key navigation for page tree */
+	.rw_pagetree_list li.rw_selected > div.rw_icon_content { background: rgba(199,63,98,1.00) !important; border-color: rgba(199,63,98,1.00) !important; }
+	.rw_pagetree_list li.rw_selected > div.rw_icon_content a { color:#fff !important;}
+	.rw_pagetree_list li.rw_selected a {background: none !important; border-color: unset; color:#333 !important;}
+
+	/* Key navigation for activity popup */
+	li.rw_selected div.rw_no_link { background: rgba(199,63,98,1.00) !important; border-color: rgba(199,63,98,1.00) !important; }
+    .rw_popup_design_default .rw_popup .rw_activity_module .rw_selected,
+    .rw_popup_design_confluence .rw_popup .rw_activity_module .rw_selected {
+        background: rgba(199,63,98,1.00) !important;
+    }
+
+	/* Main Key Navigation */
+	.rw_keynavigation_row > div.rw_selected { background: rgba(199,63,98,1.00) !important; color:#fff !important;}
+	.rw_keynavigation_container > div.rw_keynavigation_empty_item { background: none;}
+
+    /* Key Navigation in search module */
+    .rw_search_module_results ul li.rw_selected a {
+        background: rgba(199,63,98,1.00) !important;
+        border-color: rgba(199,63,98,1.00) !important;
+        color: #fff;
+    }
+
+	/* Menu keynav exceptions */
+	#notifications-anchor.rw_selected {background: rgba(199,63,98,1.00) !important; color:#fff !important;}
+
+
+	
+
+	#rw_menu_bar #rw_create_button .aui-button,
+	#rw_inline_dialog_page_menu #rw_create_button .aui-button,
+    .rw_create_blogpost_button.aui-button
+	{
+	  background-image: -moz-linear-gradient(top, #0C66E4, #0a57c3);
+	  background-image: -ms-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: -webkit-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: -o-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: linear-gradient(top,  #0C66E4, #0a57c3);
+	  text-shadow: none;
+	  color: #FFFFFF;
+	}
+
+    #rw_menu_bar #rw_create_button .aui-button,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button,
+    .rw_create_blogpost_button.aui-button
+    {
+      border-color: #0C66E4;
+    }
+    #rw_main #rw_create_button .aui-button:hover,
+    #rw_main #rw_create_button .aui-button:focus,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button:hover,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button:focus,
+    .rw_create_blogpost_button.aui-button:hover,
+    .rw_create_blogpost_button.aui-button:focus
+    {
+      background-image: -moz-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -ms-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -webkit-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -o-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: linear-gradient(top, #1f7cff, #0c5bcb);
+    }
+
+    .rw_create_blogpost_button.aui-button {
+	  border: 0;
+    }
+    .rw_create_blogpost_button.aui-button:hover {
+      color: #FFFFFF;
+	}
+
+
+		
+
+
+    	
+		        #preview #previewArea iframe {
+   overflow: visible;
+}
+
+#rw_search_query {
+    color: #000000;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+color: black;
+opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+color: black;
+}
+
+#rw_space_nav>.rw_item_content a {
+    color: #000000;
+}
+.rw_inline_dialog .rw_pagetree ul.rw_pagetree_list li a, .rw_inline_dialog .rw_pagetree ul.rw_pagetree_list li a:hover, .rw_pagetree.rw_theme_default ul.rw_pagetree_list li a, .rw_pagetree.rw_theme_default ul.rw_pagetree_list li a:hover {
+    color: #000000;
+}
+#rw_left_column>.rw_users_space_macro h3 {
+    color: #000000;
+}
+rw_users_space_macro .rw_help {
+    color: #000000;
+}
+.rw_space_news div span.rw_caption {
+    color: #000000;
+}
+.rw_space_news ul li a span {
+    color: #000000;
+}
+.rw_space_news ul li a .rw_date {
+    color: #000000;
+}
+.rw_pagetree .rw_quick_links_container h5 {
+    color: #000000;
+}    
+.rw_inline_dialog ul.rw_quick_links a, .rw_pagetree.rw_theme_default ul.rw_quick_links a {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_search_result_title {
+    color: #000000;
+}
+.rw_popup_design_confluence #rw_search_result_container ul li a span, .rw_popup_design_confluence #rw_search_result_container ul li:not(.rw_selected) a:hover span {
+    color: #000000;
+}
+.rw_popup_design_confluence #rw_search_result_container ul li a span.rw_search_item_space {
+    color: #000000;
+}
+.page-metadata-wrapper .page-metadata {
+    color: #000000;
+}
+.rw_pagetree .rw_quick_links_container .rw_help {
+    color: #000000;
+}
+.rw_dialog_menu ul li .rw_empty_menu .rw_item_content, .rw_dialog_menu ul li a .rw_item_content {
+    color: #000000;
+}
+#rw_inline_dialog_blogMenu #browse-space-menu ul .rw_section_title, #rw_inline_dialog_spaceMenu #browse-space-menu ul .rw_section_title {
+    color: #000000;
+}
+.rw_dialog_menu ul li .rw_empty_menu .rw_item_icon, .rw_dialog_menu ul li a .rw_item_icon {
+    color: #000000;
+}
+.rw_inline_dialog.rw_has_title .rw_title {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_dd_medium ul li a span.rw_item_content {
+    color: #000000;
+}
+#rw_top_menu_items_container .rw_item_content {
+    color: #000000;
+}
+.rw_dd_medium ul li a span.rw_item_icon {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_dd_medium ul li a span.rw_item_content {
+    color: #000000;
+}
+.rw_dd_medium ul li a span.rw_item_icon {
+    color: #000000;
+}
+.rw_mywork_body .rw_group_result {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_author a {
+    color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_ellipsis a {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_icon {
+   color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_date {
+    color: #000000;
+}
+.rw_small_text {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+.rw_module .rw_module_title>.rw_icon {
+    color: #000000;
+}
+ul.rw_content_list li a .rw_small_text {
+    color: #000000;
+}.rw_small_text {
+    color: #000000;
+}
+#com-atlassian-confluence .aui-dd-parent .aui-dropdown .dropdown-item a, .aui-dropdown2 .aui-dropdown2-section li a {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_icon_right {
+    color: #000000;
+}
+.rw_macro_title .rw_icon {
+    color: #000000;
+}
+.aui-dropdown2.aui-style-default>strong, .aui-dropdown2.aui-style-default .aui-dropdown2-section>strong, .aui-dropdown2-heading {
+    color: #000000;
+}
+.rw_icon, .rw_item_icon {
+    color: #000000
+}
+.rw_module .rw_module_button, .wiki-content .rw_module .rw_module_button {
+    color: #000000;
+}
+.rw_module .rw_module_button, .wiki-content .rw_module .rw_module_button {
+    border: 1px solid #000000;
+    color: #000000;
+}
+.aui-button, a.aui-button, .aui-button:visited {
+    color: #000000;
+}
+ul.rw_horizontal_menu li a {
+    color: #000000;
+}
+.rw_popup a {
+    color: #000000;
+}
+ul.rw_horizontal_menu li a {
+    color: #000000;
+}
+#rw_favorite_popup .rw_group_result {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link {
+    color: #000000;
+}
+.rw_popup a {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link span {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link {
+    color: #000000;
+    border: 1px solid #000000;
+}
+.rw_popup_design_confluence .rw_popup h1 {
+    color: #000000;
+}
+#rw_footer_wrapper.rw_theme_light #rw_footer_content a {
+    color: #FFFFFF;
+}
+#.rw_category_dd_theme_dark #rw_category_dropdown_wrapper {
+    background: #ffffff;
+}
+.rw_popup_design_confluence .rw_dd_medium .rw_item_icon:before {
+    color: #000000;
+}
+rw_footer_wrapper.rw_theme_light #rw_footer_content, #rw_footer_wrapper.rw_theme_light #rw_footer_content p {
+    font-size: 16px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+#rw_footer_wrapper.rw_theme_light {
+    background-color: #123E57;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.rw_iconfont_more:before {
+    content: "\e00d";
+    color: #ffffff;
+}
+#rw_space_nav>.rw_item_actions .rw_icon {
+    color: #000000;
+}
+.rw_mywork_macro .rw_macro_title .rw_recently_worked_on {
+color: #000;
+background: none;
+}
+.rw_recently_worked_on:before {
+content: "\e007";
+}
+.rw_pagetree .rw_expand_collapse a, .wiki-content .rw_pagetree .rw_expand_collapse a {
+    color: #000000;
+}
+.rw_pagetree.rw_theme_public ul.rw_pagetree_list li a, .rw_pagetree.rw_theme_public ul.rw_pagetree_list li a:hover {
+    color: #000000;
+}
+#com-atlassian-confluence .rw_content_menu_solid #rw_menu_bar_wrapper #rw_menu_bar h1 {
+    color: #000000;
+}
+.rw_space_filter_menu li a {
+      color: #000000;
+}
+_public ul.rw_quick_links a {
+    color: #555;
+}
+.rw_item_content {
+    color: #000000;
+}
+.rw_activity_menu .rw_section:last-child {
+    border-bottom: 0;
+    display: none;
+}
+.rw_content_section #rw_left_column>* {
+    margin-bottom: 15px;
+}
+.label-list {
+    color: #000000;
+}
+
+.jira-macro-table-underline-pdfexport {
+  & .aui-lozenge.ghx-label-1 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-2 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-3 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-4 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-5 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-6 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-7 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-8 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-9 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-10 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-11 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-12 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-13 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-14 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-0 {
+      background-color: var(--ds-text, #fff) !important;
+  }
+}
+	
+</style></head>
+<body class="theme-default aui-theme-default">
+<div id="page">
+<div class="aui-page-panel" id="main">
+<div id="main-header">
+<div id="breadcrumb-section">
+<ol id="breadcrumbs">
+<li class="first">
+<span><a href="index.html">Annotation and Image Markup</a></span>
+</li>
+<li>
+<span><a href="AIM-Documentation_40599932.html">AIM Documentation</a></span>
+</li>
+<li>
+<span><a href="AIM-Template-Manager-Documentation_75006390.html">AIM Template Manager Documentation</a></span>
+</li>
+</ol>
+</div>
+<h1 class="pagetitle" id="title-heading">
+<span id="title-text">
+                            Annotation and Image Markup : AIM Template Manager User's Guide
+                        </span>
+</h1>
+</div>
+<div class="view" id="content">
+<div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class="author"> Klinger, Carolyn (NIH/NCI) [C]</span>, last updated by <span class="editor"> Unknown User (frostrs)</span> on Nov 19, 2018
+    
+                        </div>
+<div class="wiki-content group" id="main-content">
+<div aria-label="Tip" class="confluence-information-macro confluence-information-macro-tip" role="region"><p class="title conf-macro-render">You can print and export wiki pages</p><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon" role="presentation"></span><div class="confluence-information-macro-body"><p>You can send this page to a printer or convert it to a PDF, HTML, or Word document. Refer to <a href="/externalpages/32211220.html">Printing and Exporting Wiki Pages</a>.</p></div></div><p>This guide explains how to use the caBIG® Annotation and Image Markup (AIM) Template Manager for AIM Information Model Version 3.0. The intended audience for this guide is a biomedical researcher familiar with the AIM information model.</p><div class="panel" style="border-width: 1px;"><div class="panelContent">
+<p>Topics in this guide include:</p><style type="text/css">/*<![CDATA[*/
+div.rbtoc1784122681337 {padding: 0px;}
+div.rbtoc1784122681337 ul {margin-left: 0px;}
+div.rbtoc1784122681337 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class="toc-macro rbtoc1784122681337">
+<ul class="toc-indentation">
+<li><a href="#AIMTemplateManagerUser'sGuide-GettingStartedwiththeAIMTemplateManager">Getting Started with the AIM Template Manager</a>
+<ul class="toc-indentation">
+<li><a href="#AIMTemplateManagerUser'sGuide-WhyUsetheAIMModel?">Why Use the AIM Model?</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-WhatisinanAIMTemplate?">What is in an AIM Template?</a></li>
+</ul>
+</li>
+<li><a href="#AIMTemplateManagerUser'sGuide-WorkingwithTemplateGroups">Working with Template Groups</a>
+<ul class="toc-indentation">
+<li><a href="#AIMTemplateManagerUser'sGuide-AddingaTemplateGroup">Adding a Template Group</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-DeletingaTemplateGroupdeletingtemplategroup">Deleting a Template Group</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-EditingaTemplateGroup">Editing a Template Group</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-CopyingaTemplateGroup">Copying a Template Group</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-UploadingaTemplateGroup">Uploading a Template Group</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-DownloadingaTemplateGroup">Downloading a Template Group</a></li>
+</ul>
+</li>
+<li><a href="#AIMTemplateManagerUser'sGuide-WorkingwithTemplates">Working with Templates</a>
+<ul class="toc-indentation">
+<li><a href="#AIMTemplateManagerUser'sGuide-CreatingaTemplate">Creating a Template</a>
+<ul class="toc-indentation">
+<li><a href="#AIMTemplateManagerUser'sGuide-AddaComponenttoaTemplateaddcomponenttotemplate">Add a Component to a Template</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-AddaCalculationComponenttoaTemplate">Add a Calculation Component to a Template</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-AddaCharacteristictoaComponentaddcharacteristictocomponent">Add a Characteristic to a Component</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-AddAllowedTermstoaCharacteristicspecifyallowedterms">Add Allowed Terms to a Characteristic</a></li>
+</ul>
+</li>
+<li><a href="#AIMTemplateManagerUser'sGuide-EditingaTemplate">Editing a Template</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-DeletingaTemplate">Deleting a Template</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-AddingaTemplatetoaTemplateGroup">Adding a Template to a Template Group</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-RemovingaTemplatefromaTemplateGroup">Removing a Template from a Template Group</a></li>
+</ul>
+</li>
+<li><a href="#AIMTemplateManagerUser'sGuide-BuildingaLexiconbuildingalexicon">Building a Lexicon</a>
+<ul class="toc-indentation">
+<li><a href="#AIMTemplateManagerUser'sGuide-CreateaLexicon">Create a Lexicon</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-DeleteaLexicon">Delete a Lexicon</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-CreateaLexiconEntrycreatelexiconentry">Create a Lexicon Entry</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-DeleteaLexiconEntry">Delete a Lexicon Entry</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-CopyaLexiconEntry">Copy a Lexicon Entry</a></li>
+<li><a href="#AIMTemplateManagerUser'sGuide-SearchforaTerm">Search for a Term</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div><h2 id="AIMTemplateManagerUser'sGuide-GettingStartedwiththeAIMTemplateManager">Getting Started with the AIM Template Manager</h2><p>The AIM Template Manager allows you to generate a set of well-defined questions and answer choices to facilitate collecting information for a particular purpose, such as a The Cancer Genome Atlas Glioblastoma (TCGA GBM) study. These questions and answers are contained in an AIM XML template file that you can import into an AIM-enabled application. Aided by the information in the XML file, users of the AIM-enabled application can then annotate medical images using a controlled vocabulary and standard template. This results in simple and constrained annotations that are reproducible and consistent. Finally, the AIM-enabled application captures answers and then exports them as an AIM XML document or AIM Digital Imaging and Communications in Medicine (DICOM) Structured Reporting (SR), which can be sent to the AIM Data Service or DICOM storage Service Class Provider (SCP), respectively.</p><p>You use the AIM Template Manager to design templates based on a lexicon of standard and user-definable terms. You can then collect multiple templates into template groups. You complete the process by downloading a template group as an XML file to your local computer.</p><p>AIM templates are based on the AIM template XML schema, which in turn is based on the AIM 3.0 model.</p><h3 id="AIMTemplateManagerUser'sGuide-WhyUsetheAIMModel?">Why Use the AIM Model?</h3><p>Imaging reports contain both graphical drawings and medical knowledge in the form of annotations. These annotations are stored as unstructured text and separated from graphical drawings, which are typically in a proprietary format on an imaging system. Extracting this valuable medical information and combining them with drawings on another system is time-consuming and cumbersome to filter and search.</p><p>The AIM model begins to solve this problem by capturing the descriptive information of an image with user-generated graphical symbols placed on the image into a single common information source. AIM captures medical findings using standard vocabularies such as RadLex, SNOMED CT, DICOM, and user-defined terminology. Image information captured in the AIM model includes the anatomic entity and its characteristics, imaging observation and its characteristics, and inference. However, existing vocabularies used to describe medical images contain thousands of terms that make it difficult for users to find and then include them in their AIM annotations.</p><h3 id="AIMTemplateManagerUser'sGuide-WhatisinanAIMTemplate?">What is in an AIM Template?</h3><p>An AIM template consists of a set of related questions for a study. It captures the name, version, description, UID, controlled term applied to the template, authors, and creation date of a template. It also has one or more components. Each component represents a study question that may have one or more answers. Components can be any of the following: anatomic entity, imaging observation, inference, and calculation.</p><p>Both anatomic entities and imaging observations are also described by their associated characteristics. Anatomic entity and imaging observation characteristics inherit the attributes of their respective component. Characteristics have <em>annotator confidence</em> that allows a user to enter a level of user’s confidence answering the question in terms of a percentage. A characteristic may also have a quantification value.</p><h2 id="AIMTemplateManagerUser'sGuide-WorkingwithTemplateGroups">Working with Template Groups</h2><div aria-label="Tip" class="confluence-information-macro confluence-information-macro-tip" role="region"><p class="title conf-macro-render">Saving your work</p><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon" role="presentation"></span><div class="confluence-information-macro-body"><p>The AIM Template Manager automatically saves your work after each selection you make. An animated image appears to indicate when a save is occurring.</p></div></div><h3 id="AIMTemplateManagerUser'sGuide-AddingaTemplateGroup">Adding a Template Group</h3><p>A template group is a container that holds individual templates.</p><p><strong>To add a template group</strong></p><ol><li>Click the <strong>Template Groups</strong> tab.</li><li>Below the left panel, click <span class="confluence-embedded-file-wrapper"><img alt="New template group button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881872.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="NewTemplateGroupButton.png" data-linked-resource-id="35881872" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881872.png" tabindex="0"/></span>. The new template group window appears as shown below.<br/> <span class="confluence-embedded-file-wrapper"><img alt="The new template group window." class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881849.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="NewTemplateGroupWindow.png" data-linked-resource-id="35881849" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881849.png" tabindex="0" vspace="4"/></span></li><li>Enter the name of the new group and optionally a version number and description in the boxes provided. The author and creation date fields are pre-populated. You can edit the author by completing this procedure and then editing the template group.</li><li>Click <strong>Done</strong>. The new template group appears in the Group Name panel.</li></ol><h3 id="AIMTemplateManagerUser'sGuide-DeletingaTemplateGroupdeletingtemplategroup">Deleting a Template Group <span class="confluence-anchor-link" id="AIMTemplateManagerUser'sGuide-deletingtemplategroup"></span></h3><p>Deleting a template group does not delete the templates within it.</p><p><strong>To delete a template group</strong></p><ol><li>Click the <strong>Template Groups</strong> tab.</li><li>Select the template group you want to delete by clicking it.</li><li>Below the left panel, click <span class="confluence-embedded-file-wrapper"><img alt="Delete template group button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881873.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="DeleteTemplateGroupButton.png" data-linked-resource-id="35881873" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881873.png" tabindex="0"/></span>. A message appears. <br/> <span class="confluence-embedded-file-wrapper"><img alt="Message asking, Are you sure you want to delete this AIM Template Group." class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881874.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="DeleteTemplateGroupConfirmation.png" data-linked-resource-id="35881874" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881874.png" tabindex="0" vspace="4"/></span></li><li>Click <strong>Delete</strong>.</li></ol><h3 id="AIMTemplateManagerUser'sGuide-EditingaTemplateGroup">Editing a Template Group</h3><p>You can edit the name, version, description, and author of a template group.</p><p><strong>To edit a template group</strong></p><ol><li>Click the <strong>Template Groups</strong> tab.</li><li>Below the left panel, click <span class="confluence-embedded-file-wrapper"><img alt="New template group button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881870.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="EditTemplateGroupButton.png" data-linked-resource-id="35881870" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881870.png" tabindex="0"/></span>. The selected template group's description appears as shown in the example below.<br/> <span class="confluence-embedded-file-wrapper"><img alt="Template group window showing the current values for the example Vasari template." class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881871.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="EditTemplateGroupsWindow.png" data-linked-resource-id="35881871" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881871.png" tabindex="0" vspace="4"/></span></li><li>Change the name of the new group, version, and description as needed. Note that you can change the author.</li><li>Click <strong>Done</strong>. The new template group appears in the Group Name panel.</li></ol><h3 id="AIMTemplateManagerUser'sGuide-CopyingaTemplateGroup">Copying a Template Group</h3><p>You can create a copy of a template group to make it easier for you to customize it.</p><p><strong>To copy a template group</strong></p><ol><li>Click the <strong>Template Groups</strong> tab.</li><li>Select the template group you want to copy.</li><li>At the bottom of the Group Name panel, click <span class="confluence-embedded-file-wrapper"><img alt="Copy template group button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881875.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="CopyTemplateGroupButton.png" data-linked-resource-id="35881875" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881875.png" tabindex="0"/></span>. A copy of the template with the name of <strong> <em>Current Template Name</em> </strong> <strong>copy</strong> appears in the Group Name panel.</li></ol><h3 id="AIMTemplateManagerUser'sGuide-UploadingaTemplateGroup">Uploading a Template Group</h3><p>You can upload a template group you downloaded in the past or received from someone else.</p><p><strong>To upload a template group</strong></p><ol><li>Click the <strong>Template Groups</strong> tab.</li><li>Select a template group from the Group Name panel.</li><li>Below the left panel, click <span class="confluence-embedded-file-wrapper"><img alt="Upload template group button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881877.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="UploadTemplateGroupButton.png" data-linked-resource-id="35881877" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881877.png" tabindex="0"/></span>. The upload window appears, as shown below.<br/> <span class="confluence-embedded-file-wrapper"><img alt="Small window containing a browse button and and upload button." class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881879.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="UploadTemplateGroupWindow.png" data-linked-resource-id="35881879" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881879.png" tabindex="0" vspace="4"/></span></li><li>Click <strong>Browse</strong> to navigate to a location on your home drive where the XML file is that you want to upload. The AIM Template Manager will only accept template group files that have been validated by the AIM Template XML schema. This file could have been downloaded from the AIM Template Manager or it could have been created manually using the <a class="external-link" href="https://ncisvn.nci.nih.gov/svn/files/trunk/aim/aim/AIMTemplate3.0XMLSchema/AIMTemplate_v1rv18.rar" rel="nofollow">AIM template XML schema</a>.</li><li>Click <strong>Upload</strong>. The template group appears in the Group Name panel.</li></ol><h3 id="AIMTemplateManagerUser'sGuide-DownloadingaTemplateGroup">Downloading a Template Group</h3><p>You can download a template group you create in the AIM Template Manager and then share it with others or save it for future use.</p><p><strong>To download a template group</strong></p><ol><li>Click the <strong>Template Groups</strong> tab.</li><li>Select a template group from the Group Name panel.</li><li>Below the left panel, click <span class="confluence-embedded-file-wrapper"><img alt="Download template group button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881876.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="DownloadTemplateGroupButton.png" data-linked-resource-id="35881876" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881876.png" tabindex="0"/></span>. You are prompted to save the XML file on your hard drive. The example below shows that Firefox prompts you to save it to your hard drive as an archive file.<br/> <span class="confluence-embedded-file-wrapper"><img alt="Firefox dialog box prompting you to save the file to a location you select on your hard drive." class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881884.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="DownloadTemplateGroupWindow.png" data-linked-resource-id="35881884" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881884.png" tabindex="0" vspace="4"/></span></li><li>Save the file or open it to verify the contents.</li></ol><h2 id="AIMTemplateManagerUser'sGuide-WorkingwithTemplates">Working with Templates</h2><p>When you design a template, it is helpful to keep the purpose in mind. A template structures how users will enter information into an imaging application. The following table may help make the connection between the AIM Template Manager and information entered into an imaging application.</p><div class="table-wrap"><table class="wrapped confluenceTable"><tbody><tr><th class="confluenceTh"><p>AIM Template Manager Concept</p></th><th class="confluenceTh"><p>Annotation Concept</p></th></tr><tr><td class="confluenceTd"><p>Component</p></td><td class="confluenceTd"><p>Item being annotated; for example, Tumor Location</p></td></tr><tr><td class="confluenceTd"><p>Characteristic</p></td><td class="confluenceTd"><p>Descriptive element of that item; for example, Site of Tumor Center</p></td></tr><tr><td class="confluenceTd"><p>Allowed Term</p></td><td class="confluenceTd"><p>Word that may be used to describe the descriptive element; for example, Frontal lobe</p></td></tr></tbody></table></div><div aria-label="Tip" class="confluence-information-macro confluence-information-macro-tip" role="region"><p class="title conf-macro-render">Saving your work</p><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon" role="presentation"></span><div class="confluence-information-macro-body"><p>The AIM Template Manager automatically saves your work after each selection you make. An animated image appears to indicate when a save is occurring.</p></div></div><h3 id="AIMTemplateManagerUser'sGuide-CreatingaTemplate">Creating a Template</h3><p><strong>To create a template</strong></p><ol><li>Click the <strong>Templates</strong> tab.</li><li>Below the left panel, click <span class="confluence-embedded-file-wrapper"><img alt="New template button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881872.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="NewTemplateGroupButton.png" data-linked-resource-id="35881872" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881872.png" tabindex="0"/></span>. The new template window appears as shown below.<br/> <span class="confluence-embedded-file-wrapper"><img alt="The new template window." class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881902.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="NewTemplateWindow.png" data-linked-resource-id="35881902" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881902.png" tabindex="0" vspace="4"/></span></li><li>Enter a name for the template and optionally any of the other fields. Note that you cannot change the author at this point but you can do so by editing the template later.</li><li>Click <strong>Done</strong>.</li><li><a href="#AIMTemplateManagerUser'sGuide-AddaComponenttoaTemplate">Imaging:Add one or more components</a> to the template. Components can be of any of the AIM classes, which include anatomic entity, imaging observation, inference, and calculation.</li><li><a href="#AIMTemplateManagerUser'sGuide-AddaCharacteristictoaComponent">Imaging:Add one or more characteristics</a> to each template component you add, as applicable (Inference and Calculation components don't have associated characteristics).</li><li><p><a href="#AIMTemplateManagerUser'sGuide-SpecifyAllowedTerms">Imaging:Specify the allowed terms</a>for each characteristic (for Anatomic Entity and Image Observation components) or component (for Inference and Calculation components).</p><div aria-label="Tip" class="confluence-information-macro confluence-information-macro-tip" role="region"><p class="title conf-macro-render">Expanding and collapsing</p><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon" role="presentation"></span><div class="confluence-information-macro-body"><p>Below the Template Components panel, click <span class="confluence-embedded-file-wrapper"><img alt="downward-pointing arrow button" class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881907.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="ExpandAllTempComp.png" data-linked-resource-id="35881907" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881907.png" tabindex="0"/></span> to expand all of the template components to see their characteristics or click <span class="confluence-embedded-file-wrapper"><img alt="right-pointing arrow button" class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881906.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="CollapseAllTempComp.png" data-linked-resource-id="35881906" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881906.png" tabindex="0"/></span> to collapse the characteristics and just see a list of components. Within the template component row, click the same buttons to expand or collapse individual elements of the component.</p></div></div></li></ol><h4 id="AIMTemplateManagerUser'sGuide-AddaComponenttoaTemplateaddcomponenttotemplate">Add a Component to a Template<span class="confluence-anchor-link" id="AIMTemplateManagerUser'sGuide-addcomponenttotemplate"></span></h4><p><strong>To add a component to a template</strong></p><ol><li>Select the template to which you want to add a component from the Template Name panel.</li><li>From the buttons in the Template Components panel, click <span class="confluence-embedded-file-wrapper"><img alt="Create template component button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683329.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="CreateTemplateComponentButton.png" data-linked-resource-id="37683329" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683329.png" tabindex="0"/></span>. A new Template Components section of the panel appears.<br/> <span class="confluence-embedded-file-wrapper"><img alt="New Template Components section before any options have been selected." class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683458.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="TemplateComponents_blank.png" data-linked-resource-id="37683458" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683458.png" tabindex="0" vspace="4"/></span></li><li><p>Customize your template component by specifying the items in the table below.</p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh"><p>Field</p></th><th class="confluenceTh"><p>Description</p></th></tr><tr><td class="confluenceTd"><p>Label</p></td><td class="confluenceTd"><p>Double-click this field to add a label. A label becomes a heading in the image annotation form that users complete once the template is imported into an imaging application. For example, "Lesion".</p></td></tr><tr><td class="confluenceTd"><p>Description</p></td><td class="confluenceTd"><p>Explanatory text about the component; for example, "Select the type of lesion".</p></td></tr><tr><td class="confluenceTd"><p>AIM Class</p></td><td class="confluenceTd"><div class="content-wrapper"><p>Select an AIM class from the list. As the image below of the expanded list shows, AIM class options are Anatomic Entity, Imaging Observation, Inference, and Calculation. <br class="atl-forced-newline"/> <span class="confluence-embedded-file-wrapper"><img alt="AIM Class field with options Anatomic Entity, Imaging Observation, Inference, and Calculation." class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683330.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="AIMClassDropdown.png" data-linked-resource-id="37683330" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683330.png" tabindex="0" vspace="4"/></span> <br class="atl-forced-newline"/> An Anatomic Entity is the place in the body where the finding is located; for example, lung. <br class="atl-forced-newline"/> <br class="atl-forced-newline"/> An Imaging Observation is an observation made based on interpretation of an image or images, including visual features (e.g., an opacity, abnormal high signal intensity) morphologic or physiologic processes (e.g., pleural effusion, tracheal deviation), and diseases (e.g., adenocarcinoma, arthritis). (Source: <a class="external-link" href="http://www.radlex.org" rel="nofollow">radlex.org</a></p><a class="external-link" href="http://www.cancer.gov/policies/linking" rel="nofollow"> <span class="confluence-embedded-file-wrapper"><img alt="Exit Disclaimer logo" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/73598628/73728213.png" data-linked-resource-container-id="73598628" data-linked-resource-container-version="18" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="exit_small.png" data-linked-resource-id="73728213" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/73598628/73728213.png" tabindex="0"/></span> </a><p>)</p></div></td></tr><tr><td class="confluenceTd"><p>Min</p></td><td class="confluenceTd"><p>The minimum number of times the template will allow users this select this term when they annotate an image.</p></td></tr><tr><td class="confluenceTd"><p>Max</p></td><td class="confluenceTd"><p>The maximum number of times the template will allow users to select this term when they annotate an image.</p></td></tr><tr><td class="confluenceTd"><p>Display</p></td><td class="confluenceTd"><p>Select this box to display this component in the template.</p></td></tr><tr><td class="confluenceTd"><p>Confidence</p></td><td class="confluenceTd"><p>Specify the confidence interval for the value users will enter for this component. Expected values are 0 through 100.</p></td></tr><tr><td class="confluenceTd"><p>Authors</p></td><td class="confluenceTd"><p>The AIM Template Manager user who created this component.</p></td></tr></tbody></table></div></li></ol><h4 id="AIMTemplateManagerUser'sGuide-AddaCalculationComponenttoaTemplate">Add a Calculation Component to a Template</h4><p>Calculation components require that you add not only the basic information about the component but also additional information about the calculation.</p><p><strong>To add a Calculation component to a template</strong></p><p>The AIM template requests the following information about a Calculation component.</p><div class="table-wrap"><table class="wrapped confluenceTable"><tbody><tr><th class="confluenceTh"><p>Field</p></th><th class="confluenceTh"><p>Description</p></th></tr><tr><td class="confluenceTd"><p>Description</p></td><td class="confluenceTd"><p>Explanatory text about the component</p></td></tr><tr><td class="confluenceTd"><p>MathML</p></td><td class="confluenceTd"><p>An optional mathML representation of the calculation.</p></td></tr><tr><td class="confluenceTd"><p>Algorithm Name</p></td><td class="confluenceTd"><p>A name of the algorithm used.</p></td></tr><tr><td class="confluenceTd"><p>Algorithm Version</p></td><td class="confluenceTd"><p>Information describing a version of algorithm.</p></td></tr></tbody></table></div><h4 id="AIMTemplateManagerUser'sGuide-AddaCharacteristictoaComponentaddcharacteristictocomponent">Add a Characteristic to a Component<span class="confluence-anchor-link" id="AIMTemplateManagerUser'sGuide-addcharacteristictocomponent"></span></h4><p>When you add an Anatomic Entity or Imaging Observation component to your template, you may add one or more characteristics to it. While the component entry itself results in a heading once you import the template into an imaging application, the characteristics serve to describe the component. For example, the component might be "Lesion" while some of its characteristics might be "Enhancement Quality", "Proportion Enhancing", "Proportion nCET", and "Proportion Necrosis".</p><p>Calculation components also require additional information but it is associated with the component itself and not a separate characteristic. Inference components do not have associated characteristics.</p><p><strong>To add a characteristic to a component</strong></p><ol><li><a href="#AIMTemplateManagerUser'sGuide-addcomponenttotemplate">Imaging:Create a component</a> of the Anatomic Entity or Imaging Observation AIM class.</li><li><p>Specify information describing the characteristic, as follows.</p><div class="table-wrap"><table class="wrapped confluenceTable"><tbody><tr><th class="confluenceTh"><p>Field</p></th><th class="confluenceTh"><p>Description</p></th></tr><tr><td class="confluenceTd"><p>Label</p></td><td class="confluenceTd"><p>Double-click this field to add a label. A label becomes a heading in the image annotation form that users complete once the template is imported into an imaging application.</p></td></tr><tr><td class="confluenceTd"><p>Description</p></td><td class="confluenceTd"><p>An optional description of the characteristic.</p></td></tr><tr><td class="confluenceTd"><p>Min</p></td><td class="confluenceTd"><p>The minimum number of times the template will allow users this select this term when they annotate an image.</p></td></tr><tr><td class="confluenceTd"><p>Max</p></td><td class="confluenceTd"><p>The maximum number of times the template will allow users to select this term when they annotate an image.</p></td></tr><tr><td class="confluenceTd"><p>Display</p></td><td class="confluenceTd"><p>Select this box to display this component in the template.</p></td></tr><tr><td class="confluenceTd"><p>Confidence</p></td><td class="confluenceTd"><p>Specify the confidence interval for the value users will enter for this characteristic. Expected values are 0 through 100.</p></td></tr><tr><td class="confluenceTd"><p>Authors</p></td><td class="confluenceTd"><p>The AIM Template Manager user who created this characteristic.</p></td></tr></tbody></table></div><ul><li>To add additional characteristics, click <span class="confluence-embedded-file-wrapper"><img alt="small add button next to each Characteristics entry row." class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683455.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="AddButtonSmall.png" data-linked-resource-id="37683455" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683455.png" tabindex="0"/></span> to add another row.</li><li>To delete a characteristic, select the characteristic and then click <span class="confluence-embedded-file-wrapper"><img alt="small delete button next to each Characteristics entry row." class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683524.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="DeleteButtonSmall.png" data-linked-resource-id="37683524" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683524.png" tabindex="0"/></span>.</li></ul></li></ol><h4 id="AIMTemplateManagerUser'sGuide-AddAllowedTermstoaCharacteristicspecifyallowedterms">Add Allowed Terms to a Characteristic<span class="confluence-anchor-link" id="AIMTemplateManagerUser'sGuide-specifyallowedterms"></span></h4><p>When users of your AIM template answer template questions, you can offer a list of standardized terms for their answers. You can either manually add an allowed term or use one you have <a href="#AIMTemplateManagerUser'sGuide-createlexiconentry">Imaging:added to a lexicon</a> in the AIM Template Manager.</p><p><strong>To specify a characteristic's allowed terms</strong></p><ol><li><p><a href="#AIMTemplateManagerUser'sGuide-addcharacteristictocomponent">Imaging:Add a characteristic to the component</a>. Below the characteristic, one Allowed Terms entry row appears.</p><div aria-label="Tip" class="confluence-information-macro confluence-information-macro-tip" role="region"><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon" role="presentation"></span><div class="confluence-information-macro-body"><p>To add additional allowed terms, click <span class="confluence-embedded-file-wrapper"><img alt="small add button next to each Allowed Terms entry row." class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683455.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="AddButtonSmall.png" data-linked-resource-id="37683455" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683455.png" tabindex="0"/></span> to add another row. Similarly, to delete an allowed term associated with a characteristic, select it and then click <span class="confluence-embedded-file-wrapper"><img alt="small delete button next to each Allowed Term entry row." class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683524.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="DeleteButtonSmall.png" data-linked-resource-id="37683524" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683524.png" tabindex="0"/></span></p></div></div></li><li>To select an allowed term from a <a href="#AIMTemplateManagerUser'sGuide-buildingalexicon">Imaging:lexicon you have created</a>, find it in the Search Lexicon Terms panel on the right by following these steps. Note that you must select a table heading of allowed terms before you proceed with the following steps.<br/> <span class="confluence-embedded-file-wrapper"><img alt="The Search Lexicon Terms panel." class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683528.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="SearchLexiconTerms.png" data-linked-resource-id="37683528" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683528.png" tabindex="0" vspace="4"/></span><ol><li>Enter the term you want to search for. You can also enter only part of the term, such as "Tum" for "Tumor".</li><li>Click at least one lexicon where you believe the term you are searching for is located. You can select more than one lexicon by clicking one, pressing and holding the Shift or Ctrl key, and then selecting the next one.</li><li>Click <span class="confluence-embedded-file-wrapper"><img alt="Search term button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683529.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="SearchLexiconTermsButton.png" data-linked-resource-id="37683529" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683529.png" tabindex="0"/></span>. All lexicon entries containing the word you entered appear in the search results.</li><li>Select an Allowed Terms row where you want to add the allowed term.</li><li><p>Click the <span class="confluence-embedded-file-wrapper"><img alt="Add allowed term to characteristic button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683329.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="CreateTemplateComponentButton.png" data-linked-resource-id="37683329" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683329.png" tabindex="0"/></span>button below the Search Lexicon Terms panel. The allowed term appears in the Allowed Terms row you selected.</p><div aria-label="Info" class="confluence-information-macro confluence-information-macro-information" role="region"><p class="title conf-macro-render">Showing and hiding panels</p><span class="aui-icon aui-icon-small aui-iconfont-info-filled confluence-information-macro-icon" role="presentation"></span><div class="confluence-information-macro-body"><p>If you cannot scroll any further to the right to see all of the fields of an allowed term, you can hide the Search Lexicon Terms panel. Likewise, you can show a hidden panel. Each panel in the AIM Template Manager has a small arrow in the middle of it, shown below, that you can click to show or hide it.<br/> <span class="confluence-embedded-file-wrapper"><img alt="Arrow between each panel that you can click to open or close it." class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683456.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="OpenClosePanel.png" data-linked-resource-id="37683456" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683456.png" tabindex="0"/></span></p></div></div></li></ol></li><li><p>To add an allowed term manually, specify information about it into the relevant fields on the page, which are described below.</p><div class="table-wrap"><table class="wrapped confluenceTable"><tbody><tr><th class="confluenceTh"><p>Field</p></th><th class="confluenceTh"><p>Description</p></th></tr><tr><td class="confluenceTd"><p>Term</p></td><td class="confluenceTd"><p>The allowed term's name.</p></td></tr><tr><td class="confluenceTd"><p>Code</p></td><td class="confluenceTd"><p>Unique code that identifies the term.</p></td></tr><tr><td class="confluenceTd"><p>Source</p></td><td class="confluenceTd"><p>Where the term originated.</p></td></tr><tr><td class="confluenceTd"><p>Ask if Present</p></td><td class="confluenceTd"><p>If you select this box, the template will instruct the imaging application to ask for this information if the characteristic is present. This box is not available for the Inference and Calculation AIM classes.</p></td></tr></tbody></table></div></li></ol><h3 id="AIMTemplateManagerUser'sGuide-EditingaTemplate">Editing a Template</h3><p><strong>To edit a template</strong></p><ol><li>Click the <strong>Templates</strong> tab.</li><li>Select the template you want to edit by clicking it.</li><li>Below the left panel, click <span class="confluence-embedded-file-wrapper"><img alt="Edit template button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881870.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="EditTemplateGroupButton.png" data-linked-resource-id="35881870" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881870.png" tabindex="0"/></span>. A window appears that shows the information about the template that you have saved.</li><li>Edit any of the information about the template, including the author, that you want to change.</li><li>Click <strong>Done</strong>.</li></ol><h3 id="AIMTemplateManagerUser'sGuide-DeletingaTemplate">Deleting a Template</h3><p><strong>To delete a template</strong></p><ol><li>Click the <strong>Templates</strong> tab.</li><li>Select the template you want to delete by clicking it.</li><li>Below the left panel, click <span class="confluence-embedded-file-wrapper"><img alt="Delete template button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881873.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="DeleteTemplateGroupButton.png" data-linked-resource-id="35881873" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881873.png" tabindex="0"/></span>. A message appears.<br/> <span class="confluence-embedded-file-wrapper"><img alt="Message asking, Are you sure you want to delete this template." class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683440.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="ConfirmTemplateDeleteMessage.png" data-linked-resource-id="37683440" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683440.png" tabindex="0" vspace="4"/></span></li><li>Click <strong>Delete</strong>. The template is no longer in the Templates panel.</li></ol><h3 id="AIMTemplateManagerUser'sGuide-AddingaTemplatetoaTemplateGroup">Adding a Template to a Template Group</h3><p>You can combing any number of templates in a template group. You may want to do this, for example, to make it easier for you to reference your data during a certain time in a longitudinal study.</p><p>This procedure assumes that you have already created both template groups and templates.</p><p><strong>To add a template to a template group</strong></p><ol><li>Click the <strong>Template Groups</strong> tab.</li><li>Select the template group that you want to populate with one or more templates by clicking it.</li><li>In the Group Memberships panel on the right side of the screen, click the boxes next to the templates you want to add to the selected template group, as shown below.<br/> <span class="confluence-embedded-file-wrapper"><img alt="AIM Template Manager with Template Group 1 selected and the boxes next to Template 1 and Template 2 selected." class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683441.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="GroupsandMemberships.png" data-linked-resource-id="37683441" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683441.png" tabindex="0" vspace="4"/></span></li><li>Below the Group Memberships panel, click <span class="confluence-embedded-file-wrapper"><img alt="Button below the Group Memberships panel that you click to include the selected template" class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683443.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="IncludeSelectedTemplateButton.png" data-linked-resource-id="37683443" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683443.png" tabindex="0"/></span>.<br/> The templates appear in the Group Members panel, as shown below.<br/> <span class="confluence-embedded-file-wrapper"><img alt="AIM Template Manager showing Template 1 and Template 2 as part of Template Group 1" class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683442.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="GroupMembersAdded.png" data-linked-resource-id="37683442" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683442.png" tabindex="0" vspace="4"/></span></li></ol><h3 id="AIMTemplateManagerUser'sGuide-RemovingaTemplatefromaTemplateGroup">Removing a Template from a Template Group</h3><p><strong>To remove a template from a template group</strong></p><ol><li>If you are not already on the Template Groups tab, click it to select it.</li><li>In the Group Memberships panel on the right side of the screen, click the box next to the template you want to remove from the template group.</li><li>Click <span class="confluence-embedded-file-wrapper"><img alt="Button below the Group Memberships panel that you click to include the selected template" class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683443.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="IncludeSelectedTemplateButton.png" data-linked-resource-id="37683443" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683443.png" tabindex="0"/></span>. The page refreshes and the Group Members panel no longer shows the template in the template group.</li></ol><h2 id="AIMTemplateManagerUser'sGuide-BuildingaLexiconbuildingalexicon">Building a Lexicon<span class="confluence-anchor-link" id="AIMTemplateManagerUser'sGuide-buildingalexicon"></span></h2><p>A lexicon organizes the vocabulary that may appear in an AIM template. When you build a template, you can select terms from a lexicon that users of the template will be able to select as answers to template questions. For example, if an AIM template imported into an appropriate application prompted the user to specify the location of a lesion's geographic center, the template could restrict answers to certain allowed terms from the lexicon.</p><p>You must first create a lexicon, then add lexicon entries to it. Those lexicon entries become the allowed terms that you add to a template.</p><div aria-label="Tip" class="confluence-information-macro confluence-information-macro-tip" role="region"><p class="title conf-macro-render">Saving your work</p><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon" role="presentation"></span><div class="confluence-information-macro-body"><p>The AIM Template Manager automatically saves your work after each selection you make. An animated image appears to indicate when a save is occurring.</p></div></div><h3 id="AIMTemplateManagerUser'sGuide-CreateaLexicon">Create a Lexicon</h3><p><strong>To create a lexicon</strong></p><ol><li>Click the <strong>Lexicons</strong> tab.</li><li>In the Lexicon panel, select <span class="confluence-embedded-file-wrapper"><img alt="New template button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881872.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="NewTemplateGroupButton.png" data-linked-resource-id="35881872" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881872.png" tabindex="0"/></span>. The new lexicon window appears.<br/> <span class="confluence-embedded-file-wrapper"><img alt="Window with one field labeled Lexicon Name." class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683444.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="NewLexiconWindow.png" data-linked-resource-id="37683444" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683444.png" tabindex="0" vspace="4"/></span></li><li>Enter a name for the new lexicon.</li><li>Click <strong>Done</strong>. The lexicon appears in the Lexicon panel.</li></ol><h3 id="AIMTemplateManagerUser'sGuide-DeleteaLexicon">Delete a Lexicon</h3><p><strong>To delete a lexicon</strong></p><ol><li>Click the <strong>Lexicons</strong> tab.</li><li>Select the lexicon you want to delete by clicking it.</li><li>At the bottom of the Lexicon panel, click <span class="confluence-embedded-file-wrapper"><img alt="Delete lexicon button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881873.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="DeleteTemplateGroupButton.png" data-linked-resource-id="35881873" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881873.png" tabindex="0"/></span>. A message appears.<br/> <span class="confluence-embedded-file-wrapper"><img alt="Message asking, Are you sure you want to delete this lexicon." class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683445.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="ConfirmLexiconDeletionMessage.png" data-linked-resource-id="37683445" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683445.png" tabindex="0" vspace="4"/></span></li><li>Click <strong>Delete</strong>. The lexicon is no longer in the Lexicon panel.</li></ol><h3 id="AIMTemplateManagerUser'sGuide-CreateaLexiconEntrycreatelexiconentry">Create a Lexicon Entry<span class="confluence-anchor-link" id="AIMTemplateManagerUser'sGuide-createlexiconentry"></span></h3><p><strong>To create a lexicon entry</strong></p><ol><li>Click the <strong>Lexicons</strong> tab.</li><li>Select the lexicon that you want to contain your new lexicon entry.</li><li>At the bottom of the Lexicon Terms panel, click <span class="confluence-embedded-file-wrapper"><img alt="Create template component button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683329.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="CreateTemplateComponentButton.png" data-linked-resource-id="37683329" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683329.png" tabindex="0"/></span>. A new section for the new lexicon entry appears at the bottom of the list of lexicon terms.<br/> <span class="confluence-embedded-file-wrapper"><img alt="A new section for the new lexicon entry." class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683451.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="NewLexiconEntry.png" data-linked-resource-id="37683451" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683451.png" tabindex="0" vspace="4"/></span></li><li><p>Complete the fields to describe the lexicon entry. Note that you must double-click a field to make it editable, as shown below.<br/> <span class="confluence-embedded-file-wrapper"><img alt="Blank fields for the new lexicon entry with the first field showing a cursor" class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683452.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="NewLexiconEntryFields.png" data-linked-resource-id="37683452" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683452.png" tabindex="0" vspace="4"/></span> <br/>An explanation of the purpose of each field is shown in the table below.</p><div class="table-wrap"><table class="wrapped confluenceTable"><tbody><tr><th class="confluenceTh"><p>Field</p></th><th class="confluenceTh"><p>Description</p></th></tr><tr><td class="confluenceTd"><p>Code Meaning</p></td><td class="confluenceTd"><p>The name of the term you want to use as the lexicon entry.</p></td></tr><tr><td class="confluenceTd"><p>Code Value</p></td><td class="confluenceTd"><p>The value assigned by the coding scheme designator</p></td></tr><tr><td class="confluenceTd"><p>Coding Scheme Designator</p></td><td class="confluenceTd"><p>The organization who created this coding scheme.</p></td></tr><tr><td class="confluenceTd"><p>Coding Scheme Version</p></td><td class="confluenceTd"><p>The version of the coding scheme you are using.</p></td></tr><tr><td class="confluenceTd"><p>Description</p></td><td class="confluenceTd"><p>A description of the term.</p></td></tr><tr><td class="confluenceTd"><p>Lexicon Name</p></td><td class="confluenceTd"><p>This field is already populated and is the lexicon you selected before beginning to add an entry.</p></td></tr></tbody></table></div></li></ol><h3 id="AIMTemplateManagerUser'sGuide-DeleteaLexiconEntry">Delete a Lexicon Entry</h3><p><strong>To delete a lexicon entry</strong></p><ol><li>Click the <strong>Lexicons</strong> tab.</li><li>Select the lexicon that contains the term you want to delete.</li><li>Click the term you want to delete to select it.</li><li>Click <span class="confluence-embedded-file-wrapper"><img alt="Delete lexicon button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881873.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="DeleteTemplateGroupButton.png" data-linked-resource-id="35881873" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881873.png" tabindex="0"/></span>. A message appears. <br/> <span class="confluence-embedded-file-wrapper"><img alt="Message asking, Are you sure you want to delete this lexicon entry." class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683450.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="ConfirmDeleteLexiconEntry.png" data-linked-resource-id="37683450" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683450.png" tabindex="0" vspace="4"/></span></li><li>Click <strong>Delete</strong>. The lexicon entry no longer appears in the Lexicon Terms panel.</li></ol><h3 id="AIMTemplateManagerUser'sGuide-CopyaLexiconEntry">Copy a Lexicon Entry</h3><p><strong>To copy a lexicon entry</strong></p><ol><li>Click the <strong>Lexicons</strong> tab.</li><li>From the Lexicon Terms panel, select the lexicon entry you want to copy.</li><li>At the bottom of the Lexicon Terms panel, click <span class="confluence-embedded-file-wrapper"><img alt="Copy template group button" class="confluence-embedded-image" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/35881875.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="CopyTemplateGroupButton.png" data-linked-resource-id="35881875" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/35881875.png" tabindex="0"/></span>. An exact copy of the lexicon term appears as the last lexicon entry in the list.</li></ol><h3 id="AIMTemplateManagerUser'sGuide-SearchforaTerm">Search for a Term</h3><p><strong>To search for a term</strong></p><ol><li>Click the <strong>Lexicons</strong> tab.</li><li>At the bottom of the Lexicon Terms panel, click <span class="confluence-embedded-file-wrapper"><img alt="Search term button" class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683454.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="SearchTermButton.png" data-linked-resource-id="37683454" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683454.png" tabindex="0"/></span>. A search window appears.<br/> <span class="confluence-embedded-file-wrapper"><img alt="A search window." class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683453.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="SearchLexiconTermWindow.png" data-linked-resource-id="37683453" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683453.png" tabindex="0" vspace="4"/></span></li><li>Enter the term you want to search for. You can also enter only part of the term, such as "Tum" for "Tumor".</li><li>Click at least one lexicon where you believe the term you are searching for is located. You can select more than one lexicon.</li><li>Click <span class="confluence-embedded-file-wrapper"><img alt="Search term button" class="confluence-embedded-image confluence-content-image-border" data-base-url="https://wiki.nci.nih.gov" data-image-src="attachments/35756147/37683454.png" data-linked-resource-container-id="35756147" data-linked-resource-container-version="194" data-linked-resource-content-type="image/png" data-linked-resource-default-alias="SearchTermButton.png" data-linked-resource-id="37683454" data-linked-resource-type="attachment" data-linked-resource-version="1" data-unresolved-comment-count="0" draggable="false" src="/attachments/35756147/37683454.png" tabindex="0"/></span>. All lexicon entries containing the word you entered appear in the search results.</li></ol>
+</div>
+<div class="pageSection group">
+<div class="pageSectionHeader">
+<h2 class="pageSectionTitle" id="attachments">Attachments:</h2>
+</div>
+<div align="left" class="greybox">
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881690.png">AIM_login_75.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881693.png">AIM_lexicon_75.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881692.png">AIM_template_75.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881691.png">AIM_template_groups_75.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881849.png">NewTemplateGroupWindow.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881871.png">EditTemplateGroupsWindow.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881870.png">EditTemplateGroupButton.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881872.png">NewTemplateGroupButton.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881873.png">DeleteTemplateGroupButton.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881874.png">DeleteTemplateGroupConfirmation.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881877.png">UploadTemplateGroupButton.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881875.png">CopyTemplateGroupButton.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881876.png">DownloadTemplateGroupButton.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881879.png">UploadTemplateGroupWindow.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881884.png">DownloadTemplateGroupWindow.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881902.png">NewTemplateWindow.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881907.png">ExpandAllTempComp.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/35881906.png">CollapseAllTempComp.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683329.png">CreateTemplateComponentButton.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683325.png">ExpandAllTemplateComponentButton.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683326.png">DeleteTemplateComponentButton.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683327.png">CollapseAllTemplateComponentsButton.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683328.png">CopyTemplateComponentButton.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683330.png">AIMClassDropdown.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683440.png">ConfirmTemplateDeleteMessage.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683441.png">GroupsandMemberships.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683442.png">GroupMembersAdded.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683443.png">IncludeSelectedTemplateButton.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683444.png">NewLexiconWindow.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683445.png">ConfirmLexiconDeletionMessage.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683450.png">ConfirmDeleteLexiconEntry.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683451.png">NewLexiconEntry.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683452.png">NewLexiconEntryFields.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683453.png">SearchLexiconTermWindow.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683454.png">SearchTermButton.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683455.png">AddButtonSmall.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683456.png">OpenClosePanel.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683458.png">TemplateComponents_blank.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683465.jpg">2011-01-30_143306.JPG</a> (image/jpeg)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683524.png">DeleteButtonSmall.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683528.png">SearchLexiconTerms.png</a> (image/png)
+                                <br/>
+<img alt="" height="8" src="/images/icons/bullet_blue.gif" width="8"/>
+<a href="/attachments/35756147/37683529.png">SearchLexiconTermsButton.png</a> (image/png)
+                                <br/>
+</div>
+</div>
+</div> </div>
+<div id="footer" role="contentinfo">
+<section class="footer-body">
+<p>Document generated by Confluence on Jul 15, 2026 09:38</p>
+<div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+</section>
+</div>
+</div> </body>
+</html>

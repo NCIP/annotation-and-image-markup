@@ -1,0 +1,458 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Annotation and Image Markup - AIM</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<style>.ia-fixed-sidebar, .ia-splitter-left {width: 285px;}.theme-default .ia-splitter #main {margin-left: 285px;}.ia-fixed-sidebar {visibility: hidden;}</style><link data-wrm-batch-type="context" data-wrm-key="_super" href="/styles/49776079/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="context" data-wrm-key="baseurl-checker-resource,atl.general,refined.site,viewcontent,refined.main,main,page,atl.comments,zdu-banner-all,-_super" href="/styles/49776079/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="context" data-wrm-key="refined.aui-design-tokens,-_super" href="/styles/49776079/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="resource" data-wrm-key="com.refinedwiki.confluence.plugins.theme.original:print-style" href="/styles/49776079/com.refinedwiki.confluence.plugins.theme.original_print-style.css" media="print" rel="stylesheet"/><link href="/styles/49776079/atlassian-editor.css" media="all" rel="stylesheet"/><link href="/styles/49776079/custom.css" media="all" rel="stylesheet"/><style type="text/css">
+		.rw_toolbar_menu li .rw_toolbar_dropdown li a:hover
+		{
+			color: #172B4D;
+			background: rgba(9, 30, 66, 0.06);
+		}
+
+		/* Scroll office fix */
+		#com-k15t-confluence-scroll-pdf-launcher:hover
+		{
+			color: #172B4D;
+			background: rgba(9, 30, 66, 0.06);
+		}
+	</style><link href="/styles/49776079/theme-9-1290.css" media="all" rel="stylesheet" type="text/css"/><style type="text/css">
+  #rw_wrapper.rw_effects_popup_shadow .rw_shadow_top { width: calc(100% + 40px); }
+  #rw_wrapper.rw_effects_popup_shadow .rw_shadow_top:after { width: calc(100% - 40px); }
+  #rw_wrapper.rw_effects_popup_border .rw_shadow_top { width: calc(100% + 2px); }
+</style><style type="text/css">
+	/* Key navigation in popup */
+	.rw_key_nav li.rw_selected a {
+        background-color: rgba(199,63,98,1.00) !important;
+        border-color: rgba(199,63,98,1.00) !important;
+                box-shadow: none;
+    }
+    .rw_key_nav li.rw_selected * { color: #fff !important; }
+    .rw_key_nav li.rw_selected a span.rw_item_left { background: none !important; border-color:unset !important;}
+
+	/* Key navigation category menu */
+	#rw_category_menu ul li.rw_active.rw_selected a > span { border-color: rgba(199,63,98,1.00); }
+
+	/* Confluence questions  */
+	.rw_navigation_module_questions ul li.rw_selected { background: rgba(199,63,98,1.00); }
+	.rw_category_dd_theme_dark #rw_category_dropdown_wrapper .rw_navigation_module_questions ul li.rw_selected { background: rgba(199,63,98,1.00); }
+
+	/* Key navigation for page tree */
+	.rw_pagetree_list li.rw_selected > div.rw_icon_content { background: rgba(199,63,98,1.00) !important; border-color: rgba(199,63,98,1.00) !important; }
+	.rw_pagetree_list li.rw_selected > div.rw_icon_content a { color:#fff !important;}
+	.rw_pagetree_list li.rw_selected a {background: none !important; border-color: unset; color:#333 !important;}
+
+	/* Key navigation for activity popup */
+	li.rw_selected div.rw_no_link { background: rgba(199,63,98,1.00) !important; border-color: rgba(199,63,98,1.00) !important; }
+    .rw_popup_design_default .rw_popup .rw_activity_module .rw_selected,
+    .rw_popup_design_confluence .rw_popup .rw_activity_module .rw_selected {
+        background: rgba(199,63,98,1.00) !important;
+    }
+
+	/* Main Key Navigation */
+	.rw_keynavigation_row > div.rw_selected { background: rgba(199,63,98,1.00) !important; color:#fff !important;}
+	.rw_keynavigation_container > div.rw_keynavigation_empty_item { background: none;}
+
+    /* Key Navigation in search module */
+    .rw_search_module_results ul li.rw_selected a {
+        background: rgba(199,63,98,1.00) !important;
+        border-color: rgba(199,63,98,1.00) !important;
+        color: #fff;
+    }
+
+	/* Menu keynav exceptions */
+	#notifications-anchor.rw_selected {background: rgba(199,63,98,1.00) !important; color:#fff !important;}
+
+
+	
+
+	#rw_menu_bar #rw_create_button .aui-button,
+	#rw_inline_dialog_page_menu #rw_create_button .aui-button,
+    .rw_create_blogpost_button.aui-button
+	{
+	  background-image: -moz-linear-gradient(top, #0C66E4, #0a57c3);
+	  background-image: -ms-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: -webkit-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: -o-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: linear-gradient(top,  #0C66E4, #0a57c3);
+	  text-shadow: none;
+	  color: #FFFFFF;
+	}
+
+    #rw_menu_bar #rw_create_button .aui-button,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button,
+    .rw_create_blogpost_button.aui-button
+    {
+      border-color: #0C66E4;
+    }
+    #rw_main #rw_create_button .aui-button:hover,
+    #rw_main #rw_create_button .aui-button:focus,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button:hover,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button:focus,
+    .rw_create_blogpost_button.aui-button:hover,
+    .rw_create_blogpost_button.aui-button:focus
+    {
+      background-image: -moz-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -ms-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -webkit-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -o-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: linear-gradient(top, #1f7cff, #0c5bcb);
+    }
+
+    .rw_create_blogpost_button.aui-button {
+	  border: 0;
+    }
+    .rw_create_blogpost_button.aui-button:hover {
+      color: #FFFFFF;
+	}
+
+
+		
+
+
+    	
+		        #preview #previewArea iframe {
+   overflow: visible;
+}
+
+#rw_search_query {
+    color: #000000;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+color: black;
+opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+color: black;
+}
+
+#rw_space_nav>.rw_item_content a {
+    color: #000000;
+}
+.rw_inline_dialog .rw_pagetree ul.rw_pagetree_list li a, .rw_inline_dialog .rw_pagetree ul.rw_pagetree_list li a:hover, .rw_pagetree.rw_theme_default ul.rw_pagetree_list li a, .rw_pagetree.rw_theme_default ul.rw_pagetree_list li a:hover {
+    color: #000000;
+}
+#rw_left_column>.rw_users_space_macro h3 {
+    color: #000000;
+}
+rw_users_space_macro .rw_help {
+    color: #000000;
+}
+.rw_space_news div span.rw_caption {
+    color: #000000;
+}
+.rw_space_news ul li a span {
+    color: #000000;
+}
+.rw_space_news ul li a .rw_date {
+    color: #000000;
+}
+.rw_pagetree .rw_quick_links_container h5 {
+    color: #000000;
+}    
+.rw_inline_dialog ul.rw_quick_links a, .rw_pagetree.rw_theme_default ul.rw_quick_links a {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_search_result_title {
+    color: #000000;
+}
+.rw_popup_design_confluence #rw_search_result_container ul li a span, .rw_popup_design_confluence #rw_search_result_container ul li:not(.rw_selected) a:hover span {
+    color: #000000;
+}
+.rw_popup_design_confluence #rw_search_result_container ul li a span.rw_search_item_space {
+    color: #000000;
+}
+.page-metadata-wrapper .page-metadata {
+    color: #000000;
+}
+.rw_pagetree .rw_quick_links_container .rw_help {
+    color: #000000;
+}
+.rw_dialog_menu ul li .rw_empty_menu .rw_item_content, .rw_dialog_menu ul li a .rw_item_content {
+    color: #000000;
+}
+#rw_inline_dialog_blogMenu #browse-space-menu ul .rw_section_title, #rw_inline_dialog_spaceMenu #browse-space-menu ul .rw_section_title {
+    color: #000000;
+}
+.rw_dialog_menu ul li .rw_empty_menu .rw_item_icon, .rw_dialog_menu ul li a .rw_item_icon {
+    color: #000000;
+}
+.rw_inline_dialog.rw_has_title .rw_title {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_dd_medium ul li a span.rw_item_content {
+    color: #000000;
+}
+#rw_top_menu_items_container .rw_item_content {
+    color: #000000;
+}
+.rw_dd_medium ul li a span.rw_item_icon {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_dd_medium ul li a span.rw_item_content {
+    color: #000000;
+}
+.rw_dd_medium ul li a span.rw_item_icon {
+    color: #000000;
+}
+.rw_mywork_body .rw_group_result {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_author a {
+    color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_ellipsis a {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_icon {
+   color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_date {
+    color: #000000;
+}
+.rw_small_text {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+.rw_module .rw_module_title>.rw_icon {
+    color: #000000;
+}
+ul.rw_content_list li a .rw_small_text {
+    color: #000000;
+}.rw_small_text {
+    color: #000000;
+}
+#com-atlassian-confluence .aui-dd-parent .aui-dropdown .dropdown-item a, .aui-dropdown2 .aui-dropdown2-section li a {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_icon_right {
+    color: #000000;
+}
+.rw_macro_title .rw_icon {
+    color: #000000;
+}
+.aui-dropdown2.aui-style-default>strong, .aui-dropdown2.aui-style-default .aui-dropdown2-section>strong, .aui-dropdown2-heading {
+    color: #000000;
+}
+.rw_icon, .rw_item_icon {
+    color: #000000
+}
+.rw_module .rw_module_button, .wiki-content .rw_module .rw_module_button {
+    color: #000000;
+}
+.rw_module .rw_module_button, .wiki-content .rw_module .rw_module_button {
+    border: 1px solid #000000;
+    color: #000000;
+}
+.aui-button, a.aui-button, .aui-button:visited {
+    color: #000000;
+}
+ul.rw_horizontal_menu li a {
+    color: #000000;
+}
+.rw_popup a {
+    color: #000000;
+}
+ul.rw_horizontal_menu li a {
+    color: #000000;
+}
+#rw_favorite_popup .rw_group_result {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link {
+    color: #000000;
+}
+.rw_popup a {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link span {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link {
+    color: #000000;
+    border: 1px solid #000000;
+}
+.rw_popup_design_confluence .rw_popup h1 {
+    color: #000000;
+}
+#rw_footer_wrapper.rw_theme_light #rw_footer_content a {
+    color: #FFFFFF;
+}
+#.rw_category_dd_theme_dark #rw_category_dropdown_wrapper {
+    background: #ffffff;
+}
+.rw_popup_design_confluence .rw_dd_medium .rw_item_icon:before {
+    color: #000000;
+}
+rw_footer_wrapper.rw_theme_light #rw_footer_content, #rw_footer_wrapper.rw_theme_light #rw_footer_content p {
+    font-size: 16px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+#rw_footer_wrapper.rw_theme_light {
+    background-color: #123E57;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.rw_iconfont_more:before {
+    content: "\e00d";
+    color: #ffffff;
+}
+#rw_space_nav>.rw_item_actions .rw_icon {
+    color: #000000;
+}
+.rw_mywork_macro .rw_macro_title .rw_recently_worked_on {
+color: #000;
+background: none;
+}
+.rw_recently_worked_on:before {
+content: "\e007";
+}
+.rw_pagetree .rw_expand_collapse a, .wiki-content .rw_pagetree .rw_expand_collapse a {
+    color: #000000;
+}
+.rw_pagetree.rw_theme_public ul.rw_pagetree_list li a, .rw_pagetree.rw_theme_public ul.rw_pagetree_list li a:hover {
+    color: #000000;
+}
+#com-atlassian-confluence .rw_content_menu_solid #rw_menu_bar_wrapper #rw_menu_bar h1 {
+    color: #000000;
+}
+.rw_space_filter_menu li a {
+      color: #000000;
+}
+_public ul.rw_quick_links a {
+    color: #555;
+}
+.rw_item_content {
+    color: #000000;
+}
+.rw_activity_menu .rw_section:last-child {
+    border-bottom: 0;
+    display: none;
+}
+.rw_content_section #rw_left_column>* {
+    margin-bottom: 15px;
+}
+.label-list {
+    color: #000000;
+}
+
+.jira-macro-table-underline-pdfexport {
+  & .aui-lozenge.ghx-label-1 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-2 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-3 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-4 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-5 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-6 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-7 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-8 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-9 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-10 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-11 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-12 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-13 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-14 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-0 {
+      background-color: var(--ds-text, #fff) !important;
+  }
+}
+	
+</style></head>
+<body class="theme-default aui-theme-default">
+<div id="page">
+<div class="aui-page-panel" id="main">
+<div id="main-header">
+<h1 class="pagetitle" id="title-heading">
+<span id="title-text">Annotation and Image Markup - AIM</span>
+</h1>
+</div>
+<div class="view" id="content">
+<div class="wiki-content group" id="main-content">
+<div class="sectionColumnWrapper"><div class="sectionMacro"><div class="sectionMacroRow"><div class="columnMacro" style="width:40%;min-width:40%;max-width:40%;"><div class="panel" style="border-width: 1px;"><div class="panelHeader" style="border-bottom-width: 1px;"><b>Contents of this Page</b></div><div class="panelContent">
+<style type="text/css">/*<![CDATA[*/
+div.rbtoc1785161928124 {padding: 0px;}
+div.rbtoc1785161928124 ul {margin-left: 0px;}
+div.rbtoc1785161928124 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class="toc-macro rbtoc1785161928124">
+<ul class="toc-indentation">
+<li><a href="#AnnotationandImageMarkupAIM-ToolOverview">Tool Overview</a></li>
+<li><a href="#AnnotationandImageMarkupAIM-TechnologiesUsedbytheAIMProject">Technologies Used by the AIM Project</a></li>
+<li><a href="#AnnotationandImageMarkupAIM-InstallationandDownloads">Installation and Downloads</a>
+<ul class="toc-indentation">
+<li><a href="#AnnotationandImageMarkupAIM-AIMModel">AIM Model</a></li>
+<li><a href="#AnnotationandImageMarkupAIM-AIMToolkit">AIM Toolkit</a></li>
+<li><a href="#AnnotationandImageMarkupAIM-AIMTemplateService">AIM Template Service</a></li>
+<li><a href="#AnnotationandImageMarkupAIM-AIMDataService">AIM Data Service</a></li>
+<li><a href="#AnnotationandImageMarkupAIM-AIMonClearCanvas®Workstation">AIM on ClearCanvas® Workstation</a></li>
+<li><a href="#AnnotationandImageMarkupAIM-AIMTemplateBuilder">AIM Template Builder</a></li>
+<li><a href="#AnnotationandImageMarkupAIM-AIMTemplateManager">AIM Template Manager</a></li>
+</ul>
+</li>
+<li><a href="#AnnotationandImageMarkupAIM-Support">Support</a>
+<ul class="toc-indentation">
+<li><a href="#AnnotationandImageMarkupAIM-GettingSupport">Getting Support</a></li>
+<li><a href="#AnnotationandImageMarkupAIM-OpenSourceDevelopment">Open Source Development</a></li>
+<li><a href="#AnnotationandImageMarkupAIM-DefectsandFeatureRequests">Defects and Feature Requests</a></li>
+</ul>
+</li>
+<li><a href="#AnnotationandImageMarkupAIM-Presentations,DemosandOtherMaterials">Presentations, Demos and Other Materials</a></li>
+<li><a href="#AnnotationandImageMarkupAIM-DocumentationandTraining">Documentation and Training</a></li>
+</ul>
+</div>
+</div></div></div><div class="columnMacro"><p><div class="panel" style="border-width: 1px;"><div class="panelHeader" style="border-bottom-width: 1px;"><b>CBIIT Links</b></div><div class="panelContent">
+<ul><li><a class="external-link" href="https://datascience.cancer.gov" rel="nofollow">CBIIT website</a></li><li><a class="external-link" href="https://twitter.com/@NCIDataSci" rel="nofollow">NCI Cancer Data Science on X (formerly Twitter) @ NCIDataSci</a></li></ul>
+</div></div></p><div class="panel" style="border-width: 1px;"><div class="panelHeader" style="border-bottom-width: 1px;"><b>At-a-Glance Details</b></div><div class="panelContent">
+<p><strong>AIM Model and Toolkit</strong></p><ul><li>Version Number and Release Date: <span>AIM XSLT Transformation to DICOM Standard TDI 1500 - August 2018, </span>AIM Model 4.2 - February 2018, AIM Toolkit 4.1- November 2013, AIM Template Service 2.0 - April 2014, AIM on ClearCanvas® Workstation 4.5 - May 2014, AIM Template Builder 2.0 - January 2013</li><li>Primary audience: Investigators, researchers, implementers, workstation vendors, clinicians interpreting and manipulating images</li><li>Installation Level: Advanced - technical team required for installation</li><li>System Requirements:<br/><ul><li>MS Windows 2000 or better, 512 MB RAM or better</li><li>MS Visual Studio 2005 (SP1)</li><li>Source code available. Binaries available for Windows.</li></ul></li></ul>
+</div></div></div></div></div></div><h2 id="AnnotationandImageMarkupAIM-ToolOverview">Tool Overview</h2><p>AIM is the first project to propose and create a standard means of adding information and knowledge to an image in a clinical environment, so that image content can be easily and automatically searched. AIM provides a solution to the following imaging challenges:</p><ul><li>No agreed upon syntax for annotation and markup</li><li>No agreed upon semantics to describe annotations</li><li>No standard format (for example, DICOM, XML, HL7) for annotations and markup</li></ul><p>The AIM project includes the following tools.</p><ul><li>The AIM Model captures the descriptive information for an image with user-generated graphical symbols placed on the image into a single common information source.</li><li>The AIM Toolkit has an AIM programming library written in C++ using DCMTK and Xerces for DICOM and XML creation and manipulation, respectively. The library has two logical components: implementation of the AIM information model as an AIM object model, and definition of transformations that can be performed on the AIM object model. The ANIVATR tool is a software application that shows how the library can be used. It is used for validating AIM annotations and transcoding between AIM XML and AIM DICOM SR.</li><li>The AIM Template Service is a web service application that makes it possible for you to upload (publish) and download AIM templates created using an AIM tool such as AIM Template Builder.</li><li>The AIM Template Builder is a Java application that allows you to build templates that are compatible with the AIM Model. Templates are a set of well-defined questions and answer choices that facilitate collecting information for a study. AIM Template Builder has replaced AIM Template Manager.</li><li>AIM on ClearCanvas Workstation is a referenced implementation of the AIM Model. AIM on ClearCanvas Workstation demonstrates how the AIM model and the AIM library can be applied in a real imaging diagnostic workstation. You can use AIM on ClearCanvas Workstation to create AIM XML documents and AIM DICOM SR objects that adhere to the AIM data model. You can also import a new AIM template XML document that represents a set of controlled questions and answers for each question. Typical users want to make simple and constrained annotations that are reproducible and consistent for the same kind of imaging study.</li></ul><h2 id="AnnotationandImageMarkupAIM-TechnologiesUsedbytheAIMProject">Technologies Used by the AIM Project</h2><p>The AIM project team uses the following tools and technologies to develop AIM applications.</p><ul><li>Altova XMLSpy 2013 (Altova)</li><li>Berkeley DB XML by Oracle</li><li>Boost C++ library version 1.34.1 (Boost.org)</li><li>caCORE SDK 4.1.1 (caBIG®)</li><li>CMake 2.8.x and above</li><li>DCMTK version 3.6.x (OFFIS e. V.)  </li><li>Eclipse (Eclipse Foundation, Inc.) for Windows and Linux</li><li>Enterprise Architect version 10.x (Sparx Systems)</li><li>gcc, g++ 4.4.5 or above</li><li>Homebrew Package Installer for Mac OS X</li><li>Java JDK 6 (Sun Microsystems)</li><li>Linux OSes (Debian 6.0.x and above and Ubuntu version 11 and above)</li><li>Mac OS X 10.7.5 (Lion)</li><li>Microsoft Visual Studio 2008 and 2010 (Microsoft) with STL</li><li>Xcode 4.6.x and Xcode command line utilities</li><li>Xerces XML library version 3.0.1 (Apache Software Foundation)</li></ul><h2 id="AnnotationandImageMarkupAIM-InstallationandDownloads">Installation and Downloads</h2><div aria-label="Info" class="confluence-information-macro confluence-information-macro-information" role="region"><p class="title conf-macro-render">Some AIM component downloads are in .rar and .war file compression formats.</p><span class="aui-icon aui-icon-small aui-iconfont-info-filled confluence-information-macro-icon" role="presentation"></span><div class="confluence-information-macro-body"><p><code>.rar</code> is a proprietary archive file format that supports data compression, error recovery, and file spanning. Both proprietary and free programs are available for accessing such files. A tutorial on accessing <code>.rar</code> files, including a free extractor, is <a class="external-link" href="http://howtoopenararfile.com/" rel="nofollow">available</a>. <a class="external-link" href="http://www.cancer.gov/policies/linking" rel="nofollow"> <span class="confluence-embedded-file-wrapper"><img alt="Exit Disclaimer logo" class="confluence-embedded-image" draggable="false" src="/attachments/73598628/73728213.png"/></span> </a></p><p><code>.war</code> files (short for Web application Archive) are Java archive files used for packaging and distribution of Web applications. <code>.war</code> files often contain a collection of JavaServer Pages, Java Servlets, Java classes, XML files, tag libraries, and static Web pages (HTML and related files). More information can be found in the <a class="external-link" href="http://en.wikipedia.org/wiki/WAR_file_format_%28Sun%29" rel="nofollow">Wikipedia article</a>. <a class="external-link" href="http://www.cancer.gov/policies/linking" rel="nofollow"> <span class="confluence-embedded-file-wrapper"><img alt="Exit Disclaimer logo" class="confluence-embedded-image" draggable="false" src="/attachments/73598628/73728213.png"/></span> </a></p><p>Background information on Java Web applications is <a class="external-link" href="http://onjava.com/pub/a/onjava/2001/03/15/tomcat.html" rel="nofollow">available</a>. <a class="external-link" href="http://www.cancer.gov/policies/linking" rel="nofollow"> <span class="confluence-embedded-file-wrapper"><img alt="Exit Disclaimer logo" class="confluence-embedded-image" draggable="false" src="/attachments/73598628/73728213.png"/></span> </a></p></div></div><p>The releases are listed in order by product from newest to oldest. There is also an <a class="external-link" href="https://github.com/NCIP/annotation-and-image-markup" rel="nofollow">AIM GitHub Repository</a> <a class="external-link" href="http://www.cancer.gov/policies/linking" rel="nofollow"> <span class="confluence-embedded-file-wrapper"><img alt="Exit Disclaimer logo" class="confluence-embedded-image" draggable="false" src="/attachments/73598628/73728213.png"/></span> </a></p><p><h3 id="AnnotationandImageMarkupAIM-AIMModel">AIM Model</h3><p>A <a href="/AIM-Model-Change-Logs_106070327.html">change log</a> and a <a href="/AIM-Toolkit-Documentation_80152134.html">description of the model</a> are available.</p><ul><li><a data-linked-resource-container-id="83035901" data-linked-resource-container-version="92" data-linked-resource-content-type="application/zip" data-linked-resource-default-alias="extractannotationfromaim_XSLT_asof_20180816.zip" data-linked-resource-id="379062893" data-linked-resource-type="attachment" data-linked-resource-version="1" data-nice-type="Zip Archive" href="/attachments/83035901/379062893.zip">AIM XSLT Transformation to DICOM Standard TDI 1500</a> (August 2018)</li><li><a data-linked-resource-container-id="83035901" data-linked-resource-container-version="92" data-linked-resource-content-type="application/zip" data-linked-resource-default-alias="AIM_v4.2_rv2.zip" data-linked-resource-id="361531410" data-linked-resource-type="attachment" data-linked-resource-version="1" data-nice-type="Zip Archive" href="/attachments/83035901/361531410.zip">4.2</a> (February 2018)</li><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/Model/AIM_v4_rv48/AIM_v4_rv48.zip" rel="nofollow">4.0</a> (March 2013)</li><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/Model/AIM_Foundation/AIM_Foundation_v4_rv47.zip" rel="nofollow">Foundation</a></li><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/Model/AIM_v3_rv11/AIM3.0_rv11.zip" rel="nofollow">3.0</a></li></ul><h3 id="AnnotationandImageMarkupAIM-AIMToolkit">AIM Toolkit</h3><p>The <a href="/AIM-Toolkit-Release-Notes_80152136.html">release notes</a> explain the differences between releases.</p><ul><li><a class="external-link" href="https://github.com/NCIP/annotation-and-image-markup/tree/master/AIMToolkit_v4.1.0_rv44" rel="nofollow">4.1 on GitHub</a> <a class="external-link" href="http://www.cancer.gov/policies/linking" rel="nofollow"> <span class="confluence-embedded-file-wrapper"><img alt="Exit Disclaimer logo" class="confluence-embedded-image" draggable="false" src="/attachments/73598628/73728213.png"/></span> </a> (November 2013)</li><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/XML_schemas/AIM_v4/AIM_v4_rv44_XML.zip" rel="nofollow">4.0 XML Schema</a> (March 2013)</li><li><a class="external-link" href="https://github.com/NCIP/annotation-and-image-markup/tree/master/AIMToolkit_v4.0.0_rv44" rel="nofollow">4.0 on GitHub</a> <a class="external-link" href="http://www.cancer.gov/policies/linking" rel="nofollow"> <span class="confluence-embedded-file-wrapper"><img alt="Exit Disclaimer logo" class="confluence-embedded-image" draggable="false" src="/attachments/73598628/73728213.png"/></span> </a> (March 2013)</li><li><a class="external-link" href="https://github.com/NCIP/annotation-and-image-markup/tree/master/AIMToolkit_v3.0.2_rv11" rel="nofollow">3.0.2 (Linux and Windows)</a> <a class="external-link" href="http://www.cancer.gov/policies/linking" rel="nofollow"> <span class="confluence-embedded-file-wrapper"><img alt="Exit Disclaimer logo" class="confluence-embedded-image" draggable="false" src="/attachments/73598628/73728213.png"/></span> </a> (June 2012)</li><li><a class="external-link" href="https://github.com/NCIP/annotation-and-image-markup/tree/master/AIMToolkit_v3.0.2_rv11" rel="nofollow">3.0.2 on GitHub</a> <a class="external-link" href="http://www.cancer.gov/policies/linking" rel="nofollow"> <span class="confluence-embedded-file-wrapper"><img alt="Exit Disclaimer logo" class="confluence-embedded-image" draggable="false" src="/attachments/73598628/73728213.png"/></span> </a></li><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/XML_schemas/AIM_v3/AIM3.0_rv11_XMI_XML.zip" rel="nofollow">3.0 XMI and XML Schemas</a></li></ul><h3 id="AnnotationandImageMarkupAIM-AIMTemplateService">AIM Template Service</h3><p><a href="/AIM-Template-Service-Documentation_81789563.html">AIM Template Service Documentation</a> includes the user's guide and release notes.</p><ul><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/ATS/1.1/ATS-1.1_ReleasePackage.zip" rel="nofollow">2.0/1.1</a> (April 2014)</li><li><a class="external-link" href="http://imaging.fsm.northwestern.edu" rel="nofollow">AIM Template Service online</a> <a class="external-link" href="http://www.cancer.gov/policies/linking" rel="nofollow"> <span class="confluence-embedded-file-wrapper"><img alt="Exit Disclaimer logo" class="confluence-embedded-image" draggable="false" src="/attachments/73598628/73728213.png"/></span> </a> (July 2012)</li><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/ATS/1.0/ATS-1.0.rar" rel="nofollow">1.0</a> (August 2012)</li><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/ATS/1.0/dbxml-2.5.16_x64.rar" rel="nofollow">1.0 (DB XML for Windows)</a></li></ul><h3 id="AnnotationandImageMarkupAIM-AIMDataService">AIM Data Service</h3><p>Refer to <a class="unresolved" href="#">AIME Data Service Documentation</a> for the download file and documentation.</p><h3 id="AnnotationandImageMarkupAIM-AIMonClearCanvas®Workstation">AIM on ClearCanvas® Workstation</h3><p>Refer to <a href="/AIM-on-ClearCanvas-Workstation-Documentation_75006384.html">AIM on ClearCanvas Workstation Documentation</a> for a product description, system requirements, and a list of available documentation.</p><ul><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/AIM_WS/4.5.0.0/AIM_WS_4.5.0.0_x86.rar" rel="nofollow">4.5</a>  and <a class="external-link" href="https://github.com/NCIP/annotation-and-image-markup/tree/master/AimPlugin4.5" rel="nofollow">4.5 on GitHub</a> <a class="external-link" href="http://www.cancer.gov/policies/linking" rel="nofollow"> <span class="confluence-embedded-file-wrapper"><img alt="Exit Disclaimer logo" class="confluence-embedded-image" draggable="false" src="/attachments/73598628/73728213.png"/></span> </a> (current release, May 2014)</li><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/AIM_WS/4.1.0.0/AIM_WS_4.1.0.0_x86.rar" rel="nofollow">4.1.0.0</a> (November 2013)</li><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/AIM_WS/4.0.0.0/AIM_WS_4.0.0.0_x86.rar" rel="nofollow">4.0.0.0</a> (October 2013)</li><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/AIM_WS/3.5.0.1/AIM_WS_3.5.0.1_x86.rar" rel="nofollow">3.5.0.1</a> (July 2013)</li><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/AIM_WS/3.5.0.0/AIM_WS_3.5.0.0_x86.rar" rel="nofollow">3.5.0.0</a> (February 2013)</li><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/AIM_WS/3.0.4.3/AIM_WS_3.0.4.3.rar" rel="nofollow">3.0.4.3</a></li><li><a class="external-link" href="https://ncisvn.nci.nih.gov/svn/files/trunk/aim/aim/AIMWorkstation3.0.4.232-bit/AIM_WS_3.0.4.2.rar" rel="nofollow">3.0.4.2</a></li><li>3.0.4.1 (The download file for this release was withdrawn.)</li><li><a class="external-link" href="https://ncisvn.nci.nih.gov/svn/files/trunk/aim/aim/AIMWorkstation3.0.4/AIM_WS_3.0.4.rar" rel="nofollow">3.0.4.0</a> (March 2012)</li><li><a class="external-link" href="https://ncisvn.nci.nih.gov/svn/files/trunk/aim/aim/AIMTCGAWorkstation3.0.3/AIM_TCGA_WS_3.0.3.rar" rel="nofollow">3.0.3.0</a> (May 2011)</li><li><a class="external-link" href="https://ncisvn.nci.nih.gov/svn/files/trunk/aim/aim/AIMTCGAWorkstation3.0.2/AIM_TCGA_CC_3.0.2.rar" rel="nofollow">3.0.2.0</a></li></ul><p>XML Schemas and Documents for Segment Properties</p><ul><li><p><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/Segmentation/AnatomicRegionAndModifier.xsd" rel="nofollow">AnatomicRegionAndModifier.xsd</a></p></li><li><p><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/Segmentation/AnatomicRegionAndModifier.xml" rel="nofollow">AnatomicRegionAndModifier.xml</a></p></li><li><p><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/Segmentation/SegmentationCategoryTypeModifier.xsd" rel="nofollow">SegmentationCategoryTypeModifier.xsd</a></p></li><li><p><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/Segmentation/SegmentationCategoryTypeModifier.xsd" rel="nofollow">SegmentationCategoryTypeModifier.xml</a></p></li></ul><p>DICOM Segmentation Examples</p><ul><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/Segmentation/segs.zip" rel="nofollow">Synthetic Checker</a> <u> <br/> </u></li></ul><h3 id="AnnotationandImageMarkupAIM-AIMTemplateBuilder">AIM Template Builder</h3><p>Refer to <a href="/AIM-Template-Builder-Documentation_75006387.html">AIM Template Builder Documentation</a> for a product description and a list of available documentation.</p><ul><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/ATB/2.0/AimTemplateBuilder-2.0.zip" rel="nofollow">2.0</a> (January 2013)</li><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/ATB/1.1/AimTemplateBuilder-1.1.zip" rel="nofollow">1.1</a> (July 2012)</li><li><a class="external-link" href="http://cbiit-download.nci.nih.gov/aim/releases/AIM_WS/3.5.0.1/AIM_WS_3.5.0.1_x86.rar" rel="nofollow">1.0</a> (March 2012)</li></ul><p>ATB can import the following lexicons:</p><ul><li><a data-linked-resource-container-id="83035901" data-linked-resource-container-version="92" data-linked-resource-content-type="application/zip" data-linked-resource-default-alias="NCIm_v3.zip" data-linked-resource-id="168919170" data-linked-resource-type="attachment" data-linked-resource-version="1" data-nice-type="Zip Archive" href="/attachments/83035901/168919170.zip">RadLex Lexicon 3.12</a></li><li><a data-linked-resource-container-id="83035901" data-linked-resource-container-version="92" data-linked-resource-content-type="application/zip" data-linked-resource-default-alias="RadLex3.10.zip" data-linked-resource-id="168919169" data-linked-resource-type="attachment" data-linked-resource-version="1" data-nice-type="Zip Archive" href="/attachments/83035901/168919169.zip">RadLex Lexicon 3.10</a></li><li><a data-linked-resource-container-id="83035901" data-linked-resource-container-version="92" data-linked-resource-content-type="application/zip" data-linked-resource-default-alias="NCIm_v3.zip" data-linked-resource-id="168919170" data-linked-resource-type="attachment" data-linked-resource-version="1" data-nice-type="Zip Archive" href="/attachments/83035901/168919170.zip">NCIm (NCI MetaThesaurus)</a></li></ul><h3 id="AnnotationandImageMarkupAIM-AIMTemplateManager">AIM Template Manager</h3><ul><li>1.0 (<a href="/externalpages/83035901.html">AIM Template Builder</a> replaces this application.)</li></ul></p><div aria-label="Info" class="confluence-information-macro confluence-information-macro-information" role="region"><span class="aui-icon aui-icon-small aui-iconfont-info-filled confluence-information-macro-icon" role="presentation"></span><div class="confluence-information-macro-body"><p><a href="/Downloading-Files-in-Archive-Format_73600720.html">Help with Downloading Files in Archive Format</a></p></div></div><h2 id="AnnotationandImageMarkupAIM-Support">Support</h2><h3 id="AnnotationandImageMarkupAIM-GettingSupport">Getting Support</h3><p><ul><li><span>Email: <span style="color:var(--ds-text,#172b4d);"><a class="external-link" href="mailto:NCICBIITAppsSupport@mail.nih.gov" rel="nofollow">NCIAppSupport@nih.gov</a></span></span></li><li>Call: 240-276-5541</li></ul></p><h3 id="AnnotationandImageMarkupAIM-OpenSourceDevelopment">Open Source Development</h3><p>Contact <a class="external-link" href="mailto:opensource@nci.nih.gov" rel="nofollow">Application Support</a> for information about open source development and AIM.</p><h3 id="AnnotationandImageMarkupAIM-DefectsandFeatureRequests">Defects and Feature Requests</h3><ul><li><a class="external-link" href="https://tracker.nci.nih.gov/browse/AIMES" rel="nofollow">Submit a defect or feature request for AIM Enterprise Service</a></li><li><a class="external-link" href="https://tracker.nci.nih.gov/browse/AIM" rel="nofollow">Submit a defect or feature request for AIM Information Markup Model</a></li><li><a class="external-link" href="https://tracker.nci.nih.gov/browse/AIMWS" rel="nofollow">Submit a defect or feature request for AIM on ClearCanvas Workstation</a></li></ul><h2 id="AnnotationandImageMarkupAIM-Presentations,DemosandOtherMaterials">Presentations, Demos and Other Materials</h2><ul><li><a href="/externalpages/135825323.html">Weekly Progress</a></li><li><a href="/externalpages/142377090.html">Monthly Reports</a></li><li><a data-linked-resource-container-id="49776079" data-linked-resource-container-version="182" data-linked-resource-content-type="application/pdf" data-linked-resource-default-alias="Using_AIM_Tools_508_compliant.pdf" data-linked-resource-id="90112334" data-linked-resource-type="attachment" data-linked-resource-version="1" data-nice-type="PDF Document" href="/attachments/49776079/90112334.pdf">Using AIM Tools</a> (PDF of PowerPoint)</li><li><a href="/externalpages/42337201.html">AIM Citations</a></li><li><a href="/externalpages/195625327.html">AIM Reference Materials</a></li></ul><h2 id="AnnotationandImageMarkupAIM-DocumentationandTraining">Documentation and Training</h2><ul><li><a href="/AIM-Template-Builder-Documentation_75006387.html">AIM Template Builder Documentation</a></li><li><a href="/AIM-Template-Service-Documentation_81789563.html">AIM Template Service Documentation</a></li><li><a href="/AIM-on-ClearCanvas-Workstation-Documentation_75006384.html">AIM on ClearCanvas Workstation Documentation</a></li><li><a class="external-link" href="https://ncisvn.nci.nih.gov/svn/files/trunk/aim/aim/AIMTemplateCreator-InstallationManual/AIMTemplateSoftwareSetup.zip" rel="nofollow">AIM Template Software Setup Manual</a></li><li><a href="/externalpages/35752610.html" rel="nofollow">AIM Terms and Concepts</a></li></ul></div>
+</div> </div>
+<div id="footer" role="contentinfo">
+<section class="footer-body">
+</section>
+</div>
+</div> </body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Annotation and Image Markup : Changes from the AIM Foundation to AIM 4.0, Revision 48</title>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<style>.ia-fixed-sidebar, .ia-splitter-left {width: 285px;}.theme-default .ia-splitter #main {margin-left: 285px;}.ia-fixed-sidebar {visibility: hidden;}</style><link data-wrm-batch-type="context" data-wrm-key="_super" href="/styles/95485976/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="context" data-wrm-key="baseurl-checker-resource,atl.general,refined.site,viewcontent,refined.main,main,page,atl.comments,zdu-banner-all,-_super" href="/styles/95485976/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="context" data-wrm-key="refined.aui-design-tokens,-_super" href="/styles/95485976/batch.css" media="all" rel="stylesheet"/><link data-wrm-batch-type="resource" data-wrm-key="com.refinedwiki.confluence.plugins.theme.original:print-style" href="/styles/95485976/com.refinedwiki.confluence.plugins.theme.original_print-style.css" media="print" rel="stylesheet"/><link href="/styles/95485976/atlassian-editor.css" media="all" rel="stylesheet"/><link href="/styles/95485976/custom.css" media="all" rel="stylesheet"/><style type="text/css">
+		.rw_toolbar_menu li .rw_toolbar_dropdown li a:hover
+		{
+			color: #172B4D;
+			background: rgba(9, 30, 66, 0.06);
+		}
+
+		/* Scroll office fix */
+		#com-k15t-confluence-scroll-pdf-launcher:hover
+		{
+			color: #172B4D;
+			background: rgba(9, 30, 66, 0.06);
+		}
+	</style><link href="/styles/95485976/theme-9-1290.css" media="all" rel="stylesheet" type="text/css"/><style type="text/css">
+  #rw_wrapper.rw_effects_popup_shadow .rw_shadow_top { width: calc(100% + 40px); }
+  #rw_wrapper.rw_effects_popup_shadow .rw_shadow_top:after { width: calc(100% - 40px); }
+  #rw_wrapper.rw_effects_popup_border .rw_shadow_top { width: calc(100% + 2px); }
+</style><style type="text/css">
+	/* Key navigation in popup */
+	.rw_key_nav li.rw_selected a {
+        background-color: rgba(199,63,98,1.00) !important;
+        border-color: rgba(199,63,98,1.00) !important;
+                box-shadow: none;
+    }
+    .rw_key_nav li.rw_selected * { color: #fff !important; }
+    .rw_key_nav li.rw_selected a span.rw_item_left { background: none !important; border-color:unset !important;}
+
+	/* Key navigation category menu */
+	#rw_category_menu ul li.rw_active.rw_selected a > span { border-color: rgba(199,63,98,1.00); }
+
+	/* Confluence questions  */
+	.rw_navigation_module_questions ul li.rw_selected { background: rgba(199,63,98,1.00); }
+	.rw_category_dd_theme_dark #rw_category_dropdown_wrapper .rw_navigation_module_questions ul li.rw_selected { background: rgba(199,63,98,1.00); }
+
+	/* Key navigation for page tree */
+	.rw_pagetree_list li.rw_selected > div.rw_icon_content { background: rgba(199,63,98,1.00) !important; border-color: rgba(199,63,98,1.00) !important; }
+	.rw_pagetree_list li.rw_selected > div.rw_icon_content a { color:#fff !important;}
+	.rw_pagetree_list li.rw_selected a {background: none !important; border-color: unset; color:#333 !important;}
+
+	/* Key navigation for activity popup */
+	li.rw_selected div.rw_no_link { background: rgba(199,63,98,1.00) !important; border-color: rgba(199,63,98,1.00) !important; }
+    .rw_popup_design_default .rw_popup .rw_activity_module .rw_selected,
+    .rw_popup_design_confluence .rw_popup .rw_activity_module .rw_selected {
+        background: rgba(199,63,98,1.00) !important;
+    }
+
+	/* Main Key Navigation */
+	.rw_keynavigation_row > div.rw_selected { background: rgba(199,63,98,1.00) !important; color:#fff !important;}
+	.rw_keynavigation_container > div.rw_keynavigation_empty_item { background: none;}
+
+    /* Key Navigation in search module */
+    .rw_search_module_results ul li.rw_selected a {
+        background: rgba(199,63,98,1.00) !important;
+        border-color: rgba(199,63,98,1.00) !important;
+        color: #fff;
+    }
+
+	/* Menu keynav exceptions */
+	#notifications-anchor.rw_selected {background: rgba(199,63,98,1.00) !important; color:#fff !important;}
+
+
+	
+
+	#rw_menu_bar #rw_create_button .aui-button,
+	#rw_inline_dialog_page_menu #rw_create_button .aui-button,
+    .rw_create_blogpost_button.aui-button
+	{
+	  background-image: -moz-linear-gradient(top, #0C66E4, #0a57c3);
+	  background-image: -ms-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: -webkit-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: -o-linear-gradient(top,  #0C66E4, #0a57c3);
+	  background-image: linear-gradient(top,  #0C66E4, #0a57c3);
+	  text-shadow: none;
+	  color: #FFFFFF;
+	}
+
+    #rw_menu_bar #rw_create_button .aui-button,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button,
+    .rw_create_blogpost_button.aui-button
+    {
+      border-color: #0C66E4;
+    }
+    #rw_main #rw_create_button .aui-button:hover,
+    #rw_main #rw_create_button .aui-button:focus,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button:hover,
+    #rw_inline_dialog_page_menu #rw_create_button .aui-button:focus,
+    .rw_create_blogpost_button.aui-button:hover,
+    .rw_create_blogpost_button.aui-button:focus
+    {
+      background-image: -moz-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -ms-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -webkit-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: -o-linear-gradient(top, #1f7cff, #0c5bcb);
+      background-image: linear-gradient(top, #1f7cff, #0c5bcb);
+    }
+
+    .rw_create_blogpost_button.aui-button {
+	  border: 0;
+    }
+    .rw_create_blogpost_button.aui-button:hover {
+      color: #FFFFFF;
+	}
+
+
+		
+
+
+    	
+		        #preview #previewArea iframe {
+   overflow: visible;
+}
+
+#rw_search_query {
+    color: #000000;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+color: black;
+opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+color: black;
+}
+
+#rw_space_nav>.rw_item_content a {
+    color: #000000;
+}
+.rw_inline_dialog .rw_pagetree ul.rw_pagetree_list li a, .rw_inline_dialog .rw_pagetree ul.rw_pagetree_list li a:hover, .rw_pagetree.rw_theme_default ul.rw_pagetree_list li a, .rw_pagetree.rw_theme_default ul.rw_pagetree_list li a:hover {
+    color: #000000;
+}
+#rw_left_column>.rw_users_space_macro h3 {
+    color: #000000;
+}
+rw_users_space_macro .rw_help {
+    color: #000000;
+}
+.rw_space_news div span.rw_caption {
+    color: #000000;
+}
+.rw_space_news ul li a span {
+    color: #000000;
+}
+.rw_space_news ul li a .rw_date {
+    color: #000000;
+}
+.rw_pagetree .rw_quick_links_container h5 {
+    color: #000000;
+}    
+.rw_inline_dialog ul.rw_quick_links a, .rw_pagetree.rw_theme_default ul.rw_quick_links a {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_search_result_title {
+    color: #000000;
+}
+.rw_popup_design_confluence #rw_search_result_container ul li a span, .rw_popup_design_confluence #rw_search_result_container ul li:not(.rw_selected) a:hover span {
+    color: #000000;
+}
+.rw_popup_design_confluence #rw_search_result_container ul li a span.rw_search_item_space {
+    color: #000000;
+}
+.page-metadata-wrapper .page-metadata {
+    color: #000000;
+}
+.rw_pagetree .rw_quick_links_container .rw_help {
+    color: #000000;
+}
+.rw_dialog_menu ul li .rw_empty_menu .rw_item_content, .rw_dialog_menu ul li a .rw_item_content {
+    color: #000000;
+}
+#rw_inline_dialog_blogMenu #browse-space-menu ul .rw_section_title, #rw_inline_dialog_spaceMenu #browse-space-menu ul .rw_section_title {
+    color: #000000;
+}
+.rw_dialog_menu ul li .rw_empty_menu .rw_item_icon, .rw_dialog_menu ul li a .rw_item_icon {
+    color: #000000;
+}
+.rw_inline_dialog.rw_has_title .rw_title {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_dd_medium ul li a span.rw_item_content {
+    color: #000000;
+}
+#rw_top_menu_items_container .rw_item_content {
+    color: #000000;
+}
+.rw_dd_medium ul li a span.rw_item_icon {
+    color: #000000;
+}
+.rw_popup_design_confluence .rw_dd_medium ul li a span.rw_item_content {
+    color: #000000;
+}
+.rw_dd_medium ul li a span.rw_item_icon {
+    color: #000000;
+}
+.rw_mywork_body .rw_group_result {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_author a {
+    color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_ellipsis a {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_icon {
+   color: #000000;
+}
+.rw_activity_module .rw_user_set .rw_user_set_content .rw_date {
+    color: #000000;
+}
+.rw_small_text {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_content {
+    color: #000000;
+}
+.rw_module .rw_module_title>.rw_icon {
+    color: #000000;
+}
+ul.rw_content_list li a .rw_small_text {
+    color: #000000;
+}.rw_small_text {
+    color: #000000;
+}
+#com-atlassian-confluence .aui-dd-parent .aui-dropdown .dropdown-item a, .aui-dropdown2 .aui-dropdown2-section li a {
+    color: #000000;
+}
+ul.rw_content_list li a span.rw_item_icon_right {
+    color: #000000;
+}
+.rw_macro_title .rw_icon {
+    color: #000000;
+}
+.aui-dropdown2.aui-style-default>strong, .aui-dropdown2.aui-style-default .aui-dropdown2-section>strong, .aui-dropdown2-heading {
+    color: #000000;
+}
+.rw_icon, .rw_item_icon {
+    color: #000000
+}
+.rw_module .rw_module_button, .wiki-content .rw_module .rw_module_button {
+    color: #000000;
+}
+.rw_module .rw_module_button, .wiki-content .rw_module .rw_module_button {
+    border: 1px solid #000000;
+    color: #000000;
+}
+.aui-button, a.aui-button, .aui-button:visited {
+    color: #000000;
+}
+ul.rw_horizontal_menu li a {
+    color: #000000;
+}
+.rw_popup a {
+    color: #000000;
+}
+ul.rw_horizontal_menu li a {
+    color: #000000;
+}
+#rw_favorite_popup .rw_group_result {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link {
+    color: #000000;
+}
+.rw_popup a {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link span {
+    color: #000000;
+}
+.rw_load_more_container a.rw_load_more_link {
+    color: #000000;
+    border: 1px solid #000000;
+}
+.rw_popup_design_confluence .rw_popup h1 {
+    color: #000000;
+}
+#rw_footer_wrapper.rw_theme_light #rw_footer_content a {
+    color: #FFFFFF;
+}
+#.rw_category_dd_theme_dark #rw_category_dropdown_wrapper {
+    background: #ffffff;
+}
+.rw_popup_design_confluence .rw_dd_medium .rw_item_icon:before {
+    color: #000000;
+}
+rw_footer_wrapper.rw_theme_light #rw_footer_content, #rw_footer_wrapper.rw_theme_light #rw_footer_content p {
+    font-size: 16px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+#rw_footer_wrapper.rw_theme_light {
+    background-color: #123E57;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.rw_iconfont_more:before {
+    content: "\e00d";
+    color: #ffffff;
+}
+#rw_space_nav>.rw_item_actions .rw_icon {
+    color: #000000;
+}
+.rw_mywork_macro .rw_macro_title .rw_recently_worked_on {
+color: #000;
+background: none;
+}
+.rw_recently_worked_on:before {
+content: "\e007";
+}
+.rw_pagetree .rw_expand_collapse a, .wiki-content .rw_pagetree .rw_expand_collapse a {
+    color: #000000;
+}
+.rw_pagetree.rw_theme_public ul.rw_pagetree_list li a, .rw_pagetree.rw_theme_public ul.rw_pagetree_list li a:hover {
+    color: #000000;
+}
+#com-atlassian-confluence .rw_content_menu_solid #rw_menu_bar_wrapper #rw_menu_bar h1 {
+    color: #000000;
+}
+.rw_space_filter_menu li a {
+      color: #000000;
+}
+_public ul.rw_quick_links a {
+    color: #555;
+}
+.rw_item_content {
+    color: #000000;
+}
+.rw_activity_menu .rw_section:last-child {
+    border-bottom: 0;
+    display: none;
+}
+.rw_content_section #rw_left_column>* {
+    margin-bottom: 15px;
+}
+.label-list {
+    color: #000000;
+}
+
+.jira-macro-table-underline-pdfexport {
+  & .aui-lozenge.ghx-label-1 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-2 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-3 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-4 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-5 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-6 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-7 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-8 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-9 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-10 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-11 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-12 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-13 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-14 {
+      color: var(--ds-text, #fff) !important;
+  }
+  & .aui-lozenge.ghx-label-0 {
+      background-color: var(--ds-text, #fff) !important;
+  }
+}
+	
+</style></head>
+<body class="theme-default aui-theme-default">
+<div id="page">
+<div class="aui-page-panel" id="main">
+<div id="main-header">
+<div id="breadcrumb-section">
+<ol id="breadcrumbs">
+<li class="first">
+<span><a href="index.html">Annotation and Image Markup</a></span>
+</li>
+<li>
+<span><a href="AIM-Documentation_40599932.html">AIM Documentation</a></span>
+</li>
+<li>
+<span><a href="AIM-Toolkit-Documentation_80152134.html">AIM Toolkit Documentation</a></span>
+</li>
+<li>
+<span><a href="AIM-Model-Change-Logs_106070327.html">AIM Model Change Logs</a></span>
+</li>
+</ol>
+</div>
+<h1 class="pagetitle" id="title-heading">
+<span id="title-text">
+                            Annotation and Image Markup : Changes from the AIM Foundation to AIM 4.0, Revision 48
+                        </span>
+</h1>
+</div>
+<div class="view" id="content">
+<div class="page-metadata">
+                        
+        
+    
+    
+        
+    
+        
+        
+            Created by <span class="author"> Klinger, Carolyn (NIH/NCI) [C]</span>, last updated by <span class="editor"> Unknown User (wileyal)</span> on Apr 10, 2014
+    
+                        </div>
+<div class="wiki-content group" id="main-content">
+<div aria-label="Tip" class="confluence-information-macro confluence-information-macro-tip" role="region"><p class="title conf-macro-render">You can print and export wiki pages</p><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon" role="presentation"></span><div class="confluence-information-macro-body"><p><div class="error"><span class="error">Unable to render {include}</span> The included page could not be found.</div></p></div></div><div class="panel" style="border-width: 1px;"><div class="panelHeader" style="border-bottom-width: 1px;"><b>Contents of this Page</b></div><div class="panelContent">
+<style type="text/css">/*<![CDATA[*/
+div.rbtoc1784122672902 {padding: 0px;}
+div.rbtoc1784122672902 ul {margin-left: 0px;}
+div.rbtoc1784122672902 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style><div class="toc-macro rbtoc1784122672902">
+<ul class="toc-indentation">
+<li><a href="#ChangesfromtheAIMFoundationtoAIM4.0,Revision48-Introduction">Introduction</a></li>
+<li><a href="#ChangesfromtheAIMFoundationtoAIM4.0,Revision48-SummaryofChangesbetweentheAIMFoundationandAIM4.0,Revision48Models">Summary of Changes between the AIM Foundation and AIM 4.0, Revision 48 Models</a>
+<ul class="toc-indentation">
+<li><a href="#ChangesfromtheAIMFoundationtoAIM4.0,Revision48-LesionObservationEntity(RadOnc)">LesionObservationEntity (RadOnc)</a></li>
+<li><a href="#ChangesfromtheAIMFoundationtoAIM4.0,Revision48-GeneralLesionObservationEntity(RadOnc)">GeneralLesionObservationEntity (RadOnc)</a></li>
+<li><a href="#ChangesfromtheAIMFoundationtoAIM4.0,Revision48-TimePointLesionObservationEntity(RadOnc)">TimePointLesionObservationEntity (RadOnc)</a></li>
+<li><a href="#ChangesfromtheAIMFoundationtoAIM4.0,Revision48-ClassesderivedfromAnnotationOfAnnotationStatement">Classes derived from AnnotationOfAnnotationStatement</a>
+<ul class="toc-indentation">
+<li><a href="#ChangesfromtheAIMFoundationtoAIM4.0,Revision48-AnnotationOfAnnotationHasGeneralLesionObservationEntityStatement(RadOnc)">AnnotationOfAnnotationHasGeneralLesionObservationEntityStatement (RadOnc)</a></li>
+<li><a href="#ChangesfromtheAIMFoundationtoAIM4.0,Revision48-AnnotationOfAnnotationHasTimePointLesionObservationEntityStatement(RadOnc)">AnnotationOfAnnotationHasTimePointLesionObservationEntityStatement (RadOnc)</a></li>
+</ul>
+</li>
+<li><a href="#ChangesfromtheAIMFoundationtoAIM4.0,Revision48-ClassesderivedfromImageAnnotationStatement">Classes derived from ImageAnnotationStatement</a>
+<ul class="toc-indentation">
+<li><a href="#ChangesfromtheAIMFoundationtoAIM4.0,Revision48-GeneralLesionObservationEntityHasImgingPhysicalEntityStatement(RadOnc)">GeneralLesionObservationEntityHasImgingPhysicalEntityStatement (RadOnc)</a></li>
+<li><a href="#ChangesfromtheAIMFoundationtoAIM4.0,Revision48-ImageAnnotationHasGeneralLesionObservationEntityStatement(RadOnc)">ImageAnnotationHasGeneralLesionObservationEntityStatement (RadOnc)</a></li>
+<li><a href="#ChangesfromtheAIMFoundationtoAIM4.0,Revision48-ImageAnnotationHasTimePointLesionObservationEntityStatement(RadOnc)">ImageAnnotationHasTimePointLesionObservationEntityStatement (RadOnc)</a></li>
+<li><a href="#ChangesfromtheAIMFoundationtoAIM4.0,Revision48-TimePointLesionObservationEntityHasImgingPhysicalEntityStatement(RadOnc)">TimePointLesionObservationEntityHasImgingPhysicalEntityStatement (RadOnc)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div><h2 id="ChangesfromtheAIMFoundationtoAIM4.0,Revision48-Introduction">Introduction</h2><p>AIM version 4 revision 48 Radiology and Oncology (called RadOnc) is an extension of the AIM 4.0 Foundation Model, which covers fundamental image annotation needs. The RadOnc model has nine new classes that cover Oncology lesion annotation needs. You can <a class="external-link" href="https://ncisvn.nci.nih.gov/svn/files/trunk/registrymodels/AIM/4.0/AIM_v4_rv48_load.zip" rel="nofollow">download the RadOnc model.</a></p><p>You can <a class="unresolved" href="#">download AIM 4.0 revision 43 and 44</a>.</p><h2 id="ChangesfromtheAIMFoundationtoAIM4.0,Revision48-SummaryofChangesbetweentheAIMFoundationandAIM4.0,Revision48Models">Summary of Changes between the AIM Foundation and AIM 4.0, Revision 48 Models</h2><p>AIM 4.0 has fifty-five new classes. Twelve classes were renamed and four were deleted. This document describes changes from the AIM 3.0 to the AIM 4.0 Foundation Model. Descriptions of the new classes follow.</p><h3 id="ChangesfromtheAIMFoundationtoAIM4.0,Revision48-LesionObservationEntity(RadOnc)"><em>LesionObservationEntity (RadOnc)</em></h3><p>The class is an abstract class stores observations made about lesions in both clinical trial and day-to-day clinical treatments. For detailed information, see<em> DICOM Clinical Trials Results Reporting Supplement (Working group 18)</em>.</p><h3 id="ChangesfromtheAIMFoundationtoAIM4.0,Revision48-GeneralLesionObservationEntity(RadOnc)"><em>GeneralLesionObservationEntity (RadOnc)</em></h3><p>This class contains general observations made about lesions in clinical trial results and day-to-day clinical treatment that are not specific to time point. For detailed information, see <em>DICOM Clinical Trials Results Reporting Supplement (Working group 18)</em>.</p><h3 id="ChangesfromtheAIMFoundationtoAIM4.0,Revision48-TimePointLesionObservationEntity(RadOnc)"><em>TimePointLesionObservationEntity (RadOnc)</em></h3><p>This class contains observations made about lesions in day-to-day clinical interpretations and clinical trial results at a specific time point. It also includes “lesions” that are created for the purpose of calibrating scanned film or other secondary capture images. For detailed information, see <em>DICOM Clinical Trials Results Reporting Supplement (Working group 18)</em>.</p><h3 id="ChangesfromtheAIMFoundationtoAIM4.0,Revision48-ClassesderivedfromAnnotationOfAnnotationStatement">Classes derived from <em>AnnotationOfAnnotationStatement</em></h3><h4 id="ChangesfromtheAIMFoundationtoAIM4.0,Revision48-AnnotationOfAnnotationHasGeneralLesionObservationEntityStatement(RadOnc)"><em>AnnotationOfAnnotationHasGeneralLesionObservationEntityStatement (RadOnc)</em></h4><p>An instance of annotation of annotation may have one or more general lesion observations associate with it. <em>AnnotationOfAnnotationHasGeneralLesionObservationEntityStatement</em> represents a direct relationship between an instance of annotation of annotation and general lesion observation. If you have two general lesion observations, you will need to create two statements.</p><p>A use case:</p><p>An adjudicator wants to create a general lesion observation statement from an annotation of annotation.</p><p>Assumption:</p><ol><li>An annotation of annotation, each with general lesion observation, was created earlier from a reader.</li><li>There is a system capable of reading and extracting information from the annotation for further displaying, computing and manipulating purposes.</li></ol><p>Working with AIM:</p><ol><li>Create a general lesion observation instance.</li><li>Create an <em>AnnotationOfAnnotationHasGeneralLesionObservationEntityStatement</em> statement linking the annotation of annotation (subjects) to the general lesion observation (objects).</li></ol><h4 id="ChangesfromtheAIMFoundationtoAIM4.0,Revision48-AnnotationOfAnnotationHasTimePointLesionObservationEntityStatement(RadOnc)"><em>AnnotationOfAnnotationHasTimePointLesionObservationEntityStatement (RadOnc)</em></h4><p>An instance of annotation of annotation may have one or more time-point lesion observations associate with it. <em>AnnotationOfAnnotationHasTimePointLesionObservationEntityStatement</em> represents a direct relationship between an instance of annotation of annotation and time-point lesion observation. If you have two time-point lesion observations, you will need to create two statements.</p><p>A use case:</p><p>An adjudicator wants to create a time-point lesion observation statement from an annotation of annotation.</p><p>Assumption:</p><ol><li>An annotation of annotation, each with time-point lesion observation, was created earlier from a reader.</li><li>There is a system capable of reading and extracting information from the annotations for further displaying, computing and manipulating purposes.</li></ol><p>Working with AIM:</p><ol><li>Create a time-point lesion observation instance.</li><li>Create a <em>AnnotationOfAnnotationHasTimePointLesionObservationEntityStatement</em> statement linking the annotation of annotation (subjects) to the time-point lesion observation (objects).</li></ol><h3 id="ChangesfromtheAIMFoundationtoAIM4.0,Revision48-ClassesderivedfromImageAnnotationStatement">Classes derived from <em>ImageAnnotationStatement</em></h3><p>The following<em> classes </em>were derived from<em> ImageAnnotationStatement</em>.<em> <br/> </em></p><h4 id="ChangesfromtheAIMFoundationtoAIM4.0,Revision48-GeneralLesionObservationEntityHasImgingPhysicalEntityStatement(RadOnc)"><em>GeneralLesionObservationEntityHasImgingPhysicalEntityStatement (RadOnc)</em></h4><p>The class is used to record a relationship between a general lesion observation entity and imaging physical entity. Each lesion observation can only be directly related to one imaging physical entity.</p><p>A use case:</p><p>An imaging interpreter wants to link a general lesion observation and imaging physical annotation.</p><p>Working with AIM:</p><ol><li>Create an imaging physical entity instance.</li><li>Create a general lesion observation entity instance.</li><li>Create an <em>GeneralLesionObservationEntityHasImagingPhysicalEntityStatement</em> statement linking the general lesion observation entity (subjects) to the imaging physical entity (objects).</li></ol><h4 id="ChangesfromtheAIMFoundationtoAIM4.0,Revision48-ImageAnnotationHasGeneralLesionObservationEntityStatement(RadOnc)"><em>ImageAnnotationHasGeneralLesionObservationEntityStatement (RadOnc)</em></h4><p>An instance of image annotation may have one or more general lesion observations associate with it. <em>ImageAnnotationHasGeneralLesionObservationEntityStatement</em> represents a direct relationship between an instance of image annotation and general lesion observation. If you have two general lesion observations, you will need to create two statements.</p><p>A use case:</p><p>An adjudicator wants to create a time-point lesion observation statement from an image annotation.</p><p>Assumption:</p><ol><li>An image annotation, each with time-point lesion observation, was created earlier from a reader.</li><li>There is a system capable of reading and extracting information from the annotation for further displaying, computing and manipulating purposes.</li></ol><p>Working with AIM:</p><ol><li>Create a time-point lesion observation instance.</li><li>Create an <em>ImageAnnotationHasTimePointLesionObservationEntityStatement</em> statement linking the annotation of annotation (subjects) to the time-point lesion observation (objects).</li></ol><h4 id="ChangesfromtheAIMFoundationtoAIM4.0,Revision48-ImageAnnotationHasTimePointLesionObservationEntityStatement(RadOnc)"><em>ImageAnnotationHasTimePointLesionObservationEntityStatement (RadOnc)</em></h4><p>An instance of image annotation may have one or more time-point lesion observations associate with it. <em>ImageAnnotationHasTimePointLesionObservationEntityStatement</em> represents a direct relationship between an instance of image annotation and time-point lesion observation. If you have two general lesion observations, you will need to create two statements.</p><p>A use case:</p><p>An adjudicator wants to create a time-point lesion observation statement from an image annotation.</p><p>Assumption:</p><ol><li>An image annotation, each with time-point lesion observation, was created earlier from a reader.</li><li>There is a system capable of reading and extracting information from the annotation for further displaying, computing and manipulating purposes.</li></ol><p>Working with AIM:</p><ol><li>Create a time-point lesion observation instance.</li><li>Create a <em>ImageAnnotationHasTimePointLesionObservationEntityStatement</em> statement linking the image annotation (subjects) to the time-point lesion observation (objects).</li></ol><h4 id="ChangesfromtheAIMFoundationtoAIM4.0,Revision48-TimePointLesionObservationEntityHasImgingPhysicalEntityStatement(RadOnc)"><em>TimePointLesionObservationEntityHasImgingPhysicalEntityStatement (RadOnc)</em></h4><p>The class is used to record a relationship between a timepoint lesion observation entity and imaging physical entity. Each lesion observation can only be directly related to one imaging physical entity.</p><p>A use case:</p><p>An imaging interpreter wants to link a timepoint lesion observation and imaging physical annotation.</p><p>Working with AIM:</p><ol><li>Create an imaging physical entity instance.</li><li>Create a timepoint lesion observation entity instance.</li><li>Create a <em>TimePointLesionObservationEntityHasImagingPhysicalEntityStatement</em> statement linking the timepoint lesion observation entity (subjects) to the imaging physical entity (objects).</li></ol><p> </p>
+</div>
+</div> </div>
+<div id="footer" role="contentinfo">
+<section class="footer-body">
+<p>Document generated by Confluence on Jul 15, 2026 09:37</p>
+<div id="footer-logo"><a href="https://www.atlassian.com/">Atlassian</a></div>
+</section>
+</div>
+</div> </body>
+</html>
